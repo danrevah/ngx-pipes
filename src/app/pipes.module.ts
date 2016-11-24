@@ -9,5 +9,5 @@ import {STRING_PIPES} from "./pipes/string/string";
   exports: [...STRING_PIPES, ...ARRAY_PIPES]
 })
 
-export class PipesModule {
+export class NgPipesModule {
 }
