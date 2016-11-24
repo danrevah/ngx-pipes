@@ -11,19 +11,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var array_1 = require("./pipes/array/array");
 var string_1 = require("./pipes/string/string");
-var PipesModule = (function () {
-    function PipesModule() {
+var NgPipesModule = (function () {
+    function NgPipesModule() {
     }
-    PipesModule = __decorate([
+    NgPipesModule = __decorate([
         core_1.NgModule({
             declarations: string_1.STRING_PIPES.concat(array_1.ARRAY_PIPES),
             imports: [],
             exports: string_1.STRING_PIPES.concat(array_1.ARRAY_PIPES)
         }), 
         __metadata('design:paramtypes', [])
-    ], PipesModule);
-    return PipesModule;
+    ], NgPipesModule);
+    return NgPipesModule;
 }());
-exports.PipesModule = PipesModule;
+exports.NgPipesModule = NgPipesModule;
 
 //# sourceMappingURL=pipes.module.js.map

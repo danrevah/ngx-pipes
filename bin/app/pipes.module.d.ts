@@ -1,2 +1,2 @@
-export declare class PipesModule {
+export declare class NgPipesModule {
 }
