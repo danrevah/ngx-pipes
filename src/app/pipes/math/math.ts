@@ -6,8 +6,9 @@ import {FloorPipe} from "./floor";
 import {RoundPipe} from "./round";
 import {SqrtPipe} from "./sqrt";
 import {PowerPipe} from "./pow";
+import {CeilPipe} from "./ceil";
 
 export const MATH_PIPES = [
-  MaxPipe, MinPipe, PercentPipe, SumPipe, FloorPipe, RoundPipe, SqrtPipe, PowerPipe
-
+  MaxPipe, MinPipe, PercentPipe, SumPipe, FloorPipe,
+  RoundPipe, SqrtPipe, PowerPipe, CeilPipe
 ];

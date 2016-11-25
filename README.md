@@ -334,6 +334,16 @@ Api: `number | percentage: [total | default = 100]: [floor | default = false]`
 <p>{{ 5 | percentage: 160: true }}</p> <-- Output: "3" -->
 ```
 
+### ceil
+
+Returns ceil of a number by precision 
+Api: `number | ceil: [precision | default = 0]`
+
+```html
+<p>{{ 42.123 | ceil }}</p> <-- Output: "43" -->
+<p>{{ 42.123 | ceil: 2 }}</p> <-- Output: "42.13" -->x
+```
+
 ### floor
 
 Returns floor of a number by precision 
