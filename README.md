@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/danrevah/ng2-pipes.svg?branch=master)](https://travis-ci.org/danrevah/ng2-pipes)
 
-> Useful Angular2 pipes
+> Useful pipes for Angular2
 
 ## Table of contents
 
@@ -17,7 +17,19 @@
     - [trim](#trim)
     - [ltrim](#ltrim)
     - [rtrim](#rtrim)
+    - [reverse](#reverse)
  - [Array](#Array)   
+    - [diff](#diff)
+    - [flatten](#flatten)
+    - [initial](#initial)
+    - [intersection](#intersection)
+    - [reverse](#reverse)
+    - [tail](#tail)
+    - [truthify](#truthify)
+    - [union](#union)
+    - [unique](#unique)
+    - [without](#without)
+ 
 
 ## Installation
 
@@ -129,4 +141,147 @@ Api: `string | rtrim: [characters|optional]`
 ```html
 <p>{{'  foo  ' | rtrim }}</p> <!-- Output: "  foo" -->
 <p>{{'foobarfoo' | rtrim: 'foo' }}</p> <!-- Output: "foobar" -->
+```
+
+### reverse
+
+Reverses a string
+Api: `string | reverse`
+
+```html
+<p>{{'foo bar' | reverse }}</p> <!-- Output: "rab oof" -->
+```
+
+
+## Array
+
+### diff
+
+Returns array of diff between arrays 
+Api: `array | diff: [ARRAY]: [ARRAY]: ... : [ARRAY]`
+
+```typescript
+this.items = [1, 2, 3, 4];
+```
+
+```html
+<li *ngFor="let item of items | diff: [[1, 2]]"> <-- Array: [3, 4] -->
+```
+
+### flatten
+
+Flattens nested array, passing shallow will mean it will only be flattened a single level
+Api: `array | flatten: [shallow|optional]`
+
+```typescript
+this.items = [1,2,3,[4,5,6,[7,8,9],[10,11,12,13,[14],[15],[16, [17]]]]];
+```
+
+```html
+<li *ngFor="let item of items | flatten"> 
+<-- Array: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17] -->
+```
+
+### initial
+
+Slicing off the end of the array by n elements
+Api: `array | initial: n`
+
+```typescript
+this.items = [first, second, third];
+```
+
+```html
+<li *ngFor="let item of items | initial: 1"> <-- Array: [first, second] -->
+```
+
+### tail
+
+Slicing off the start of the array by n elements
+Api: `array | tail: n`
+
+```typescript
+this.items = [first, second, third];
+```
+
+```html
+<li *ngFor="let item of items | tail: 1"> <-- Array: [second, third] -->
+```
+
+### intersection
+
+Returns the intersections of an arrays
+Api: `array | intersection: [ARRAY]: [ARRAY]: ... : [ARRAY]`
+
+```typescript
+this.items = [1, 2, 3, 4, 5];
+```
+
+```html
+<li *ngFor="let item of items | intersection: [1, 2]: [3, 6]"> <-- Array: [1, 2, 3] -->
+```
+
+### reverse
+
+Reverses an array
+Api: `array | reverse`
+
+```typescript
+this.items = [1, 2, 3];
+```
+
+```html
+<li *ngFor="let item of items | reverse"> <-- Array: [3, 2, 1] -->
+```
+
+### truthify
+
+Removes un-truthy values from array
+Api: `array | truthify`
+
+```typescript
+this.items = [null, 1, false, undefined, 2, 0, 3, NaN, 4, ''];
+```
+
+```html
+<li *ngFor="let item of items | truthify"> <-- Array: [1, 2, 3, 4] -->
+```
+
+### union
+
+Removes un-truthy values from array
+Api: `array | union: [ARRAY]`
+
+```typescript
+this.items = [1, 2, 3];
+```
+
+```html
+<li *ngFor="let item of items | union: [[4]]"> <-- Array: [1, 2, 3, 4] -->
+```
+
+### unique
+
+Removes duplicates from array
+Api: `array | unique`
+
+```typescript
+this.items = [1, 2, 3, 1, 2, 3];
+```
+
+```html
+<li *ngFor="let item of items | unique"> <-- Array: [1, 2, 3] -->
+```
+
+### unique
+
+Returns array without specific elements
+Api: `array | without: [ARRAY]`
+
+```typescript
+this.items = [1, 2, 3, 1, 2, 3];
+```
+
+```html
+<li *ngFor="let item of items | without: [1,3]"> <-- Array: [2, 2] -->
 ```
