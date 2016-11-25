@@ -365,7 +365,7 @@ Api: `number | ceil: [precision | default = 0]`
 
 ```html
 <p>{{ 42.123 | ceil }}</p> <-- Output: "43" -->
-<p>{{ 42.123 | ceil: 2 }}</p> <-- Output: "42.13" -->x
+<p>{{ 42.123 | ceil: 2 }}</p> <-- Output: "42.13" -->
 ```
 
 ### floor
@@ -376,7 +376,7 @@ Api: `number | floor: [precision | default = 0]`
 
 ```html
 <p>{{ 42.123 | floor }}</p> <-- Output: "42" -->
-<p>{{ 42.123 | floor: 2 }}</p> <-- Output: "42.12" -->x
+<p>{{ 42.123 | floor: 2 }}</p> <-- Output: "42.12" -->
 ```
 
 ### round
@@ -388,7 +388,7 @@ Api: `number | round: [precision | default = 0]`
 ```html
 <p>{{ 42.4 | round }}</p> <-- Output: "42" -->
 <p>{{ 42.5 | round }}</p> <-- Output: "43" -->
-<p>{{ 42.123 | round: 2 }}</p> <-- Output: "42.12" -->x
+<p>{{ 42.123 | round: 2 }}</p> <-- Output: "42.12" -->
 ```
 
 ### sqrt
