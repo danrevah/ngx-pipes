@@ -33,6 +33,7 @@
     - [min](#min)
     - [max](#max)
     - [percent](#percent)
+    - [ceil](#ceil)
     - [floor](#floor)
     - [round](#round)
     - [sqrt](#sqrt)
