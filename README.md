@@ -1,4 +1,6 @@
-# Angular2 Pipes [![npm version](https://badge.fury.io/js/ng2-pipes.svg)](https://badge.fury.io/js/ng2-pipes) [![Build Status](https://travis-ci.org/danrevah/ng2-pipes.svg?branch=master)](https://travis-ci.org/danrevah/ng2-pipes)
+# Angular2 Pipes 
+
+[![Build Status](https://travis-ci.org/danrevah/ng2-pipes.svg?branch=master)](https://travis-ci.org/danrevah/ng2-pipes) [![npm version](https://badge.fury.io/js/ng2-pipes.svg)](https://badge.fury.io/js/ng2-pipes) 
 
 > Useful pipes for Angular2
 
