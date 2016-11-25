@@ -38,6 +38,15 @@
     - [round](#round)
     - [sqrt](#sqrt)
     - [pow](#pow)
+ - [Boolean](#Boolean)   
+    - [isNull](#isNull)
+    - [isDefined](#isDefined)
+    - [isUndefined](#isUndefined)
+    - [isString](#isString)
+    - [isFunction](#isFunction)
+    - [isNumber](#isNumber)
+    - [isArray](#isArray)
+    - [isObject](#isObject)
  
 
 ## Installation
@@ -410,4 +419,99 @@ Api: `number | pow: [power | default = 2]`
 ```html
 <p>{{ 3 | pow }}</p> <-- Output: "9" -->
 <p>{{ 3 | pow: 3 }}</p> <-- Output: "27" -->
+```
+
+## Boolean
+
+### isNull
+
+Checks if some value is null
+
+Api: `any | isNull`
+
+```html
+<p>{{ null | isNull }}</p> <-- Output: "true" -->
+<p>{{ 1 | isNull }}</p> <-- Output: "false" -->
+```
+
+### isDefined
+
+Checks if some value is defined
+
+Api: `any | isDefined`
+
+```html
+<p>{{ 1 | isDefined }}</p> <-- Output: "true" -->
+<p>{{ undefined | isDefined }}</p> <-- Output: "false" -->
+```
+
+### isUndefined
+
+Checks if some value is undefined
+
+Api: `any | isUndefined`
+
+```html
+<p>{{ 1 | isUndefined }}</p> <-- Output: "false" -->
+<p>{{ undefined | isUndefined }}</p> <-- Output: "true" -->
+```
+
+
+### isString
+
+Checks if some value is a string
+
+Api: `any | isString`
+
+```html
+<p>{{ 1 | isString }}</p> <-- Output: "false" -->
+<p>{{ '' | isString }}</p> <-- Output: "true" -->
+```
+
+### isNumber
+
+Checks if some value is a number
+
+Api: `any | isNumber`
+
+```typescript
+this.func = () => {};
+this.num = 1;
+```
+
+```html
+<p>{{ num | isNumber }}</p> <-- Output: "true" -->
+<p>{{ func | isNumber }}</p> <-- Output: "false" -->
+```
+
+### isArray
+
+Checks if some value is an array
+
+Api: `any | isArray`
+
+```typescript
+this.arr = [1, 2];
+this.num = 1;
+```
+
+```html
+<p>{{ num | isArray }}</p> <-- Output: "false" -->
+<p>{{ arr | isArray }}</p> <-- Output: "true" -->
+```
+
+### isObject
+
+Checks if some value is an object
+
+Api: `any | isObject`
+
+```typescript
+this.obj = {a: 1, b: 2};
+this.num = 1;
+```
+
+```html
+<p>{{ num | isObject }}</p> <-- Output: "false" -->
+<p>{{ obj | isObject }}</p> <-- Output: "true" -->
 ```

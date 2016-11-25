@@ -12,14 +12,15 @@ var core_1 = require('@angular/core');
 var array_1 = require("./pipes/array/array");
 var string_1 = require("./pipes/string/string");
 var math_1 = require("./pipes/math/math");
+var boolean_1 = require("./pipes/boolean/boolean");
 var NgPipesModule = (function () {
     function NgPipesModule() {
     }
     NgPipesModule = __decorate([
         core_1.NgModule({
-            declarations: string_1.STRING_PIPES.concat(array_1.ARRAY_PIPES, math_1.MATH_PIPES),
+            declarations: string_1.STRING_PIPES.concat(array_1.ARRAY_PIPES, math_1.MATH_PIPES, boolean_1.BOOLEAN_PIPES),
             imports: [],
-            exports: string_1.STRING_PIPES.concat(array_1.ARRAY_PIPES, math_1.MATH_PIPES)
+            exports: string_1.STRING_PIPES.concat(array_1.ARRAY_PIPES, math_1.MATH_PIPES, boolean_1.BOOLEAN_PIPES)
         }), 
         __metadata('design:paramtypes', [])
     ], NgPipesModule);
