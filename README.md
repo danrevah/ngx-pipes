@@ -302,7 +302,7 @@ Returns the minimum of a given array
 Api: `array | min`
 
 ```html
-{{ [1, 2, 3, 1, 2, 3] | min }} <-- Output: "1" -->
+<p>{{ [1, 2, 3, 1, 2, 3] | min }}</p> <-- Output: "1" -->
 ```
 
 ### max
@@ -311,7 +311,7 @@ Returns the maximum of a given array
 Api: `array | max`
 
 ```html
-{{ [1, 2, 3, 1, 2, 3] | max }} <-- Output: "3" -->
+<p>{{ [1, 2, 3, 1, 2, 3] | max }}</p> <-- Output: "3" -->
 ```
 
 ### sum
@@ -320,7 +320,7 @@ Returns the sum of a given array
 Api: `array | sum`
 
 ```html
-{{ [1, 2, 3, 4] | sum }} <-- Output: "10" -->
+<p>{{ [1, 2, 3, 4] | sum }}</p> <-- Output: "10" -->
 ```
 
 ### percent
@@ -329,9 +329,9 @@ Returns percent between numbers
 Api: `number | percentage: [total | default = 100]: [floor | default = false]`
 
 ```html
-{{ 5 | percentage }} <-- Output: "5" -->
-{{ 5 | percentage: 160 }} <-- Output: "3.125" -->
-{{ 5 | percentage: 160: true }} <-- Output: "3" -->
+<p>{{ 5 | percentage }}</p> <-- Output: "5" -->
+<p>{{ 5 | percentage: 160 }}</p> <-- Output: "3.125" -->
+<p>{{ 5 | percentage: 160: true }}</p> <-- Output: "3" -->
 ```
 
 ### floor
@@ -340,8 +340,8 @@ Returns floor of a number by precision
 Api: `number | floor: [precision | default = 0]`
 
 ```html
-{{ 42.123 | floor }} <-- Output: "42" -->
-{{ 42.123 | floor: 2 }} <-- Output: "42.12" -->x
+<p>{{ 42.123 | floor }}</p> <-- Output: "42" -->
+<p>{{ 42.123 | floor: 2 }}</p> <-- Output: "42.12" -->x
 ```
 
 ### round
@@ -350,9 +350,9 @@ Returns round of a number by precision
 Api: `number | round: [precision | default = 0]`
 
 ```html
-{{ 42.4 | round }} <-- Output: "42" -->
-{{ 42.5 | round }} <-- Output: "43" -->
-{{ 42.123 | round: 2 }} <-- Output: "42.12" -->x
+<p>{{ 42.4 | round }}</p> <-- Output: "42" -->
+<p>{{ 42.5 | round }}</p> <-- Output: "43" -->
+<p>{{ 42.123 | round: 2 }}</p> <-- Output: "42.12" -->x
 ```
 
 ### sqrt
@@ -361,7 +361,7 @@ Returns the square root of a number
 Api: `number | sqrt`
 
 ```html
-{{ 9 | sqrt }} <-- Output: "3" -->
+<p>{{ 9 | sqrt }}</p> <-- Output: "3" -->
 ```
 
 ### pow
@@ -370,6 +370,6 @@ Returns the power of a number
 Api: `number | pow: [power | default = 2]`
 
 ```html
-{{ 3 | pow }} <-- Output: "9" -->
-{{ 3 | pow: 3 }} <-- Output: "27" -->
+<p>{{ 3 | pow }}</p> <-- Output: "9" -->
+<p>{{ 3 | pow: 3 }}</p> <-- Output: "27" -->
 ```
