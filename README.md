@@ -70,6 +70,7 @@ import {NgPipesModule} from 'ng2-pipes';
 ### repeat
 
 Repeats a string n times
+
 Api: `string | repeat: times: [separator|optional]`
 Example:
 
@@ -80,6 +81,7 @@ Example:
 ### scan
 
 Scans string and replace `{i}` placeholders by equivalent member of the array
+
 Api: `string | scan: [ARRAY]`
 
 ```html
@@ -90,6 +92,7 @@ Api: `string | scan: [ARRAY]`
 
 Shortening a string by length and providing a custom string to denote an omission
 
+
 Api: `string | shorten: length: [suffix|optional]: [wordBreak boolean|optional]`
 
 ```html
@@ -99,6 +102,7 @@ Api: `string | shorten: length: [suffix|optional]: [wordBreak boolean|optional]`
 ### strip-tags
 
 Strips a HTML tags from string and providing which tags should not be removed
+
 Api: `string | strip-tags: [ARRAY]`
 
 ```html
@@ -125,6 +129,7 @@ Uppercase first letter every word
 ### trim
 
 Strips characters from the beginning and end of a string (default character is space).
+
 Api: `string | trim: [characters|optional]`
 
 ```html
@@ -135,6 +140,7 @@ Api: `string | trim: [characters|optional]`
 ### ltrim
 
 Strips characters from the beginning of a string (default character is space).
+
 Api: `string | ltrim: [characters|optional]`
 
 ```html
@@ -145,6 +151,7 @@ Api: `string | ltrim: [characters|optional]`
 ### rtrim
 
 Strips characters from the end of a string (default character is space).
+
 Api: `string | rtrim: [characters|optional]`
 
 ```html
@@ -155,6 +162,7 @@ Api: `string | rtrim: [characters|optional]`
 ### reverse
 
 Reverses a string
+
 Api: `string | reverse`
 
 ```html
@@ -167,6 +175,7 @@ Api: `string | reverse`
 ### diff
 
 Returns array of diff between arrays 
+
 Api: `array | diff: [ARRAY]: [ARRAY]: ... : [ARRAY]`
 
 ```typescript
@@ -180,6 +189,7 @@ this.items = [1, 2, 3, 4];
 ### flatten
 
 Flattens nested array, passing shallow will mean it will only be flattened a single level
+
 Api: `array | flatten: [shallow|optional]`
 
 ```typescript
@@ -194,6 +204,7 @@ this.items = [1,2,3,[4,5,6,[7,8,9],[10,11,12,13,[14],[15],[16, [17]]]]];
 ### initial
 
 Slicing off the end of the array by n elements
+
 Api: `array | initial: n`
 
 ```typescript
@@ -207,6 +218,7 @@ this.items = [first, second, third];
 ### tail
 
 Slicing off the start of the array by n elements
+
 Api: `array | tail: n`
 
 ```typescript
@@ -220,6 +232,7 @@ this.items = [first, second, third];
 ### intersection
 
 Returns the intersections of an arrays
+
 Api: `array | intersection: [ARRAY]: [ARRAY]: ... : [ARRAY]`
 
 ```typescript
@@ -233,6 +246,7 @@ this.items = [1, 2, 3, 4, 5];
 ### reverse
 
 Reverses an array
+
 Api: `array | reverse`
 
 ```typescript
@@ -246,6 +260,7 @@ this.items = [1, 2, 3];
 ### truthify
 
 Removes un-truthy values from array
+
 Api: `array | truthify`
 
 ```typescript
@@ -259,6 +274,7 @@ this.items = [null, 1, false, undefined, 2, 0, 3, NaN, 4, ''];
 ### union
 
 Removes un-truthy values from array
+
 Api: `array | union: [ARRAY]`
 
 ```typescript
@@ -272,6 +288,7 @@ this.items = [1, 2, 3];
 ### unique
 
 Removes duplicates from array
+
 Api: `array | unique`
 
 ```typescript
@@ -285,6 +302,7 @@ this.items = [1, 2, 3, 1, 2, 3];
 ### without
 
 Returns array without specific elements
+
 Api: `array | without: [ARRAY]`
 
 ```typescript
@@ -300,6 +318,7 @@ this.items = [1, 2, 3, 1, 2, 3];
 ### min
 
 Returns the minimum of a given array
+
 Api: `array | min`
 
 ```html
@@ -309,6 +328,7 @@ Api: `array | min`
 ### max
 
 Returns the maximum of a given array
+
 Api: `array | max`
 
 ```html
@@ -318,6 +338,7 @@ Api: `array | max`
 ### sum
 
 Returns the sum of a given array
+
 Api: `array | sum`
 
 ```html
@@ -327,6 +348,7 @@ Api: `array | sum`
 ### percent
 
 Returns percent between numbers 
+
 Api: `number | percentage: [total | default = 100]: [floor | default = false]`
 
 ```html
@@ -338,6 +360,7 @@ Api: `number | percentage: [total | default = 100]: [floor | default = false]`
 ### ceil
 
 Returns ceil of a number by precision 
+
 Api: `number | ceil: [precision | default = 0]`
 
 ```html
@@ -348,6 +371,7 @@ Api: `number | ceil: [precision | default = 0]`
 ### floor
 
 Returns floor of a number by precision 
+
 Api: `number | floor: [precision | default = 0]`
 
 ```html
@@ -358,6 +382,7 @@ Api: `number | floor: [precision | default = 0]`
 ### round
 
 Returns round of a number by precision 
+
 Api: `number | round: [precision | default = 0]`
 
 ```html
@@ -369,6 +394,7 @@ Api: `number | round: [precision | default = 0]`
 ### sqrt
 
 Returns the square root of a number 
+
 Api: `number | sqrt`
 
 ```html
@@ -378,6 +404,7 @@ Api: `number | sqrt`
 ### pow
 
 Returns the power of a number 
+
 Api: `number | pow: [power | default = 2]`
 
 ```html
