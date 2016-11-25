@@ -58,7 +58,7 @@
 $ npm install ng2-pipes --save 
 ```
 
-2. Add into your module `imports` the PipesModule
+2. Add into your module `imports` the `NgPipesModule`
 
 ```typescript
 import {NgPipesModule} from 'ng2-pipes';
