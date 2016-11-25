@@ -81,7 +81,6 @@ import {NgPipesModule} from 'ng2-pipes';
 Repeats a string n times
 
 Api: `string | repeat: times: [separator|optional]`
-Example:
 
 ```html
 <p>{{ 'example' | repeat: 3: '@' }}</p> <!-- Output: "example@example@example" -->
