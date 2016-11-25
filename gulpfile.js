@@ -4,7 +4,7 @@ const sourcemaps = require('gulp-sourcemaps');
 const merge = require('merge2');
 const tsProject = tsc.createProject('tsconfig.json');
 
-gulp.task('build', () => {
+gulp.task('release', () => {
   const tsResult = gulp.src(['./src/**/*.ts', '!./src/**/*.spec.ts'])
     .pipe(sourcemaps.init())
     .pipe(tsProject());
