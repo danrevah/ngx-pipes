@@ -273,7 +273,7 @@ this.items = [1, 2, 3, 1, 2, 3];
 <li *ngFor="let item of items | unique"> <-- Array: [1, 2, 3] -->
 ```
 
-### unique
+### without
 
 Returns array without specific elements
 Api: `array | without: [ARRAY]`
