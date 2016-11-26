@@ -9,8 +9,9 @@ import {PowerPipe} from './pow';
 import {CeilPipe} from './ceil';
 import {DegreesPipe} from './degrees';
 import {BytesPipe} from './bytes';
+import {RadiansPipe} from "./radians";
 
 export const MATH_PIPES = [
   MaxPipe, MinPipe, PercentPipe, SumPipe, FloorPipe, RoundPipe, SqrtPipe, PowerPipe,
-  CeilPipe, DegreesPipe, BytesPipe
+  CeilPipe, DegreesPipe, BytesPipe, RadiansPipe
 ];

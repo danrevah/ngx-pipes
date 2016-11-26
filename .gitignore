@@ -9,7 +9,6 @@
 
 # output
 /dist
-/bin
 
 # IDEs and editors
 /.idea
