@@ -429,7 +429,7 @@ this.predicate = (value: any, index: number, array: any[]): boolean => {
 
 ### sample
 
-Returns randomly sample items from array
+Returns sample items randomly from array
 
 Api: `array | sample: [amount | default = 1]`
 
