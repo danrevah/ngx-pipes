@@ -126,7 +126,7 @@ Api: `string | stripTags: [ARRAY]`
 
 ```html
 <p>{{'<a href="">foo</a> <p class="foo">bar</p>' | stripTags }}</p> <!-- Output: "foo bar" -->
-<p>{{'<a href="">foo</a> <p class="foo">bar</p>' | stripTags: ['p']}}</p> <!-- Output: foo <p class="foo">bar</p> -->
+<p>{{'<a href="">foo</a> <p class="foo">bar</p>' | stripTags: 'p'}}</p> <!-- Output: foo <p class="foo">bar</p> -->
 ```
 
 ### ucfirst
