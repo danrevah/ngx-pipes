@@ -29,6 +29,10 @@
     - [union](#union)
     - [unique](#unique)
     - [without](#without)
+    - [pluck](#pluck)
+    - [shuffle](#shuffle)
+    - [every](#every)
+    - [some](#some)
  - [Math](#Math)   
     - [min](#min)
     - [max](#max)
@@ -330,6 +334,96 @@ this.items = [1, 2, 3, 1, 2, 3];
 
 ```html
 <li *ngFor="let item of items | without: [1,3]"> <-- Array: [2, 2] -->
+```
+
+### pluck
+
+Returns array of properties values
+
+Api: `array | pluck: propertyName`
+
+```typescript
+this.items = [
+  {
+    a: 1, 
+    b: {
+      c: 4
+    }
+  }, 
+  {
+    a: 2, 
+    b: {
+      c: 5
+    }
+  }, 
+  {
+    a: 3, 
+    b: {
+      c: 6
+    }
+  }, 
+];
+```
+
+```html
+<li *ngFor="let item of items | pluck: 'a'"> <-- Array: [1, 2, 3] -->
+<li *ngFor="let item of items | pluck: 'b.c'"> <-- Array: [4, 5, 6] -->
+```
+
+### shuffle
+
+Returns randomly shuffled array
+
+Api: `array | shuffle`
+
+```typescript
+this.items = [1, 2, 3, 4, 5, 6];
+```
+
+```html
+<li *ngFor="let item of items | shuffle"> <-- Array: [4, 1, 6, 2, 5, 3] -->
+```
+
+### every
+
+Returns boolean value if every elements of the array fits the predicate
+
+Api: `array | every: predicate`
+
+```typescript
+this.itemsOne = [1, 1, 1];
+this.itemsTwo = [1, 1, 2];
+this.itemsThree = [2, 2, 2];
+this.predicate = (value: any, index: number, array: any[]): boolean => {
+  return value === 1;
+};
+```
+
+```html
+<p>{{ itemsOne | every: predicate }}</p> <-- Output: "true" -->
+<p>{{ itemsTwo | every: predicate }}</p> <-- Output: "false" -->
+<p>{{ itemsThree | every: predicate }}</p> <-- Output: "false" -->
+```
+
+### some
+
+Returns boolean value if some elements of the array fits the predicate
+
+Api: `array | some: predicate`
+
+```typescript
+this.itemsOne = [1, 1, 1];
+this.itemsTwo = [1, 1, 2];
+this.itemsThree = [2, 2, 2];
+this.predicate = (value: any, index: number, array: any[]): boolean => {
+  return value === 1;
+};
+```
+
+```html
+<p>{{ itemsOne | some: predicate }}</p> <-- Output: "true" -->
+<p>{{ itemsTwo | some: predicate }}</p> <-- Output: "true" -->
+<p>{{ itemsThree | some: predicate }}</p> <-- Output: "false" -->
 ```
 
 ## Math
