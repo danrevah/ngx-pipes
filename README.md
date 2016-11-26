@@ -428,6 +428,39 @@ Api: `number | pow: [power | default = 2]`
 <p>{{ 3 | pow: 3 }}</p> <-- Output: "27" -->
 ```
 
+### degrees
+
+Returns the degrees of a number in radians 
+
+Api: `number | degrees`
+
+```html
+<p>{{ 3.141592653589793 | degrees }}</p> <-- Output: "180" -->
+```
+
+### radians
+
+Returns the radians of a number in degrees 
+
+Api: `number | radians`
+
+```html
+<p>{{ 180 | radians }}</p> <-- Output: "3.141592653589793" -->
+```
+
+### bytes
+
+Returns bytes with a unit symbol
+
+Api: `number | bytes`
+
+```html
+<p>{{ 10 | bytes }}</p> <-- Output: "1 B" -->
+<p>{{ 1000 | bytes }}</p> <-- Output: "1 KB" -->
+<p>{{ 1000000 | bytes }}</p> <-- Output: "1 MB" -->
+<p>{{ 1000000000 | bytes }}</p> <-- Output: "1 GB" -->
+```
+
 ## Boolean
 
 ### isNull
