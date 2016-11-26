@@ -12,8 +12,11 @@ var core_1 = require('@angular/core');
 var StripTagsPipe = (function () {
     function StripTagsPipe() {
     }
-    StripTagsPipe.prototype.transform = function (text, _a) {
-        var _b = (_a === void 0 ? [] : _a)[0], allowedTags = _b === void 0 ? [] : _b;
+    StripTagsPipe.prototype.transform = function (text) {
+        var allowedTags = [];
+        for (var _i = 1; _i < arguments.length; _i++) {
+            allowedTags[_i - 1] = arguments[_i];
+        }
         return allowedTags.length > 0
             ? text.replace(new RegExp("<(?!/?(" + allowedTags.join('|') + ")s*/?)[^>]+>", 'g'), '')
             : text.replace(/<(?:.|\s)*?>/g, '');

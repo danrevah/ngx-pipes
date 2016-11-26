@@ -1,6 +1,6 @@
 {
   "name": "ng2-pipes",
-  "version": "0.3.7",
+  "version": "0.3.8",
   "author": "Dan Revah",
   "description": "Useful angular2 pipes",
   "license": "MIT",
@@ -13,8 +13,18 @@
     "e2e": "protractor"
   },
   "keywords": [
-    "ng2", "ng", "angular", "angular2", "angularjs", "pipes", "filters", "library",
-    "angular2 pipes", "ng2 pipes", "angular filters", "angular pipes"
+    "ng2",
+    "ng",
+    "angular",
+    "angular2",
+    "angularjs",
+    "pipes",
+    "filters",
+    "library",
+    "angular2 pipes",
+    "ng2 pipes",
+    "angular filters",
+    "angular pipes"
   ],
   "repository": {
     "type": "git",
