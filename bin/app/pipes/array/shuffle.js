@@ -18,7 +18,7 @@ var ShufflePipe = (function () {
         if (!Array.isArray(arr)) {
             return arr;
         }
-        var shuffled = Array.from(arr);
+        var shuffled = arr.slice();
         for (var i = 0, n = arr.length - 1, l = n - 1; i < l; ++i) {
             var j = Math.floor(Math.random() * (n - i + 1)) + i;
             _a = [shuffled[j], shuffled[i]], shuffled[i] = _a[0], shuffled[j] = _a[1];
