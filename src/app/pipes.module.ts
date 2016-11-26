@@ -6,6 +6,8 @@ import {BOOLEAN_PIPES} from "./pipes/boolean/boolean";
 
 
 @NgModule({
+  declarations: [...STRING_PIPES, ...ARRAY_PIPES, ...MATH_PIPES, ...BOOLEAN_PIPES],
+  imports: [],
   exports: [...STRING_PIPES, ...ARRAY_PIPES, ...MATH_PIPES, ...BOOLEAN_PIPES]
 })
 export class NgPipesModule {}
