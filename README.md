@@ -96,7 +96,7 @@ import {NgPipesModule} from 'ng2-pipes';
 
 Repeats a string n times
 
-Api: `string | repeat: times: [separator|optional]`
+API: `string | repeat: times: [separator|optional]`
 
 ```html
 <p>{{ 'example' | repeat: 3: '@' }}</p> <!-- Output: "example@example@example" -->
@@ -106,7 +106,7 @@ Api: `string | repeat: times: [separator|optional]`
 
 Scans string and replace `{i}` placeholders by equivalent member of the array
 
-Api: `string | scan: [ARRAY]`
+API: `string | scan: [ARRAY]`
 
 ```html
 <p>{{'Hey {0}, {1}' | scan: ['foo', 'bar']}}</p> <!-- Output: "Hey foo, bar" -->
@@ -117,7 +117,7 @@ Api: `string | scan: [ARRAY]`
 Shortening a string by length and providing a custom string to denote an omission
 
 
-Api: `string | shorten: length: [suffix|optional]: [wordBreak boolean|optional]`
+API: `string | shorten: length: [suffix|optional]: [wordBreak boolean|optional]`
 
 ```html
 <p>{{'Hey foo bar' | shorten: 3: '...'}}</p> <!-- Output: "Hey..." -->
@@ -127,7 +127,7 @@ Api: `string | shorten: length: [suffix|optional]: [wordBreak boolean|optional]`
 
 Strips a HTML tags from string and providing which tags should not be removed
 
-Api: `string | stripTags: [ARRAY]`
+API: `string | stripTags: [ARRAY]`
 
 ```html
 <p>{{'<a href="">foo</a> <p class="foo">bar</p>' | stripTags }}</p> <!-- Output: "foo bar" -->
@@ -154,7 +154,7 @@ Uppercase first letter every word
 
 Strips characters from the beginning and end of a string (default character is space).
 
-Api: `string | trim: [characters|optional]`
+API: `string | trim: [characters|optional]`
 
 ```html
 <p>{{'  foo  ' | trim }}</p> <!-- Output: "foo" -->
@@ -165,7 +165,7 @@ Api: `string | trim: [characters|optional]`
 
 Strips characters from the beginning of a string (default character is space).
 
-Api: `string | ltrim: [characters|optional]`
+API: `string | ltrim: [characters|optional]`
 
 ```html
 <p>{{'  foo  ' | ltrim }}</p> <!-- Output: "foo  " -->
@@ -176,7 +176,7 @@ Api: `string | ltrim: [characters|optional]`
 
 Strips characters from the end of a string (default character is space).
 
-Api: `string | rtrim: [characters|optional]`
+API: `string | rtrim: [characters|optional]`
 
 ```html
 <p>{{'  foo  ' | rtrim }}</p> <!-- Output: "  foo" -->
@@ -187,7 +187,7 @@ Api: `string | rtrim: [characters|optional]`
 
 Reverses a string
 
-Api: `string | reverse`
+API: `string | reverse`
 
 ```html
 <p>{{'foo bar' | reverse }}</p> <!-- Output: "rab oof" -->
@@ -200,7 +200,7 @@ Api: `string | reverse`
 
 Returns array of diff between arrays 
 
-Api: `array | diff: [ARRAY]: [ARRAY]: ... : [ARRAY]`
+API: `array | diff: [ARRAY]: [ARRAY]: ... : [ARRAY]`
 
 ```typescript
 this.items = [1, 2, 3, 4];
@@ -214,7 +214,7 @@ this.items = [1, 2, 3, 4];
 
 Flattens nested array, passing shallow will mean it will only be flattened a single level
 
-Api: `array | flatten: [shallow|optional]`
+API: `array | flatten: [shallow|optional]`
 
 ```typescript
 this.items = [1,2,3,[4,5,6,[7,8,9],[10,11,12,13,[14],[15],[16, [17]]]]];
@@ -229,7 +229,7 @@ this.items = [1,2,3,[4,5,6,[7,8,9],[10,11,12,13,[14],[15],[16, [17]]]]];
 
 Slicing off the end of the array by n elements
 
-Api: `array | initial: n`
+API: `array | initial: n`
 
 ```typescript
 this.items = [first, second, third];
@@ -243,7 +243,7 @@ this.items = [first, second, third];
 
 Slicing off the start of the array by n elements
 
-Api: `array | tail: n`
+API: `array | tail: n`
 
 ```typescript
 this.items = [first, second, third];
@@ -257,7 +257,7 @@ this.items = [first, second, third];
 
 Returns the intersections of an arrays
 
-Api: `array | intersection: [ARRAY]: [ARRAY]: ... : [ARRAY]`
+API: `array | intersection: [ARRAY]: [ARRAY]: ... : [ARRAY]`
 
 ```typescript
 this.items = [1, 2, 3, 4, 5];
@@ -271,7 +271,7 @@ this.items = [1, 2, 3, 4, 5];
 
 Reverses an array
 
-Api: `array | reverse`
+API: `array | reverse`
 
 ```typescript
 this.items = [1, 2, 3];
@@ -285,7 +285,7 @@ this.items = [1, 2, 3];
 
 Removes un-truthy values from array
 
-Api: `array | truthify`
+API: `array | truthify`
 
 ```typescript
 this.items = [null, 1, false, undefined, 2, 0, 3, NaN, 4, ''];
@@ -299,7 +299,7 @@ this.items = [null, 1, false, undefined, 2, 0, 3, NaN, 4, ''];
 
 Removes un-truthy values from array
 
-Api: `array | union: [ARRAY]`
+API: `array | union: [ARRAY]`
 
 ```typescript
 this.items = [1, 2, 3];
@@ -313,7 +313,7 @@ this.items = [1, 2, 3];
 
 Removes duplicates from array
 
-Api: `array | unique`
+API: `array | unique`
 
 ```typescript
 this.items = [1, 2, 3, 1, 2, 3];
@@ -327,7 +327,7 @@ this.items = [1, 2, 3, 1, 2, 3];
 
 Returns array without specific elements
 
-Api: `array | without: [ARRAY]`
+API: `array | without: [ARRAY]`
 
 ```typescript
 this.items = [1, 2, 3, 1, 2, 3];
@@ -341,7 +341,7 @@ this.items = [1, 2, 3, 1, 2, 3];
 
 Returns array of properties values
 
-Api: `array | pluck: propertyName`
+API: `array | pluck: propertyName`
 
 ```typescript
 this.items = [
@@ -375,7 +375,7 @@ this.items = [
 
 Returns randomly shuffled array
 
-Api: `array | shuffle`
+API: `array | shuffle`
 
 ```typescript
 this.items = [1, 2, 3, 4, 5, 6];
@@ -389,7 +389,7 @@ this.items = [1, 2, 3, 4, 5, 6];
 
 Returns true if every elements of the array fits the predicate otherwise false
 
-Api: `array | every: predicate`
+API: `array | every: predicate`
 
 ```typescript
 this.itemsOne = [1, 1, 1];
@@ -410,7 +410,7 @@ this.predicate = (value: any, index: number, array: any[]): boolean => {
 
 Returns true if some elements of the array fits the predicate otherwise false
 
-Api: `array | some: predicate`
+API: `array | some: predicate`
 
 ```typescript
 this.itemsOne = [1, 1, 1];
@@ -431,7 +431,7 @@ this.predicate = (value: any, index: number, array: any[]): boolean => {
 
 Returns sample items randomly from array
 
-Api: `array | sample: [amount | default = 1]`
+API: `array | sample: [amount | default = 1]`
 
 ```html
 <p>{{ [1, 2, 3, 4] | sample }}</p> <-- Output: "[2]" -->
@@ -444,7 +444,7 @@ Api: `array | sample: [amount | default = 1]`
 
 Returns the minimum of a given array
 
-Api: `array | min`
+API: `array | min`
 
 ```html
 <p>{{ [1, 2, 3, 1, 2, 3] | min }}</p> <-- Output: "1" -->
@@ -454,7 +454,7 @@ Api: `array | min`
 
 Returns the maximum of a given array
 
-Api: `array | max`
+API: `array | max`
 
 ```html
 <p>{{ [1, 2, 3, 1, 2, 3] | max }}</p> <-- Output: "3" -->
@@ -464,7 +464,7 @@ Api: `array | max`
 
 Returns the sum of a given array
 
-Api: `array | sum`
+API: `array | sum`
 
 ```html
 <p>{{ [1, 2, 3, 4] | sum }}</p> <-- Output: "10" -->
@@ -474,7 +474,7 @@ Api: `array | sum`
 
 Returns percent between numbers 
 
-Api: `number | percentage: [total | default = 100]: [floor | default = false]`
+API: `number | percentage: [total | default = 100]: [floor | default = false]`
 
 ```html
 <p>{{ 5 | percentage }}</p> <-- Output: "5" -->
@@ -486,7 +486,7 @@ Api: `number | percentage: [total | default = 100]: [floor | default = false]`
 
 Returns ceil of a number by precision 
 
-Api: `number | ceil: [precision | default = 0]`
+API: `number | ceil: [precision | default = 0]`
 
 ```html
 <p>{{ 42.123 | ceil }}</p> <-- Output: "43" -->
@@ -497,7 +497,7 @@ Api: `number | ceil: [precision | default = 0]`
 
 Returns floor of a number by precision 
 
-Api: `number | floor: [precision | default = 0]`
+API: `number | floor: [precision | default = 0]`
 
 ```html
 <p>{{ 42.123 | floor }}</p> <-- Output: "42" -->
@@ -508,7 +508,7 @@ Api: `number | floor: [precision | default = 0]`
 
 Returns round of a number by precision 
 
-Api: `number | round: [precision | default = 0]`
+API: `number | round: [precision | default = 0]`
 
 ```html
 <p>{{ 42.4 | round }}</p> <-- Output: "42" -->
@@ -520,7 +520,7 @@ Api: `number | round: [precision | default = 0]`
 
 Returns the square root of a number 
 
-Api: `number | sqrt`
+API: `number | sqrt`
 
 ```html
 <p>{{ 9 | sqrt }}</p> <-- Output: "3" -->
@@ -530,7 +530,7 @@ Api: `number | sqrt`
 
 Returns the power of a number 
 
-Api: `number | pow: [power | default = 2]`
+API: `number | pow: [power | default = 2]`
 
 ```html
 <p>{{ 3 | pow }}</p> <-- Output: "9" -->
@@ -541,7 +541,7 @@ Api: `number | pow: [power | default = 2]`
 
 Returns the degrees of a number in radians 
 
-Api: `number | degrees`
+API: `number | degrees`
 
 ```html
 <p>{{ 3.141592653589793 | degrees }}</p> <-- Output: "180" -->
@@ -551,7 +551,7 @@ Api: `number | degrees`
 
 Returns the radians of a number in degrees 
 
-Api: `number | radians`
+API: `number | radians`
 
 ```html
 <p>{{ 180 | radians }}</p> <-- Output: "3.141592653589793" -->
@@ -561,7 +561,7 @@ Api: `number | radians`
 
 Returns bytes with a unit symbol
 
-Api: `number | bytes`
+API: `number | bytes`
 
 ```html
 <p>{{ 10 | bytes }}</p> <-- Output: "1 B" -->
@@ -574,7 +574,7 @@ Api: `number | bytes`
 
 ### isNull
 
-Api: `any | isNull`
+API: `any | isNull`
 
 ```html
 <p>{{ null | isNull }}</p> <-- Output: "true" -->
@@ -583,7 +583,7 @@ Api: `any | isNull`
 
 ### isDefined
 
-Api: `any | isDefined`
+API: `any | isDefined`
 
 ```html
 <p>{{ 1 | isDefined }}</p> <-- Output: "true" -->
@@ -592,7 +592,7 @@ Api: `any | isDefined`
 
 ### isUndefined
 
-Api: `any | isUndefined`
+API: `any | isUndefined`
 
 ```html
 <p>{{ 1 | isUndefined }}</p> <-- Output: "false" -->
@@ -602,7 +602,7 @@ Api: `any | isUndefined`
 
 ### isString
 
-Api: `any | isString`
+API: `any | isString`
 
 ```html
 <p>{{ 1 | isString }}</p> <-- Output: "false" -->
@@ -611,7 +611,7 @@ Api: `any | isString`
 
 ### isNumber
 
-Api: `any | isNumber`
+API: `any | isNumber`
 
 ```typescript
 this.func = () => {};
@@ -625,7 +625,7 @@ this.num = 1;
 
 ### isArray
 
-Api: `any | isArray`
+API: `any | isArray`
 
 ```typescript
 this.arr = [1, 2];
@@ -639,7 +639,7 @@ this.num = 1;
 
 ### isObject
 
-Api: `any | isObject`
+API: `any | isObject`
 
 ```typescript
 this.obj = {a: 1, b: 2};
@@ -653,7 +653,7 @@ this.num = 1;
 
 ### isGreaterThan
 
-Api: `number | isGreaterThan: otherNumber`
+API: `number | isGreaterThan: otherNumber`
 
 ```html
 <p>{{ 1 | isGreaterThan: 1 }}</p> <-- Output: "false" -->
@@ -663,7 +663,7 @@ Api: `number | isGreaterThan: otherNumber`
 
 ### isGreaterEqualThan
 
-Api: `number | isGreaterEqualThan: otherNumber`
+API: `number | isGreaterEqualThan: otherNumber`
 
 ```html
 <p>{{ 1 | isGreaterEqualThan: 1 }}</p> <-- Output: "true" -->
@@ -673,7 +673,7 @@ Api: `number | isGreaterEqualThan: otherNumber`
 
 ### isLessThan
 
-Api: `number | isLessThan: otherNumber`
+API: `number | isLessThan: otherNumber`
 
 ```html
 <p>{{ 1 | isLessThan: 1 }}</p> <-- Output: "false" -->
@@ -683,7 +683,7 @@ Api: `number | isLessThan: otherNumber`
 
 ### isLessEqualThan
 
-Api: `number | isLessEqualThan: otherNumber`
+API: `number | isLessEqualThan: otherNumber`
 
 ```html
 <p>{{ 1 | isLessEqualThan: 1 }}</p> <-- Output: "true" -->
@@ -693,7 +693,7 @@ Api: `number | isLessEqualThan: otherNumber`
 
 ### isEqualTo
 
-Api: `number | isEqualTo: otherNumber`
+API: `number | isEqualTo: otherNumber`
 
 ```html
 <p>{{ 1 | isEqualTo: 1 }}</p> <-- Output: "true" -->
@@ -704,7 +704,7 @@ Api: `number | isEqualTo: otherNumber`
 
 ### isNotEqualTo
 
-Api: `number | isNotEqualTo: otherNumber`
+API: `number | isNotEqualTo: otherNumber`
 
 ```html
 <p>{{ 1 | isNotEqualTo: 1 }}</p> <-- Output: "false" -->
@@ -715,7 +715,7 @@ Api: `number | isNotEqualTo: otherNumber`
 
 ### isIdenticalTo
 
-Api: `number | isIdenticalTo: otherNumber`
+API: `number | isIdenticalTo: otherNumber`
 
 ```html
 <p>{{ 1 | isIdenticalTo: 1 }}</p> <-- Output: "true" -->
@@ -726,7 +726,7 @@ Api: `number | isIdenticalTo: otherNumber`
 
 ### isNotIdenticalTo
 
-Api: `number | isNotIdenticalTo: otherNumber`
+API: `number | isNotIdenticalTo: otherNumber`
 
 ```html
 <p>{{ 1 | isNotIdenticalTo: 1 }}</p> <-- Output: "false" -->
