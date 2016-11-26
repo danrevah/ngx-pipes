@@ -1,6 +1,8 @@
 {
   "name": "ng2-pipes",
-  "version": "0.3.3",
+  "version": "0.3.4",
+  "author": "Dan Revah",
+  "description": "Useful angular2 pipes",
   "license": "MIT",
   "angular-cli": {},
   "scripts": {
@@ -10,11 +12,15 @@
     "pree2e": "webdriver-manager update",
     "e2e": "protractor"
   },
+  "keywords": [
+    "ng2", "ng", "angular", "angular2", "angularjs", "pipes", "filters", "library",
+    "angular2 pipes", "ng2 pipes", "angular filters", "angular pipes"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/danrevah/ng2-pipes.git"
   },
-  "dependencies": {
+  "devDependencies": {
     "@angular/common": "^2.1.0",
     "@angular/compiler": "^2.1.0",
     "@angular/core": "^2.1.0",
@@ -26,9 +32,7 @@
     "core-js": "^2.4.1",
     "rxjs": "5.0.0-beta.12",
     "ts-helpers": "^1.1.1",
-    "zone.js": "^0.6.23"
-  },
-  "devDependencies": {
+    "zone.js": "^0.6.23",
     "@angular/compiler-cli": "^2.1.0",
     "@types/jasmine": "^2.2.30",
     "@types/node": "^6.0.42",

@@ -12,11 +12,12 @@ var core_1 = require('@angular/core');
 var DiffPipe = (function () {
     function DiffPipe() {
     }
-    DiffPipe.prototype.transform = function (arr, args) {
-        if (args === void 0) { args = []; }
-        return args.reduce(function (diffArr, currArr) {
-            return diffArr.filter(function (elm) { return !~currArr.indexOf(elm); });
-        }, arr);
+    DiffPipe.prototype.transform = function (arr) {
+        var args = [];
+        for (var _i = 1; _i < arguments.length; _i++) {
+            args[_i - 1] = arguments[_i];
+        }
+        return args.reduce(function (diffArr, currArr) { return diffArr.filter(function (elm) { return !~currArr.indexOf(elm); }); }, arr);
     };
     DiffPipe = __decorate([
         core_1.Injectable(),

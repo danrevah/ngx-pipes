@@ -1,2 +1,2 @@
-import { IsDefinedPipe } from "./is-defined";
-export declare const BOOLEAN_PIPES: typeof IsDefinedPipe[];
+import { IsGreaterEqualThanPipe } from "./is-greater-equal-than";
+export declare const BOOLEAN_PIPES: typeof IsGreaterEqualThanPipe[];

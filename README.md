@@ -11,7 +11,7 @@
     - [repeat](#repeat)
     - [scan](#scan)
     - [shorten](#shorten)
-    - [strip-tags](#strip-tags)
+    - [stripTags](#stripTags)
     - [ucfirst](#ucfirst)
     - [ucwords](#ucwords)
     - [trim](#trim)
@@ -47,6 +47,14 @@
     - [isNumber](#isNumber)
     - [isArray](#isArray)
     - [isObject](#isObject)
+    - [isGreaterThan](#isGreaterThan)
+    - [isGreaterEqualThan](#isGreaterEqualThan)
+    - [isLessThan](#isLessThan)
+    - [isLessEqualThan](#isLessEqualThan)
+    - [isEqualTo](#isEqualTo)
+    - [isNotEqualTo](#isNotEqualTo)
+    - [isIdenticalTo](#isIdenticalTo)
+    - [isNotIdenticalTo](#isNotIdenticalTo)
  
 
 ## Installation
@@ -107,15 +115,15 @@ Api: `string | shorten: length: [suffix|optional]: [wordBreak boolean|optional]`
 <p>{{'Hey foo bar' | shorten: 3: '...'}}</p> <!-- Output: "Hey..." -->
 ```
 
-### strip-tags
+### stripTags
 
 Strips a HTML tags from string and providing which tags should not be removed
 
-Api: `string | strip-tags: [ARRAY]`
+Api: `string | stripTags: [ARRAY]`
 
 ```html
-<p>{{'<a href="">foo</a> <p class="foo">bar</p>' | strip-tags }}</p> <!-- Output: "foo bar" -->
-<p>{{'<a href="">foo</a> <p class="foo">bar</p>' | strip-tags: ['p']}}</p> <!-- Output: foo <p class="foo">bar</p> -->
+<p>{{'<a href="">foo</a> <p class="foo">bar</p>' | stripTags }}</p> <!-- Output: "foo bar" -->
+<p>{{'<a href="">foo</a> <p class="foo">bar</p>' | stripTags: ['p']}}</p> <!-- Output: foo <p class="foo">bar</p> -->
 ```
 
 ### ucfirst
@@ -424,8 +432,6 @@ Api: `number | pow: [power | default = 2]`
 
 ### isNull
 
-Checks if some value is null
-
 Api: `any | isNull`
 
 ```html
@@ -435,8 +441,6 @@ Api: `any | isNull`
 
 ### isDefined
 
-Checks if some value is defined
-
 Api: `any | isDefined`
 
 ```html
@@ -445,8 +449,6 @@ Api: `any | isDefined`
 ```
 
 ### isUndefined
-
-Checks if some value is undefined
 
 Api: `any | isUndefined`
 
@@ -458,8 +460,6 @@ Api: `any | isUndefined`
 
 ### isString
 
-Checks if some value is a string
-
 Api: `any | isString`
 
 ```html
@@ -468,8 +468,6 @@ Api: `any | isString`
 ```
 
 ### isNumber
-
-Checks if some value is a number
 
 Api: `any | isNumber`
 
@@ -485,8 +483,6 @@ this.num = 1;
 
 ### isArray
 
-Checks if some value is an array
-
 Api: `any | isArray`
 
 ```typescript
@@ -501,8 +497,6 @@ this.num = 1;
 
 ### isObject
 
-Checks if some value is an object
-
 Api: `any | isObject`
 
 ```typescript
@@ -513,4 +507,88 @@ this.num = 1;
 ```html
 <p>{{ num | isObject }}</p> <-- Output: "false" -->
 <p>{{ obj | isObject }}</p> <-- Output: "true" -->
+```
+
+### isGreaterThan
+
+Api: `number | isGreaterThan: otherNumber`
+
+```html
+<p>{{ 1 | isGreaterThan: 1 }}</p> <-- Output: "false" -->
+<p>{{ 1 | isGreaterThan: 2 }}</p> <-- Output: "false" -->
+<p>{{ 2 | isGreaterThan: 1 }}</p> <-- Output: "true" -->
+```
+
+### isGreaterEqualThan
+
+Api: `number | isGreaterEqualThan: otherNumber`
+
+```html
+<p>{{ 1 | isGreaterEqualThan: 1 }}</p> <-- Output: "true" -->
+<p>{{ 1 | isGreaterEqualThan: 2 }}</p> <-- Output: "false" -->
+<p>{{ 2 | isGreaterEqualThan: 1 }}</p> <-- Output: "true" -->
+```
+
+### isLessThan
+
+Api: `number | isLessThan: otherNumber`
+
+```html
+<p>{{ 1 | isLessThan: 1 }}</p> <-- Output: "false" -->
+<p>{{ 1 | isLessThan: 2 }}</p> <-- Output: "true" -->
+<p>{{ 2 | isLessThan: 1 }}</p> <-- Output: "false" -->
+```
+
+### isLessEqualThan
+
+Api: `number | isLessEqualThan: otherNumber`
+
+```html
+<p>{{ 1 | isLessEqualThan: 1 }}</p> <-- Output: "true" -->
+<p>{{ 1 | isLessEqualThan: 2 }}</p> <-- Output: "true" -->
+<p>{{ 2 | isLessEqualThan: 1 }}</p> <-- Output: "false" -->
+```
+
+### isEqualTo
+
+Api: `number | isEqualTo: otherNumber`
+
+```html
+<p>{{ 1 | isEqualTo: 1 }}</p> <-- Output: "true" -->
+<p>{{ 1 | isEqualTo: '1' }}</p> <-- Output: "true" -->
+<p>{{ 1 | isEqualTo: 2 }}</p> <-- Output: "false" -->
+<p>{{ 2 | isEqualTo: 1 }}</p> <-- Output: "false" -->
+```
+
+### isNotEqualTo
+
+Api: `number | isNotEqualTo: otherNumber`
+
+```html
+<p>{{ 1 | isNotEqualTo: 1 }}</p> <-- Output: "false" -->
+<p>{{ 1 | isNotEqualTo: '1' }}</p> <-- Output: "false" -->
+<p>{{ 1 | isNotEqualTo: 2 }}</p> <-- Output: "true" -->
+<p>{{ 2 | isNotEqualTo: 1 }}</p> <-- Output: "true" -->
+```
+
+### isIdenticalTo
+
+Api: `number | isIdenticalTo: otherNumber`
+
+```html
+<p>{{ 1 | isIdenticalTo: 1 }}</p> <-- Output: "true" -->
+<p>{{ 1 | isIdenticalTo: '1' }}</p> <-- Output: "false" -->
+<p>{{ 1 | isIdenticalTo: 2 }}</p> <-- Output: "false" -->
+<p>{{ 2 | isIdenticalTo: 1 }}</p> <-- Output: "false" -->
+```
+
+### isNotIdenticalTo
+
+Api: `number | isNotIdenticalTo: otherNumber`
+
+```html
+<p>{{ 1 | isNotIdenticalTo: 1 }}</p> <-- Output: "false" -->
+<p>{{ 1 | isNotIdenticalTo: '1' }}</p> <-- Output: "true" -->
+<p>{{ 1 | isNotIdenticalTo: 2 }}</p> <-- Output: "true" -->
+<p>{{ 2 | isNotIdenticalTo: 1 }}</p> <-- Output: "true" -->
 ```
