@@ -12,9 +12,10 @@ import {PluckPipe} from './pluck';
 import {ShufflePipe} from './shuffle';
 import {EveryPipe} from './every';
 import {SomePipe} from './some';
+import {SamplePipe} from './sample';
 
 export const ARRAY_PIPES = [
   DiffPipe, FlattenPipe, InitialPipe, IntersectionPipe, ReversePipe, TailPipe,
   TrurthifyPipe, UnionPipe, UniquePipe, WithoutPipe, PluckPipe, ShufflePipe,
-  EveryPipe, SomePipe
+  EveryPipe, SomePipe, SamplePipe
 ];

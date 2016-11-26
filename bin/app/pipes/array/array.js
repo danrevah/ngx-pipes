@@ -13,10 +13,11 @@ var pluck_1 = require('./pluck');
 var shuffle_1 = require('./shuffle');
 var every_1 = require('./every');
 var some_1 = require('./some');
+var sample_1 = require('./sample');
 exports.ARRAY_PIPES = [
     diff_1.DiffPipe, flatten_1.FlattenPipe, initial_1.InitialPipe, intersection_1.IntersectionPipe, reverse_1.ReversePipe, tail_1.TailPipe,
     truthify_1.TrurthifyPipe, union_1.UnionPipe, unique_1.UniquePipe, without_1.WithoutPipe, pluck_1.PluckPipe, shuffle_1.ShufflePipe,
-    every_1.EveryPipe, some_1.SomePipe
+    every_1.EveryPipe, some_1.SomePipe, sample_1.SamplePipe
 ];
 
 //# sourceMappingURL=array.js.map

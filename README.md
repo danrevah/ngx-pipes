@@ -33,6 +33,7 @@
     - [shuffle](#shuffle)
     - [every](#every)
     - [some](#some)
+    - [sample](#sample)
  - [Math](#Math)   
     - [min](#min)
     - [max](#max)
@@ -424,6 +425,17 @@ this.predicate = (value: any, index: number, array: any[]): boolean => {
 <p>{{ itemsOne | some: predicate }}</p> <-- Output: "true" -->
 <p>{{ itemsTwo | some: predicate }}</p> <-- Output: "true" -->
 <p>{{ itemsThree | some: predicate }}</p> <-- Output: "false" -->
+```
+
+### sample
+
+Returns randomly sample items from array
+
+Api: `array | sample: [amount | default = 1]`
+
+```html
+<p>{{ [1, 2, 3, 4] | sample }}</p> <-- Output: "[2]" -->
+<p>{{ [1, 2, 3, 4] | sample: 2 }}</p> <-- Output: "[4, 3]" -->
 ```
 
 ## Math
