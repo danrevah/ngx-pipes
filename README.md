@@ -386,7 +386,7 @@ this.items = [1, 2, 3, 4, 5, 6];
 
 ### every
 
-Returns boolean value if every elements of the array fits the predicate
+Returns true if every elements of the array fits the predicate otherwise false
 
 Api: `array | every: predicate`
 
@@ -407,7 +407,7 @@ this.predicate = (value: any, index: number, array: any[]): boolean => {
 
 ### some
 
-Returns boolean value if some elements of the array fits the predicate
+Returns true if some elements of the array fits the predicate otherwise false
 
 Api: `array | some: predicate`
 
