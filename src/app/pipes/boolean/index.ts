@@ -1,3 +1,4 @@
+import {NgModule} from '@angular/core';
 import {IsDefinedPipe} from './is-defined';
 import {IsNullPipe} from './is-null';
 import {IsUndefinedPipe} from './is-undefined';
@@ -21,3 +22,27 @@ export const BOOLEAN_PIPES = [
   IsLessEqualThanPipe, IsEqualToPipe, IsNotEqualToPipe, IsIdenticalToPipe, IsNotIdenticalToPipe,
   IsLessThanPipe
 ];
+
+@NgModule({
+  declarations: [...BOOLEAN_PIPES],
+  imports: [],
+  exports: [...BOOLEAN_PIPES]
+})
+export class NgBooleanPipesModule {}
+
+export * from './is-defined';
+export * from './is-null';
+export * from './is-undefined';
+export * from './is-string';
+export * from './is-function';
+export * from './is-number';
+export * from './is-array';
+export * from './is-object';
+export * from './is-greater-equal-than';
+export * from './is-greater-than';
+export * from './is-less-equal-than';
+export * from './is-equal-to';
+export * from './is-not-equal-to';
+export * from './is-identical-to';
+export * from './is-not-identical-to';
+export * from './is-less-than';

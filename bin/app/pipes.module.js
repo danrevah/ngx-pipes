@@ -8,24 +8,31 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+function __export(m) {
+    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
+}
 var core_1 = require('@angular/core');
-var array_1 = require("./pipes/array/array");
-var string_1 = require("./pipes/string/string");
-var math_1 = require("./pipes/math/math");
-var boolean_1 = require("./pipes/boolean/boolean");
+var array_1 = require('./pipes/array');
+var string_1 = require('./pipes/string');
+var math_1 = require('./pipes/math');
+var boolean_1 = require('./pipes/boolean');
 var NgPipesModule = (function () {
     function NgPipesModule() {
     }
     NgPipesModule = __decorate([
         core_1.NgModule({
-            declarations: string_1.STRING_PIPES.concat(array_1.ARRAY_PIPES, math_1.MATH_PIPES, boolean_1.BOOLEAN_PIPES),
+            declarations: [],
             imports: [],
-            exports: string_1.STRING_PIPES.concat(array_1.ARRAY_PIPES, math_1.MATH_PIPES, boolean_1.BOOLEAN_PIPES)
+            exports: [array_1.NgArrayPipesModule, string_1.NgStringPipesModule, math_1.NgMathPipesModule, boolean_1.NgBooleanPipesModule]
         }), 
         __metadata('design:paramtypes', [])
     ], NgPipesModule);
     return NgPipesModule;
 }());
 exports.NgPipesModule = NgPipesModule;
+__export(require('./pipes/array'));
+__export(require('./pipes/string'));
+__export(require('./pipes/math'));
+__export(require('./pipes/boolean'));
 
 //# sourceMappingURL=pipes.module.js.map

@@ -74,7 +74,8 @@
 $ npm install ng2-pipes --save 
 ```
 
-2. Add into your module `imports` the `NgPipesModule`
+2. You could either add into your module `imports` the `NgPipesModule` in order to add all of the pipes, Or add a specific 
+module such as `NgArrayPipesModule`, `NgStringPipesModule`, `NgMathPipesModule` or `NgBooleanPipesModule`.
 
 ```typescript
 import {NgPipesModule} from 'ng2-pipes';
@@ -86,8 +87,24 @@ import {NgPipesModule} from 'ng2-pipes';
    NgPipesModule
  ]
 })
-
 ```
+
+3. Pipes are also injectable and can be used in Components / Services / etc..
+
+```typescript
+@Component({
+  // ..
+  providers: [ReversePipe]
+})
+export class AppComponent {
+  constructor(private reversePipe: ReversePipe) {
+    this.reversePipe.transform('foo'); // Returns: "oof"
+  }
+  // ..
+}
+```
+
+
 
 
 ## String
