@@ -264,7 +264,7 @@ this.items = [1, 2, 3, 4, 5];
 ```
 
 ```html
-<li *ngFor="let item of items | intersection: [1, 2]: [3, 6]"> <!-- Array: [1, 2, 3] -->
+<li *ngFor="let item of items | intersection: [1, 2, 3]: [3, 6]"> <!-- Array: [3] -->
 ```
 
 ### reverse
