@@ -1,10 +1,10 @@
-import {PercentPipe} from "./percent";
+import {PercentagePipe} from './percentage';
 
-describe('PercentPipe', () => {
-  let pipe: PercentPipe;
+describe('PercentagePipe', () => {
+  let pipe: PercentagePipe;
 
   beforeEach(() => {
-    pipe = new PercentPipe();
+    pipe = new PercentagePipe();
   });
 
   it('should return percent between numbers', () => {

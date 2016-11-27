@@ -1,7 +1,7 @@
 "use strict";
 var max_1 = require('./max');
 var min_1 = require('./min');
-var percent_1 = require('./percent');
+var percentage_1 = require('./percentage');
 var sum_1 = require('./sum');
 var floor_1 = require('./floor');
 var round_1 = require('./round');
@@ -12,7 +12,7 @@ var degrees_1 = require('./degrees');
 var bytes_1 = require('./bytes');
 var radians_1 = require("./radians");
 exports.MATH_PIPES = [
-    max_1.MaxPipe, min_1.MinPipe, percent_1.PercentPipe, sum_1.SumPipe, floor_1.FloorPipe, round_1.RoundPipe, sqrt_1.SqrtPipe, pow_1.PowerPipe,
+    max_1.MaxPipe, min_1.MinPipe, percentage_1.PercentagePipe, sum_1.SumPipe, floor_1.FloorPipe, round_1.RoundPipe, sqrt_1.SqrtPipe, pow_1.PowerPipe,
     ceil_1.CeilPipe, degrees_1.DegreesPipe, bytes_1.BytesPipe, radians_1.RadiansPipe
 ];
 

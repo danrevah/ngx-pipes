@@ -1,8 +1,8 @@
 import {PipeTransform, Pipe, Injectable} from '@angular/core';
 
 @Injectable()
-@Pipe({name: 'percent'})
-export class PercentPipe implements PipeTransform {
+@Pipe({name: 'percentage'})
+export class PercentagePipe implements PipeTransform {
 
   transform(num: number, total: number = 100, floor: boolean = false): number {
     if (isNaN(num)) {

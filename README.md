@@ -37,7 +37,7 @@
  - [Math](#Math)   
     - [min](#min)
     - [max](#max)
-    - [percent](#percent)
+    - [percentage](#percentage)
     - [ceil](#ceil)
     - [floor](#floor)
     - [round](#round)
@@ -470,9 +470,9 @@ API: `array | sum`
 <p>{{ [1, 2, 3, 4] | sum }}</p> <!-- Output: "10" -->
 ```
 
-### percent
+### percentage
 
-Returns percent between numbers 
+Returns percentage between numbers 
 
 API: `number | percentage: [total | default = 100]: [floor | default = false]`
 
@@ -564,7 +564,7 @@ Returns bytes with a unit symbol
 API: `number | bytes`
 
 ```html
-<p>{{ 10 | bytes }}</p> <!-- Output: "1 B" -->
+<p>{{ 10 | bytes }}</p> <!-- Output: "10 B" -->
 <p>{{ 1000 | bytes }}</p> <!-- Output: "1 KB" -->
 <p>{{ 1000000 | bytes }}</p> <!-- Output: "1 MB" -->
 <p>{{ 1000000000 | bytes }}</p> <!-- Output: "1 GB" -->

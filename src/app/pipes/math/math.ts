@@ -1,6 +1,6 @@
 import {MaxPipe} from './max';
 import {MinPipe} from './min';
-import {PercentPipe} from './percent';
+import {PercentagePipe} from './percentage';
 import {SumPipe} from './sum';
 import {FloorPipe} from './floor';
 import {RoundPipe} from './round';
@@ -12,6 +12,6 @@ import {BytesPipe} from './bytes';
 import {RadiansPipe} from "./radians";
 
 export const MATH_PIPES = [
-  MaxPipe, MinPipe, PercentPipe, SumPipe, FloorPipe, RoundPipe, SqrtPipe, PowerPipe,
+  MaxPipe, MinPipe, PercentagePipe, SumPipe, FloorPipe, RoundPipe, SqrtPipe, PowerPipe,
   CeilPipe, DegreesPipe, BytesPipe, RadiansPipe
 ];
