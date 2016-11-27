@@ -1,4 +1,4 @@
-import {TailPipe} from "./tail";
+import {TailPipe} from './tail';
 
 describe('TailPipe', () => {
   let pipe: TailPipe;
@@ -14,8 +14,8 @@ describe('TailPipe', () => {
   });
 
   it('should slice properly', () => {
-    expect(pipe.transform([1, 2, 3, 4], [1])).toEqual([2, 3, 4]);
-    expect(pipe.transform([1, 2, 3, 4], [3])).toEqual([4]);
+    expect(pipe.transform([1, 2, 3, 4], 1)).toEqual([2, 3, 4]);
+    expect(pipe.transform([1, 2, 3, 4], 3)).toEqual([4]);
   });
 
   it('should slice properly array of objects', () => {
@@ -23,6 +23,6 @@ describe('TailPipe', () => {
         barObj = {id: 2, name: 'bar'},
         cazObj = {id: 3, name: 'caz'};
 
-    expect(pipe.transform([fooObj, barObj, cazObj], [1])).toEqual([barObj, cazObj]);
+    expect(pipe.transform([fooObj, barObj, cazObj], 1)).toEqual([barObj, cazObj]);
   });
 });

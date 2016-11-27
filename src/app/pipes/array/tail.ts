@@ -4,7 +4,7 @@ import {PipeTransform, Pipe, Injectable} from '@angular/core';
 @Pipe({name: 'tail'})
 export class TailPipe implements PipeTransform {
 
-  transform(arr: any[], [num = 0]: number[] = []): any[]
+  transform(arr: any[], num: number = 0): any[]
   {
     return arr instanceof Array
         ? arr.slice(num)

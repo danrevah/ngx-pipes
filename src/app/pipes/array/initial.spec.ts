@@ -1,4 +1,4 @@
-import {InitialPipe} from "./initial";
+import {InitialPipe} from './initial';
 
 describe('InitialPipe', () => {
   let pipe: InitialPipe;
@@ -14,8 +14,8 @@ describe('InitialPipe', () => {
   });
 
   it('should slice properly', () => {
-    expect(pipe.transform([1, 2, 3, 4], [1])).toEqual([1, 2, 3]);
-    expect(pipe.transform([1, 2, 3, 4], [3])).toEqual([1]);
+    expect(pipe.transform([1, 2, 3, 4], 1)).toEqual([1, 2, 3]);
+    expect(pipe.transform([1, 2, 3, 4], 3)).toEqual([1]);
   });
 
   it('should slice properly array of objects', () => {
@@ -23,6 +23,6 @@ describe('InitialPipe', () => {
         barObj = {id: 2, name: 'bar'},
         cazObj = {id: 3, name: 'caz'};
 
-    expect(pipe.transform([fooObj, barObj, cazObj], [1])).toEqual([fooObj, barObj]);
+    expect(pipe.transform([fooObj, barObj, cazObj], 1)).toEqual([fooObj, barObj]);
   });
 });
