@@ -12,8 +12,8 @@ var core_1 = require('@angular/core');
 var InitialPipe = (function () {
     function InitialPipe() {
     }
-    InitialPipe.prototype.transform = function (arr, _a) {
-        var _b = (_a === void 0 ? [] : _a)[0], num = _b === void 0 ? 0 : _b;
+    InitialPipe.prototype.transform = function (arr, num) {
+        if (num === void 0) { num = 0; }
         return arr instanceof Array
             ? arr.slice(0, arr.length - num)
             : arr;

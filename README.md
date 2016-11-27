@@ -207,7 +207,7 @@ this.items = [1, 2, 3, 4];
 ```
 
 ```html
-<li *ngFor="let item of items | diff: [[1, 2]]"> <-- Array: [3, 4] -->
+<li *ngFor="let item of items | diff: [1, 2]"> <!-- Array: [3, 4] -->
 ```
 
 ### flatten
@@ -222,7 +222,7 @@ this.items = [1,2,3,[4,5,6,[7,8,9],[10,11,12,13,[14],[15],[16, [17]]]]];
 
 ```html
 <li *ngFor="let item of items | flatten"> 
-<-- Array: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17] -->
+<!-- Array: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17] -->
 ```
 
 ### initial
@@ -236,7 +236,7 @@ this.items = [first, second, third];
 ```
 
 ```html
-<li *ngFor="let item of items | initial: 1"> <-- Array: [first, second] -->
+<li *ngFor="let item of items | initial: 1"> <!-- Array: [first, second] -->
 ```
 
 ### tail
@@ -250,7 +250,7 @@ this.items = [first, second, third];
 ```
 
 ```html
-<li *ngFor="let item of items | tail: 1"> <-- Array: [second, third] -->
+<li *ngFor="let item of items | tail: 1"> <!-- Array: [second, third] -->
 ```
 
 ### intersection
@@ -264,7 +264,7 @@ this.items = [1, 2, 3, 4, 5];
 ```
 
 ```html
-<li *ngFor="let item of items | intersection: [1, 2]: [3, 6]"> <-- Array: [1, 2, 3] -->
+<li *ngFor="let item of items | intersection: [1, 2]: [3, 6]"> <!-- Array: [1, 2, 3] -->
 ```
 
 ### reverse
@@ -278,7 +278,7 @@ this.items = [1, 2, 3];
 ```
 
 ```html
-<li *ngFor="let item of items | reverse"> <-- Array: [3, 2, 1] -->
+<li *ngFor="let item of items | reverse"> <!-- Array: [3, 2, 1] -->
 ```
 
 ### truthify
@@ -292,7 +292,7 @@ this.items = [null, 1, false, undefined, 2, 0, 3, NaN, 4, ''];
 ```
 
 ```html
-<li *ngFor="let item of items | truthify"> <-- Array: [1, 2, 3, 4] -->
+<li *ngFor="let item of items | truthify"> <!-- Array: [1, 2, 3, 4] -->
 ```
 
 ### union
@@ -306,7 +306,7 @@ this.items = [1, 2, 3];
 ```
 
 ```html
-<li *ngFor="let item of items | union: [[4]]"> <-- Array: [1, 2, 3, 4] -->
+<li *ngFor="let item of items | union: [[4]]"> <!-- Array: [1, 2, 3, 4] -->
 ```
 
 ### unique
@@ -320,7 +320,7 @@ this.items = [1, 2, 3, 1, 2, 3];
 ```
 
 ```html
-<li *ngFor="let item of items | unique"> <-- Array: [1, 2, 3] -->
+<li *ngFor="let item of items | unique"> <!-- Array: [1, 2, 3] -->
 ```
 
 ### without
@@ -334,7 +334,7 @@ this.items = [1, 2, 3, 1, 2, 3];
 ```
 
 ```html
-<li *ngFor="let item of items | without: [1,3]"> <-- Array: [2, 2] -->
+<li *ngFor="let item of items | without: [1,3]"> <!-- Array: [2, 2] -->
 ```
 
 ### pluck
@@ -367,8 +367,8 @@ this.items = [
 ```
 
 ```html
-<li *ngFor="let item of items | pluck: 'a'"> <-- Array: [1, 2, 3] -->
-<li *ngFor="let item of items | pluck: 'b.c'"> <-- Array: [4, 5, 6] -->
+<li *ngFor="let item of items | pluck: 'a'"> <!-- Array: [1, 2, 3] -->
+<li *ngFor="let item of items | pluck: 'b.c'"> <!-- Array: [4, 5, 6] -->
 ```
 
 ### shuffle
@@ -382,7 +382,7 @@ this.items = [1, 2, 3, 4, 5, 6];
 ```
 
 ```html
-<li *ngFor="let item of items | shuffle"> <-- Array: [4, 1, 6, 2, 5, 3] -->
+<li *ngFor="let item of items | shuffle"> <!-- Array: [4, 1, 6, 2, 5, 3] -->
 ```
 
 ### every
@@ -401,9 +401,9 @@ this.predicate = (value: any, index: number, array: any[]): boolean => {
 ```
 
 ```html
-<p>{{ itemsOne | every: predicate }}</p> <-- Output: "true" -->
-<p>{{ itemsTwo | every: predicate }}</p> <-- Output: "false" -->
-<p>{{ itemsThree | every: predicate }}</p> <-- Output: "false" -->
+<p>{{ itemsOne | every: predicate }}</p> <!-- Output: "true" -->
+<p>{{ itemsTwo | every: predicate }}</p> <!-- Output: "false" -->
+<p>{{ itemsThree | every: predicate }}</p> <!-- Output: "false" -->
 ```
 
 ### some
@@ -422,9 +422,9 @@ this.predicate = (value: any, index: number, array: any[]): boolean => {
 ```
 
 ```html
-<p>{{ itemsOne | some: predicate }}</p> <-- Output: "true" -->
-<p>{{ itemsTwo | some: predicate }}</p> <-- Output: "true" -->
-<p>{{ itemsThree | some: predicate }}</p> <-- Output: "false" -->
+<p>{{ itemsOne | some: predicate }}</p> <!-- Output: "true" -->
+<p>{{ itemsTwo | some: predicate }}</p> <!-- Output: "true" -->
+<p>{{ itemsThree | some: predicate }}</p> <!-- Output: "false" -->
 ```
 
 ### sample
@@ -434,8 +434,8 @@ Returns sample items randomly from array
 API: `array | sample: [amount | default = 1]`
 
 ```html
-<p>{{ [1, 2, 3, 4] | sample }}</p> <-- Output: "[2]" -->
-<p>{{ [1, 2, 3, 4] | sample: 2 }}</p> <-- Output: "[4, 3]" -->
+<p>{{ [1, 2, 3, 4] | sample }}</p> <!-- Output: "[2]" -->
+<p>{{ [1, 2, 3, 4] | sample: 2 }}</p> <!-- Output: "[4, 3]" -->
 ```
 
 ## Math
@@ -447,7 +447,7 @@ Returns the minimum of a given array
 API: `array | min`
 
 ```html
-<p>{{ [1, 2, 3, 1, 2, 3] | min }}</p> <-- Output: "1" -->
+<p>{{ [1, 2, 3, 1, 2, 3] | min }}</p> <!-- Output: "1" -->
 ```
 
 ### max
@@ -457,7 +457,7 @@ Returns the maximum of a given array
 API: `array | max`
 
 ```html
-<p>{{ [1, 2, 3, 1, 2, 3] | max }}</p> <-- Output: "3" -->
+<p>{{ [1, 2, 3, 1, 2, 3] | max }}</p> <!-- Output: "3" -->
 ```
 
 ### sum
@@ -467,7 +467,7 @@ Returns the sum of a given array
 API: `array | sum`
 
 ```html
-<p>{{ [1, 2, 3, 4] | sum }}</p> <-- Output: "10" -->
+<p>{{ [1, 2, 3, 4] | sum }}</p> <!-- Output: "10" -->
 ```
 
 ### percent
@@ -477,9 +477,9 @@ Returns percent between numbers
 API: `number | percentage: [total | default = 100]: [floor | default = false]`
 
 ```html
-<p>{{ 5 | percentage }}</p> <-- Output: "5" -->
-<p>{{ 5 | percentage: 160 }}</p> <-- Output: "3.125" -->
-<p>{{ 5 | percentage: 160: true }}</p> <-- Output: "3" -->
+<p>{{ 5 | percentage }}</p> <!-- Output: "5" -->
+<p>{{ 5 | percentage: 160 }}</p> <!-- Output: "3.125" -->
+<p>{{ 5 | percentage: 160: true }}</p> <!-- Output: "3" -->
 ```
 
 ### ceil
@@ -489,8 +489,8 @@ Returns ceil of a number by precision
 API: `number | ceil: [precision | default = 0]`
 
 ```html
-<p>{{ 42.123 | ceil }}</p> <-- Output: "43" -->
-<p>{{ 42.123 | ceil: 2 }}</p> <-- Output: "42.13" -->
+<p>{{ 42.123 | ceil }}</p> <!-- Output: "43" -->
+<p>{{ 42.123 | ceil: 2 }}</p> <!-- Output: "42.13" -->
 ```
 
 ### floor
@@ -500,8 +500,8 @@ Returns floor of a number by precision
 API: `number | floor: [precision | default = 0]`
 
 ```html
-<p>{{ 42.123 | floor }}</p> <-- Output: "42" -->
-<p>{{ 42.123 | floor: 2 }}</p> <-- Output: "42.12" -->
+<p>{{ 42.123 | floor }}</p> <!-- Output: "42" -->
+<p>{{ 42.123 | floor: 2 }}</p> <!-- Output: "42.12" -->
 ```
 
 ### round
@@ -511,9 +511,9 @@ Returns round of a number by precision
 API: `number | round: [precision | default = 0]`
 
 ```html
-<p>{{ 42.4 | round }}</p> <-- Output: "42" -->
-<p>{{ 42.5 | round }}</p> <-- Output: "43" -->
-<p>{{ 42.123 | round: 2 }}</p> <-- Output: "42.12" -->
+<p>{{ 42.4 | round }}</p> <!-- Output: "42" -->
+<p>{{ 42.5 | round }}</p> <!-- Output: "43" -->
+<p>{{ 42.123 | round: 2 }}</p> <!-- Output: "42.12" -->
 ```
 
 ### sqrt
@@ -523,7 +523,7 @@ Returns the square root of a number
 API: `number | sqrt`
 
 ```html
-<p>{{ 9 | sqrt }}</p> <-- Output: "3" -->
+<p>{{ 9 | sqrt }}</p> <!-- Output: "3" -->
 ```
 
 ### pow
@@ -533,8 +533,8 @@ Returns the power of a number
 API: `number | pow: [power | default = 2]`
 
 ```html
-<p>{{ 3 | pow }}</p> <-- Output: "9" -->
-<p>{{ 3 | pow: 3 }}</p> <-- Output: "27" -->
+<p>{{ 3 | pow }}</p> <!-- Output: "9" -->
+<p>{{ 3 | pow: 3 }}</p> <!-- Output: "27" -->
 ```
 
 ### degrees
@@ -544,7 +544,7 @@ Returns the degrees of a number in radians
 API: `number | degrees`
 
 ```html
-<p>{{ 3.141592653589793 | degrees }}</p> <-- Output: "180" -->
+<p>{{ 3.141592653589793 | degrees }}</p> <!-- Output: "180" -->
 ```
 
 ### radians
@@ -554,7 +554,7 @@ Returns the radians of a number in degrees
 API: `number | radians`
 
 ```html
-<p>{{ 180 | radians }}</p> <-- Output: "3.141592653589793" -->
+<p>{{ 180 | radians }}</p> <!-- Output: "3.141592653589793" -->
 ```
 
 ### bytes
@@ -564,10 +564,10 @@ Returns bytes with a unit symbol
 API: `number | bytes`
 
 ```html
-<p>{{ 10 | bytes }}</p> <-- Output: "1 B" -->
-<p>{{ 1000 | bytes }}</p> <-- Output: "1 KB" -->
-<p>{{ 1000000 | bytes }}</p> <-- Output: "1 MB" -->
-<p>{{ 1000000000 | bytes }}</p> <-- Output: "1 GB" -->
+<p>{{ 10 | bytes }}</p> <!-- Output: "1 B" -->
+<p>{{ 1000 | bytes }}</p> <!-- Output: "1 KB" -->
+<p>{{ 1000000 | bytes }}</p> <!-- Output: "1 MB" -->
+<p>{{ 1000000000 | bytes }}</p> <!-- Output: "1 GB" -->
 ```
 
 ## Boolean
@@ -577,8 +577,8 @@ API: `number | bytes`
 API: `any | isNull`
 
 ```html
-<p>{{ null | isNull }}</p> <-- Output: "true" -->
-<p>{{ 1 | isNull }}</p> <-- Output: "false" -->
+<p>{{ null | isNull }}</p> <!-- Output: "true" -->
+<p>{{ 1 | isNull }}</p> <!-- Output: "false" -->
 ```
 
 ### isDefined
@@ -586,8 +586,8 @@ API: `any | isNull`
 API: `any | isDefined`
 
 ```html
-<p>{{ 1 | isDefined }}</p> <-- Output: "true" -->
-<p>{{ undefined | isDefined }}</p> <-- Output: "false" -->
+<p>{{ 1 | isDefined }}</p> <!-- Output: "true" -->
+<p>{{ undefined | isDefined }}</p> <!-- Output: "false" -->
 ```
 
 ### isUndefined
@@ -595,8 +595,8 @@ API: `any | isDefined`
 API: `any | isUndefined`
 
 ```html
-<p>{{ 1 | isUndefined }}</p> <-- Output: "false" -->
-<p>{{ undefined | isUndefined }}</p> <-- Output: "true" -->
+<p>{{ 1 | isUndefined }}</p> <!-- Output: "false" -->
+<p>{{ undefined | isUndefined }}</p> <!-- Output: "true" -->
 ```
 
 
@@ -605,8 +605,8 @@ API: `any | isUndefined`
 API: `any | isString`
 
 ```html
-<p>{{ 1 | isString }}</p> <-- Output: "false" -->
-<p>{{ '' | isString }}</p> <-- Output: "true" -->
+<p>{{ 1 | isString }}</p> <!-- Output: "false" -->
+<p>{{ '' | isString }}</p> <!-- Output: "true" -->
 ```
 
 ### isNumber
@@ -619,8 +619,8 @@ this.num = 1;
 ```
 
 ```html
-<p>{{ num | isNumber }}</p> <-- Output: "true" -->
-<p>{{ func | isNumber }}</p> <-- Output: "false" -->
+<p>{{ num | isNumber }}</p> <!-- Output: "true" -->
+<p>{{ func | isNumber }}</p> <!-- Output: "false" -->
 ```
 
 ### isArray
@@ -633,8 +633,8 @@ this.num = 1;
 ```
 
 ```html
-<p>{{ num | isArray }}</p> <-- Output: "false" -->
-<p>{{ arr | isArray }}</p> <-- Output: "true" -->
+<p>{{ num | isArray }}</p> <!-- Output: "false" -->
+<p>{{ arr | isArray }}</p> <!-- Output: "true" -->
 ```
 
 ### isObject
@@ -647,8 +647,8 @@ this.num = 1;
 ```
 
 ```html
-<p>{{ num | isObject }}</p> <-- Output: "false" -->
-<p>{{ obj | isObject }}</p> <-- Output: "true" -->
+<p>{{ num | isObject }}</p> <!-- Output: "false" -->
+<p>{{ obj | isObject }}</p> <!-- Output: "true" -->
 ```
 
 ### isGreaterThan
@@ -656,9 +656,9 @@ this.num = 1;
 API: `number | isGreaterThan: otherNumber`
 
 ```html
-<p>{{ 1 | isGreaterThan: 1 }}</p> <-- Output: "false" -->
-<p>{{ 1 | isGreaterThan: 2 }}</p> <-- Output: "false" -->
-<p>{{ 2 | isGreaterThan: 1 }}</p> <-- Output: "true" -->
+<p>{{ 1 | isGreaterThan: 1 }}</p> <!-- Output: "false" -->
+<p>{{ 1 | isGreaterThan: 2 }}</p> <!-- Output: "false" -->
+<p>{{ 2 | isGreaterThan: 1 }}</p> <!-- Output: "true" -->
 ```
 
 ### isGreaterEqualThan
@@ -666,9 +666,9 @@ API: `number | isGreaterThan: otherNumber`
 API: `number | isGreaterEqualThan: otherNumber`
 
 ```html
-<p>{{ 1 | isGreaterEqualThan: 1 }}</p> <-- Output: "true" -->
-<p>{{ 1 | isGreaterEqualThan: 2 }}</p> <-- Output: "false" -->
-<p>{{ 2 | isGreaterEqualThan: 1 }}</p> <-- Output: "true" -->
+<p>{{ 1 | isGreaterEqualThan: 1 }}</p> <!-- Output: "true" -->
+<p>{{ 1 | isGreaterEqualThan: 2 }}</p> <!-- Output: "false" -->
+<p>{{ 2 | isGreaterEqualThan: 1 }}</p> <!-- Output: "true" -->
 ```
 
 ### isLessThan
@@ -676,9 +676,9 @@ API: `number | isGreaterEqualThan: otherNumber`
 API: `number | isLessThan: otherNumber`
 
 ```html
-<p>{{ 1 | isLessThan: 1 }}</p> <-- Output: "false" -->
-<p>{{ 1 | isLessThan: 2 }}</p> <-- Output: "true" -->
-<p>{{ 2 | isLessThan: 1 }}</p> <-- Output: "false" -->
+<p>{{ 1 | isLessThan: 1 }}</p> <!-- Output: "false" -->
+<p>{{ 1 | isLessThan: 2 }}</p> <!-- Output: "true" -->
+<p>{{ 2 | isLessThan: 1 }}</p> <!-- Output: "false" -->
 ```
 
 ### isLessEqualThan
@@ -686,9 +686,9 @@ API: `number | isLessThan: otherNumber`
 API: `number | isLessEqualThan: otherNumber`
 
 ```html
-<p>{{ 1 | isLessEqualThan: 1 }}</p> <-- Output: "true" -->
-<p>{{ 1 | isLessEqualThan: 2 }}</p> <-- Output: "true" -->
-<p>{{ 2 | isLessEqualThan: 1 }}</p> <-- Output: "false" -->
+<p>{{ 1 | isLessEqualThan: 1 }}</p> <!-- Output: "true" -->
+<p>{{ 1 | isLessEqualThan: 2 }}</p> <!-- Output: "true" -->
+<p>{{ 2 | isLessEqualThan: 1 }}</p> <!-- Output: "false" -->
 ```
 
 ### isEqualTo
@@ -696,10 +696,10 @@ API: `number | isLessEqualThan: otherNumber`
 API: `number | isEqualTo: otherNumber`
 
 ```html
-<p>{{ 1 | isEqualTo: 1 }}</p> <-- Output: "true" -->
-<p>{{ 1 | isEqualTo: '1' }}</p> <-- Output: "true" -->
-<p>{{ 1 | isEqualTo: 2 }}</p> <-- Output: "false" -->
-<p>{{ 2 | isEqualTo: 1 }}</p> <-- Output: "false" -->
+<p>{{ 1 | isEqualTo: 1 }}</p> <!-- Output: "true" -->
+<p>{{ 1 | isEqualTo: '1' }}</p> <!-- Output: "true" -->
+<p>{{ 1 | isEqualTo: 2 }}</p> <!-- Output: "false" -->
+<p>{{ 2 | isEqualTo: 1 }}</p> <!-- Output: "false" -->
 ```
 
 ### isNotEqualTo
@@ -707,10 +707,10 @@ API: `number | isEqualTo: otherNumber`
 API: `number | isNotEqualTo: otherNumber`
 
 ```html
-<p>{{ 1 | isNotEqualTo: 1 }}</p> <-- Output: "false" -->
-<p>{{ 1 | isNotEqualTo: '1' }}</p> <-- Output: "false" -->
-<p>{{ 1 | isNotEqualTo: 2 }}</p> <-- Output: "true" -->
-<p>{{ 2 | isNotEqualTo: 1 }}</p> <-- Output: "true" -->
+<p>{{ 1 | isNotEqualTo: 1 }}</p> <!-- Output: "false" -->
+<p>{{ 1 | isNotEqualTo: '1' }}</p> <!-- Output: "false" -->
+<p>{{ 1 | isNotEqualTo: 2 }}</p> <!-- Output: "true" -->
+<p>{{ 2 | isNotEqualTo: 1 }}</p> <!-- Output: "true" -->
 ```
 
 ### isIdenticalTo
@@ -718,10 +718,10 @@ API: `number | isNotEqualTo: otherNumber`
 API: `number | isIdenticalTo: otherNumber`
 
 ```html
-<p>{{ 1 | isIdenticalTo: 1 }}</p> <-- Output: "true" -->
-<p>{{ 1 | isIdenticalTo: '1' }}</p> <-- Output: "false" -->
-<p>{{ 1 | isIdenticalTo: 2 }}</p> <-- Output: "false" -->
-<p>{{ 2 | isIdenticalTo: 1 }}</p> <-- Output: "false" -->
+<p>{{ 1 | isIdenticalTo: 1 }}</p> <!-- Output: "true" -->
+<p>{{ 1 | isIdenticalTo: '1' }}</p> <!-- Output: "false" -->
+<p>{{ 1 | isIdenticalTo: 2 }}</p> <!-- Output: "false" -->
+<p>{{ 2 | isIdenticalTo: 1 }}</p> <!-- Output: "false" -->
 ```
 
 ### isNotIdenticalTo
@@ -729,8 +729,8 @@ API: `number | isIdenticalTo: otherNumber`
 API: `number | isNotIdenticalTo: otherNumber`
 
 ```html
-<p>{{ 1 | isNotIdenticalTo: 1 }}</p> <-- Output: "false" -->
-<p>{{ 1 | isNotIdenticalTo: '1' }}</p> <-- Output: "true" -->
-<p>{{ 1 | isNotIdenticalTo: 2 }}</p> <-- Output: "true" -->
-<p>{{ 2 | isNotIdenticalTo: 1 }}</p> <-- Output: "true" -->
+<p>{{ 1 | isNotIdenticalTo: 1 }}</p> <!-- Output: "false" -->
+<p>{{ 1 | isNotIdenticalTo: '1' }}</p> <!-- Output: "true" -->
+<p>{{ 1 | isNotIdenticalTo: 2 }}</p> <!-- Output: "true" -->
+<p>{{ 2 | isNotIdenticalTo: 1 }}</p> <!-- Output: "true" -->
 ```
