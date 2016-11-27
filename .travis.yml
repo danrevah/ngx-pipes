@@ -20,7 +20,8 @@ before_install:
 before_script:
 - npm install -g angular-cli
 - npm install -g karma
+- npm install -g gulp
 - npm install
-- ng build
+- gulp release
 
 script: ng test --watch=false
