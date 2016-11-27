@@ -4,9 +4,9 @@ import {PipeTransform, Pipe, Injectable} from '@angular/core';
 @Pipe({name: 'trim'})
 export class TrimPipe implements PipeTransform {
 
-  transform(text:string, [chars = '\\s']:string[] = []):string {
+  transform(text: string, chars: string = '\\s'): string {
     return text.replace(new RegExp(
-        `^[${chars}]+|[${chars}]+$`, 'g'
+      `^[${chars}]+|[${chars}]+$`, 'g'
     ), '');
   }
 }

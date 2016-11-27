@@ -12,8 +12,8 @@ var core_1 = require('@angular/core');
 var LeftTrimPipe = (function () {
     function LeftTrimPipe() {
     }
-    LeftTrimPipe.prototype.transform = function (text, _a) {
-        var _b = (_a === void 0 ? [] : _a)[0], chars = _b === void 0 ? '\\s' : _b;
+    LeftTrimPipe.prototype.transform = function (text, chars) {
+        if (chars === void 0) { chars = '\\s'; }
         return text.replace(new RegExp("^[" + chars + "]+"), '');
     };
     LeftTrimPipe = __decorate([

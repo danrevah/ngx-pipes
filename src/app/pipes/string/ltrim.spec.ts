@@ -1,4 +1,4 @@
-import {LeftTrimPipe} from "./ltrim";
+import {LeftTrimPipe} from './ltrim';
 
 describe('LeftTrimPipe Tests', () => {
   let pipe:LeftTrimPipe;
@@ -13,7 +13,7 @@ describe('LeftTrimPipe Tests', () => {
   });
 
   it('Should left trim other characters from string', () => {
-    let result = pipe.transform('42foo bar42', ['42']);
+    let result = pipe.transform('42foo bar42', '42');
     expect(result).toEqual('foo bar42');
   });
 });

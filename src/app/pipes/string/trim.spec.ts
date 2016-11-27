@@ -1,4 +1,4 @@
-import {TrimPipe} from "./trim";
+import {TrimPipe} from './trim';
 
 describe('TrimPipe Tests', () => {
   let pipe:TrimPipe;
@@ -13,7 +13,7 @@ describe('TrimPipe Tests', () => {
   });
 
   it('Should trim other characters from string', () => {
-    let result = pipe.transform('42foo bar4242', ['42']);
+    let result = pipe.transform('42foo bar4242', '42');
     expect(result).toEqual('foo bar');
   });
 });

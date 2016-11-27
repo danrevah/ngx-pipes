@@ -158,7 +158,7 @@ API: `string | trim: [characters|optional]`
 
 ```html
 <p>{{'  foo  ' | trim }}</p> <!-- Output: "foo" -->
-<p>{{'foobarfoo' | ltrim: 'foo' }}</p> <!-- Output: "bar" -->
+<p>{{'foobarfoo' | trim: 'foo' }}</p> <!-- Output: "bar" -->
 ```
 
 ### ltrim

@@ -4,7 +4,7 @@ import {PipeTransform, Pipe, Injectable} from '@angular/core';
 @Pipe({name: 'ltrim'})
 export class LeftTrimPipe implements PipeTransform {
 
-  transform(text:string, [chars = '\\s']:string[] = []):string {
+  transform(text: string, chars: string = '\\s'): string {
     return text.replace(new RegExp(`^[${chars}]+`), '');
   }
 }

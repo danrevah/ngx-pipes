@@ -1,4 +1,4 @@
-import {RightTrimPipe} from "./rtrim";
+import {RightTrimPipe} from './rtrim';
 
 describe('RightTrimPipe Tests', () => {
   let pipe:RightTrimPipe;
@@ -13,7 +13,7 @@ describe('RightTrimPipe Tests', () => {
   });
 
   it('Should right trim other characters from string', () => {
-    let result = pipe.transform('42foo bar42', ['42']);
+    let result = pipe.transform('42foo bar42', '42');
     expect(result).toEqual('42foo bar');
   });
 });
