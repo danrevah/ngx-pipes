@@ -67,7 +67,6 @@
 
 ## Installation
 
-
 1. Use npm to install the package
 
   ```terminal
