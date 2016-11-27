@@ -12,15 +12,16 @@ var core_1 = require('@angular/core');
 var ShortenPipe = (function () {
     function ShortenPipe() {
     }
-    ShortenPipe.prototype.transform = function (text, _a) {
-        var _b = _a === void 0 ? [] : _a, _c = _b[0], length = _c === void 0 ? 0 : _c, _d = _b[1], suffix = _d === void 0 ? '' : _d, _e = _b[2], wordBreak = _e === void 0 ? true : _e;
+    ShortenPipe.prototype.transform = function (text, length, suffix, wordBreak) {
+        if (length === void 0) { length = 0; }
+        if (suffix === void 0) { suffix = ''; }
+        if (wordBreak === void 0) { wordBreak = true; }
         return (text.length > length)
             ? (wordBreak
                 ? (text.slice(0, length) + suffix)
                 : (!!~text.indexOf(' ', length)
                     ? (text.slice(0, text.indexOf(' ', length)) + suffix)
-                    : text))
-            : text;
+                    : text)) : text;
     };
     ShortenPipe = __decorate([
         core_1.Injectable(),

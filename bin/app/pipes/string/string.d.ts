@@ -1,2 +1,3 @@
 import { LeftTrimPipe } from "./ltrim";
-export declare const STRING_PIPES: typeof LeftTrimPipe[];
+import { ShortenPipe } from "./shorten";
+export declare const STRING_PIPES: (typeof LeftTrimPipe | typeof ShortenPipe)[];
