@@ -2,7 +2,12 @@ sudo: required
 dist: trusty
 language: node_js
 node_js:
+  - '4.0'
+  - '4.4'
+  - '5.0'
+  - '5.7'
   - '6.0'
+  - '7.0'
 
 addons:
 apt:
@@ -20,8 +25,6 @@ before_install:
 before_script:
 - npm install -g angular-cli
 - npm install -g karma
-- npm install -g gulp
 - npm install
-- gulp release
 
 script: ng test --watch=false
