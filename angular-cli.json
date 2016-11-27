@@ -7,19 +7,14 @@
     {
       "root": "src",
       "outDir": "dist",
-      "assets": [
-        "assets",
-        "favicon.ico"
-      ],
+      "assets": [],
       "index": "index.html",
       "main": "main.ts",
       "test": "test.ts",
       "tsconfig": "tsconfig.json",
       "prefix": "app",
       "mobile": false,
-      "styles": [
-        "styles.css"
-      ],
+      "styles": [],
       "scripts": [],
       "environments": {
         "source": "environments/environment.ts",
@@ -49,11 +44,11 @@
     },
     "spec": {
       "class": false,
-      "component": true,
-      "directive": true,
-      "module": false,
+      "component": false,
+      "directive": false,
+      "module": true,
       "pipe": true,
-      "service": true
+      "service": false
     }
   }
 }
