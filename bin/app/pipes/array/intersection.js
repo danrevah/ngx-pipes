@@ -12,8 +12,11 @@ var core_1 = require('@angular/core');
 var IntersectionPipe = (function () {
     function IntersectionPipe() {
     }
-    IntersectionPipe.prototype.transform = function (arr, args) {
-        if (args === void 0) { args = []; }
+    IntersectionPipe.prototype.transform = function (arr) {
+        var args = [];
+        for (var _i = 1; _i < arguments.length; _i++) {
+            args[_i - 1] = arguments[_i];
+        }
         return args.reduce(function (newArr, currArr) {
             return newArr.filter(function (elm) { return !!~currArr.indexOf(elm); });
         }, arr);
