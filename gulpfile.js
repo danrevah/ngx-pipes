@@ -6,8 +6,8 @@ const clean = require('gulp-clean');
 const tsProject = tsc.createProject('tsconfig.json');
 
 gulp.task('clean', () => {
-  const tsResult = gulp.src(['./src/**/*.d.ts', './src/**/*.js', './src/**/*.js', './src/**/*.js.map']);
-  return tsResult.pipe(clean());
+  return gulp.src(['./src/**/*.d.ts', './src/**/*.js', './src/**/*.js', './src/**/*.js.map'])
+    .pipe(clean());
 });
 
 gulp.task('release', ['clean'], () => {
