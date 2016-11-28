@@ -1,1 +1,0 @@
-{"version":3,"sources":["../src/app/index.ts"],"names":[],"mappings":";;;;AAAA,iBAAc,gBAAgB,CAAC,EAAA","file":"index.js","sourcesContent":["export * from './pipes.module';\n"]}
