@@ -1,11 +1,13 @@
 {
   "name": "ng2-pipes",
-  "version": "0.4.16",
+  "version": "0.4.17",
   "author": "Dan Revah",
   "description": "Useful angular2 pipes",
   "license": "MIT",
   "angular-cli": {},
   "scripts": {
+    "prepublish": "gulp release",
+    "postpublish": "gulp clean",
     "start": "ng serve",
     "lint": "tslint \"src/**/*.ts\"",
     "test": "ng test"
