@@ -1,5 +1,5 @@
 import {PipeTransform, Pipe, Injectable} from '@angular/core';
-import {extractProperty} from '../utils/utils';
+import {extractProperty} from '../helpers';
 
 @Injectable()
 @Pipe({name: 'pluck'})

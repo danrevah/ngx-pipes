@@ -1,4 +1,4 @@
-import {extractProperty} from './utils';
+import {extractProperty} from './helpers';
 
 describe('Utils Tests', () => {
 

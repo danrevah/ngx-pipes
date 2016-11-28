@@ -1,5 +1,5 @@
 import {PipeTransform, Pipe, Injectable} from '@angular/core';
-import {isNumberFinite} from '../utils/utils';
+import {isNumberFinite} from '../helpers';
 
 @Injectable()
 @Pipe({name: 'radians'})

@@ -1,5 +1,4 @@
 import {PipeTransform, Pipe, Injectable} from '@angular/core';
-import {extractProperty} from '../utils/utils';
 
 @Injectable()
 @Pipe({name: 'shuffle'})
