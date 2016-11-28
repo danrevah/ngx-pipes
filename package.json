@@ -6,8 +6,6 @@
   "license": "MIT",
   "angular-cli": {},
   "scripts": {
-    "prepublish": "gulp release",
-    "postpublish": "gulp clean",
     "start": "ng serve",
     "lint": "tslint \"src/**/*.ts\"",
     "test": "ng test"
