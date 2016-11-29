@@ -5,8 +5,8 @@ import {PipeTransform, Pipe, Injectable} from '@angular/core';
 export class IntersectionPipe implements PipeTransform {
 
   transform(arr: any[], ...args: any[]): any[] {
-    return args.reduce((newArr, currArr) =>
-        newArr.filter(elm => !!~currArr.indexOf(elm))
-      , arr);
+    return args.reduce((newArr, currArr) => {
+      return newArr.filter(elm => !!~currArr.indexOf(elm))
+    }, arr);
   }
 }

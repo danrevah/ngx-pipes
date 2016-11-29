@@ -11,7 +11,7 @@ export class ReversePipe implements PipeTransform {
     if (typeof value === 'string') {
       return value.split('').reverse().join('');
     }
-    if (value instanceof Array) {
+    if (Array.isArray(value)) {
       return value.reverse();
     }
     return value;

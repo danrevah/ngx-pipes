@@ -8,12 +8,12 @@ describe('RepeatPipe Tests', () => {
   });
 
   it('Should repeat string', () => {
-    let result = pipe.transform('foo', [3]);
+    let result = pipe.transform('foo', 3);
     expect(result).toEqual('foofoofoo');
   });
 
   it('Should repeat string with separator', () => {
-    let result = pipe.transform('foo', [3, '-']);
+    let result = pipe.transform('foo', 3, '-');
     expect(result).toEqual('foo-foo-foo');
   });
 
@@ -23,6 +23,6 @@ describe('RepeatPipe Tests', () => {
   });
 
   it('Should throw range exception if times count is below zero', () => {
-    expect(() => { pipe.transform('foo', [-1]) }).toThrow(new RangeError());
+    expect(() => { pipe.transform('foo', -1) }).toThrow(new RangeError());
   });
 });

@@ -11,11 +11,17 @@ export function isNumberFinite(value: any) {
   return isNumber(value) && isFinite(value);
 }
 
-export function extractProperty(obj: any, map: string) {
+export function extractProperty(obj: Object, map: string) {
   const keys = map.split('.');
   const key = keys.shift();
+  let prop = obj[key];
 
-  return keys.length > 0 && !isUndefined(obj[key])
-    ? extractProperty(obj[key], keys.join('.'))
-    : obj[key];
+  for (let key of keys) {
+    if (isUndefined(prop[key])) {
+      return prop[key];
+    }
+    prop = prop[key];
+  }
+
+  return prop;
 }

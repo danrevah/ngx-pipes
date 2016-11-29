@@ -4,7 +4,7 @@ import {PipeTransform, Pipe, Injectable} from '@angular/core';
 @Pipe({name: 'truthify'})
 export class TrurthifyPipe implements PipeTransform {
 
-  transform(arr:any[]):any[] {
+  transform(arr: any[]): any[] {
     return arr.filter(elm => !!elm);
   }
 }

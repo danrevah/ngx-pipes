@@ -4,12 +4,11 @@ import {PipeTransform, Pipe, Injectable} from '@angular/core';
 @Pipe({name: 'repeat'})
 export class RepeatPipe implements PipeTransform {
 
-  transform(str:string, [n = 1, separator = '']: any[] = []):string {
-    let times: number = ~~n;
-    if (times <= 0) {
+  transform(str: string, n: number = 1, separator: string = ''): string {
+    if (n <= 0) {
       throw new RangeError();
     }
-    return times == 1 ? str : this.repeat(str, times - 1, separator);
+    return n == 1 ? str : this.repeat(str, n - 1, separator);
   }
 
   private repeat(str: string, n: number, separator: string): string {

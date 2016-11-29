@@ -10,7 +10,7 @@ export class BytesPipe implements PipeTransform {
       return NaN;
     }
 
-    const dictionary: Array<any> = [
+    const dictionary: Array<{max: number, type: string}> = [
       { max: 1e3, type: 'B' },
       { max: 1e6, type: 'KB' },
       { max: 1e9, type: 'MB' },

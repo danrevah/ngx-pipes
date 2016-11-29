@@ -4,7 +4,7 @@ import {PipeTransform, Pipe, Injectable} from '@angular/core';
 @Pipe({name: 'round'})
 export class RoundPipe implements PipeTransform {
 
-  transform(num: number, precision: number = 0):number {
+  transform(num: number, precision: number = 0): number {
     if (precision <= 0) {
       return Math.round(num);
     }

@@ -5,6 +5,8 @@ import {PipeTransform, Pipe, Injectable} from '@angular/core';
 export class DiffPipe implements PipeTransform {
 
   transform(arr: any[], ...args: any[]): any[] {
-    return args.reduce((diffArr, currArr) => diffArr.filter(elm => !~currArr.indexOf(elm)), arr);
+    return args.reduce((diffArr, currArr) => {
+      return diffArr.filter(elm => !~currArr.indexOf(elm))
+    }, arr);
   }
 }
