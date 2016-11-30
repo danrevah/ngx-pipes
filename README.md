@@ -18,6 +18,7 @@
     - [ltrim](#ltrim)
     - [rtrim](#rtrim)
     - [reverse](#reverse)
+    - [slugify](#slugify)
  - [Array](#Array)   
     - [diff](#diff)
     - [flatten](#flatten)
@@ -208,6 +209,17 @@ API: `string | reverse`
 
 ```html
 <p>{{'foo bar' | reverse }}</p> <!-- Output: "rab oof" -->
+```
+
+### slugify
+
+Slugify a string (lower case and add dash between words).
+
+API: `string | slugify`
+
+```html
+<p>{{'Foo Bar' | slugify }}</p> <!-- Output: "foo-bar" -->
+<p>{{'Some Text To Slugify' | slugify }}</p> <!-- Output: "some-text-to-slugify" -->
 ```
 
 

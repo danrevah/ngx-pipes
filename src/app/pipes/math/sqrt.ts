@@ -1,6 +1,5 @@
-import {PipeTransform, Pipe, Injectable} from '@angular/core';
+import {PipeTransform, Pipe} from '@angular/core';
 
-@Injectable()
 @Pipe({name: 'sqrt'})
 export class SqrtPipe implements PipeTransform {
 

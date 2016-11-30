@@ -8,10 +8,11 @@ import {ShortenPipe} from './shorten';
 import {StripTagsPipe} from './strip-tags';
 import {TrimPipe} from './trim';
 import {UcFirstPipe} from './ucfirst';
+import {SlugifyPipe} from './slugify';
 
 export const STRING_PIPES = [
   LeftTrimPipe, RepeatPipe, RightTrimPipe, ScanPipe, ShortenPipe,
-  StripTagsPipe, TrimPipe, UcFirstPipe, UcWordsPipe
+  StripTagsPipe, TrimPipe, UcFirstPipe, UcWordsPipe, SlugifyPipe
 ];
 
 @NgModule({
@@ -30,3 +31,4 @@ export * from './shorten';
 export * from './strip-tags';
 export * from './trim';
 export * from './ucfirst';
+export * from './slugify';

@@ -1,6 +1,5 @@
-import {PipeTransform, Pipe, Injectable} from '@angular/core';
+import {PipeTransform, Pipe} from '@angular/core';
 
-@Injectable()
 @Pipe({name: 'isArray'})
 export class IsArrayPipe implements PipeTransform {
 

@@ -1,7 +1,6 @@
-import {PipeTransform, Pipe, Injectable} from '@angular/core';
+import {PipeTransform, Pipe} from '@angular/core';
 import {isNumberFinite} from '../helpers';
 
-@Injectable()
 @Pipe({name: 'radians'})
 export class RadiansPipe implements PipeTransform {
 
