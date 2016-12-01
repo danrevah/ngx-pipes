@@ -768,7 +768,7 @@ API: `number | isNotIdenticalTo: otherNumber`
 
 ## Contributing
 
-* before adding any new feature or a fix make sure to open a ticket !
+* before adding any new feature or a fix make sure to open an issue first!
 
 * Make sure you have `angular-cli` & `karma` installed globally.
 
