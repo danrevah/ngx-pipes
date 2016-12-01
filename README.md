@@ -773,7 +773,7 @@ API: `number | isNotIdenticalTo: otherNumber`
 Make sure you have `angular-cli` & `karma` installed globally.
 
 ```bash
-$ npm install -g angular-cli
+$ npm install -g angular-cli karma
 ```
 
 Clone the project, and install dependencies.
