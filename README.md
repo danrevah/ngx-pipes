@@ -8,6 +8,7 @@
 ## Table of contents
 
  - [Installation](#installation)
+ - [Contributing](#contributing)
  - [String](#String)
     - [repeat](#repeat)
     - [scan](#scan)
@@ -764,3 +765,35 @@ API: `number | isNotIdenticalTo: otherNumber`
 <p>{{ 1 | isNotIdenticalTo: 2 }}</p> <!-- Output: "true" -->
 <p>{{ 2 | isNotIdenticalTo: 1 }}</p> <!-- Output: "true" -->
 ```
+
+## Contributing
+
+* before adding any new feature or a fix make sure to open a ticket !
+
+* Make sure you have `angular-cli` & `karma` installed globally.
+
+```bash
+$ npm install -g angular-cli
+```
+
+* Clone the project, and install dependencies.
+
+```bash
+$ git clone https://github.com/danrevah/ng2-pipes.git
+$ npm install
+```
+
+* Create a new branch
+
+```bash
+$ git checkout -b feat/someFeature
+```
+
+* Add tests & make sure everything is running properly
+```bash
+$ npm test
+```
+
+* Commit & push, and make a pull request!
+
+
