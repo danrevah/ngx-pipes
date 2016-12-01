@@ -768,32 +768,32 @@ API: `number | isNotIdenticalTo: otherNumber`
 
 ## Contributing
 
-* before adding any new feature or a fix make sure to open an issue first!
+* Before adding any new feature or a fix make sure to open an issue first!
 
-* Make sure you have `angular-cli` & `karma` installed globally.
+Make sure you have `angular-cli` & `karma` installed globally.
 
 ```bash
 $ npm install -g angular-cli
 ```
 
-* Clone the project, and install dependencies.
+Clone the project, and install dependencies.
 
 ```bash
 $ git clone https://github.com/danrevah/ng2-pipes.git
 $ npm install
 ```
 
-* Create a new branch
+Create a new branch
 
 ```bash
 $ git checkout -b feat/someFeature
 ```
 
-* Add tests & make sure everything is running properly
+Add tests & make sure everything is running properly
 ```bash
 $ npm test
 ```
 
-* Commit & push, and make a pull request!
+Commit & push, and make a pull request!
 
 
