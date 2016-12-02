@@ -2,6 +2,7 @@
 
 # compiled output
 /tmp
+coverage/
 
 # dependencies
 /node_modules
