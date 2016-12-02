@@ -1,1 +1,2 @@
-export * from './helpers';
+import GeneralHelper from './helpers';
+export default GeneralHelper;

@@ -1,5 +1,5 @@
 import {EveryPipe} from './every';
-import {isNumber, isUndefined} from '../helpers';
+import GeneralHelper from '../helpers/helpers';
 
 describe('EveryPipe', () => {
   let pipe: EveryPipe;
@@ -9,10 +9,10 @@ describe('EveryPipe', () => {
   });
 
   it('should check if every elements of the array fits the predicate', () => {
-    expect(pipe.transform([1, 2, 3, 4], isNumber)).toBeTruthy();
-    expect(pipe.transform([1, 2, 3, 'a'], isNumber)).toBeFalsy();
-    expect(pipe.transform([1, 2, 3, 4], isUndefined)).toBeFalsy();
-    expect(pipe.transform([undefined, undefined, 1], isUndefined)).toBeFalsy();
-    expect(pipe.transform([undefined, undefined], isUndefined)).toBeTruthy();
+    expect(pipe.transform([1, 2, 3, 4], GeneralHelper.isNumber)).toBeTruthy();
+    expect(pipe.transform([1, 2, 3, 'a'], GeneralHelper.isNumber)).toBeFalsy();
+    expect(pipe.transform([1, 2, 3, 4], GeneralHelper.isUndefined)).toBeFalsy();
+    expect(pipe.transform([undefined, undefined, 1], GeneralHelper.isUndefined)).toBeFalsy();
+    expect(pipe.transform([undefined, undefined], GeneralHelper.isUndefined)).toBeTruthy();
   });
 });

@@ -1,11 +1,11 @@
 import {PipeTransform, Pipe} from '@angular/core';
-import {isNumberFinite} from '../helpers';
+import GeneralHelper from '../helpers/helpers';
 
 @Pipe({name: 'bytes'})
 export class BytesPipe implements PipeTransform {
 
   transform(value: number): string | number {
-    if (!isNumberFinite(value)) {
+    if (!GeneralHelper.isNumberFinite(value)) {
       return NaN;
     }
 

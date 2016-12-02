@@ -1,4 +1,4 @@
-import {extractProperty} from './helpers';
+import GeneralHelper from './helpers';
 
 describe('Utils Tests', () => {
 
@@ -24,11 +24,11 @@ describe('Utils Tests', () => {
       }
     };
 
-    expect(extractProperty(obj, 'a')).toEqual(1);
-    expect(extractProperty(obj, 'b.c')).toEqual(2);
-    expect(extractProperty(obj, 'b.d.e')).toEqual(3);
-    expect(extractProperty(obj, 'f.g')).toEqual(4);
-    expect(extractProperty(obj, 'f.i.j.k.l')).toEqual(6);
-    expect(extractProperty(obj, 'f.i.j.k.l.')).toEqual(undefined);
+    expect(GeneralHelper.extractDeepPropertyByMapKey(obj, 'a')).toEqual(1);
+    expect(GeneralHelper.extractDeepPropertyByMapKey(obj, 'b.c')).toEqual(2);
+    expect(GeneralHelper.extractDeepPropertyByMapKey(obj, 'b.d.e')).toEqual(3);
+    expect(GeneralHelper.extractDeepPropertyByMapKey(obj, 'f.g')).toEqual(4);
+    expect(GeneralHelper.extractDeepPropertyByMapKey(obj, 'f.i.j.k.l')).toEqual(6);
+    expect(GeneralHelper.extractDeepPropertyByMapKey(obj, 'f.i.j.k.l.')).toEqual(undefined);
   });
 });
