@@ -3,7 +3,7 @@ import {PipeTransform, Pipe} from '@angular/core';
 @Pipe({name: 'sample'})
 export class SamplePipe implements PipeTransform {
 
-  transform(arr: any[], len: number = 1): any[] {
+  transform(arr: any, len: number = 1): any[] {
     if (!Array.isArray(arr)) {
       return arr;
     }

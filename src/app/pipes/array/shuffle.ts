@@ -5,7 +5,7 @@ export class ShufflePipe implements PipeTransform {
 
   // Using a version of the Fisher-Yates shuffle algorithm
   // https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle
-  transform(arr: any[]): any[] {
+  transform(arr: any): any[] {
     if (!Array.isArray(arr)) {
       return arr;
     }

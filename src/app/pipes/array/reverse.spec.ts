@@ -7,6 +7,13 @@ describe('ReversePipe', () => {
     pipe = new ReversePipe();
   });
 
+  it('should not do anything when not an array or string', () => {
+    expect(pipe.transform(null)).toEqual(null);
+    expect(pipe.transform(undefined)).toEqual(undefined);
+    expect(pipe.transform(42)).toEqual(42);
+    expect(pipe.transform({foo: 1, bar: 2})).toEqual({foo: 1, bar: 2});
+  });
+
   it('should reverse array', () => {
     let array = [1,2,3,4,5];
     let result = pipe.transform(array);
