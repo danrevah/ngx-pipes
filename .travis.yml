@@ -24,4 +24,4 @@ before_script:
 - npm install -g angular-cli
 - npm install -g karma
 
-script: ng test --watch=false
+script: ng test -cc --watch=false
