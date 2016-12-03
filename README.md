@@ -1,6 +1,6 @@
 # Angular2 Pipes 
 
-[![Coverage Status](https://coveralls.io/repos/github/danrevah/ng2-pipes/badge.svg?branch=master)](https://coveralls.io/github/danrevah/ng2-pipes?branch=master)[![Build Status](https://travis-ci.org/danrevah/ng2-pipes.svg?branch=master)](https://travis-ci.org/danrevah/ng2-pipes) [![npm version](https://badge.fury.io/js/ng2-pipes.svg)](https://badge.fury.io/js/ng2-pipes) 
+[![Coverage Status](https://coveralls.io/repos/github/danrevah/ng2-pipes/badge.svg?branch=master)](https://coveralls.io/github/danrevah/ng2-pipes?branch=master) [![Build Status](https://travis-ci.org/danrevah/ng2-pipes.svg?branch=master)](https://travis-ci.org/danrevah/ng2-pipes) [![npm version](https://badge.fury.io/js/ng2-pipes.svg)](https://badge.fury.io/js/ng2-pipes) 
 
 > Useful pipes for Angular2.
 
