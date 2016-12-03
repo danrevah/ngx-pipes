@@ -7,6 +7,7 @@
 ## Table of contents
 
  - [Installation](#installation)
+ - [Changelog](#changelog)
  - [Contributing](#contributing)
  - [String](#String)
     - [repeat](#repeat)
@@ -765,6 +766,12 @@ API: `number | isNotIdenticalTo: otherNumber`
 <p>{{ 2 | isNotIdenticalTo: 1 }}</p> <!-- Output: "true" -->
 ```
 
+## Changelog
+
+### 0.4.19
+
+- Add more validations on user input instead of throwing JS error 
+
 ## Contributing
 
 * Before adding any new feature or a fix make sure to open an issue first!
@@ -794,5 +801,3 @@ $ npm test
 ```
 
 Commit & push, and make a pull request!
-
-
