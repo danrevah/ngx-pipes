@@ -7,6 +7,14 @@ describe('TrurthifyPipe', () => {
     pipe = new TrurthifyPipe();
   });
 
+  it('should not change anything if not array', () => {
+    expect(pipe.transform('foo')).toEqual('foo');
+    expect(pipe.transform(null)).toEqual(null);
+    expect(pipe.transform(undefined)).toEqual(undefined);
+    expect(pipe.transform(42)).toEqual(42);
+    expect(pipe.transform({foo: 1, bar: 2})).toEqual({foo: 1, bar: 2});
+  });
+
   it('should not change array without falsy values', () => {
     expect(pipe.transform([1,2,3])).toEqual([1, 2, 3]);
   });

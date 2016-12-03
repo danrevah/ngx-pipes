@@ -7,6 +7,13 @@ describe('ShortenPipe Tests', () => {
     pipe = new ShortenPipe();
   });
 
+  it('should not do anything when not a string', () => {
+    expect(pipe.transform(null)).toEqual(null);
+    expect(pipe.transform(undefined)).toEqual(undefined);
+    expect(pipe.transform(42)).toEqual(42);
+    expect(pipe.transform({foo: 1, bar: 2})).toEqual({foo: 1, bar: 2});
+  });
+
   it('should not change the string if the length is more than the string size', () => {
     expect(pipe.transform('lorem ipsum', 20)).toEqual('lorem ipsum');
     expect(pipe.transform('lorem ipsum', 20, '..')).toEqual('lorem ipsum');

@@ -5,6 +5,8 @@ import GeneralHelper from '../helpers';
 export class SlugifyPipe implements PipeTransform {
 
   transform(str: string): string {
-    return GeneralHelper.isString(str) ? str.toLowerCase().replace(/\s+/g, '-') : str;
+    return GeneralHelper.isString(str)
+      ? str.toLowerCase().replace(/\s+/g, '-')
+      : str;
   }
 }

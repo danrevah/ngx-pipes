@@ -3,10 +3,14 @@ import {PipeTransform, Pipe} from '@angular/core';
 @Pipe({name: 'flatten'})
 export class FlattenPipe implements PipeTransform {
 
-  transform(array: any[], shallow: boolean = false): any[] {
+  transform(arr: any, shallow: boolean = false): any[] {
+    if (!Array.isArray(arr)) {
+      return arr;
+    }
+
     return shallow
-      ? [].concat.apply([], array)
-      : this.flatten(array);
+      ? [].concat.apply([], arr)
+      : this.flatten(arr);
   }
 
   private flatten(array: any[]): any[] {
