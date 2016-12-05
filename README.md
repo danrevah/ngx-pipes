@@ -21,6 +21,10 @@
     - [rtrim](#rtrim)
     - [reverse](#reverse)
     - [slugify](#slugify)
+    - [camelize](#camelize)
+    - [latinise](#latinise)
+    - [lines](#lines)
+    - [underscore](#underscore)
  - [Array](#Array)   
     - [diff](#diff)
     - [flatten](#flatten)
@@ -222,6 +226,50 @@ API: `string | slugify`
 ```html
 <p>{{'Foo Bar' | slugify }}</p> <!-- Output: "foo-bar" -->
 <p>{{'Some Text To Slugify' | slugify }}</p> <!-- Output: "some-text-to-slugify" -->
+```
+
+### camelize
+
+Camelize a string replaces dashes and underscores and converts to camelCase string.
+
+API: `string | camelize`
+
+```html
+<p>{{'foo_bar' | camelize }}</p> <!-- Output: "fooBar" -->
+<p>{{'some_dashed-with-underscore' | camelize }}</p> <!-- Output: "someDashedWithUnderscore" -->
+<p>{{'-dash_first-' | camelize }}</p> <!-- Output: "dashFirst" -->
+```
+
+### latinise
+
+Removes accents from Latin characters.
+
+API: `string | latinise`
+
+```html
+<p>{{'Féé' | latinise }}</p> <!-- Output: "Fee" -->
+<p>{{'foo' | latinise }}</p> <!-- Output: "foo" -->
+```
+
+### lines
+
+Removes accents from Latin characters.
+
+API: `string | lines`
+
+```html
+<p>{{'Some\nSentence with\r\nNew line' | lines }}</p> <!-- Output: "['Some', 'Sentence with', 'New line']" -->
+```
+
+### underscore
+
+Converts camelCase string to underscore.
+
+API: `string | underscore`
+
+```html
+<p>{{'angularIsAwesome' | underscore }}</p> <!-- Output: "angular_is_awesome" -->
+<p>{{'FooBar' | underscore }}</p> <!-- Output: "foo_bar" -->
 ```
 
 

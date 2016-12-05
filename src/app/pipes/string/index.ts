@@ -9,10 +9,15 @@ import {StripTagsPipe} from './strip-tags';
 import {TrimPipe} from './trim';
 import {UcFirstPipe} from './ucfirst';
 import {SlugifyPipe} from './slugify';
+import {CamelizePipe} from './camelize';
+import {LatinisePipe} from './latinise';
+import {LinesPipe} from './lines';
+import {UnderscorePipe} from './underscore';
 
 export const STRING_PIPES = [
   LeftTrimPipe, RepeatPipe, RightTrimPipe, ScanPipe, ShortenPipe,
-  StripTagsPipe, TrimPipe, UcFirstPipe, UcWordsPipe, SlugifyPipe
+  StripTagsPipe, TrimPipe, UcFirstPipe, UcWordsPipe, SlugifyPipe,
+  CamelizePipe, LatinisePipe, LinesPipe, UnderscorePipe
 ];
 
 @NgModule({
@@ -32,3 +37,7 @@ export * from './strip-tags';
 export * from './trim';
 export * from './ucfirst';
 export * from './slugify';
+export * from './camelize';
+export * from './latinise';
+export * from './lines';
+export * from './underscore';
