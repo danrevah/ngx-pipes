@@ -1,32 +1,33 @@
-import {DiffPipe} from './diff';
-import {InitialPipe} from './initial';
-import {FlattenPipe} from './flatten';
-import {IntersectionPipe} from './intersection';
-import {ReversePipe} from './reverse';
-import {TailPipe} from './tail';
-import {TrurthifyPipe} from './truthify';
-import {UnionPipe} from './union';
-import {UniquePipe} from './unique';
-import {WithoutPipe} from './without';
-import {PluckPipe} from './pluck';
-import {ShufflePipe} from './shuffle';
-import {EveryPipe} from './every';
-import {SomePipe} from './some';
-import {SamplePipe} from './sample';
-import {NgModule} from '@angular/core';
+import { DiffPipe } from './diff';
+import { InitialPipe } from './initial';
+import { FlattenPipe } from './flatten';
+import { IntersectionPipe } from './intersection';
+import { ReversePipe } from './reverse';
+import { TailPipe } from './tail';
+import { TrurthifyPipe } from './truthify';
+import { UnionPipe } from './union';
+import { UniquePipe } from './unique';
+import { WithoutPipe } from './without';
+import { PluckPipe } from './pluck';
+import { ShufflePipe } from './shuffle';
+import { EveryPipe } from './every';
+import { SomePipe } from './some';
+import { SamplePipe } from './sample';
+import { GroupByPipe } from './groupBy';
+import { NgModule } from '@angular/core';
 
 const ARRAY_PIPES = [
   DiffPipe, FlattenPipe, InitialPipe, IntersectionPipe, ReversePipe, TailPipe,
   TrurthifyPipe, UnionPipe, UniquePipe, WithoutPipe, PluckPipe, ShufflePipe,
-  EveryPipe, SomePipe, SamplePipe
+  EveryPipe, SomePipe, SamplePipe, GroupByPipe
 ];
 
 @NgModule({
-  declarations: [...ARRAY_PIPES],
+  declarations: [ ...ARRAY_PIPES ],
   imports: [],
-  exports: [...ARRAY_PIPES]
+  exports: [ ...ARRAY_PIPES ]
 })
-export class NgArrayPipesModule {}
+export class NgArrayPipesModule { }
 
 export * from './diff';
 export * from './initial';
@@ -43,3 +44,4 @@ export * from './shuffle';
 export * from './every';
 export * from './some';
 export * from './sample';
+export * from './groupBy';
