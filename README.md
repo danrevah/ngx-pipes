@@ -43,6 +43,9 @@
     - [every](#every)
     - [some](#some)
     - [sample](#sample)
+    - [groupBy](#groupBy)
+    - [keys](#keys)
+    - [values](#values)
  - [Math](#Math)   
     - [min](#min)
     - [max](#max)
@@ -517,6 +520,48 @@ API: `array | sample: [amount | default = 1]`
 ```html
 <p>{{ [1, 2, 3, 4] | sample }}</p> <!-- Output: "[2]" -->
 <p>{{ [1, 2, 3, 4] | sample: 2 }}</p> <!-- Output: "[4, 3]" -->
+```
+
+### groupBy
+
+Returns object of grouped by items by discriminator
+
+API: `array | groupBy: [string | Function]`
+
+```javascript
+import {GroupByPipe} from 'ng2-pipes/src/app/pipes/array/group-by';
+
+@Component({
+  // ...
+  providers: [GroupByPipe]
+})
+export class AppComponent {
+  constructor(private groupByPipe: GroupByPipe) {
+    // .. 
+    const arrayObject = [{elm: 'foo', value: 0}, {elm: 'bar', value: 1}, {elm: 'foo', value: 2}];
+    const groupedObject = groupByPipe.transform(arrayObject, 'elm')); 
+    // `groupedObject` -> Contains: {foo: [{elm: 'foo', value: 0}, {elm: 'foo', value: 2}], bar: [{elm: 'bar', value: 1}]}
+  }
+```
+
+### keys
+
+Returns array of object keys
+
+API: `object | keys`
+
+```html
+<p>{{ {foo: 1, bar: 2} | keys }}</p> <!-- Output: "['foo', 'bar']" -->
+```
+
+### values
+
+Returns array of object values
+
+API: `object | values`
+
+```html
+<p>{{ {foo: 1, bar: 2} | values }}</p> <!-- Output: "[1, 2]" -->
 ```
 
 ## Math

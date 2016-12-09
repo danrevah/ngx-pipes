@@ -1,7 +1,11 @@
 
 export default class GeneralHelper {
-  static isUndefined(value) {
+  static isUndefined(value: any) {
     return typeof value === 'undefined';
+  }
+
+  static isFunction(value: any) {
+    return typeof value === 'function';
   }
 
   static isNumber(value: any) {
@@ -10,6 +14,10 @@ export default class GeneralHelper {
 
   static isString(value: any) {
     return typeof value === 'string';
+  }
+
+  static isObject(value: any) {
+    return value !== null && typeof value === 'object';
   }
 
   static isNumberFinite(value: any) {
