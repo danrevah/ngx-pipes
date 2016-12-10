@@ -14,14 +14,12 @@ import { EveryPipe } from './every';
 import { SomePipe } from './some';
 import { SamplePipe } from './sample';
 import { GroupByPipe } from './group-by';
-import { KeysPipe } from './keys';
-import { ValuesPipe } from './values';
 import { NgModule } from '@angular/core';
 
 const ARRAY_PIPES = [
   DiffPipe, FlattenPipe, InitialPipe, IntersectionPipe, ReversePipe, TailPipe,
   TrurthifyPipe, UnionPipe, UniquePipe, WithoutPipe, PluckPipe, ShufflePipe,
-  EveryPipe, SomePipe, SamplePipe, GroupByPipe, KeysPipe, ValuesPipe
+  EveryPipe, SomePipe, SamplePipe, GroupByPipe
 ];
 
 @NgModule({
@@ -29,7 +27,7 @@ const ARRAY_PIPES = [
   imports: [],
   exports: [ ...ARRAY_PIPES ]
 })
-export class NgArrayPipesModule { }
+export class NgArrayPipesModule {}
 
 export * from './diff';
 export * from './initial';
@@ -46,6 +44,4 @@ export * from './shuffle';
 export * from './every';
 export * from './some';
 export * from './sample';
-export * from './keys';
-export * from './values';
 export * from './group-by';

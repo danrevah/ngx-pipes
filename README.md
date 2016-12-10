@@ -44,9 +44,11 @@
     - [some](#some)
     - [sample](#sample)
     - [groupBy](#groupBy)
+ - [Object](#object)
     - [keys](#keys)
     - [values](#values)
- - [Math](#Math)   
+    - [pairs](#pairs)
+ - [Math](#math)   
     - [min](#min)
     - [max](#max)
     - [percentage](#percentage)
@@ -85,7 +87,7 @@
   $ npm install ng2-pipes --save 
   ```
 
-2. You could either add into your module `imports` the `NgPipesModule` in order to add all of the pipes, Or add a specific module such as `NgArrayPipesModule`, `NgStringPipesModule`, `NgMathPipesModule` or `NgBooleanPipesModule`.
+2. You could either add into your module `imports` the `NgPipesModule` in order to add all of the pipes, Or add a specific module such as `NgArrayPipesModule`, `NgObjectPipesModule`, `NgStringPipesModule`, `NgMathPipesModule` or `NgBooleanPipesModule`.
 
   ```typescript
   import {NgPipesModule} from 'ng2-pipes';
@@ -544,6 +546,8 @@ export class AppComponent {
   }
 ```
 
+## Object
+
 ### keys
 
 Returns array of object keys
@@ -562,6 +566,17 @@ API: `object | values`
 
 ```html
 <p>{{ {foo: 1, bar: 2} | values }}</p> <!-- Output: "[1, 2]" -->
+```
+
+### pairs
+
+Returns array of an object key value pairs
+
+API: `object | pairs`
+
+```html
+<p>{{ {foo: 1, bar: 2} | pairs }}</p> <!-- Output: "[['foo', 1], ['bar', 2]]" -->
+<p>{{ {foo: [1, 2], bar: [3, 4]} | pairs }}</p> <!-- Output: "[['foo', [1, 2]], ['bar', [3, 4]]]" -->
 ```
 
 ## Math
