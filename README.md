@@ -11,7 +11,7 @@
  - [Installation](#installation)
  - [Changelog](#changelog)
  - [Contributing](#contributing)
- - [String](#String)
+ - [String](#string)
     - [repeat](#repeat)
     - [scan](#scan)
     - [shorten](#shorten)
@@ -49,6 +49,8 @@
     - [values](#values)
     - [pairs](#pairs)
     - [pick](#pick)
+    - [invert](#invert)
+    - [invertby](#invertby)
  - [Math](#math)   
     - [min](#min)
     - [max](#max)
@@ -61,7 +63,7 @@
     - [degrees](#degrees)
     - [radians](#radians)
     - [bytes](#bytes)
- - [Boolean](#Boolean)   
+ - [Boolean](#boolean)   
     - [isNull](#isnull)
     - [isDefined](#isdefined)
     - [isUndefined](#isundefined)
@@ -588,6 +590,34 @@ API: `object | pick: [key | string]]`
 ```html
 <p>{{ {foo: 1, bar: 2} | pick: 'foo' }}</p> <!-- Output: "{foo: 1}" -->
 <p>{{ {foo: 1, bar: 2} | pick: 'foo': 'bar' }}</p> <!-- Output: "{foo: 1, bar: 2}" -->
+```
+
+### invert
+
+Returns object with inverted keys and values. in case of equal values, subsequent values overwrite property assignments of previous values.
+
+API: `object | invert`
+
+```html
+<p>{{ {foo: 1, bar: 2} | invert }}</p> <!-- Output: "{1: 'foo', 2: 'bar'}" -->
+```
+
+### invertBy
+
+Returns object with inverted keys and values. in case of equal values, will add to an array.
+
+API: `object | invertBy: [Function | optional]`
+
+```typescript
+this.cb = (value): string => {
+  return `name_${value}`;
+};
+```
+
+```html
+<p>{{ {foo: 1, bar: 2} | invertBy }}</p> <!-- Output: "{1: ['foo'], 2: ['bar']}" -->
+<p>{{ {foo: 1, bar: 2} | invertBy: cb }}</p> <!-- Output: "{name_1: ['foo'], name_2: ['bar']}" -->
+<p>{{ {a: 1, b: 2, c: 1, d: 2} | invertBy }}</p> <!-- Output: "{1: ['a', 'c'], 2: ['b', 'd']}" -->
 ```
 
 ## Math
