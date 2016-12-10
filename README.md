@@ -49,8 +49,9 @@
     - [values](#values)
     - [pairs](#pairs)
     - [pick](#pick)
+    - [omit](#omit)
     - [invert](#invert)
-    - [invertby](#invertby)
+    - [invertBy](#invertby)
  - [Math](#math)   
     - [min](#min)
     - [max](#max)
@@ -590,6 +591,17 @@ API: `object | pick: [key | string]]`
 ```html
 <p>{{ {foo: 1, bar: 2} | pick: 'foo' }}</p> <!-- Output: "{foo: 1}" -->
 <p>{{ {foo: 1, bar: 2} | pick: 'foo': 'bar' }}</p> <!-- Output: "{foo: 1, bar: 2}" -->
+```
+
+### omit
+
+Returns object after omitting keys from object (opposite of pick)
+
+API: `object | omit: [key | string]]`
+
+```html
+<p>{{ {foo: 1, bar: 2} | omit: 'foo' }}</p> <!-- Output: "{bar: 2}" -->
+<p>{{ {foo: 1, bar: 2} | omit: 'foo': 'bar' }}</p> <!-- Output: "{}" -->
 ```
 
 ### invert
