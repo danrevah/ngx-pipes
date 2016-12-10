@@ -48,6 +48,7 @@
     - [keys](#keys)
     - [values](#values)
     - [pairs](#pairs)
+    - [pick](#pick)
  - [Math](#math)   
     - [min](#min)
     - [max](#max)
@@ -278,7 +279,6 @@ API: `string | underscore`
 <p>{{'angularIsAwesome' | underscore }}</p> <!-- Output: "angular_is_awesome" -->
 <p>{{'FooBar' | underscore }}</p> <!-- Output: "foo_bar" -->
 ```
-
 
 ## Array
 
@@ -577,6 +577,17 @@ API: `object | pairs`
 ```html
 <p>{{ {foo: 1, bar: 2} | pairs }}</p> <!-- Output: "[['foo', 1], ['bar', 2]]" -->
 <p>{{ {foo: [1, 2], bar: [3, 4]} | pairs }}</p> <!-- Output: "[['foo', [1, 2]], ['bar', [3, 4]]]" -->
+```
+
+### pick
+
+Returns object with picked keys from object
+
+API: `object | pick: [key | string]]`
+
+```html
+<p>{{ {foo: 1, bar: 2} | pick: 'foo' }}</p> <!-- Output: "{foo: 1}" -->
+<p>{{ {foo: 1, bar: 2} | pick: 'foo': 'bar' }}</p> <!-- Output: "{foo: 1, bar: 2}" -->
 ```
 
 ## Math
