@@ -21,9 +21,9 @@ export const STRING_PIPES = [
 ];
 
 @NgModule({
-  declarations: [...STRING_PIPES],
+  declarations: STRING_PIPES,
   imports: [],
-  exports: [...STRING_PIPES]
+  exports: STRING_PIPES
 })
 export class NgStringPipesModule {}
 
