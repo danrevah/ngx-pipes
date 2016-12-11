@@ -9,7 +9,6 @@
 ## Table of contents
 
  - [Installation](#installation)
- - [Changelog](#changelog)
  - [Contributing](#contributing)
  - [String](#string)
     - [repeat](#repeat)
@@ -928,12 +927,6 @@ API: `number | isNotIdenticalTo: otherNumber`
 <p>{{ 1 | isNotIdenticalTo: 2 }}</p> <!-- Output: "true" -->
 <p>{{ 2 | isNotIdenticalTo: 1 }}</p> <!-- Output: "true" -->
 ```
-
-## Changelog
-
-### 0.4.19
-
-- Add more validations on user input instead of throwing JS error 
 
 ## Contributing
 
