@@ -13,11 +13,14 @@ import {CamelizePipe} from './camelize';
 import {LatinisePipe} from './latinise';
 import {LinesPipe} from './lines';
 import {UnderscorePipe} from './underscore';
+import {MatchPipe} from './match';
+import {TestPipe} from './test';
 
 export const STRING_PIPES = [
   LeftTrimPipe, RepeatPipe, RightTrimPipe, ScanPipe, ShortenPipe,
   StripTagsPipe, TrimPipe, UcFirstPipe, UcWordsPipe, SlugifyPipe,
-  CamelizePipe, LatinisePipe, LinesPipe, UnderscorePipe
+  CamelizePipe, LatinisePipe, LinesPipe, UnderscorePipe, MatchPipe,
+  TestPipe
 ];
 
 @NgModule({
@@ -41,3 +44,5 @@ export * from './camelize';
 export * from './latinise';
 export * from './lines';
 export * from './underscore';
+export * from './match';
+export * from './test';

@@ -27,6 +27,8 @@
     - [latinise](#latinise)
     - [lines](#lines)
     - [underscore](#underscore)
+    - [test](#test)
+    - [match](#match)
  - [Array](#Array)   
     - [diff](#diff)
     - [flatten](#flatten)
@@ -281,6 +283,30 @@ API: `string | underscore`
 ```html
 <p>{{'angularIsAwesome' | underscore }}</p> <!-- Output: "angular_is_awesome" -->
 <p>{{'FooBar' | underscore }}</p> <!-- Output: "foo_bar" -->
+```
+
+### test
+
+Tests if a string matches a pattern.
+
+API: `string | test: {RegExp}: {Flags}`
+
+```html
+<p>{{'foo 42' | test: '[\\d]+$': 'g' }}</p> <!-- Output: true -->
+<p>{{'42 foo' | test: '[\\d]+$': 'g' }}</p> <!-- Output: false -->
+<p>{{'FOO' | test: '^foo': 'i' }}</p> <!-- Output: true -->
+```
+
+### match
+
+Returns array of matched elements in string.
+
+API: `string | match: {RegExp}: {Flags}`
+
+```html
+<p>{{'foo 42' | match: '[\\d]+$': 'g' }}</p> <!-- Output: '42' -->
+<p>{{'42 foo' | match: '[\\d]+$': 'g' }}</p> <!-- Output: null -->
+<p>{{'FOO' | match: '^foo': 'i' }}</p> <!-- Output: 'FOO' -->
 ```
 
 ## Array
