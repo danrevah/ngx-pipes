@@ -24,9 +24,9 @@ export const BOOLEAN_PIPES = [
 ];
 
 @NgModule({
-  declarations: [...BOOLEAN_PIPES],
+  declarations: BOOLEAN_PIPES,
   imports: [],
-  exports: [...BOOLEAN_PIPES]
+  exports: BOOLEAN_PIPES
 })
 export class NgBooleanPipesModule {}
 

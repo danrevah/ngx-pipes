@@ -23,9 +23,9 @@ const ARRAY_PIPES = [
 ];
 
 @NgModule({
-  declarations: [ ...ARRAY_PIPES ],
+  declarations: ARRAY_PIPES,
   imports: [],
-  exports: [ ...ARRAY_PIPES ]
+  exports: ARRAY_PIPES
 })
 export class NgArrayPipesModule {}
 
