@@ -554,20 +554,12 @@ Returns object of grouped by items by discriminator
 
 API: `array | groupBy: [string | Function]`
 
-```javascript
-import {GroupByPipe} from 'ng2-pipes/src/app/pipes/array/group-by';
+```typescript
+this.arrayObject = [{elm: 'foo', value: 0}, {elm: 'bar', value: 1}, {elm: 'foo', value: 2}];
+```
 
-@Component({
-  // ...
-  providers: [GroupByPipe]
-})
-export class AppComponent {
-  constructor(private groupByPipe: GroupByPipe) {
-    // .. 
-    const arrayObject = [{elm: 'foo', value: 0}, {elm: 'bar', value: 1}, {elm: 'foo', value: 2}];
-    const groupedObject = groupByPipe.transform(arrayObject, 'elm')); 
-    // `groupedObject` -> Contains: {foo: [{elm: 'foo', value: 0}, {elm: 'foo', value: 2}], bar: [{elm: 'bar', value: 1}]}
-  }
+```html
+<p>{{ arrayObject | groupBy: 'elm' }}</p> <!-- Output: "{foo: [{elm: 'foo', value: 0}, {elm: 'foo', value: 2}], bar: [{elm: 'bar', value: 1}]}" -->
 ```
 
 ## Object
