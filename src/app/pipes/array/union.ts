@@ -4,14 +4,15 @@ import {PipeTransform, Pipe} from '@angular/core';
 export class UnionPipe implements PipeTransform {
 
   transform(arr: any, args: any[] = []): any[] {
-    return (!Array.isArray(arr) || !Array.isArray(args))
-      ? arr
-      : args.reduce((newArr, currArr) => {
+    if (!Array.isArray(arr) || !Array.isArray(args)) {
+      return arr;
+    }
+
+    return args.reduce((newArr, currArr) => {
         return newArr.concat(currArr.reduce((noDupArr, curr) => {
-            if (!~noDupArr.indexOf(curr) && !~newArr.indexOf(curr)) {
-              noDupArr.push(curr);
-            }
-            return noDupArr;
+            return (!~noDupArr.indexOf(curr) && !~newArr.indexOf(curr))
+              ? noDupArr.concat([curr])
+              : noDupArr;
           }, []));
       }, arr);
   }

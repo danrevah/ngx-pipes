@@ -4,8 +4,12 @@ import {PipeTransform, Pipe} from '@angular/core';
 export class IntersectionPipe implements PipeTransform {
 
   transform(arr: any, ...args: any[]): any[] {
-    return !Array.isArray(arr) ? arr : args.reduce((newArr, currArr) => {
-      return newArr.filter(elm => !!~currArr.indexOf(elm))
+    if (!Array.isArray(arr)) {
+      return arr;
+    }
+
+    return args.reduce((newArr, currArr) => {
+      return newArr.filter(elm => !!~currArr.indexOf(elm));
     }, arr);
   }
 }

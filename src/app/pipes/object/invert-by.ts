@@ -9,12 +9,11 @@ export class InvertByPipe implements PipeTransform {
       return obj;
     }
 
-    return Object.keys(obj)
-      .reduce((o, k) => {
-        const key = cb ? cb(obj[k]) : obj[k];
-        return Array.isArray(o[key])
-          ? (o[key].push(k), o)
-          : Object.assign(o, {[key]: [k]});
+    return Object.keys(obj).reduce((o, k) => {
+      const key = cb ? cb(obj[k]) : obj[k];
+      return Array.isArray(o[key])
+        ? (o[key].push(k), o)
+        : Object.assign(o, {[key]: [k]});
       }, {});
   }
 }
