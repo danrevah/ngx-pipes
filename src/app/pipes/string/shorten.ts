@@ -8,10 +8,12 @@ export class ShortenPipe implements PipeTransform {
     if (!GeneralHelper.isString(text)) {
       return text;
     }
+
     if (text.length > length) {
       if (wordBreak) {
         return text.slice(0, length) + suffix;
       }
+
       if (!!~text.indexOf(' ', length)) {
         return text.slice(0, text.indexOf(' ', length)) + suffix;
       }

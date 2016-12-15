@@ -6,7 +6,7 @@ export class ScanPipe implements PipeTransform {
 
   transform(text: string, args: string[] = []): string {
     return GeneralHelper.isString(text)
-      ? text.replace(/\{(\d+)}/g, (match, index) => typeof (args[index]) !== 'undefined' ? args[index] : match)
+      ? text.replace(/\{(\d+)}/g, (match, index) => !GeneralHelper.isUndefined(args[index]) ? args[index] : match)
       : text;
   }
 }

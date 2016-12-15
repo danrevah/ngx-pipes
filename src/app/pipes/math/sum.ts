@@ -4,8 +4,8 @@ import {PipeTransform, Pipe} from '@angular/core';
 export class SumPipe implements PipeTransform {
 
   transform(arr: number[]): number|number[] {
-    return !Array.isArray(arr)
-      ? arr
-      : arr.reduce((sum, curr) => sum + curr, 0);
+    return Array.isArray(arr)
+      ? arr.reduce((sum, curr) => sum + curr, 0)
+      : arr;
   }
 }

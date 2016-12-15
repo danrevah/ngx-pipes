@@ -4,6 +4,8 @@ import {PipeTransform, Pipe} from '@angular/core';
 export class SqrtPipe implements PipeTransform {
 
   transform(num: number): number {
-    return isNaN(num) ? num : Math.sqrt(num);
+    return !isNaN(num)
+      ? Math.sqrt(num)
+      : num;
   }
 }

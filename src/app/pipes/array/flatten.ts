@@ -14,7 +14,10 @@ export class FlattenPipe implements PipeTransform {
   }
 
   private flatten(array: any[]): any[] {
-    return array.reduce((arr: any[], elm: any) => elm instanceof Array ?
-      arr.concat(this.flatten(elm)) : arr.concat(elm), []);
+    return array.reduce((arr: any[], elm: any) =>
+      Array.isArray(elm)
+        ? arr.concat(this.flatten(elm))
+        : arr.concat(elm)
+      , []);
   }
 }
