@@ -1,4 +1,4 @@
-# Angular Pipes  [![npm](https://img.shields.io/npm/v/ng2-pipes.svg?style=flat-square)](https://www.npmjs.com/package/ng2-pipes) [![Travis](https://img.shields.io/travis/danrevah/ng2-pipes.svg?style=flat-square)](https://travis-ci.org/danrevah/ng2-pipes) [![Coveralls](https://img.shields.io/coveralls/danrevah/ng2-pipes.svg?style=flat-square)](https://coveralls.io/github/danrevah/ng2-pipes?branch=master)
+# Angular Pipes  [![npm](https://img.shields.io/npm/v/ng2-pipes.svg?style=flat-square)](https://www.npmjs.com/package/ng2-pipes) [![Travis](https://img.shields.io/travis/danrevah/ng-pipes.svg?style=flat-square)](https://travis-ci.org/danrevah/ng-pipes) [![Coveralls](https://img.shields.io/coveralls/danrevah/ng2-pipes.svg?style=flat-square)](https://coveralls.io/github/danrevah/ng2-pipes?branch=master)
 
 > Useful pipes for Angular 2
 
