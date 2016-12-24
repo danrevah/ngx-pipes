@@ -40,7 +40,7 @@
     - [every](#every)
     - [some](#some)
     - [sample](#sample)
-    - [groupBy](#groupBy)
+    - [groupBy](#groupby)
  - [Object](#object)
     - [keys](#keys)
     - [values](#values)
