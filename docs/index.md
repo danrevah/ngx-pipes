@@ -135,7 +135,7 @@ Repeats a string n times
 API: `string | repeat: times: [separator|optional]`
 
 ```html
-<p>{{ 'example' | repeat: 3: '@' }}</p> <!-- Output: "example@example@example" -->
+<p>{% raw %}{{ 'example' | repeat: 3: '@' }}{% endraw %}</p> <!-- Output: "example@example@example" -->
 ```
 
 ### scan
@@ -145,7 +145,7 @@ Scans string and replace `{i}` placeholders by equivalent member of the array
 API: `string | scan: [ARRAY]`
 
 ```html
-<p>{{'Hey {0}, {1}' | scan: ['foo', 'bar']}}</p> <!-- Output: "Hey foo, bar" -->
+<p>{% raw %}{{'Hey {0}, {1}' | scan: ['foo', 'bar']}}{% endraw %}</p> <!-- Output: "Hey foo, bar" -->
 ```
 
 ### shorten
@@ -156,7 +156,7 @@ Shortening a string by length and providing a custom string to denote an omissio
 API: `string | shorten: length: [suffix|optional]: [wordBreak boolean|optional]`
 
 ```html
-<p>{{'Hey foo bar' | shorten: 3: '...'}}</p> <!-- Output: "Hey..." -->
+<p>{% raw %}{{'Hey foo bar' | shorten: 3: '...'}}{% endraw %}</p> <!-- Output: "Hey..." -->
 ```
 
 ### stripTags
@@ -166,8 +166,8 @@ Strips a HTML tags from string and providing which tags should not be removed
 API: `string | stripTags: [ARRAY]`
 
 ```html
-<p>{{'<a href="">foo</a> <p class="foo">bar</p>' | stripTags }}</p> <!-- Output: "foo bar" -->
-<p>{{'<a href="">foo</a> <p class="foo">bar</p>' | stripTags: 'p'}}</p> <!-- Output: foo <p class="foo">bar</p> -->
+<p>{% raw %}{{'<a href="">foo</a> <p class="foo">bar</p>' | stripTags }}{% endraw %}</p> <!-- Output: "foo bar" -->
+<p>{% raw %}{{'<a href="">foo</a> <p class="foo">bar</p>' | stripTags: 'p'}}{% endraw %}</p> <!-- Output: foo <p class="foo">bar</p> -->
 ```
 
 ### ucfirst
@@ -175,7 +175,7 @@ API: `string | stripTags: [ARRAY]`
 Uppercase first letter of first word
 
 ```html
-<p>{{'foo bar' | ucfirst }}</p> <!-- Output: "Foo bar" -->
+<p>{% raw %}{{'foo bar' | ucfirst }}{% endraw %}</p> <!-- Output: "Foo bar" -->
 ```
 
 ### ucwords
@@ -183,7 +183,7 @@ Uppercase first letter of first word
 Uppercase first letter every word
 
 ```html
-<p>{{'foo bar' | ucwords }}</p> <!-- Output: "Foo Bar" -->
+<p>{% raw %}{{'foo bar' | ucwords }}{% endraw %}</p> <!-- Output: "Foo Bar" -->
 ```
 
 ### trim
@@ -193,8 +193,8 @@ Strips characters from the beginning and end of a string (default character is s
 API: `string | trim: [characters|optional]`
 
 ```html
-<p>{{'  foo  ' | trim }}</p> <!-- Output: "foo" -->
-<p>{{'foobarfoo' | trim: 'foo' }}</p> <!-- Output: "bar" -->
+<p>{% raw %}{{'  foo  ' | trim }}{% endraw %}</p> <!-- Output: "foo" -->
+<p>{% raw %}{{'foobarfoo' | trim: 'foo' }}{% endraw %}</p> <!-- Output: "bar" -->
 ```
 
 ### ltrim
@@ -204,8 +204,8 @@ Strips characters from the beginning of a string (default character is space).
 API: `string | ltrim: [characters|optional]`
 
 ```html
-<p>{{'  foo  ' | ltrim }}</p> <!-- Output: "foo  " -->
-<p>{{'foobarfoo' | ltrim: 'foo' }}</p> <!-- Output: "barfoo" -->
+<p>{% raw %}{{'  foo  ' | ltrim }}{% endraw %}</p> <!-- Output: "foo  " -->
+<p>{% raw %}{{'foobarfoo' | ltrim: 'foo' }}{% endraw %}</p> <!-- Output: "barfoo" -->
 ```
 
 ### rtrim
@@ -215,8 +215,8 @@ Strips characters from the end of a string (default character is space).
 API: `string | rtrim: [characters|optional]`
 
 ```html
-<p>{{'  foo  ' | rtrim }}</p> <!-- Output: "  foo" -->
-<p>{{'foobarfoo' | rtrim: 'foo' }}</p> <!-- Output: "foobar" -->
+<p>{% raw %}{{'  foo  ' | rtrim }}{% endraw %}</p> <!-- Output: "  foo" -->
+<p>{% raw %}{{'foobarfoo' | rtrim: 'foo' }}{% endraw %}</p> <!-- Output: "foobar" -->
 ```
 
 ### reverse
@@ -226,7 +226,7 @@ Reverses a string
 API: `string | reverse`
 
 ```html
-<p>{{'foo bar' | reverse }}</p> <!-- Output: "rab oof" -->
+<p>{% raw %}{{'foo bar' | reverse }}{% endraw %}</p> <!-- Output: "rab oof" -->
 ```
 
 ### slugify
@@ -236,8 +236,8 @@ Slugify a string (lower case and add dash between words).
 API: `string | slugify`
 
 ```html
-<p>{{'Foo Bar' | slugify }}</p> <!-- Output: "foo-bar" -->
-<p>{{'Some Text To Slugify' | slugify }}</p> <!-- Output: "some-text-to-slugify" -->
+<p>{% raw %}{{'Foo Bar' | slugify }}{% endraw %}</p> <!-- Output: "foo-bar" -->
+<p>{% raw %}{{'Some Text To Slugify' | slugify }}{% endraw %}</p> <!-- Output: "some-text-to-slugify" -->
 ```
 
 ### camelize
@@ -247,9 +247,9 @@ Camelize a string replaces dashes and underscores and converts to camelCase stri
 API: `string | camelize`
 
 ```html
-<p>{{'foo_bar' | camelize }}</p> <!-- Output: "fooBar" -->
-<p>{{'some_dashed-with-underscore' | camelize }}</p> <!-- Output: "someDashedWithUnderscore" -->
-<p>{{'-dash_first-' | camelize }}</p> <!-- Output: "dashFirst" -->
+<p>{% raw %}{{'foo_bar' | camelize }}{% endraw %}</p> <!-- Output: "fooBar" -->
+<p>{% raw %}{{'some_dashed-with-underscore' | camelize }}{% endraw %}</p> <!-- Output: "someDashedWithUnderscore" -->
+<p>{% raw %}{{'-dash_first-' | camelize }}{% endraw %}</p> <!-- Output: "dashFirst" -->
 ```
 
 ### latinise
@@ -259,8 +259,8 @@ Removes accents from Latin characters.
 API: `string | latinise`
 
 ```html
-<p>{{'Féé' | latinise }}</p> <!-- Output: "Fee" -->
-<p>{{'foo' | latinise }}</p> <!-- Output: "foo" -->
+<p>{% raw %}{{'Féé' | latinise }}{% endraw %}</p> <!-- Output: "Fee" -->
+<p>{% raw %}{{'foo' | latinise }}{% endraw %}</p> <!-- Output: "foo" -->
 ```
 
 ### lines
@@ -270,7 +270,7 @@ Removes accents from Latin characters.
 API: `string | lines`
 
 ```html
-<p>{{'Some\nSentence with\r\nNew line' | lines }}</p> <!-- Output: "['Some', 'Sentence with', 'New line']" -->
+<p>{% raw %}{{'Some\nSentence with\r\nNew line' | lines }}{% endraw %}</p> <!-- Output: "['Some', 'Sentence with', 'New line']" -->
 ```
 
 ### underscore
@@ -280,8 +280,8 @@ Converts camelCase string to underscore.
 API: `string | underscore`
 
 ```html
-<p>{{'angularIsAwesome' | underscore }}</p> <!-- Output: "angular_is_awesome" -->
-<p>{{'FooBar' | underscore }}</p> <!-- Output: "foo_bar" -->
+<p>{% raw %}{{'angularIsAwesome' | underscore }}{% endraw %}</p> <!-- Output: "angular_is_awesome" -->
+<p>{% raw %}{{'FooBar' | underscore }}{% endraw %}</p> <!-- Output: "foo_bar" -->
 ```
 
 ### test
@@ -291,9 +291,9 @@ Tests if a string matches a pattern.
 API: `string | test: {RegExp}: {Flags}`
 
 ```html
-<p>{{'foo 42' | test: '[\\d]+$': 'g' }}</p> <!-- Output: true -->
-<p>{{'42 foo' | test: '[\\d]+$': 'g' }}</p> <!-- Output: false -->
-<p>{{'FOO' | test: '^foo': 'i' }}</p> <!-- Output: true -->
+<p>{% raw %}{{'foo 42' | test: '[\\d]+$': 'g' }}{% endraw %}</p> <!-- Output: true -->
+<p>{% raw %}{{'42 foo' | test: '[\\d]+$': 'g' }}{% endraw %}</p> <!-- Output: false -->
+<p>{% raw %}{{'FOO' | test: '^foo': 'i' }}{% endraw %}</p> <!-- Output: true -->
 ```
 
 ### match
@@ -303,9 +303,9 @@ Returns array of matched elements in string.
 API: `string | match: {RegExp}: {Flags}`
 
 ```html
-<p>{{'foo 42' | match: '[\\d]+$': 'g' }}</p> <!-- Output: '42' -->
-<p>{{'42 foo' | match: '[\\d]+$': 'g' }}</p> <!-- Output: null -->
-<p>{{'FOO' | match: '^foo': 'i' }}</p> <!-- Output: 'FOO' -->
+<p>{% raw %}{{'foo 42' | match: '[\\d]+$': 'g' }}{% endraw %}</p> <!-- Output: '42' -->
+<p>{% raw %}{{'42 foo' | match: '[\\d]+$': 'g' }}{% endraw %}</p> <!-- Output: null -->
+<p>{% raw %}{{'FOO' | match: '^foo': 'i' }}{% endraw %}</p> <!-- Output: 'FOO' -->
 ```
 
 ## Array
@@ -515,9 +515,9 @@ this.predicate = (value: any, index: number, array: any[]): boolean => {
 ```
 
 ```html
-<p>{{ itemsOne | every: predicate }}</p> <!-- Output: "true" -->
-<p>{{ itemsTwo | every: predicate }}</p> <!-- Output: "false" -->
-<p>{{ itemsThree | every: predicate }}</p> <!-- Output: "false" -->
+<p>{% raw %}{{ itemsOne | every: predicate }}{% endraw %}</p> <!-- Output: "true" -->
+<p>{% raw %}{{ itemsTwo | every: predicate }}{% endraw %}</p> <!-- Output: "false" -->
+<p>{% raw %}{{ itemsThree | every: predicate }}{% endraw %}</p> <!-- Output: "false" -->
 ```
 
 ### some
@@ -536,9 +536,9 @@ this.predicate = (value: any, index: number, array: any[]): boolean => {
 ```
 
 ```html
-<p>{{ itemsOne | some: predicate }}</p> <!-- Output: "true" -->
-<p>{{ itemsTwo | some: predicate }}</p> <!-- Output: "true" -->
-<p>{{ itemsThree | some: predicate }}</p> <!-- Output: "false" -->
+<p>{% raw %}{{ itemsOne | some: predicate }}{% endraw %}</p> <!-- Output: "true" -->
+<p>{% raw %}{{ itemsTwo | some: predicate }}{% endraw %}</p> <!-- Output: "true" -->
+<p>{% raw %}{{ itemsThree | some: predicate }}{% endraw %}</p> <!-- Output: "false" -->
 ```
 
 ### sample
@@ -548,8 +548,8 @@ Returns sample items randomly from array
 API: `array | sample: [amount | default = 1]`
 
 ```html
-<p>{{ [1, 2, 3, 4] | sample }}</p> <!-- Output: "[2]" -->
-<p>{{ [1, 2, 3, 4] | sample: 2 }}</p> <!-- Output: "[4, 3]" -->
+<p>{% raw %}{{ [1, 2, 3, 4] | sample }}{% endraw %}</p> <!-- Output: "[2]" -->
+<p>{% raw %}{{ [1, 2, 3, 4] | sample: 2 }}{% endraw %}</p> <!-- Output: "[4, 3]" -->
 ```
 
 ### groupBy
@@ -563,7 +563,7 @@ this.arrayObject = [{elm: 'foo', value: 0}, {elm: 'bar', value: 1}, {elm: 'foo',
 ```
 
 ```html
-<p>{{ arrayObject | groupBy: 'elm' }}</p> <!-- Output: "{foo: [{elm: 'foo', value: 0}, {elm: 'foo', value: 2}], bar: [{elm: 'bar', value: 1}]}" -->
+<p>{% raw %}{{ arrayObject | groupBy: 'elm' }}{% endraw %}</p> <!-- Output: "{foo: [{elm: 'foo', value: 0}, {elm: 'foo', value: 2}], bar: [{elm: 'bar', value: 1}]}" -->
 ```
 
 ## Object
@@ -575,7 +575,7 @@ Returns array of object keys
 API: `object | keys`
 
 ```html
-<p>{{ {foo: 1, bar: 2} | keys }}</p> <!-- Output: "['foo', 'bar']" -->
+<p>{% raw %}{{ {foo: 1, bar: 2} | keys }}{% endraw %}</p> <!-- Output: "['foo', 'bar']" -->
 ```
 
 ### values
@@ -585,7 +585,7 @@ Returns array of object values
 API: `object | values`
 
 ```html
-<p>{{ {foo: 1, bar: 2} | values }}</p> <!-- Output: "[1, 2]" -->
+<p>{% raw %}{{ {foo: 1, bar: 2} | values }}{% endraw %}</p> <!-- Output: "[1, 2]" -->
 ```
 
 ### pairs
@@ -595,8 +595,8 @@ Returns array of an object key value pairs
 API: `object | pairs`
 
 ```html
-<p>{{ {foo: 1, bar: 2} | pairs }}</p> <!-- Output: "[['foo', 1], ['bar', 2]]" -->
-<p>{{ {foo: [1, 2], bar: [3, 4]} | pairs }}</p> <!-- Output: "[['foo', [1, 2]], ['bar', [3, 4]]]" -->
+<p>{% raw %}{{ {foo: 1, bar: 2} | pairs }}{% endraw %}</p> <!-- Output: "[['foo', 1], ['bar', 2]]" -->
+<p>{% raw %}{{ {foo: [1, 2], bar: [3, 4]} | pairs }}{% endraw %}</p> <!-- Output: "[['foo', [1, 2]], ['bar', [3, 4]]]" -->
 ```
 
 ### pick
@@ -606,8 +606,8 @@ Returns object with picked keys from object
 API: `object | pick: [key | string]]`
 
 ```html
-<p>{{ {foo: 1, bar: 2} | pick: 'foo' }}</p> <!-- Output: "{foo: 1}" -->
-<p>{{ {foo: 1, bar: 2} | pick: 'foo': 'bar' }}</p> <!-- Output: "{foo: 1, bar: 2}" -->
+<p>{% raw %}{{ {foo: 1, bar: 2} | pick: 'foo' }}{% endraw %}</p> <!-- Output: "{foo: 1}" -->
+<p>{% raw %}{{ {foo: 1, bar: 2} | pick: 'foo': 'bar' }}{% endraw %}</p> <!-- Output: "{foo: 1, bar: 2}" -->
 ```
 
 ### omit
@@ -617,8 +617,8 @@ Returns object after omitting keys from object (opposite of pick)
 API: `object | omit: [key | string]]`
 
 ```html
-<p>{{ {foo: 1, bar: 2} | omit: 'foo' }}</p> <!-- Output: "{bar: 2}" -->
-<p>{{ {foo: 1, bar: 2} | omit: 'foo': 'bar' }}</p> <!-- Output: "{}" -->
+<p>{% raw %}{{ {foo: 1, bar: 2} | omit: 'foo' }}{% endraw %}</p> <!-- Output: "{bar: 2}" -->
+<p>{% raw %}{{ {foo: 1, bar: 2} | omit: 'foo': 'bar' }}{% endraw %}</p> <!-- Output: "{}" -->
 ```
 
 ### invert
@@ -628,7 +628,7 @@ Returns object with inverted keys and values. in case of equal values, subsequen
 API: `object | invert`
 
 ```html
-<p>{{ {foo: 1, bar: 2} | invert }}</p> <!-- Output: "{1: 'foo', 2: 'bar'}" -->
+<p>{% raw %}{{ {foo: 1, bar: 2} | invert }}{% endraw %}</p> <!-- Output: "{1: 'foo', 2: 'bar'}" -->
 ```
 
 ### invertBy
@@ -644,9 +644,9 @@ this.cb = (value): string => {
 ```
 
 ```html
-<p>{{ {foo: 1, bar: 2} | invertBy }}</p> <!-- Output: "{1: ['foo'], 2: ['bar']}" -->
-<p>{{ {foo: 1, bar: 2} | invertBy: cb }}</p> <!-- Output: "{name_1: ['foo'], name_2: ['bar']}" -->
-<p>{{ {a: 1, b: 2, c: 1, d: 2} | invertBy }}</p> <!-- Output: "{1: ['a', 'c'], 2: ['b', 'd']}" -->
+<p>{% raw %}{{ {foo: 1, bar: 2} | invertBy }}{% endraw %}</p> <!-- Output: "{1: ['foo'], 2: ['bar']}" -->
+<p>{% raw %}{{ {foo: 1, bar: 2} | invertBy: cb }}{% endraw %}</p> <!-- Output: "{name_1: ['foo'], name_2: ['bar']}" -->
+<p>{% raw %}{{ {a: 1, b: 2, c: 1, d: 2} | invertBy }}{% endraw %}</p> <!-- Output: "{1: ['a', 'c'], 2: ['b', 'd']}" -->
 ```
 
 ## Math
@@ -658,7 +658,7 @@ Returns the minimum of a given array
 API: `array | min`
 
 ```html
-<p>{{ [1, 2, 3, 1, 2, 3] | min }}</p> <!-- Output: "1" -->
+<p>{% raw %}{{ [1, 2, 3, 1, 2, 3] | min }}{% endraw %}</p> <!-- Output: "1" -->
 ```
 
 ### max
@@ -668,7 +668,7 @@ Returns the maximum of a given array
 API: `array | max`
 
 ```html
-<p>{{ [1, 2, 3, 1, 2, 3] | max }}</p> <!-- Output: "3" -->
+<p>{% raw %}{{ [1, 2, 3, 1, 2, 3] | max }}{% endraw %}</p> <!-- Output: "3" -->
 ```
 
 ### sum
@@ -678,7 +678,7 @@ Returns the sum of a given array
 API: `array | sum`
 
 ```html
-<p>{{ [1, 2, 3, 4] | sum }}</p> <!-- Output: "10" -->
+<p>{% raw %}{{ [1, 2, 3, 4] | sum }}{% endraw %}</p> <!-- Output: "10" -->
 ```
 
 ### percentage
@@ -688,9 +688,9 @@ Returns percentage between numbers
 API: `number | percentage: [total | default = 100]: [floor | default = false]`
 
 ```html
-<p>{{ 5 | percentage }}</p> <!-- Output: "5" -->
-<p>{{ 5 | percentage: 160 }}</p> <!-- Output: "3.125" -->
-<p>{{ 5 | percentage: 160: true }}</p> <!-- Output: "3" -->
+<p>{% raw %}{{ 5 | percentage }}{% endraw %}</p> <!-- Output: "5" -->
+<p>{% raw %}{{ 5 | percentage: 160 }}{% endraw %}</p> <!-- Output: "3.125" -->
+<p>{% raw %}{{ 5 | percentage: 160: true }}{% endraw %}</p> <!-- Output: "3" -->
 ```
 
 ### ceil
@@ -700,8 +700,8 @@ Returns ceil of a number by precision
 API: `number | ceil: [precision | default = 0]`
 
 ```html
-<p>{{ 42.123 | ceil }}</p> <!-- Output: "43" -->
-<p>{{ 42.123 | ceil: 2 }}</p> <!-- Output: "42.13" -->
+<p>{% raw %}{{ 42.123 | ceil }}{% endraw %}</p> <!-- Output: "43" -->
+<p>{% raw %}{{ 42.123 | ceil: 2 }}{% endraw %}</p> <!-- Output: "42.13" -->
 ```
 
 ### floor
@@ -711,8 +711,8 @@ Returns floor of a number by precision
 API: `number | floor: [precision | default = 0]`
 
 ```html
-<p>{{ 42.123 | floor }}</p> <!-- Output: "42" -->
-<p>{{ 42.123 | floor: 2 }}</p> <!-- Output: "42.12" -->
+<p>{% raw %}{{ 42.123 | floor }}{% endraw %}</p> <!-- Output: "42" -->
+<p>{% raw %}{{ 42.123 | floor: 2 }}{% endraw %}</p> <!-- Output: "42.12" -->
 ```
 
 ### round
@@ -722,9 +722,9 @@ Returns round of a number by precision
 API: `number | round: [precision | default = 0]`
 
 ```html
-<p>{{ 42.4 | round }}</p> <!-- Output: "42" -->
-<p>{{ 42.5 | round }}</p> <!-- Output: "43" -->
-<p>{{ 42.123 | round: 2 }}</p> <!-- Output: "42.12" -->
+<p>{% raw %}{{ 42.4 | round }}{% endraw %}</p> <!-- Output: "42" -->
+<p>{% raw %}{{ 42.5 | round }}{% endraw %}</p> <!-- Output: "43" -->
+<p>{% raw %}{{ 42.123 | round: 2 }}{% endraw %}</p> <!-- Output: "42.12" -->
 ```
 
 ### sqrt
@@ -734,7 +734,7 @@ Returns the square root of a number
 API: `number | sqrt`
 
 ```html
-<p>{{ 9 | sqrt }}</p> <!-- Output: "3" -->
+<p>{% raw %}{{ 9 | sqrt }}{% endraw %}</p> <!-- Output: "3" -->
 ```
 
 ### pow
@@ -744,8 +744,8 @@ Returns the power of a number
 API: `number | pow: [power | default = 2]`
 
 ```html
-<p>{{ 3 | pow }}</p> <!-- Output: "9" -->
-<p>{{ 3 | pow: 3 }}</p> <!-- Output: "27" -->
+<p>{% raw %}{{ 3 | pow }}{% endraw %}</p> <!-- Output: "9" -->
+<p>{% raw %}{{ 3 | pow: 3 }}{% endraw %}</p> <!-- Output: "27" -->
 ```
 
 ### degrees
@@ -755,7 +755,7 @@ Returns the degrees of a number in radians
 API: `number | degrees`
 
 ```html
-<p>{{ 3.141592653589793 | degrees }}</p> <!-- Output: "180" -->
+<p>{% raw %}{{ 3.141592653589793 | degrees }}{% endraw %}</p> <!-- Output: "180" -->
 ```
 
 ### radians
@@ -765,7 +765,7 @@ Returns the radians of a number in degrees
 API: `number | radians`
 
 ```html
-<p>{{ 180 | radians }}</p> <!-- Output: "3.141592653589793" -->
+<p>{% raw %}{{ 180 | radians }}{% endraw %}</p> <!-- Output: "3.141592653589793" -->
 ```
 
 ### bytes
@@ -775,10 +775,10 @@ Returns bytes with a unit symbol
 API: `number | bytes`
 
 ```html
-<p>{{ 10 | bytes }}</p> <!-- Output: "10 B" -->
-<p>{{ 1000 | bytes }}</p> <!-- Output: "1 KB" -->
-<p>{{ 1000000 | bytes }}</p> <!-- Output: "1 MB" -->
-<p>{{ 1000000000 | bytes }}</p> <!-- Output: "1 GB" -->
+<p>{% raw %}{{ 10 | bytes }}{% endraw %}</p> <!-- Output: "10 B" -->
+<p>{% raw %}{{ 1000 | bytes }}{% endraw %}</p> <!-- Output: "1 KB" -->
+<p>{% raw %}{{ 1000000 | bytes }}{% endraw %}</p> <!-- Output: "1 MB" -->
+<p>{% raw %}{{ 1000000000 | bytes }}{% endraw %}</p> <!-- Output: "1 GB" -->
 ```
 
 ## Boolean
@@ -788,8 +788,8 @@ API: `number | bytes`
 API: `any | isNull`
 
 ```html
-<p>{{ null | isNull }}</p> <!-- Output: "true" -->
-<p>{{ 1 | isNull }}</p> <!-- Output: "false" -->
+<p>{% raw %}{{ null | isNull }}{% endraw %}</p> <!-- Output: "true" -->
+<p>{% raw %}{{ 1 | isNull }}{% endraw %}</p> <!-- Output: "false" -->
 ```
 
 ### isDefined
@@ -797,8 +797,8 @@ API: `any | isNull`
 API: `any | isDefined`
 
 ```html
-<p>{{ 1 | isDefined }}</p> <!-- Output: "true" -->
-<p>{{ undefined | isDefined }}</p> <!-- Output: "false" -->
+<p>{% raw %}{{ 1 | isDefined }}{% endraw %}</p> <!-- Output: "true" -->
+<p>{% raw %}{{ undefined | isDefined }}{% endraw %}</p> <!-- Output: "false" -->
 ```
 
 ### isUndefined
@@ -806,8 +806,8 @@ API: `any | isDefined`
 API: `any | isUndefined`
 
 ```html
-<p>{{ 1 | isUndefined }}</p> <!-- Output: "false" -->
-<p>{{ undefined | isUndefined }}</p> <!-- Output: "true" -->
+<p>{% raw %}{{ 1 | isUndefined }}{% endraw %}</p> <!-- Output: "false" -->
+<p>{% raw %}{{ undefined | isUndefined }}{% endraw %}</p> <!-- Output: "true" -->
 ```
 
 
@@ -816,8 +816,8 @@ API: `any | isUndefined`
 API: `any | isString`
 
 ```html
-<p>{{ 1 | isString }}</p> <!-- Output: "false" -->
-<p>{{ '' | isString }}</p> <!-- Output: "true" -->
+<p>{% raw %}{{ 1 | isString }}{% endraw %}</p> <!-- Output: "false" -->
+<p>{% raw %}{{ '' | isString }}{% endraw %}</p> <!-- Output: "true" -->
 ```
 
 ### isNumber
@@ -830,8 +830,8 @@ this.num = 1;
 ```
 
 ```html
-<p>{{ num | isNumber }}</p> <!-- Output: "true" -->
-<p>{{ func | isNumber }}</p> <!-- Output: "false" -->
+<p>{% raw %}{{ num | isNumber }}{% endraw %}</p> <!-- Output: "true" -->
+<p>{% raw %}{{ func | isNumber }}{% endraw %}</p> <!-- Output: "false" -->
 ```
 
 ### isArray
@@ -844,8 +844,8 @@ this.num = 1;
 ```
 
 ```html
-<p>{{ num | isArray }}</p> <!-- Output: "false" -->
-<p>{{ arr | isArray }}</p> <!-- Output: "true" -->
+<p>{% raw %}{{ num | isArray }}{% endraw %}</p> <!-- Output: "false" -->
+<p>{% raw %}{{ arr | isArray }}{% endraw %}</p> <!-- Output: "true" -->
 ```
 
 ### isObject
@@ -858,8 +858,8 @@ this.num = 1;
 ```
 
 ```html
-<p>{{ num | isObject }}</p> <!-- Output: "false" -->
-<p>{{ obj | isObject }}</p> <!-- Output: "true" -->
+<p>{% raw %}{{ num | isObject }}{% endraw %}</p> <!-- Output: "false" -->
+<p>{% raw %}{{ obj | isObject }}{% endraw %}</p> <!-- Output: "true" -->
 ```
 
 ### isGreaterThan
@@ -867,9 +867,9 @@ this.num = 1;
 API: `number | isGreaterThan: otherNumber`
 
 ```html
-<p>{{ 1 | isGreaterThan: 1 }}</p> <!-- Output: "false" -->
-<p>{{ 1 | isGreaterThan: 2 }}</p> <!-- Output: "false" -->
-<p>{{ 2 | isGreaterThan: 1 }}</p> <!-- Output: "true" -->
+<p>{% raw %}{{ 1 | isGreaterThan: 1 }}{% endraw %}</p> <!-- Output: "false" -->
+<p>{% raw %}{{ 1 | isGreaterThan: 2 }}{% endraw %}</p> <!-- Output: "false" -->
+<p>{% raw %}{{ 2 | isGreaterThan: 1 }}{% endraw %}</p> <!-- Output: "true" -->
 ```
 
 ### isGreaterEqualThan
@@ -877,9 +877,9 @@ API: `number | isGreaterThan: otherNumber`
 API: `number | isGreaterEqualThan: otherNumber`
 
 ```html
-<p>{{ 1 | isGreaterEqualThan: 1 }}</p> <!-- Output: "true" -->
-<p>{{ 1 | isGreaterEqualThan: 2 }}</p> <!-- Output: "false" -->
-<p>{{ 2 | isGreaterEqualThan: 1 }}</p> <!-- Output: "true" -->
+<p>{% raw %}{{ 1 | isGreaterEqualThan: 1 }}{% endraw %}</p> <!-- Output: "true" -->
+<p>{% raw %}{{ 1 | isGreaterEqualThan: 2 }}{% endraw %}</p> <!-- Output: "false" -->
+<p>{% raw %}{{ 2 | isGreaterEqualThan: 1 }}{% endraw %}</p> <!-- Output: "true" -->
 ```
 
 ### isLessThan
@@ -887,9 +887,9 @@ API: `number | isGreaterEqualThan: otherNumber`
 API: `number | isLessThan: otherNumber`
 
 ```html
-<p>{{ 1 | isLessThan: 1 }}</p> <!-- Output: "false" -->
-<p>{{ 1 | isLessThan: 2 }}</p> <!-- Output: "true" -->
-<p>{{ 2 | isLessThan: 1 }}</p> <!-- Output: "false" -->
+<p>{% raw %}{{ 1 | isLessThan: 1 }}{% endraw %}</p> <!-- Output: "false" -->
+<p>{% raw %}{{ 1 | isLessThan: 2 }}{% endraw %}</p> <!-- Output: "true" -->
+<p>{% raw %}{{ 2 | isLessThan: 1 }}{% endraw %}</p> <!-- Output: "false" -->
 ```
 
 ### isLessEqualThan
@@ -897,9 +897,9 @@ API: `number | isLessThan: otherNumber`
 API: `number | isLessEqualThan: otherNumber`
 
 ```html
-<p>{{ 1 | isLessEqualThan: 1 }}</p> <!-- Output: "true" -->
-<p>{{ 1 | isLessEqualThan: 2 }}</p> <!-- Output: "true" -->
-<p>{{ 2 | isLessEqualThan: 1 }}</p> <!-- Output: "false" -->
+<p>{% raw %}{{ 1 | isLessEqualThan: 1 }}{% endraw %}</p> <!-- Output: "true" -->
+<p>{% raw %}{{ 1 | isLessEqualThan: 2 }}{% endraw %}</p> <!-- Output: "true" -->
+<p>{% raw %}{{ 2 | isLessEqualThan: 1 }}{% endraw %}</p> <!-- Output: "false" -->
 ```
 
 ### isEqualTo
@@ -907,10 +907,10 @@ API: `number | isLessEqualThan: otherNumber`
 API: `number | isEqualTo: otherNumber`
 
 ```html
-<p>{{ 1 | isEqualTo: 1 }}</p> <!-- Output: "true" -->
-<p>{{ 1 | isEqualTo: '1' }}</p> <!-- Output: "true" -->
-<p>{{ 1 | isEqualTo: 2 }}</p> <!-- Output: "false" -->
-<p>{{ 2 | isEqualTo: 1 }}</p> <!-- Output: "false" -->
+<p>{% raw %}{{ 1 | isEqualTo: 1 }}{% endraw %}</p> <!-- Output: "true" -->
+<p>{% raw %}{{ 1 | isEqualTo: '1' }}{% endraw %}</p> <!-- Output: "true" -->
+<p>{% raw %}{{ 1 | isEqualTo: 2 }}{% endraw %}</p> <!-- Output: "false" -->
+<p>{% raw %}{{ 2 | isEqualTo: 1 }}{% endraw %}</p> <!-- Output: "false" -->
 ```
 
 ### isNotEqualTo
@@ -918,10 +918,10 @@ API: `number | isEqualTo: otherNumber`
 API: `number | isNotEqualTo: otherNumber`
 
 ```html
-<p>{{ 1 | isNotEqualTo: 1 }}</p> <!-- Output: "false" -->
-<p>{{ 1 | isNotEqualTo: '1' }}</p> <!-- Output: "false" -->
-<p>{{ 1 | isNotEqualTo: 2 }}</p> <!-- Output: "true" -->
-<p>{{ 2 | isNotEqualTo: 1 }}</p> <!-- Output: "true" -->
+<p>{% raw %}{{ 1 | isNotEqualTo: 1 }}{% endraw %}</p> <!-- Output: "false" -->
+<p>{% raw %}{{ 1 | isNotEqualTo: '1' }}{% endraw %}</p> <!-- Output: "false" -->
+<p>{% raw %}{{ 1 | isNotEqualTo: 2 }}{% endraw %}</p> <!-- Output: "true" -->
+<p>{% raw %}{{ 2 | isNotEqualTo: 1 }}{% endraw %}</p> <!-- Output: "true" -->
 ```
 
 ### isIdenticalTo
@@ -929,10 +929,10 @@ API: `number | isNotEqualTo: otherNumber`
 API: `number | isIdenticalTo: otherNumber`
 
 ```html
-<p>{{ 1 | isIdenticalTo: 1 }}</p> <!-- Output: "true" -->
-<p>{{ 1 | isIdenticalTo: '1' }}</p> <!-- Output: "false" -->
-<p>{{ 1 | isIdenticalTo: 2 }}</p> <!-- Output: "false" -->
-<p>{{ 2 | isIdenticalTo: 1 }}</p> <!-- Output: "false" -->
+<p>{% raw %}{{ 1 | isIdenticalTo: 1 }}{% endraw %}</p> <!-- Output: "true" -->
+<p>{% raw %}{{ 1 | isIdenticalTo: '1' }}{% endraw %}</p> <!-- Output: "false" -->
+<p>{% raw %}{{ 1 | isIdenticalTo: 2 }}{% endraw %}</p> <!-- Output: "false" -->
+<p>{% raw %}{{ 2 | isIdenticalTo: 1 }}{% endraw %}</p> <!-- Output: "false" -->
 ```
 
 ### isNotIdenticalTo
@@ -940,10 +940,10 @@ API: `number | isIdenticalTo: otherNumber`
 API: `number | isNotIdenticalTo: otherNumber`
 
 ```html
-<p>{{ 1 | isNotIdenticalTo: 1 }}</p> <!-- Output: "false" -->
-<p>{{ 1 | isNotIdenticalTo: '1' }}</p> <!-- Output: "true" -->
-<p>{{ 1 | isNotIdenticalTo: 2 }}</p> <!-- Output: "true" -->
-<p>{{ 2 | isNotIdenticalTo: 1 }}</p> <!-- Output: "true" -->
+<p>{% raw %}{{ 1 | isNotIdenticalTo: 1 }}{% endraw %}</p> <!-- Output: "false" -->
+<p>{% raw %}{{ 1 | isNotIdenticalTo: '1' }}{% endraw %}</p> <!-- Output: "true" -->
+<p>{% raw %}{{ 1 | isNotIdenticalTo: 2 }}{% endraw %}</p> <!-- Output: "true" -->
+<p>{% raw %}{{ 2 | isNotIdenticalTo: 1 }}{% endraw %}</p> <!-- Output: "true" -->
 ```
 
 ## Contributing
