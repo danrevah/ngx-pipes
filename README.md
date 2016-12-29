@@ -25,6 +25,8 @@
     - [underscore](#underscore)
     - [test](#test)
     - [match](#match)
+    - [lpad](#lpad)
+    - [rpad](#rpad)
  - [Array](#Array)   
     - [diff](#diff)
     - [flatten](#flatten)
@@ -262,7 +264,7 @@ API: `string | latinise`
 
 ### lines
 
-Removes accents from Latin characters.
+Converts a string with new lines into an array of each line.
 
 API: `string | lines`
 
@@ -303,6 +305,30 @@ API: `string | match: {RegExp}: {Flags}`
 <p>{{'foo 42' | match: '[\\d]+$': 'g' }}</p> <!-- Output: '42' -->
 <p>{{'42 foo' | match: '[\\d]+$': 'g' }}</p> <!-- Output: null -->
 <p>{{'FOO' | match: '^foo': 'i' }}</p> <!-- Output: 'FOO' -->
+```
+
+### lpad
+
+Left pad a string to a given length using a given pad character (default is a space)
+
+
+API: `string | lpad: length: [padCharacter:string|optional]`
+
+```html
+<p>{{'foo' | lpad: 5}}</p> <!-- Output: "  foo" -->
+<!-- Cast a number to string in order to left pad it with zeros -->
+<p>{{String(3) | lpad: 5: '0'}}</p> <!-- Output: "00003" -->
+```
+
+### rpad
+
+Right pad a string to a given length using a given pad character  (default is a space)
+
+
+API: `string | rpad: length: [padCharacter:string|optional]`
+
+```html
+<p>{{'Foo' | rpad: 5: '#'}}</p> <!-- Output: "Foo##" -->
 ```
 
 ## Array
