@@ -1,6 +1,6 @@
 {
   "name": "ng2-pipes",
-  "version": "0.5.4",
+  "version": "1.0.0",
   "author": "Dan Revah",
   "description": "Useful angular2 pipes",
   "license": "MIT",
@@ -27,7 +27,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/danrevah/ng2-pipes.git"
+    "url": "https://github.com/danrevah/ng-pipes.git"
   },
   "devDependencies": {
     "@angular/common": "^2.1.0",
