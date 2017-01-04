@@ -1,7 +1,7 @@
 # ngx-pipes  
 [![npm](https://img.shields.io/npm/v/ngx-pipes.svg?style=flat-square)](https://www.npmjs.com/package/ngx-pipes) [![Travis](https://img.shields.io/travis/danrevah/ngx-pipes.svg?style=flat-square)](https://travis-ci.org/danrevah/ngx-pipes) [![Coveralls](https://img.shields.io/coveralls/danrevah/ngx-pipes.svg?style=flat-square)](https://coveralls.io/github/danrevah/ngx-pipes?branch=master) [![npm](https://img.shields.io/npm/dt/ng2-pipes.svg?style=flat-square)](https://www.npmjs.com/package/ng2-pipes) [![license](https://img.shields.io/github/license/mashape/apistatus.svg?style=flat-square)](https://github.com/danrevah/ng-pipes/blob/master/LICENSE.md)
 
-> Useful pipes for Angular 2+ with no external dependencies!
+> Useful pipes for Angular 2 and beyond with no external dependencies!
 
 ## Table of contents
 
@@ -94,7 +94,7 @@
 2. You could either add into your module `imports` the `NgPipesModule` in order to add all of the pipes, Or add a specific module such as `NgArrayPipesModule`, `NgObjectPipesModule`, `NgStringPipesModule`, `NgMathPipesModule` or `NgBooleanPipesModule`.
 
   ```typescript
-  import {NgPipesModule} from 'ng2-pipes';
+  import {NgPipesModule} from 'ngx-pipes';
   
   @NgModule({
    // ...
@@ -108,7 +108,7 @@
 3. Pipes are also injectable and can be used in Components / Services / etc..
 
   ```typescript  
-  import {ReversePipe} from 'ng2-pipes/src/app/pipes/array/reverse';
+  import {ReversePipe} from 'ngx-pipes/src/app/pipes/array/reverse';
 
   @Component({
     // ..
