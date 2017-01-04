@@ -1,5 +1,5 @@
 # Angular Pipes  
-[![npm](https://img.shields.io/npm/v/ng2-pipes.svg?style=flat-square)](https://www.npmjs.com/package/ng2-pipes) [![Travis](https://img.shields.io/travis/danrevah/ng-pipes.svg?style=flat-square)](https://travis-ci.org/danrevah/ng-pipes) [![Coveralls](https://img.shields.io/coveralls/danrevah/ng-pipes.svg?style=flat-square)](https://coveralls.io/github/danrevah/ng-pipes?branch=master) [![npm](https://img.shields.io/npm/dt/ng2-pipes.svg?style=flat-square)](https://www.npmjs.com/package/ng2-pipes) [![license](https://img.shields.io/github/license/mashape/apistatus.svg?style=flat-square)](https://github.com/danrevah/ng-pipes/blob/master/LICENSE.md)
+[![npm](https://img.shields.io/npm/v/ngx-pipes.svg?style=flat-square)](https://www.npmjs.com/package/ngx-pipes) [![Travis](https://img.shields.io/travis/danrevah/ngx-pipes.svg?style=flat-square)](https://travis-ci.org/danrevah/ngx-pipes) [![Coveralls](https://img.shields.io/coveralls/danrevah/ngx-pipes.svg?style=flat-square)](https://coveralls.io/github/danrevah/ngx-pipes?branch=master) [![npm](https://img.shields.io/npm/dt/ng2-pipes.svg?style=flat-square)](https://www.npmjs.com/package/ng2-pipes) [![license](https://img.shields.io/github/license/mashape/apistatus.svg?style=flat-square)](https://github.com/danrevah/ng-pipes/blob/master/LICENSE.md)
 
 > Useful pipes for Angular 2+ with no external dependencies!
 
@@ -88,7 +88,7 @@
 1. Use npm to install the package
 
   ```terminal
-  $ npm install ng2-pipes --save 
+  $ npm install ngx-pipes --save 
   ```
 
 2. You could either add into your module `imports` the `NgPipesModule` in order to add all of the pipes, Or add a specific module such as `NgArrayPipesModule`, `NgObjectPipesModule`, `NgStringPipesModule`, `NgMathPipesModule` or `NgBooleanPipesModule`.
