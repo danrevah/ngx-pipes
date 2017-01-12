@@ -606,15 +606,15 @@ this.users = [
 ```
 
 ```html
-// Returns users with `id` of 1
+<!-- Returns users with `id` of 1 -->
 <p>{{ users | filterBy: ['id']: 1 }}</p> 
 <!-- Output: "[{id: 1, first_name: 'John', last_name: 'Doe', work: { company: 'Foo Tech', previous_company: '' }}]" -->
 
-// filterBy also support nested properties
+<!-- filterBy also support nested properties -->
 <p>{{ users | filterBy: ['work.company']: 'Bar Tech' }}</p> 
 <!-- Output: "[{ "id": 3, "first_name": "Bruce", "last_name": "John", "work": { "company": "Bar Tech", "previous_company": "" } }]" -->
 
-// Return users whose first name or last name is 'John'.
+<!-- Return users whose first name or last name is 'John'. -->
 <p>{{ users | filterBy: ['first_name', 'last_name']: 'John' }}</p>
 <!-- Output: "[{id: 1, first_name: 'John', last_name: 'Doe', work: { company: 'Foo Tech', previous_company: '' }}]" -->
 ```
