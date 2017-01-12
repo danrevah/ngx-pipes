@@ -44,6 +44,7 @@
     - [some](#some)
     - [sample](#sample)
     - [groupBy](#groupby)
+    - [filterBy](#filterby)
  - [Object](#object)
     - [keys](#keys)
     - [values](#values)
@@ -132,7 +133,7 @@
 
 Repeats a string n times
 
-API: `string | repeat: times: [separator|optional]`
+**Usage:** `string | repeat: times: [separator|optional]`
 
 ```html
 <p>{{ 'example' | repeat: 3: '@' }}</p> <!-- Output: "example@example@example" -->
@@ -142,7 +143,7 @@ API: `string | repeat: times: [separator|optional]`
 
 Scans string and replace `{i}` placeholders by equivalent member of the array
 
-API: `string | scan: [ARRAY]`
+**Usage:** `string | scan: [ARRAY]`
 
 ```html
 <p>{{'Hey {0}, {1}' | scan: ['foo', 'bar']}}</p> <!-- Output: "Hey foo, bar" -->
@@ -152,8 +153,7 @@ API: `string | scan: [ARRAY]`
 
 Shortening a string by length and providing a custom string to denote an omission
 
-
-API: `string | shorten: length: [suffix|optional]: [wordBreak boolean|optional]`
+**Usage:** `string | shorten: length: [suffix|optional]: [wordBreak boolean|optional]`
 
 ```html
 <p>{{'Hey foo bar' | shorten: 3: '...'}}</p> <!-- Output: "Hey..." -->
@@ -163,7 +163,7 @@ API: `string | shorten: length: [suffix|optional]: [wordBreak boolean|optional]`
 
 Strips a HTML tags from string and providing which tags should not be removed
 
-API: `string | stripTags: [ARRAY]`
+**Usage:** `string | stripTags: [ARRAY]`
 
 ```html
 <p>{{'<a href="">foo</a> <p class="foo">bar</p>' | stripTags }}</p> <!-- Output: "foo bar" -->
@@ -190,7 +190,7 @@ Uppercase first letter every word
 
 Strips characters from the beginning and end of a string (default character is space).
 
-API: `string | trim: [characters|optional]`
+**Usage:** `string | trim: [characters|optional]`
 
 ```html
 <p>{{'  foo  ' | trim }}</p> <!-- Output: "foo" -->
@@ -201,7 +201,7 @@ API: `string | trim: [characters|optional]`
 
 Strips characters from the beginning of a string (default character is space).
 
-API: `string | ltrim: [characters|optional]`
+**Usage:** `string | ltrim: [characters|optional]`
 
 ```html
 <p>{{'  foo  ' | ltrim }}</p> <!-- Output: "foo  " -->
@@ -212,7 +212,7 @@ API: `string | ltrim: [characters|optional]`
 
 Strips characters from the end of a string (default character is space).
 
-API: `string | rtrim: [characters|optional]`
+**Usage:** `string | rtrim: [characters|optional]`
 
 ```html
 <p>{{'  foo  ' | rtrim }}</p> <!-- Output: "  foo" -->
@@ -223,7 +223,7 @@ API: `string | rtrim: [characters|optional]`
 
 Reverses a string
 
-API: `string | reverse`
+**Usage:** `string | reverse`
 
 ```html
 <p>{{'foo bar' | reverse }}</p> <!-- Output: "rab oof" -->
@@ -233,7 +233,7 @@ API: `string | reverse`
 
 Slugify a string (lower case and add dash between words).
 
-API: `string | slugify`
+**Usage:** `string | slugify`
 
 ```html
 <p>{{'Foo Bar' | slugify }}</p> <!-- Output: "foo-bar" -->
@@ -244,7 +244,7 @@ API: `string | slugify`
 
 Camelize a string replaces dashes and underscores and converts to camelCase string.
 
-API: `string | camelize`
+**Usage:** `string | camelize`
 
 ```html
 <p>{{'foo_bar' | camelize }}</p> <!-- Output: "fooBar" -->
@@ -256,7 +256,7 @@ API: `string | camelize`
 
 Removes accents from Latin characters.
 
-API: `string | latinise`
+**Usage:** `string | latinise`
 
 ```html
 <p>{{'Féé' | latinise }}</p> <!-- Output: "Fee" -->
@@ -267,7 +267,7 @@ API: `string | latinise`
 
 Converts a string with new lines into an array of each line.
 
-API: `string | lines`
+**Usage:** `string | lines`
 
 ```html
 <p>{{'Some\nSentence with\r\nNew line' | lines }}</p> <!-- Output: "['Some', 'Sentence with', 'New line']" -->
@@ -277,7 +277,7 @@ API: `string | lines`
 
 Converts camelCase string to underscore.
 
-API: `string | underscore`
+**Usage:** `string | underscore`
 
 ```html
 <p>{{'angularIsAwesome' | underscore }}</p> <!-- Output: "angular_is_awesome" -->
@@ -288,7 +288,7 @@ API: `string | underscore`
 
 Tests if a string matches a pattern.
 
-API: `string | test: {RegExp}: {Flags}`
+**Usage:** `string | test: {RegExp}: {Flags}`
 
 ```html
 <p>{{'foo 42' | test: '[\\d]+$': 'g' }}</p> <!-- Output: true -->
@@ -300,7 +300,7 @@ API: `string | test: {RegExp}: {Flags}`
 
 Returns array of matched elements in string.
 
-API: `string | match: {RegExp}: {Flags}`
+**Usage:** `string | match: {RegExp}: {Flags}`
 
 ```html
 <p>{{'foo 42' | match: '[\\d]+$': 'g' }}</p> <!-- Output: '42' -->
@@ -313,7 +313,7 @@ API: `string | match: {RegExp}: {Flags}`
 Left pad a string to a given length using a given pad character (default is a space)
 
 
-API: `string | lpad: length: [padCharacter:string|optional]`
+**Usage:** `string | lpad: length: [padCharacter:string|optional]`
 
 ```html
 <p>{{'foo' | lpad: 5}}</p> <!-- Output: "  foo" -->
@@ -326,7 +326,7 @@ API: `string | lpad: length: [padCharacter:string|optional]`
 Right pad a string to a given length using a given pad character  (default is a space)
 
 
-API: `string | rpad: length: [padCharacter:string|optional]`
+**Usage:** `string | rpad: length: [padCharacter:string|optional]`
 
 ```html
 <p>{{'Foo' | rpad: 5: '#'}}</p> <!-- Output: "Foo##" -->
@@ -338,7 +338,7 @@ API: `string | rpad: length: [padCharacter:string|optional]`
 
 Returns array of diff between arrays 
 
-API: `array | diff: [ARRAY]: [ARRAY]: ... : [ARRAY]`
+**Usage:** `array | diff: [ARRAY]: [ARRAY]: ... : [ARRAY]`
 
 ```typescript
 this.items = [1, 2, 3, 4];
@@ -352,7 +352,7 @@ this.items = [1, 2, 3, 4];
 
 Flattens nested array, passing shallow will mean it will only be flattened a single level
 
-API: `array | flatten: [shallow|optional]`
+**Usage:** `array | flatten: [shallow|optional]`
 
 ```typescript
 this.items = [1,2,3,[4,5,6,[7,8,9],[10,11,12,13,[14],[15],[16, [17]]]]];
@@ -367,7 +367,7 @@ this.items = [1,2,3,[4,5,6,[7,8,9],[10,11,12,13,[14],[15],[16, [17]]]]];
 
 Slicing off the end of the array by n elements
 
-API: `array | initial: n`
+**Usage:** `array | initial: n`
 
 ```typescript
 this.items = [first, second, third];
@@ -381,7 +381,7 @@ this.items = [first, second, third];
 
 Slicing off the start of the array by n elements
 
-API: `array | tail: n`
+**Usage:** `array | tail: n`
 
 ```typescript
 this.items = [first, second, third];
@@ -395,7 +395,7 @@ this.items = [first, second, third];
 
 Returns the intersections of an arrays
 
-API: `array | intersection: [ARRAY]: [ARRAY]: ... : [ARRAY]`
+**Usage:** `array | intersection: [ARRAY]: [ARRAY]: ... : [ARRAY]`
 
 ```typescript
 this.items = [1, 2, 3, 4, 5];
@@ -409,7 +409,7 @@ this.items = [1, 2, 3, 4, 5];
 
 Reverses an array
 
-API: `array | reverse`
+**Usage:** `array | reverse`
 
 ```typescript
 this.items = [1, 2, 3];
@@ -423,7 +423,7 @@ this.items = [1, 2, 3];
 
 Removes un-truthy values from array
 
-API: `array | truthify`
+**Usage:** `array | truthify`
 
 ```typescript
 this.items = [null, 1, false, undefined, 2, 0, 3, NaN, 4, ''];
@@ -437,7 +437,7 @@ this.items = [null, 1, false, undefined, 2, 0, 3, NaN, 4, ''];
 
 Removes un-truthy values from array
 
-API: `array | union: [ARRAY]`
+**Usage:** `array | union: [ARRAY]`
 
 ```typescript
 this.items = [1, 2, 3];
@@ -451,7 +451,7 @@ this.items = [1, 2, 3];
 
 Removes duplicates from array
 
-API: `array | unique`
+**Usage:** `array | unique`
 
 ```typescript
 this.items = [1, 2, 3, 1, 2, 3];
@@ -465,7 +465,7 @@ this.items = [1, 2, 3, 1, 2, 3];
 
 Returns array without specific elements
 
-API: `array | without: [ARRAY]`
+**Usage:** `array | without: [ARRAY]`
 
 ```typescript
 this.items = [1, 2, 3, 1, 2, 3];
@@ -479,7 +479,7 @@ this.items = [1, 2, 3, 1, 2, 3];
 
 Returns array of properties values
 
-API: `array | pluck: propertyName`
+**Usage:** `array | pluck: propertyName`
 
 ```typescript
 this.items = [
@@ -513,7 +513,7 @@ this.items = [
 
 Returns randomly shuffled array
 
-API: `array | shuffle`
+**Usage:** `array | shuffle`
 
 ```typescript
 this.items = [1, 2, 3, 4, 5, 6];
@@ -527,7 +527,7 @@ this.items = [1, 2, 3, 4, 5, 6];
 
 Returns true if every elements of the array fits the predicate otherwise false
 
-API: `array | every: predicate`
+**Usage:** `array | every: predicate`
 
 ```typescript
 this.itemsOne = [1, 1, 1];
@@ -548,7 +548,7 @@ this.predicate = (value: any, index: number, array: any[]): boolean => {
 
 Returns true if some elements of the array fits the predicate otherwise false
 
-API: `array | some: predicate`
+**Usage:** `array | some: predicate`
 
 ```typescript
 this.itemsOne = [1, 1, 1];
@@ -569,7 +569,7 @@ this.predicate = (value: any, index: number, array: any[]): boolean => {
 
 Returns sample items randomly from array
 
-API: `array | sample: [amount | default = 1]`
+**Usage:** `array | sample: [amount | default = 1]`
 
 ```html
 <p>{{ [1, 2, 3, 4] | sample }}</p> <!-- Output: "[2]" -->
@@ -580,7 +580,7 @@ API: `array | sample: [amount | default = 1]`
 
 Returns object of grouped by items by discriminator
 
-API: `array | groupBy: [string | Function]`
+**Usage:** `array | groupBy: [string | Function]`
 
 ```typescript
 this.arrayObject = [{elm: 'foo', value: 0}, {elm: 'bar', value: 1}, {elm: 'foo', value: 2}];
@@ -590,13 +590,42 @@ this.arrayObject = [{elm: 'foo', value: 0}, {elm: 'bar', value: 1}, {elm: 'foo',
 <p>{{ arrayObject | groupBy: 'elm' }}</p> <!-- Output: "{foo: [{elm: 'foo', value: 0}, {elm: 'foo', value: 2}], bar: [{elm: 'bar', value: 1}]}" -->
 ```
 
+### filterBy
+
+Returns object of grouped by items by discriminator
+
+**Usage:** `array | filterBy: [prop, nested.prop, ...]: search: [strict | optional]`
+
+```typescript
+this.users = [
+   {id: 1, first_name: 'John', last_name: 'Doe', work: { company: 'Foo Tech' }},
+   {id: 2, first_name: 'Jane', last_name: 'West', work: { company: 'AAA Solutions' }},
+   {id: 3, first_name: 'Bruce', last_name: 'John', work: { company: 'Bar Tech' }},
+   {id: 4, first_name: 'William', last_name: 'Cent', work: { company: 'Foo Tech' }}
+];
+```
+
+```html
+// Returns users with `id` of 1
+<p>{{ users | filterBy: ['id']: 1 }}</p> 
+<!-- Output: "[{id: 1, first_name: 'John', last_name: 'Doe', work: { company: 'Foo Tech', previous_company: '' }}]" -->
+
+// filterBy also support nested properties
+<p>{{ users | filterBy: ['work.company']: 'Bar Tech' }}</p> 
+<!-- Output: "[{ "id": 3, "first_name": "Bruce", "last_name": "John", "work": { "company": "Bar Tech", "previous_company": "" } }]" -->
+
+// Return users whose first name or last name is 'John'.
+<p>{{ users | filterBy: ['first_name', 'last_name']: 'John' }}</p>
+<!-- Output: "[{id: 1, first_name: 'John', last_name: 'Doe', work: { company: 'Foo Tech', previous_company: '' }}]" -->
+```
+
 ## Object
 
 ### keys
 
 Returns array of object keys
 
-API: `object | keys`
+**Usage:** `object | keys`
 
 ```html
 <p>{{ {foo: 1, bar: 2} | keys }}</p> <!-- Output: "['foo', 'bar']" -->
@@ -606,7 +635,7 @@ API: `object | keys`
 
 Returns array of object values
 
-API: `object | values`
+**Usage:** `object | values`
 
 ```html
 <p>{{ {foo: 1, bar: 2} | values }}</p> <!-- Output: "[1, 2]" -->
@@ -616,7 +645,7 @@ API: `object | values`
 
 Returns array of an object key value pairs
 
-API: `object | pairs`
+**Usage:** `object | pairs`
 
 ```html
 <p>{{ {foo: 1, bar: 2} | pairs }}</p> <!-- Output: "[['foo', 1], ['bar', 2]]" -->
@@ -627,7 +656,7 @@ API: `object | pairs`
 
 Returns object with picked keys from object
 
-API: `object | pick: [key | string]]`
+**Usage:** `object | pick: [key | string]]`
 
 ```html
 <p>{{ {foo: 1, bar: 2} | pick: 'foo' }}</p> <!-- Output: "{foo: 1}" -->
@@ -638,7 +667,7 @@ API: `object | pick: [key | string]]`
 
 Returns object after omitting keys from object (opposite of pick)
 
-API: `object | omit: [key | string]]`
+**Usage:** `object | omit: [key | string]]`
 
 ```html
 <p>{{ {foo: 1, bar: 2} | omit: 'foo' }}</p> <!-- Output: "{bar: 2}" -->
@@ -649,7 +678,7 @@ API: `object | omit: [key | string]]`
 
 Returns object with inverted keys and values. in case of equal values, subsequent values overwrite property assignments of previous values.
 
-API: `object | invert`
+**Usage:** `object | invert`
 
 ```html
 <p>{{ {foo: 1, bar: 2} | invert }}</p> <!-- Output: "{1: 'foo', 2: 'bar'}" -->
@@ -659,7 +688,7 @@ API: `object | invert`
 
 Returns object with inverted keys and values. in case of equal values, will add to an array.
 
-API: `object | invertBy: [Function | optional]`
+**Usage:** `object | invertBy: [Function | optional]`
 
 ```typescript
 this.cb = (value): string => {
@@ -679,7 +708,7 @@ this.cb = (value): string => {
 
 Returns the minimum of a given array
 
-API: `array | min`
+**Usage:** `array | min`
 
 ```html
 <p>{{ [1, 2, 3, 1, 2, 3] | min }}</p> <!-- Output: "1" -->
@@ -689,7 +718,7 @@ API: `array | min`
 
 Returns the maximum of a given array
 
-API: `array | max`
+**Usage:** `array | max`
 
 ```html
 <p>{{ [1, 2, 3, 1, 2, 3] | max }}</p> <!-- Output: "3" -->
@@ -699,7 +728,7 @@ API: `array | max`
 
 Returns the sum of a given array
 
-API: `array | sum`
+**Usage:** `array | sum`
 
 ```html
 <p>{{ [1, 2, 3, 4] | sum }}</p> <!-- Output: "10" -->
@@ -709,7 +738,7 @@ API: `array | sum`
 
 Returns percentage between numbers 
 
-API: `number | percentage: [total | default = 100]: [floor | default = false]`
+**Usage:** `number | percentage: [total | default = 100]: [floor | default = false]`
 
 ```html
 <p>{{ 5 | percentage }}</p> <!-- Output: "5" -->
@@ -721,7 +750,7 @@ API: `number | percentage: [total | default = 100]: [floor | default = false]`
 
 Returns ceil of a number by precision 
 
-API: `number | ceil: [precision | default = 0]`
+**Usage:** `number | ceil: [precision | default = 0]`
 
 ```html
 <p>{{ 42.123 | ceil }}</p> <!-- Output: "43" -->
@@ -732,7 +761,7 @@ API: `number | ceil: [precision | default = 0]`
 
 Returns floor of a number by precision 
 
-API: `number | floor: [precision | default = 0]`
+**Usage:** `number | floor: [precision | default = 0]`
 
 ```html
 <p>{{ 42.123 | floor }}</p> <!-- Output: "42" -->
@@ -743,7 +772,7 @@ API: `number | floor: [precision | default = 0]`
 
 Returns round of a number by precision 
 
-API: `number | round: [precision | default = 0]`
+**Usage:** `number | round: [precision | default = 0]`
 
 ```html
 <p>{{ 42.4 | round }}</p> <!-- Output: "42" -->
@@ -755,7 +784,7 @@ API: `number | round: [precision | default = 0]`
 
 Returns the square root of a number 
 
-API: `number | sqrt`
+**Usage:** `number | sqrt`
 
 ```html
 <p>{{ 9 | sqrt }}</p> <!-- Output: "3" -->
@@ -765,7 +794,7 @@ API: `number | sqrt`
 
 Returns the power of a number 
 
-API: `number | pow: [power | default = 2]`
+**Usage:** `number | pow: [power | default = 2]`
 
 ```html
 <p>{{ 3 | pow }}</p> <!-- Output: "9" -->
@@ -776,7 +805,7 @@ API: `number | pow: [power | default = 2]`
 
 Returns the degrees of a number in radians 
 
-API: `number | degrees`
+**Usage:** `number | degrees`
 
 ```html
 <p>{{ 3.141592653589793 | degrees }}</p> <!-- Output: "180" -->
@@ -786,7 +815,7 @@ API: `number | degrees`
 
 Returns the radians of a number in degrees 
 
-API: `number | radians`
+**Usage:** `number | radians`
 
 ```html
 <p>{{ 180 | radians }}</p> <!-- Output: "3.141592653589793" -->
@@ -796,7 +825,7 @@ API: `number | radians`
 
 Returns bytes with a unit symbol
 
-API: `number | bytes`
+**Usage:** `number | bytes`
 
 ```html
 <p>{{ 10 | bytes }}</p> <!-- Output: "10 B" -->
@@ -809,7 +838,7 @@ API: `number | bytes`
 
 ### isNull
 
-API: `any | isNull`
+**Usage:** `any | isNull`
 
 ```html
 <p>{{ null | isNull }}</p> <!-- Output: "true" -->
@@ -818,7 +847,7 @@ API: `any | isNull`
 
 ### isDefined
 
-API: `any | isDefined`
+**Usage:** `any | isDefined`
 
 ```html
 <p>{{ 1 | isDefined }}</p> <!-- Output: "true" -->
@@ -827,7 +856,7 @@ API: `any | isDefined`
 
 ### isUndefined
 
-API: `any | isUndefined`
+**Usage:** `any | isUndefined`
 
 ```html
 <p>{{ 1 | isUndefined }}</p> <!-- Output: "false" -->
@@ -837,7 +866,7 @@ API: `any | isUndefined`
 
 ### isString
 
-API: `any | isString`
+**Usage:** `any | isString`
 
 ```html
 <p>{{ 1 | isString }}</p> <!-- Output: "false" -->
@@ -846,7 +875,7 @@ API: `any | isString`
 
 ### isNumber
 
-API: `any | isNumber`
+**Usage:** `any | isNumber`
 
 ```typescript
 this.func = () => {};
@@ -860,7 +889,7 @@ this.num = 1;
 
 ### isArray
 
-API: `any | isArray`
+**Usage:** `any | isArray`
 
 ```typescript
 this.arr = [1, 2];
@@ -874,7 +903,7 @@ this.num = 1;
 
 ### isObject
 
-API: `any | isObject`
+**Usage:** `any | isObject`
 
 ```typescript
 this.obj = {a: 1, b: 2};
@@ -888,7 +917,7 @@ this.num = 1;
 
 ### isGreaterThan
 
-API: `number | isGreaterThan: otherNumber`
+**Usage:** `number | isGreaterThan: otherNumber`
 
 ```html
 <p>{{ 1 | isGreaterThan: 1 }}</p> <!-- Output: "false" -->
@@ -898,7 +927,7 @@ API: `number | isGreaterThan: otherNumber`
 
 ### isGreaterEqualThan
 
-API: `number | isGreaterEqualThan: otherNumber`
+**Usage:** `number | isGreaterEqualThan: otherNumber`
 
 ```html
 <p>{{ 1 | isGreaterEqualThan: 1 }}</p> <!-- Output: "true" -->
@@ -908,7 +937,7 @@ API: `number | isGreaterEqualThan: otherNumber`
 
 ### isLessThan
 
-API: `number | isLessThan: otherNumber`
+**Usage:** `number | isLessThan: otherNumber`
 
 ```html
 <p>{{ 1 | isLessThan: 1 }}</p> <!-- Output: "false" -->
@@ -918,7 +947,7 @@ API: `number | isLessThan: otherNumber`
 
 ### isLessEqualThan
 
-API: `number | isLessEqualThan: otherNumber`
+**Usage:** `number | isLessEqualThan: otherNumber`
 
 ```html
 <p>{{ 1 | isLessEqualThan: 1 }}</p> <!-- Output: "true" -->
@@ -928,7 +957,7 @@ API: `number | isLessEqualThan: otherNumber`
 
 ### isEqualTo
 
-API: `number | isEqualTo: otherNumber`
+**Usage:** `number | isEqualTo: otherNumber`
 
 ```html
 <p>{{ 1 | isEqualTo: 1 }}</p> <!-- Output: "true" -->
@@ -939,7 +968,7 @@ API: `number | isEqualTo: otherNumber`
 
 ### isNotEqualTo
 
-API: `number | isNotEqualTo: otherNumber`
+**Usage:** `number | isNotEqualTo: otherNumber`
 
 ```html
 <p>{{ 1 | isNotEqualTo: 1 }}</p> <!-- Output: "false" -->
@@ -950,7 +979,7 @@ API: `number | isNotEqualTo: otherNumber`
 
 ### isIdenticalTo
 
-API: `number | isIdenticalTo: otherNumber`
+**Usage:** `number | isIdenticalTo: otherNumber`
 
 ```html
 <p>{{ 1 | isIdenticalTo: 1 }}</p> <!-- Output: "true" -->
@@ -961,7 +990,7 @@ API: `number | isIdenticalTo: otherNumber`
 
 ### isNotIdenticalTo
 
-API: `number | isNotIdenticalTo: otherNumber`
+**Usage:** `number | isNotIdenticalTo: otherNumber`
 
 ```html
 <p>{{ 1 | isNotIdenticalTo: 1 }}</p> <!-- Output: "false" -->

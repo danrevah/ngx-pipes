@@ -38,7 +38,7 @@ describe('FilterByPipe', () => {
   });
 
   it('should filter by nested field with a single result', () => {
-    const filtered = pipe.transform(users, ['work.company'], 'Bar Tech');
+    const filtered = pipe.transform(users, ['work.company'], 'Bar');
 
     expect(filtered.length).toEqual(1);
     expect(filtered[0]).toEqual(users[2]);
@@ -58,5 +58,11 @@ describe('FilterByPipe', () => {
     expect(filtered.length).toEqual(2);
     expect(filtered[0]).toEqual(users[2]);
     expect(filtered[1]).toEqual(users[3]);
+  });
+
+  it('should filter by field with a strict mode', () => {
+    const filtered = pipe.transform(users, ['work.company'], 'Bar', true);
+
+    expect(filtered.length).toEqual(0);
   });
 });
