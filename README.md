@@ -55,6 +55,7 @@
  - [Math](#math)   
     - [min](#min)
     - [max](#max)
+    - [sum](#sum)
     - [percentage](#percentage)
     - [ceil](#ceil)
     - [floor](#floor)
