@@ -19,6 +19,7 @@ coverage/
 .c9/
 *.launch
 .settings/
+ng-pipes.iml
 
 # misc
 /.sass-cache
