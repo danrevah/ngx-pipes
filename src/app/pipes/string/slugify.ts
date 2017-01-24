@@ -7,7 +7,7 @@ export class SlugifyPipe implements PipeTransform {
   transform(str: string): string {
     return GeneralHelper.isString(str)
       ? str.toLowerCase()
-      .replace(/[^a-z0-9 -]/g, ' ')
+      .replace(/[^a-z0-9-]/g, ' ')
       .replace(/\s+/g, '-')
       : str;
   }
