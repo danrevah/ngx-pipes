@@ -16,4 +16,9 @@ describe('SlugifyPipe Tests', () => {
     expect(pipe.transform('Foo Bar Baz')).toEqual('foo-bar-baz');
     expect(pipe.transform('UPPER CASE TEXT')).toEqual('upper-case-text');
   });
+
+  it('Should slugify special strings', () => {
+    expect(pipe.transform('http://example.com/foo')).toEqual('http-example-com-foo');
+    expect(pipe.transform(' http://example.com/foo ')).toEqual('http-example-com-foo');
+  });
 });
