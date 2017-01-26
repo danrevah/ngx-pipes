@@ -28,12 +28,55 @@ describe('GroupByPipe', () => {
       bar: [{key: 'bar'}, {key: 'bar'}]
     });
   });
+
   it('allow function to be used as discriminator', () => {
     const arrayWithDiscriminator = [{key: 'foo'}, {key: 'bar'}, {key: 'foo'}, {key: 'bar'}];
     const result = pipe.transform(arrayWithDiscriminator, _ => _['key']);
     expect(result).toEqual({
       foo: [{key: 'foo'}, {key: 'foo'}],
       bar: [{key: 'bar'}, {key: 'bar'}]
+    });
+  });
+
+  it('group on multiple discriminator', () => {
+    const arrayWithDiscriminator = [
+      {id: 1, key: 'foo', type: 1},
+      {id: 2, key: 'foo', type: 2},
+      {id: 3, key: 'foo', type: 1},
+      {id: 4, key: 'foo', type: 2}
+    ];
+    const result = pipe.transform(arrayWithDiscriminator, ['key', 'type']);
+    expect(result).toEqual({
+      foo_1: [{id: 1, key: 'foo', type: 1}, {id: 3, key: 'foo', type: 1}],
+      foo_2: [{id: 2, key: 'foo', type: 2}, {id: 4, key: 'foo', type: 2}]
+    });
+  });
+
+  it('group on deep property discriminator', () => {
+    const arrayWithDiscriminator = [
+      {id: 1, prop: { deep: 'foo' }},
+      {id: 2, prop: { deep: 'bar' }},
+      {id: 3, prop: { deep: 'foo' }},
+      {id: 4, prop: { deep: 'bar' }}
+    ];
+    const result = pipe.transform(arrayWithDiscriminator, 'prop.deep');
+    expect(result).toEqual({
+      foo: [{id: 1, prop: { deep: 'foo' }}, {id: 3, prop: { deep: 'foo' }}],
+      bar: [{id: 2, prop: { deep: 'bar' }}, {id: 4, prop: { deep: 'bar' }}]
+    });
+  });
+
+  it('group on multiple deep property discriminator', () => {
+    const arrayWithDiscriminator = [
+      {id: 1, prop: { deep: 'foo', type: 1 }},
+      {id: 2, prop: { deep: 'foo', type: 2 }},
+      {id: 3, prop: { deep: 'foo', type: 1 }},
+      {id: 4, prop: { deep: 'foo', type: 2 }}
+    ];
+    const result = pipe.transform(arrayWithDiscriminator, ['prop.deep', 'prop.type']);
+    expect(result).toEqual({
+      foo_1: [{id: 1, prop: { deep: 'foo', type: 1 }}, {id: 3, prop: { deep: 'foo', type: 1 }}],
+      foo_2: [{id: 2, prop: { deep: 'foo', type: 2 }}, {id: 4, prop: { deep: 'foo', type: 2 }}]
     });
   });
 });

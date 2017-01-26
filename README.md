@@ -578,16 +578,35 @@ Returns sample items randomly from array
 
 ### groupBy
 
-Returns object of grouped by items by discriminator
+Returns object of grouped by items by discriminator, and supports nested properties.
 
-**Usage:** `array | groupBy: [string | Function]`
+**Usage:** `array | groupBy: [string[] | string | Function]`
 
 ```typescript
-this.arrayObject = [{elm: 'foo', value: 0}, {elm: 'bar', value: 1}, {elm: 'foo', value: 2}];
+this.arrayObject = [
+  {id: 1, elm: 'foo', value: 0}, 
+  {id: 2, elm: 'bar', value: 1}, 
+  {id: 3, elm: 'foo', value: 2}, 
+  {id: 4, elm: 'foo', value: 2}
+];
+
+this.arrayNestedObject = [
+  {id: 1, prop: { deep: 'foo' }},
+  {id: 2, prop: { deep: 'bar' }},
+  {id: 3, prop: { deep: 'foo' }},
+  {id: 4, prop: { deep: 'bar' }}
+];
 ```
 
 ```html
-<p>{{ arrayObject | groupBy: 'elm' }}</p> <!-- Output: "{foo: [{elm: 'foo', value: 0}, {elm: 'foo', value: 2}], bar: [{elm: 'bar', value: 1}]}" -->
+<p>{{ arrayObject | groupBy: 'elm' }}</p> 
+<!-- Output: "{foo: [{id: 1, elm: 'foo', value: 0}, {id: 3, elm: 'foo', value: 2}, {id: 4, elm: 'foo', value: 2}], bar: [{id: 2, elm: 'bar', value: 1}]}" -->
+
+<p>{{ arrayObject | groupBy: ['elm', 'value'] }}</p> 
+<!-- Output: "{foo_0: [{elm: foo, value: 0}], bar_1: [{elm:bar,value: 1}], foo_2: [{elm:foo, value: 2}], bar_3: [{elm:bar, value: 3}]}" -->
+
+<p>{{ arrayNestedObject | groupBy: 'prop.deep' }}</p> 
+<!-- Output:{foo: [{id: 1, prop: {deep: foo}}, {id: 3, prop: {deep: foo}}], bar: [{id: 2, prop: {deep: bar}}, {id: 4, prop: {deep: bar}}]}" -->
 ```
 
 ### filterBy
