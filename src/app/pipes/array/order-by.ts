@@ -13,41 +13,30 @@ export class OrderByPipe implements PipeTransform {
 
     if (Array.isArray(config)) {
       return out.sort((a, b) => {
-        let pos;
+        let pos = 0;
 
-        for (let i=0, l=config.length; i<l; ++i) {
-          const sign = config[i].substr(0, 1);
-          const prop = config[i].replace(/^[-+]/, '');
-          const asc = sign !== '-';
-
+        for (let i=0, l=config.length; i<l && pos === 0; ++i) {
+          const [prop, asc] = OrderByPipe.extractFromConfig(config[i]);
           pos = OrderByPipe.orderCompare(prop, asc, a, b);
-          if (pos !== 0) break;
         }
 
         return pos;
       });
-    } else if (GeneralHelper.isString(config)) {
-      const sign = config.substr(0, 1);
-      const prop = config.replace(/^[-+]/, '');
-      const asc = sign !== '-';
+    }
+
+    if (GeneralHelper.isString(config)) {
+      const [prop, asc] = OrderByPipe.extractFromConfig(config);
 
       if (config.length === 1) {
         return asc ? out.sort() : out.sort().reverse();
       }
+      
       return out.sort(OrderByPipe.orderCompare.bind(this, prop, asc));
     }
 
-    return out.sort((a, b) => {
-      if (GeneralHelper.isString(a) && GeneralHelper.isString(b)) {
-        return a.toLowerCase().localeCompare(b.toLowerCase());
-      }
-
-      if (a === b) {
-        return 0;
-      }
-
-      return a < b ? -1 : 1;
-    });
+    return out.sort((a, b) => GeneralHelper.isString(a) && GeneralHelper.isString(b)
+        ? a.toLowerCase().localeCompare(b.toLowerCase())
+        : a - b);
   }
 
   static orderCompare(prop, asc, a, b) {
@@ -64,5 +53,13 @@ export class OrderByPipe implements PipeTransform {
 
     const pos = fir < sec ? -1 : 1;
     return asc ? pos : -pos;
+  }
+
+  static extractFromConfig(config) {
+    const sign = config.substr(0, 1);
+    const prop = config.replace(/^[-+]/, '');
+    const asc = sign !== '-';
+
+    return [prop, asc];
   }
 }
