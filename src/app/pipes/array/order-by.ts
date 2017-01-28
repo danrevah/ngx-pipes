@@ -12,7 +12,6 @@ export class OrderByPipe implements PipeTransform {
     const out = [...arr];
 
     if (Array.isArray(config)) {
-
       return out.sort((a, b) => {
         let pos;
 
@@ -38,7 +37,17 @@ export class OrderByPipe implements PipeTransform {
       return out.sort(OrderByPipe.orderCompare.bind(this, prop, asc));
     }
 
-    return out.sort();
+    return out.sort((a, b) => {
+      if (GeneralHelper.isString(a) && GeneralHelper.isString(b)) {
+        return a.toLowerCase().localeCompare(b.toLowerCase());
+      }
+
+      if (a === b) {
+        return 0;
+      }
+
+      return a < b ? -1 : 1;
+    });
   }
 
   static orderCompare(prop, asc, a, b) {
