@@ -45,6 +45,17 @@ describe('OrderByPipe', () => {
     expect(pipe.transform(['c', 'b', 'a'], '+')).toEqual(['a', 'b', 'c']);
   });
 
+  it('should order by property with a single character name', () => {
+    expect(pipe.transform([{a: 1}, {a: 3}, {a: 42}, {a: 2}], 'a'))
+      .toEqual([{a: 1}, {a: 2}, {a: 3}, {a: 42}]);
+
+    expect(pipe.transform([{a: 1}, {a: 3}, {a: 42}, {a: 2}], '+a'))
+      .toEqual([{a: 1}, {a: 2}, {a: 3}, {a: 42}]);
+
+    expect(pipe.transform([{a: 1}, {a: 3}, {a: 42}, {a: 2}], '-a'))
+      .toEqual([{a: 42}, {a: 3}, {a: 2}, {a: 1}]);
+  });
+
   it('should order by property if there a stringy value of `+property` or `property`', () => {
     expect(pipe.transform(testArray, 'amount')).toEqual([
       {id: 3, name: 'Dan', amount: 1},

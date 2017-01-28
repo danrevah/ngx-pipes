@@ -11,6 +11,7 @@ export class OrderByPipe implements PipeTransform {
 
     const out = [...arr];
 
+    // sort by multiple properties
     if (Array.isArray(config)) {
       return out.sort((a, b) => {
         for (let i=0, l=config.length; i<l; ++i) {
@@ -24,35 +25,42 @@ export class OrderByPipe implements PipeTransform {
       });
     }
 
+    // sort by a single property value
     if (GeneralHelper.isString(config)) {
-      const [prop, asc] = OrderByPipe.extractFromConfig(config);
+      const [prop, asc, sign] = OrderByPipe.extractFromConfig(config);
 
       if (config.length === 1) {
-        return asc ? out.sort() : out.sort().reverse();
+        switch (sign) {
+          case '+': return out.sort();
+          case '-': return out.sort().reverse();
+        }
       }
 
       return out.sort(OrderByPipe.orderCompare.bind(this, prop, asc));
     }
 
-    return out.sort((a, b) => GeneralHelper.isString(a) && GeneralHelper.isString(b)
+    // default sort by value
+    return out.sort((a, b) => {
+      return GeneralHelper.isString(a) && GeneralHelper.isString(b)
         ? a.toLowerCase().localeCompare(b.toLowerCase())
-        : a - b);
+        : a - b;
+    });
   }
 
   static orderCompare(prop, asc, a, b) {
-    const fir = GeneralHelper.extractDeepPropertyByMapKey(a, prop);
-    const sec = GeneralHelper.extractDeepPropertyByMapKey(b, prop);
+    const first = GeneralHelper.extractDeepPropertyByMapKey(a, prop);
+    const second = GeneralHelper.extractDeepPropertyByMapKey(b, prop);
 
-    if (fir === sec) {
+    if (first === second) {
       return 0;
     }
 
-    if (GeneralHelper.isString(fir) && GeneralHelper.isString(sec)) {
-      const pos = fir.toLowerCase().localeCompare(sec.toLowerCase());
+    if (GeneralHelper.isString(first) && GeneralHelper.isString(second)) {
+      const pos = first.toLowerCase().localeCompare(second.toLowerCase());
       return asc ? pos : -pos;
     }
 
-    const pos = fir < sec ? -1 : 1;
+    const pos = first < second ? -1 : 1;
     return asc ? pos : -pos;
   }
 
@@ -61,6 +69,6 @@ export class OrderByPipe implements PipeTransform {
     const prop = config.replace(/^[-+]/, '');
     const asc = sign !== '-';
 
-    return [prop, asc];
+    return [prop, asc, sign];
   }
 }

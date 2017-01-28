@@ -27,15 +27,11 @@ export default class GeneralHelper {
   static extractDeepPropertyByMapKey(obj: Object, map: string) {
     const keys = map.split('.');
     const key = keys.shift();
-    let prop = obj[key];
 
-    for (let key of keys) {
-      if (GeneralHelper.isUndefined(prop[key])) {
-        return prop[key];
-      }
-      prop = prop[key];
-    }
-
-    return prop;
+    return keys.reduce((prop, key) => {
+      return !GeneralHelper.isUndefined(prop) && !GeneralHelper.isUndefined(prop[key])
+        ? prop[key]
+        : undefined;
+    }, obj[key]);
   }
 }
