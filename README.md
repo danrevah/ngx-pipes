@@ -665,24 +665,24 @@ const deepObj = [
 
 ```html
 <!-- Returns array orderd by value -->
-<p>{{ numbers | orderBy }}</p>  <!--- Output: [1, 2, 3] --->
-<p>{{ numbers | orderBy: '-' }}</p>  <!--- Output: [3, 2, 1] --->
+<p>{{ numbers | orderBy }}</p>  <!-- Output: [1, 2, 3] -->
+<p>{{ numbers | orderBy: '-' }}</p>  <!-- Output: [3, 2, 1] -->
 
 <!-- Returns array orderd by value of property -->
 <p>{{ deepObj | orderBy: 'amount' }}</p>  
-<!--- Output: [{id: 3, ...}, {id: 4, ...}, {id: 2, ...}, {id: 1, ...}] --->
+<!-- Output: [{id: 3, ...}, {id: 4, ...}, {id: 2, ...}, {id: 1, ...}] -->
 <p>{{ deepObj | orderBy: '-amount' }}</p>  
-<!--- Output: [{id: 1, ...}, {id: 2, ...}, {id: 4, ...}, {id: 3, ...}] --->
+<!-- Output: [{id: 1, ...}, {id: 2, ...}, {id: 4, ...}, {id: 3, ...}] -->
 
 <!-- Returns array orderd by value of deep property -->
 <p>{{ deepObj | orderBy: 'deep.prop' }}</p>  
-<!--- Output: [{id: 3, ...}, {id: 2, ...}, {id: 4, ...}, {id: 1, ...}] --->
+<!-- Output: [{id: 3, ...}, {id: 2, ...}, {id: 4, ...}, {id: 1, ...}] -->
 <p>{{ deepObj | orderBy: '-deep.prop' }}</p>  
-<!--- Output: [{id: 1, ...}, {id: 4, ...}, {id: 2, ...}, {id: 3, ...}] --->
+<!-- Output: [{id: 1, ...}, {id: 4, ...}, {id: 2, ...}, {id: 3, ...}] -->
 
 <!-- Returns array orderd by mutliple properties -->
 <p>{{ obj | orderBy: ['amount', 'id'] }}</p>  
-<!--- Output: [{id: 1, ...}, {id: 3, ...}, {id: 2, ...}, {id: 4, ...}] --->
+<!-- Output: [{id: 1, ...}, {id: 3, ...}, {id: 2, ...}, {id: 4, ...}] -->
 ```
 
 ## Object
