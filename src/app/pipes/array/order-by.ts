@@ -40,15 +40,16 @@ export class OrderByPipe implements PipeTransform {
   }
 
   static orderCompare(prop, asc, a, b) {
-    if (GeneralHelper.isString(a) && GeneralHelper.isString(b)) {
-      return a.toLowerCase().localeCompare(b.toLowerCase());
-    }
-
     const fir = GeneralHelper.extractDeepPropertyByMapKey(a, prop);
     const sec = GeneralHelper.extractDeepPropertyByMapKey(b, prop);
 
     if (fir === sec) {
       return 0;
+    }
+
+    if (GeneralHelper.isString(fir) && GeneralHelper.isString(sec)) {
+      const pos = fir.toLowerCase().localeCompare(sec.toLowerCase());
+      return asc ? pos : -pos;
     }
 
     const pos = fir < sec ? -1 : 1;

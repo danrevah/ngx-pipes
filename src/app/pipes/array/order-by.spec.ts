@@ -61,6 +61,15 @@ describe('OrderByPipe', () => {
     ]);
   });
 
+  it('should order by property if there a stringy value of `+property` or `property`', () => {
+    expect(pipe.transform(testArray, 'name')).toEqual([
+      {id: 3, name: 'Dan', amount: 1},
+      {id: 4, name: 'Dave', amount: 2},
+      {id: 1, name: 'John', amount: 1337},
+      {id: 2, name: 'Michael', amount: 42}
+    ]);
+  });
+
   it('should reverse order by property if there a stringy value of `-property`', () => {
     expect(pipe.transform(testArray, '-amount')).toEqual([
       {id: 1, name: 'John', amount: 1337},
@@ -81,6 +90,21 @@ describe('OrderByPipe', () => {
       {id: 3, name: 'Dan', amount: 1},
       {id: 2, name: 'Michael', amount: 2},
       {id: 4, name: 'Dave', amount: 2}
+    ]);
+  });
+
+
+  it('should reverse order by multiple properties if there an array values', () => {
+    expect(pipe.transform([
+      {id: 4, name: 'Dave', amount: 2},
+      {id: 2, name: 'Michael', amount: 2},
+      {id: 3, name: 'Dan', amount: 1},
+      {id: 1, name: 'John', amount: 1}
+    ], ['amount'])).toEqual([
+      {id: 3, name: 'Dan', amount: 1},
+      {id: 1, name: 'John', amount: 1},
+      {id: 4, name: 'Dave', amount: 2},
+      {id: 2, name: 'Michael', amount: 2}
     ]);
   });
 
