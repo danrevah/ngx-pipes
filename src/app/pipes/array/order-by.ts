@@ -13,14 +13,14 @@ export class OrderByPipe implements PipeTransform {
 
     if (Array.isArray(config)) {
       return out.sort((a, b) => {
-        let pos = 0;
-
-        for (let i=0, l=config.length; i<l && pos === 0; ++i) {
+        for (let i=0, l=config.length; i<l; ++i) {
           const [prop, asc] = OrderByPipe.extractFromConfig(config[i]);
-          pos = OrderByPipe.orderCompare(prop, asc, a, b);
+          const pos = OrderByPipe.orderCompare(prop, asc, a, b);
+          if (pos !== 0) {
+            return pos;
+          }
         }
-
-        return pos;
+        return 0;
       });
     }
 
@@ -30,7 +30,7 @@ export class OrderByPipe implements PipeTransform {
       if (config.length === 1) {
         return asc ? out.sort() : out.sort().reverse();
       }
-      
+
       return out.sort(OrderByPipe.orderCompare.bind(this, prop, asc));
     }
 
