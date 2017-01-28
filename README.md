@@ -45,7 +45,7 @@
     - [sample](#sample)
     - [groupBy](#groupby)
     - [filterBy](#filterby)
-    - [orderBy](#orderBy)
+    - [orderBy](#orderby)
  - [Object](#object)
     - [keys](#keys)
     - [values](#values)
