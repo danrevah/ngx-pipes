@@ -45,6 +45,7 @@
     - [sample](#sample)
     - [groupBy](#groupby)
     - [filterBy](#filterby)
+    - [orderBy](#orderBy)
  - [Object](#object)
     - [keys](#keys)
     - [values](#values)
@@ -611,7 +612,7 @@ this.arrayNestedObject = [
 
 ### filterBy
 
-Returns object of grouped by items by discriminator
+Returns object array of grouped by items by discriminator
 
 **Usage:** `array | filterBy: [prop, nested.prop, ...]: search: [strict | optional]`
 
@@ -636,6 +637,52 @@ this.users = [
 <!-- Return users whose first name or last name is 'John'. -->
 <p>{{ users | filterBy: ['first_name', 'last_name']: 'John' }}</p>
 <!-- Output: "[{id: 1, first_name: 'John', last_name: 'Doe', work: { company: 'Foo Tech', previous_company: '' }}]" -->
+```
+
+### orderBy
+
+Returns ordered array by configuration 
+
+**Usage:** `array | orderBy: [prop, nested.prop, array of props, ...]`
+
+```typescript
+const numbers = [2, 1, 3];
+
+const obj = [
+  {id: 4, name: 'Dave', amount: 2},
+  {id: 2, name: 'Michael', amount: 2},
+  {id: 3, name: 'Dan', amount: 1},
+  {id: 1, name: 'John', amount: 1}
+];
+
+const deepObj = [
+  {id: 1, name: 'John', amount: 1337, deep: {prop: 4}},
+  {id: 2, name: 'Michael', amount: 42, deep: {prop: 2}},
+  {id: 3, name: 'Dan', amount: 1, deep: {prop: 1}},
+  {id: 4, name: 'Dave', amount: 2, deep: {prop: 3}}
+];
+```
+
+```html
+<!-- Returns array orderd by value -->
+<p>{{ numbers | orderBy }}</p>  <!--- Output: [1, 2, 3] --->
+<p>{{ numbers | orderBy: '-' }}</p>  <!--- Output: [3, 2, 1] --->
+
+<!-- Returns array orderd by value of property -->
+<p>{{ deepObj | orderBy: 'amount' }}</p>  
+<!--- Output: [{id: 3, ...}, {id: 4, ...}, {id: 2, ...}, {id: 1, ...}] --->
+<p>{{ deepObj | orderBy: '-amount' }}</p>  
+<!--- Output: [{id: 1, ...}, {id: 2, ...}, {id: 4, ...}, {id: 3, ...}] --->
+
+<!-- Returns array orderd by value of deep property -->
+<p>{{ deepObj | orderBy: 'deep.prop' }}</p>  
+<!--- Output: [{id: 3, ...}, {id: 2, ...}, {id: 4, ...}, {id: 1, ...}] --->
+<p>{{ deepObj | orderBy: '-deep.prop' }}</p>  
+<!--- Output: [{id: 1, ...}, {id: 4, ...}, {id: 2, ...}, {id: 3, ...}] --->
+
+<!-- Returns array orderd by mutliple properties -->
+<p>{{ obj | orderBy: ['amount', 'id'] }}</p>  
+<!--- Output: [{id: 1, ...}, {id: 3, ...}, {id: 2, ...}, {id: 4, ...}] --->
 ```
 
 ## Object
