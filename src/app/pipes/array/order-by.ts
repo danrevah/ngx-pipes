@@ -48,8 +48,8 @@ export class OrderByPipe implements PipeTransform {
   }
 
   static orderCompare(prop, asc, a, b) {
-    const first = GeneralHelper.extractDeepPropertyByMapKey(a, prop);
-    const second = GeneralHelper.extractDeepPropertyByMapKey(b, prop);
+    const first = GeneralHelper.extractDeepPropertyByMapKey(a, prop),
+          second = GeneralHelper.extractDeepPropertyByMapKey(b, prop);
 
     if (first === second) {
       return 0;
@@ -60,8 +60,9 @@ export class OrderByPipe implements PipeTransform {
       return asc ? pos : -pos;
     }
 
-    const pos = first < second ? -1 : 1;
-    return asc ? pos : -pos;
+    return asc
+      ? first - second
+      : second - first;
   }
 
   static extractFromConfig(config) {
