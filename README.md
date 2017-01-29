@@ -3,8 +3,6 @@
 
 > Useful pipes for Angular 2 and beyond with no external dependencies
 
-**For any feature request or issues:** https://github.com/danrevah/ngx-pipes/issues/new
-
 ## Table of contents
 
  - [Installation](#installation)
