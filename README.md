@@ -3,7 +3,7 @@
 
 > Useful pipes for Angular 2 and beyond with no external dependencies
 
-*** Got any idea for a new pipe which could be useful? your welcome on opening a new feature request issue! ***
+**Got any idea for a new pipe which could be useful? your welcome on opening a new feature request issue!**
 
 ## Table of contents
 
