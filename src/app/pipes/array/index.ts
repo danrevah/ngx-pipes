@@ -16,11 +16,12 @@ import {SamplePipe} from './sample';
 import {GroupByPipe} from './group-by';
 import {FilterByPipe} from './filter-by';
 import {NgModule} from '@angular/core';
+import {OrderByPipe} from './order-by';
 
 const ARRAY_PIPES = [
   DiffPipe, FlattenPipe, InitialPipe, IntersectionPipe, ReversePipe, TailPipe,
   TrurthifyPipe, UnionPipe, UniquePipe, WithoutPipe, PluckPipe, ShufflePipe,
-  EveryPipe, SomePipe, SamplePipe, GroupByPipe, FilterByPipe
+  EveryPipe, SomePipe, SamplePipe, GroupByPipe, FilterByPipe, OrderByPipe
 ];
 
 @NgModule({
