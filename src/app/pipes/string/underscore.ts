@@ -1,11 +1,11 @@
 import {PipeTransform, Pipe} from '@angular/core';
-import GeneralHelper from '../helpers/helpers';
+import {isString} from '../helpers/helpers';
 
 @Pipe({name: 'underscore'})
 export class UnderscorePipe implements PipeTransform {
 
   transform(text: any, chars: string = '\\s'): string {
-    return GeneralHelper.isString(text)
+    return isString(text)
       ? text.trim()
         .replace(/\s+/g, '')
         .replace(/[A-Z]/g, (c, k) => k ? `_${c.toLowerCase()}` : c.toLowerCase())

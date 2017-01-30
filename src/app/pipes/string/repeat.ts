@@ -1,5 +1,5 @@
 import {PipeTransform, Pipe} from '@angular/core';
-import GeneralHelper from '../helpers/helpers';
+import {isString} from '../helpers/helpers';
 
 @Pipe({name: 'repeat'})
 export class RepeatPipe implements PipeTransform {
@@ -12,7 +12,7 @@ export class RepeatPipe implements PipeTransform {
   }
 
   private repeat(str: string, n: number, separator: string): string {
-    return GeneralHelper.isString(str)
+    return isString(str)
       ? (n == 0 ? str : (str + separator + this.repeat(str, n - 1, separator)))
       : str;
   }

@@ -1,11 +1,11 @@
 import {PipeTransform, Pipe} from '@angular/core';
-import GeneralHelper from '../helpers/helpers';
+import {isNumber, isString, extractDeepPropertyByMapKey} from '../helpers/helpers';
 
 @Pipe({name: 'filterBy'})
 export class FilterByPipe implements PipeTransform {
 
   transform(arr: any, props: Array<string>, search: any, strict: boolean = false): any[] {
-    if (!Array.isArray(arr) || (!GeneralHelper.isString(search) && !GeneralHelper.isNumber(search))) {
+    if (!Array.isArray(arr) || (!isString(search) && !isNumber(search))) {
       return arr;
     }
 
@@ -14,7 +14,7 @@ export class FilterByPipe implements PipeTransform {
     return arr.filter((obj) => {
       return props.some((prop) => {
         const value: string = String(
-          GeneralHelper.extractDeepPropertyByMapKey(obj, prop)
+          extractDeepPropertyByMapKey(obj, prop)
         ).toLowerCase();
 
         return strict

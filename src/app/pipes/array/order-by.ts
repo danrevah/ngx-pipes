@@ -1,5 +1,5 @@
 import {PipeTransform, Pipe} from '@angular/core';
-import GeneralHelper from '../helpers/helpers';
+import {isString, extractDeepPropertyByMapKey} from '../helpers/helpers';
 
 @Pipe({name: 'orderBy'})
 export class OrderByPipe implements PipeTransform {
@@ -26,7 +26,7 @@ export class OrderByPipe implements PipeTransform {
     }
 
     // sort by a single property value
-    if (GeneralHelper.isString(config)) {
+    if (isString(config)) {
       const [prop, asc, sign] = OrderByPipe.extractFromConfig(config);
 
       if (config.length === 1) {
@@ -41,21 +41,21 @@ export class OrderByPipe implements PipeTransform {
 
     // default sort by value
     return out.sort((a, b) => {
-      return GeneralHelper.isString(a) && GeneralHelper.isString(b)
+      return isString(a) && isString(b)
         ? a.toLowerCase().localeCompare(b.toLowerCase())
         : a - b;
     });
   }
 
   static orderCompare(prop, asc, a, b) {
-    const first = GeneralHelper.extractDeepPropertyByMapKey(a, prop),
-          second = GeneralHelper.extractDeepPropertyByMapKey(b, prop);
+    const first = extractDeepPropertyByMapKey(a, prop),
+          second = extractDeepPropertyByMapKey(b, prop);
 
     if (first === second) {
       return 0;
     }
 
-    if (GeneralHelper.isString(first) && GeneralHelper.isString(second)) {
+    if (isString(first) && isString(second)) {
       const pos = first.toLowerCase().localeCompare(second.toLowerCase());
       return asc ? pos : -pos;
     }

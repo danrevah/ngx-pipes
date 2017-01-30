@@ -1,11 +1,11 @@
 import {PipeTransform, Pipe} from '@angular/core';
-import GeneralHelper from '../helpers/helpers';
+import {isString} from '../helpers/helpers';
 
 @Pipe({name: 'shorten'})
 export class ShortenPipe implements PipeTransform {
 
   transform(text: any, length: number = 0, suffix: string = '', wordBreak: boolean = true): string {
-    if (!GeneralHelper.isString(text)) {
+    if (!isString(text)) {
       return text;
     }
 

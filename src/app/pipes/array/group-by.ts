@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import GeneralHelper from '../helpers/helpers';
+import {extractDeepPropertyByMapKey, isFunction} from '../helpers/helpers';
 
 @Pipe({name: 'groupBy'})
 export class GroupByPipe implements PipeTransform {
@@ -15,12 +15,12 @@ export class GroupByPipe implements PipeTransform {
   private groupBy(list: any[], discriminator: any) {
     return list.reduce((acc, payload) => {
       let key;
-      if (GeneralHelper.isFunction(discriminator)) {
+      if (isFunction(discriminator)) {
         key = (<Function>discriminator)(payload);
       } else if (Array.isArray(discriminator)) {
-        key = discriminator.map(k => GeneralHelper.extractDeepPropertyByMapKey(payload, k)).join('_');
+        key = discriminator.map(k => extractDeepPropertyByMapKey(payload, k)).join('_');
       } else {
-        key = GeneralHelper.extractDeepPropertyByMapKey(payload, <string>discriminator);
+        key = extractDeepPropertyByMapKey(payload, <string>discriminator);
       }
 
       return acc[key] = Array.isArray(acc[key])

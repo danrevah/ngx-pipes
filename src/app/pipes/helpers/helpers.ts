@@ -1,37 +1,36 @@
 
-export default class GeneralHelper {
-  static isUndefined(value: any) {
-    return typeof value === 'undefined';
-  }
 
-  static isFunction(value: any) {
-    return typeof value === 'function';
-  }
+export function isUndefined(value: any) {
+  return typeof value === 'undefined';
+}
 
-  static isNumber(value: any) {
-    return typeof value === 'number';
-  }
+export function isFunction(value: any) {
+  return typeof value === 'function';
+}
 
-  static isString(value: any) {
-    return typeof value === 'string';
-  }
+export function isNumber(value: any) {
+  return typeof value === 'number';
+}
 
-  static isObject(value: any) {
-    return value !== null && typeof value === 'object';
-  }
+export function isString(value: any) {
+  return typeof value === 'string';
+}
 
-  static isNumberFinite(value: any) {
-    return GeneralHelper.isNumber(value) && isFinite(value);
-  }
+export function isObject(value: any) {
+  return value !== null && typeof value === 'object';
+}
 
-  static extractDeepPropertyByMapKey(obj: Object, map: string) {
-    const keys = map.split('.');
-    const key = keys.shift();
+export function isNumberFinite(value: any) {
+  return isNumber(value) && isFinite(value);
+}
 
-    return keys.reduce((prop, key) => {
-      return !GeneralHelper.isUndefined(prop) && !GeneralHelper.isUndefined(prop[key])
-        ? prop[key]
-        : undefined;
-    }, obj[key]);
-  }
+export function extractDeepPropertyByMapKey(obj: Object, map: string) {
+  const keys = map.split('.');
+  const key = keys.shift();
+
+  return keys.reduce((prop, key) => {
+    return !isUndefined(prop) && !isUndefined(prop[key])
+      ? prop[key]
+      : undefined;
+  }, obj[key]);
 }

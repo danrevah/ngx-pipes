@@ -1,11 +1,11 @@
 import {PipeTransform, Pipe} from '@angular/core';
-import GeneralHelper from '../helpers/helpers';
+import {isObject} from '../helpers/helpers';
 
 @Pipe({name: 'invertBy'})
 export class InvertByPipe implements PipeTransform {
 
   transform(obj: any, cb: Function = null): Object {
-    if (Array.isArray(obj) || !GeneralHelper.isObject(obj)) {
+    if (Array.isArray(obj) || !isObject(obj)) {
       return obj;
     }
 

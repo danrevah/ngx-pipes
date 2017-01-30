@@ -1,11 +1,11 @@
 import {PipeTransform, Pipe} from '@angular/core';
-import GeneralHelper from '../helpers';
+import {isString} from '../helpers/helpers';
 
 @Pipe({name: 'slugify'})
 export class SlugifyPipe implements PipeTransform {
 
   transform(str: string): string {
-    return GeneralHelper.isString(str)
+    return isString(str)
       ? str.toLowerCase().trim()
         .replace(/[^\w\-]+/g, ' ')
         .replace(/\s+/g, '-')

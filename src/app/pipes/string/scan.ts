@@ -1,12 +1,12 @@
 import {PipeTransform, Pipe} from '@angular/core';
-import GeneralHelper from '../helpers/helpers';
+import {isString, isUndefined} from '../helpers/helpers';
 
 @Pipe({name: 'scan'})
 export class ScanPipe implements PipeTransform {
 
   transform(text: string, args: string[] = []): string {
-    return GeneralHelper.isString(text)
-      ? text.replace(/\{(\d+)}/g, (match, index) => !GeneralHelper.isUndefined(args[index]) ? args[index] : match)
+    return isString(text)
+      ? text.replace(/\{(\d+)}/g, (match, index) => !isUndefined(args[index]) ? args[index] : match)
       : text;
   }
 }

@@ -1,11 +1,11 @@
 import {PipeTransform, Pipe} from '@angular/core';
-import GeneralHelper from '../helpers/helpers';
+import {isNumberFinite} from '../helpers/helpers';
 
 @Pipe({name: 'degrees'})
 export class DegreesPipe implements PipeTransform {
 
   transform(radians: number): number {
-    if (!GeneralHelper.isNumberFinite(radians)) {
+    if (!isNumberFinite(radians)) {
       return NaN;
     }
 

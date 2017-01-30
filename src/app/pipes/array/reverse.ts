@@ -1,12 +1,12 @@
 import {PipeTransform, Pipe} from '@angular/core';
-import GeneralHelper from '../helpers/helpers';
+import {isString} from '../helpers/helpers';
 
 @Pipe({name: 'reverse'})
 export class ReversePipe implements PipeTransform {
 
   transform(value: any): any
   {
-    if (GeneralHelper.isString(value)) {
+    if (isString(value)) {
       return value.split('').reverse().join('');
     }
 
