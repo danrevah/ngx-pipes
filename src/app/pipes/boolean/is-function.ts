@@ -4,7 +4,7 @@ import {isFunction} from '../helpers/helpers';
 @Pipe({name: 'isFunction'})
 export class IsFunctionPipe implements PipeTransform {
 
-  transform(value: any): boolean {
-    return isFunction(value);
+  transform(input: any): boolean {
+    return isFunction(input);
   }
 }

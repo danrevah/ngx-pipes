@@ -3,21 +3,23 @@ import {PipeTransform, Pipe} from '@angular/core';
 @Pipe({name: 'flatten'})
 export class FlattenPipe implements PipeTransform {
 
-  transform(arr: any, shallow: boolean = false): any[] {
-    if (!Array.isArray(arr)) {
-      return arr;
+  transform(input: any, shallow: boolean = false): any[] {
+    if (!Array.isArray(input)) {
+      return input;
     }
 
     return shallow
-      ? [].concat.apply([], arr)
-      : this.flatten(arr);
+      ? [].concat.apply([], input)
+      : this.flatten(input);
   }
 
   private flatten(array: any[]): any[] {
-    return array.reduce((arr: any[], elm: any) =>
-      Array.isArray(elm)
-        ? arr.concat(this.flatten(elm))
-        : arr.concat(elm)
-      , []);
+    return array.reduce((arr: any[], elm: any) => {
+      if (Array.isArray(elm)) {
+        return arr.concat(this.flatten(elm));
+      }
+
+      return arr.concat(elm);
+    }, []);
   }
 }

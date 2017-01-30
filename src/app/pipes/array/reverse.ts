@@ -4,14 +4,14 @@ import {isString} from '../helpers/helpers';
 @Pipe({name: 'reverse'})
 export class ReversePipe implements PipeTransform {
 
-  transform(value: any): any
+  transform(input: any): any
   {
-    if (isString(value)) {
-      return value.split('').reverse().join('');
+    if (isString(input)) {
+      return input.split('').reverse().join('');
     }
 
-    return Array.isArray(value)
-      ? value.reverse()
-      : value;
+    return Array.isArray(input)
+      ? input.reverse()
+      : input;
   }
 }

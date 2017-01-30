@@ -4,28 +4,35 @@ import {extractDeepPropertyByMapKey, isFunction} from '../helpers/helpers';
 @Pipe({name: 'groupBy'})
 export class GroupByPipe implements PipeTransform {
 
-  transform(arr: any, discriminator: any = []): any {
-    if (!Array.isArray(arr)) {
-      return arr;
+  transform(input: any, discriminator: any = []): any {
+    if (!Array.isArray(input)) {
+      return input;
     }
 
-    return this.groupBy(arr, discriminator);
+    return this.groupBy(input, discriminator);
   }
 
   private groupBy(list: any[], discriminator: any) {
     return list.reduce((acc, payload) => {
-      let key;
-      if (isFunction(discriminator)) {
-        key = (<Function>discriminator)(payload);
-      } else if (Array.isArray(discriminator)) {
-        key = discriminator.map(k => extractDeepPropertyByMapKey(payload, k)).join('_');
-      } else {
-        key = extractDeepPropertyByMapKey(payload, <string>discriminator);
-      }
+      const key = this.extractKeyByDiscriminator(discriminator, payload);
 
-      return acc[key] = Array.isArray(acc[key])
+      acc[key] = Array.isArray(acc[key])
         ? acc[key].concat([payload])
-        : [payload], acc;
+        : [payload];
+
+      return acc;
     }, {});
+  }
+
+  private extractKeyByDiscriminator(discriminator, payload) {
+    if (isFunction(discriminator)) {
+      return (<Function>discriminator)(payload);
+    }
+
+    if (Array.isArray(discriminator)) {
+      return discriminator.map(k => extractDeepPropertyByMapKey(payload, k)).join('_');
+    }
+
+    return extractDeepPropertyByMapKey(payload, <string>discriminator);
   }
 }

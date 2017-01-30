@@ -4,7 +4,7 @@ import {isUndefined} from '../helpers/helpers';
 @Pipe({name: 'isDefined'})
 export class IsDefinedPipe implements PipeTransform {
 
-  transform(value: any): boolean {
-    return !isUndefined(value);
+  transform(input: any): boolean {
+    return !isUndefined(input);
   }
 }

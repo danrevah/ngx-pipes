@@ -4,12 +4,12 @@ import {isString, extractDeepPropertyByMapKey} from '../helpers/helpers';
 @Pipe({name: 'orderBy'})
 export class OrderByPipe implements PipeTransform {
 
-  transform(arr: any, config?: any): any[] {
-    if (!Array.isArray(arr)) {
-      return arr;
+  transform(input: any, config?: any): any[] {
+    if (!Array.isArray(input)) {
+      return input;
     }
 
-    const out = [...arr];
+    const out = [...input];
 
     // sort by multiple properties
     if (Array.isArray(config)) {

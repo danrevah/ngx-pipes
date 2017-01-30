@@ -3,7 +3,7 @@ import {PipeTransform, Pipe} from '@angular/core';
 @Pipe({name: 'isIdenticalTo'})
 export class IsIdenticalToPipe implements PipeTransform {
 
-  transform(value: any, other: any): boolean {
-    return value === other;
+  transform(input: any, other: any): boolean {
+    return input === other;
   }
 }

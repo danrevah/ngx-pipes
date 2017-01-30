@@ -4,7 +4,7 @@ import {isString} from '../helpers/helpers';
 @Pipe({name: 'isString'})
 export class IsStringPipe implements PipeTransform {
 
-  transform(value: any): boolean {
-    return isString(value);
+  transform(input: any): boolean {
+    return isString(input);
   }
 }

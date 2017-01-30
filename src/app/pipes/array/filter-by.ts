@@ -1,25 +1,25 @@
 import {PipeTransform, Pipe} from '@angular/core';
-import {isNumber, isString, extractDeepPropertyByMapKey} from '../helpers/helpers';
+import {isString, extractDeepPropertyByMapKey, isNumberFinite} from '../helpers/helpers';
 
 @Pipe({name: 'filterBy'})
 export class FilterByPipe implements PipeTransform {
 
-  transform(arr: any, props: Array<string>, search: any, strict: boolean = false): any[] {
-    if (!Array.isArray(arr) || (!isString(search) && !isNumber(search))) {
-      return arr;
+  transform(input: any, props: Array<string>, search: any, strict: boolean = false): any[] {
+    if (!Array.isArray(input) || (!isString(search) && !isNumberFinite(search))) {
+      return input;
     }
 
-    search = String(search).toLowerCase();
+    const term = String(search).toLowerCase();
 
-    return arr.filter((obj) => {
+    return input.filter((obj) => {
       return props.some((prop) => {
         const value: string = String(
           extractDeepPropertyByMapKey(obj, prop)
         ).toLowerCase();
 
         return strict
-          ? search === value
-          : !!~value.indexOf(search);
+          ? term === value
+          : !!~value.indexOf(term);
       });
     });
   }
