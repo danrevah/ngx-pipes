@@ -4,17 +4,17 @@ import {extractDeepPropertyByMapKey, isFunction} from '../helpers/helpers';
 @Pipe({name: 'groupBy'})
 export class GroupByPipe implements PipeTransform {
 
-  transform(input: any, discriminator: any = []): any {
+  transform(input: any, discriminator: any = [], delimiter = '|'): any {
     if (!Array.isArray(input)) {
       return input;
     }
 
-    return this.groupBy(input, discriminator);
+    return this.groupBy(input, discriminator, delimiter);
   }
 
-  private groupBy(list: any[], discriminator: any) {
+  private groupBy(list: any[], discriminator: any, delimiter: string) {
     return list.reduce((acc, payload) => {
-      const key = this.extractKeyByDiscriminator(discriminator, payload);
+      const key = this.extractKeyByDiscriminator(discriminator, payload, delimiter);
 
       acc[key] = Array.isArray(acc[key])
         ? acc[key].concat([payload])
@@ -24,13 +24,13 @@ export class GroupByPipe implements PipeTransform {
     }, {});
   }
 
-  private extractKeyByDiscriminator(discriminator, payload) {
+  private extractKeyByDiscriminator(discriminator, payload, delimiter) {
     if (isFunction(discriminator)) {
       return (<Function>discriminator)(payload);
     }
 
     if (Array.isArray(discriminator)) {
-      return discriminator.map(k => extractDeepPropertyByMapKey(payload, k)).join('_');
+      return discriminator.map(k => extractDeepPropertyByMapKey(payload, k)).join(delimiter);
     }
 
     return extractDeepPropertyByMapKey(payload, <string>discriminator);

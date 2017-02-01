@@ -581,7 +581,7 @@ Returns sample items randomly from array
 
 Returns object of grouped by items by discriminator, and supports nested properties.
 
-**Usage:** `array | groupBy: [string[] | string | Function]`
+**Usage:** `array | groupBy: [string[] | string | Function]: [delimiter: string | optional, default = '|']`
 
 ```typescript
 this.arrayObject = [
@@ -604,6 +604,9 @@ this.arrayNestedObject = [
 <!-- Output: "{foo: [{id: 1, elm: 'foo', value: 0}, {id: 3, elm: 'foo', value: 2}, {id: 4, elm: 'foo', value: 2}], bar: [{id: 2, elm: 'bar', value: 1}]}" -->
 
 <p>{{ arrayObject | groupBy: ['elm', 'value'] }}</p> 
+<!-- Output: "{'foo|0': [{elm: foo, value: 0}], 'bar|1': [{elm:bar,value: 1}], 'foo|2': [{elm:foo, value: 2}], 'bar|3': [{elm:bar, value: 3}]}" -->
+
+<p>{{ arrayObject | groupBy: ['elm', 'value']: '_' }}</p> 
 <!-- Output: "{foo_0: [{elm: foo, value: 0}], bar_1: [{elm:bar,value: 1}], foo_2: [{elm:foo, value: 2}], bar_3: [{elm:bar, value: 3}]}" -->
 
 <p>{{ arrayNestedObject | groupBy: 'prop.deep' }}</p> 

@@ -38,6 +38,20 @@ describe('GroupByPipe', () => {
     });
   });
 
+  it('group on multiple discriminator with delimiter', () => {
+    const arrayWithDiscriminator = [
+      {id: 1, key: 'foo', type: 1},
+      {id: 2, key: 'foo', type: 2},
+      {id: 3, key: 'foo', type: 1},
+      {id: 4, key: 'foo', type: 2}
+    ];
+    const result = pipe.transform(arrayWithDiscriminator, ['key', 'type'], '_');
+    expect(result).toEqual({
+      foo_1: [{id: 1, key: 'foo', type: 1}, {id: 3, key: 'foo', type: 1}],
+      foo_2: [{id: 2, key: 'foo', type: 2}, {id: 4, key: 'foo', type: 2}]
+    });
+  });
+
   it('group on multiple discriminator', () => {
     const arrayWithDiscriminator = [
       {id: 1, key: 'foo', type: 1},
@@ -47,8 +61,8 @@ describe('GroupByPipe', () => {
     ];
     const result = pipe.transform(arrayWithDiscriminator, ['key', 'type']);
     expect(result).toEqual({
-      foo_1: [{id: 1, key: 'foo', type: 1}, {id: 3, key: 'foo', type: 1}],
-      foo_2: [{id: 2, key: 'foo', type: 2}, {id: 4, key: 'foo', type: 2}]
+      'foo|1': [{id: 1, key: 'foo', type: 1}, {id: 3, key: 'foo', type: 1}],
+      'foo|2': [{id: 2, key: 'foo', type: 2}, {id: 4, key: 'foo', type: 2}]
     });
   });
 
@@ -75,8 +89,8 @@ describe('GroupByPipe', () => {
     ];
     const result = pipe.transform(arrayWithDiscriminator, ['prop.deep', 'prop.type']);
     expect(result).toEqual({
-      foo_1: [{id: 1, prop: { deep: 'foo', type: 1 }}, {id: 3, prop: { deep: 'foo', type: 1 }}],
-      foo_2: [{id: 2, prop: { deep: 'foo', type: 2 }}, {id: 4, prop: { deep: 'foo', type: 2 }}]
+      'foo|1': [{id: 1, prop: { deep: 'foo', type: 1 }}, {id: 3, prop: { deep: 'foo', type: 1 }}],
+      'foo|2': [{id: 2, prop: { deep: 'foo', type: 2 }}, {id: 4, prop: { deep: 'foo', type: 2 }}]
     });
   });
 });
