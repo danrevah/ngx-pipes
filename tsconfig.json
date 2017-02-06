@@ -13,13 +13,15 @@
     ]
   },
   "include": [
-    "src/app/pipes.module.ts"
+    "src/app/pipes.module.ts",
+    "src/app/index.ts",
+    "index.ts"
   ],
   "exclude": [
     "node_modules",
     "**/*.spec.ts"
   ],
   "angularCompilerOptions": {
-    "genDir": "compiled"
+    "strictMetadataEmit": true
   }
 }

@@ -24,15 +24,14 @@ export const MATH_PIPES = [
 })
 export class NgMathPipesModule {}
 
-export * from './max';
-export * from './min';
-export * from './percentage';
-export * from './sum';
-export * from './floor';
-export * from './round';
-export * from './sqrt';
-export * from './pow';
-export * from './ceil';
-export * from './degrees';
-export * from './bytes';
-export * from './radians';
+export {MaxPipe} from './max';
+export {MinPipe} from './min';
+export {PercentagePipe} from './percentage';
+export {SumPipe} from './sum';
+export {FloorPipe} from './floor';
+export {RoundPipe} from './round';
+export {SqrtPipe} from './sqrt';
+export {PowerPipe} from './pow';
+export {CeilPipe} from './ceil';
+export {DegreesPipe} from './degrees';
+export {BytesPipe} from './bytes';

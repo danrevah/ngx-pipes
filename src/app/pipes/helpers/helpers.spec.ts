@@ -1,5 +1,6 @@
 
 import {extractDeepPropertyByMapKey} from './helpers';
+
 describe('Utils Tests', () => {
 
   it('should extract properties properly', () => {
