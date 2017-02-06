@@ -1,5 +1,5 @@
 # ngx-pipes  
-[![npm](https://img.shields.io/npm/v/ngx-pipes.svg?style=flat-square)](https://www.npmjs.com/package/ngx-pipes) [![Travis](https://img.shields.io/travis/danrevah/ngx-pipes.svg?style=flat-square)](https://travis-ci.org/danrevah/ngx-pipes) [![Coveralls](https://img.shields.io/coveralls/danrevah/ngx-pipes.svg?style=flat-square)](https://coveralls.io/github/danrevah/ngx-pipes?branch=master) [![license](https://img.shields.io/github/license/mashape/apistatus.svg?style=flat-square)](https://github.com/danrevah/ng-pipes/blob/master/LICENSE.md)
+[![npm](https://img.shields.io/npm/v/ngx-pipes.svg?style=flat-square)](https://www.npmjs.com/package/ngx-pipes) [![Travis](https://img.shields.io/travis/danrevah/ngx-pipes.svg?style=flat-square)](https://travis-ci.org/danrevah/ngx-pipes) [![Coveralls](https://img.shields.io/coveralls/danrevah/ngx-pipes.svg?style=flat-square)](https://coveralls.io/github/danrevah/ngx-pipes?branch=master) [![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://github.com/danrevah/ng-pipes/blob/master/LICENSE.md)
 
 > Useful pipes for Angular 2 and beyond with no external dependencies
 
