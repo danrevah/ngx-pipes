@@ -24,11 +24,11 @@ export function isNumberFinite(value: any) {
   return isNumber(value) && isFinite(value);
 }
 
-export function extractDeepPropertyByMapKey(obj: Object, map: string) {
+export function extractDeepPropertyByMapKey(obj: any, map: string): any {
   const keys = map.split('.');
   const key = keys.shift();
 
-  return keys.reduce((prop, key) => {
+  return keys.reduce((prop: any, key: string) => {
     return !isUndefined(prop) && !isUndefined(prop[key])
       ? prop[key]
       : undefined;

@@ -31,7 +31,7 @@ describe('GroupByPipe', () => {
 
   it('allow function to be used as discriminator', () => {
     const arrayWithDiscriminator = [{key: 'foo'}, {key: 'bar'}, {key: 'foo'}, {key: 'bar'}];
-    const result = pipe.transform(arrayWithDiscriminator, _ => _['key']);
+    const result = pipe.transform(arrayWithDiscriminator, (_: any) => _['key']);
     expect(result).toEqual({
       foo: [{key: 'foo'}, {key: 'foo'}],
       bar: [{key: 'bar'}, {key: 'bar'}]

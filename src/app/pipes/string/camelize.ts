@@ -9,8 +9,10 @@ export class CamelizePipe implements PipeTransform {
       return text;
     }
 
-    return text.toLowerCase().split(/[-_\s]/g).filter(v => !!v).map((word, key) => {
-      return !key ? word : (word.slice(0, 1).toUpperCase() + word.slice(1))
-    }).join('');
+    return text.toLowerCase()
+      .split(/[-_\s]/g)
+      .filter((v: string) => !!v).map((word: string, key: any) => {
+        return !key ? word : (word.slice(0, 1).toUpperCase() + word.slice(1))
+      }).join('');
   }
 }

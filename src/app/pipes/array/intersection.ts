@@ -8,6 +8,6 @@ export class IntersectionPipe implements PipeTransform {
       return input;
     }
 
-    return args.reduce((n, c) => n.filter(e => !!~c.indexOf(e)), input);
+    return args.reduce((n, c) => n.filter((e: any) => !!~c.indexOf(e)), input);
   }
 }

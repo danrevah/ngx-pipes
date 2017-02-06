@@ -8,7 +8,7 @@ export class SamplePipe implements PipeTransform {
       return input;
     }
 
-    let sample = [];
+    let sample: any[] = [];
     for (let i = 0, tmp = [...input], l = len < tmp.length ? len : tmp.length; i < l; ++i) {
       sample = sample.concat(tmp.splice(
         Math.floor(Math.random() * tmp.length),

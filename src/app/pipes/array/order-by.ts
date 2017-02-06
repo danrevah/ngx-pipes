@@ -47,7 +47,7 @@ export class OrderByPipe implements PipeTransform {
     });
   }
 
-  static orderCompare(prop, asc, a, b) {
+  static orderCompare(prop: string, asc: boolean, a: any, b: any) {
     const first = extractDeepPropertyByMapKey(a, prop),
           second = extractDeepPropertyByMapKey(b, prop);
 
@@ -65,7 +65,7 @@ export class OrderByPipe implements PipeTransform {
       : second - first;
   }
 
-  static extractFromConfig(config) {
+  static extractFromConfig(config: any) {
     const sign = config.substr(0, 1);
     const prop = config.replace(/^[-+]/, '');
     const asc = sign !== '-';

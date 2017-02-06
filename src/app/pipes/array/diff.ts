@@ -8,6 +8,6 @@ export class DiffPipe implements PipeTransform {
       return input;
     }
 
-    return args.reduce((d, c) => d.filter(e => !~c.indexOf(e)), input);
+    return args.reduce((d, c) => d.filter((e: any) => !~c.indexOf(e)), input);
   }
 }

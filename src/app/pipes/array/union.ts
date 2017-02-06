@@ -9,7 +9,7 @@ export class UnionPipe implements PipeTransform {
     }
 
     return args.reduce((newArr, currArr) => {
-        return newArr.concat(currArr.reduce((noDupArr, curr) => {
+        return newArr.concat(currArr.reduce((noDupArr: any[], curr: any) => {
             return (!~noDupArr.indexOf(curr) && !~newArr.indexOf(curr))
               ? noDupArr.concat([curr])
               : noDupArr;

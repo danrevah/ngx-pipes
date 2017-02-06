@@ -9,7 +9,7 @@ export class InvertByPipe implements PipeTransform {
       return obj;
     }
 
-    return Object.keys(obj).reduce((o, k) => {
+    return Object.keys(obj).reduce((o: any, k: string) => {
       const key = cb ? cb(obj[k]) : obj[k];
       return Array.isArray(o[key])
         ? (o[key].push(k), o)

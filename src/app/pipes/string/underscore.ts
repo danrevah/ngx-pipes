@@ -8,7 +8,9 @@ export class UnderscorePipe implements PipeTransform {
     return isString(text)
       ? text.trim()
         .replace(/\s+/g, '')
-        .replace(/[A-Z]/g, (c, k) => k ? `_${c.toLowerCase()}` : c.toLowerCase())
+        .replace(/[A-Z]/g, (c: string, k: any) => {
+          return k ? `_${c.toLowerCase()}` : c.toLowerCase()
+        })
       : text;
   }
 }
