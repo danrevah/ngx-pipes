@@ -1,6 +1,6 @@
 {
   "name": "ngx-pipes",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "author": "Dan Revah",
   "description": "Useful angular2 pipes",
   "license": "MIT",
@@ -8,7 +8,7 @@
   "scripts": {
     "start": "ng serve",
     "test": "ng test",
-    "build:js": "ngc -p tsconfig.json"
+    "build:js": "ngc -p tsconfig-aot.json"
   },
   "main": "src/app/index.js",
   "keywords": [
