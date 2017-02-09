@@ -4,10 +4,10 @@ describe('FilterByPipe', () => {
   let pipe: FilterByPipe;
 
   const users = [
-    {id: 1, first_name: 'John', last_name: 'Doe', work: { title: 'Software Engineer', company: 'Foo Tech', previous_company: 'Unknown' }},
-    {id: 2, first_name: 'Jane', last_name: 'West', work: { title: 'Designer', company: 'AAA Solutions', previous_company: 'Unknown' }},
-    {id: 3, first_name: 'Bruce', last_name: 'John', work: { title: 'Software Engineer', company: 'Bar Tech', previous_company: 'Unknown' }},
-    {id: 4, first_name: 'William', last_name: 'Cent', work: { title: 'Designer', company: 'Foo Tech', previous_company: 'Bar Tech' }}
+    {id: 1, first_name: 'John', last_name: 'Doe', work: { title: 'Software Engineer', company: 'Foo Tech', previous_company: 'Unknown' }, current_employed: true},
+    {id: 2, first_name: 'Jane', last_name: 'West', work: { title: 'Designer', company: 'AAA Solutions', previous_company: 'Unknown' }, current_employed: false},
+    {id: 3, first_name: 'Bruce', last_name: 'John', work: { title: 'Software Engineer', company: 'Bar Tech', previous_company: 'Unknown' }, current_employed: true},
+    {id: 4, first_name: 'William', last_name: 'Cent', work: { title: 'Designer', company: 'Foo Tech', previous_company: 'Bar Tech' }, current_employed: false}
   ];
 
   beforeEach(() => {
@@ -27,6 +27,14 @@ describe('FilterByPipe', () => {
 
     expect(filtered.length).toEqual(1);
     expect(filtered[0]).toEqual(users[0]);
+  });
+
+  it('should filter by boolean value', () => {
+    const filtered = pipe.transform(users, ['current_employed'], true);
+
+    expect(filtered.length).toEqual(2);
+    expect(filtered[0]).toEqual(users[0]);
+    expect(filtered[1]).toEqual(users[2]);
   });
 
   it('should filter by multiple fields with a two result', () => {

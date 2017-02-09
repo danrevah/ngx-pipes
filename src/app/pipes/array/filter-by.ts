@@ -1,11 +1,11 @@
 import {PipeTransform, Pipe} from '@angular/core';
-import {isString, extractDeepPropertyByMapKey, isNumberFinite} from '../helpers/helpers';
+import {isString, extractDeepPropertyByMapKey, isNumberFinite, isBoolean} from '../helpers/helpers';
 
 @Pipe({name: 'filterBy'})
 export class FilterByPipe implements PipeTransform {
 
   transform(input: any, props: Array<string>, search: any, strict: boolean = false): any[] {
-    if (!Array.isArray(input) || (!isString(search) && !isNumberFinite(search))) {
+    if (!Array.isArray(input) || (!isString(search) && !isNumberFinite(search) && !isBoolean(search))) {
       return input;
     }
 
