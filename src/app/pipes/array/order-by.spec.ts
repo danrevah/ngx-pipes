@@ -72,6 +72,35 @@ describe('OrderByPipe', () => {
     ]);
   });
 
+  it('should order by a property of type boolean', () => {
+    expect(pipe.transform([
+      {id: 1, value: false},
+      {id: 2, value: true},
+      {id: 3, value: false},
+      {id: 4, value: true},
+    ], 'value')).toEqual([
+      {id: 1, value: false},
+      {id: 3, value: false},
+      {id: 2, value: true},
+      {id: 4, value: true},
+    ]);
+  });
+
+  it('should order by a property of type date', () => {
+    const curr = new Date;
+    expect(pipe.transform([
+      {id: 1, value: new Date(curr.getTime() + 3)},
+      {id: 2, value: new Date(curr.getTime() + 2)},
+      {id: 3, value: new Date(curr.getTime() + 1)},
+      {id: 4, value: new Date(curr.getTime() + 4)},
+    ], 'value')).toEqual([
+      {id: 3, value: new Date(curr.getTime() + 1)},
+      {id: 2, value: new Date(curr.getTime() + 2)},
+      {id: 1, value: new Date(curr.getTime() + 3)},
+      {id: 4, value: new Date(curr.getTime() + 4)},
+    ]);
+  });
+
   it('should order by property if there a stringy value of `+property` or `property`', () => {
     expect(pipe.transform(testArray, 'name')).toEqual([
       {id: 3, name: 'Dan', amount: 1},
