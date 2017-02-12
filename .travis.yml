@@ -2,10 +2,9 @@ sudo: required
 dist: trusty
 language: node_js
 node_js:
-  - '5.0'
-  - '5.7'
   - '6.0'
   - '6.9'
+  - '7.5'
 
 addons:
 apt:
