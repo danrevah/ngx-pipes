@@ -31,8 +31,8 @@ export class OrderByPipe implements PipeTransform {
 
       if (config.length === 1) {
         switch (sign) {
-          case '+': return out.sort();
-          case '-': return out.sort().reverse();
+          case '+': return out.sort(OrderByPipe.simpleSort.bind(this));
+          case '-': return out.sort(OrderByPipe.simpleSort.bind(this)).reverse();
         }
       }
 
@@ -40,14 +40,16 @@ export class OrderByPipe implements PipeTransform {
     }
 
     // default sort by value
-    return out.sort((a, b) => {
-      return isString(a) && isString(b)
-        ? a.toLowerCase().localeCompare(b.toLowerCase())
-        : a - b;
-    });
+    return out.sort(OrderByPipe.simpleSort.bind(this));
   }
 
-  static orderCompare(prop: string, asc: boolean, a: any, b: any) {
+  private static simpleSort(a: any, b: any) {
+    return isString(a) && isString(b)
+      ? a.toLowerCase().localeCompare(b.toLowerCase())
+      : a - b;
+  }
+
+  private static orderCompare(prop: string, asc: boolean, a: any, b: any) {
     const first = extractDeepPropertyByMapKey(a, prop),
           second = extractDeepPropertyByMapKey(b, prop);
 
@@ -65,7 +67,7 @@ export class OrderByPipe implements PipeTransform {
       : second - first;
   }
 
-  static extractFromConfig(config: any) {
+  private static extractFromConfig(config: any) {
     const sign = config.substr(0, 1);
     const prop = config.replace(/^[-+]/, '');
     const asc = sign !== '-';

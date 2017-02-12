@@ -14,6 +14,17 @@ describe('OrderByPipe', () => {
     pipe = new OrderByPipe();
   });
 
+  it ('should return dates in order asc', () => {
+    const a = new Date();
+    const b = new Date();
+    expect(pipe.transform([a, b], '+')).toEqual([a, b]);
+  });
+
+  it ('should return numbers in order asc', () => {
+    const numbers = [0, -1, 345, 1234, 1337, -3];
+    expect(pipe.transform(numbers, '+')).toEqual([-3, -1, 0, 345, 1234, 1337]);
+  });
+
   it('should not do anything in-case of not an array', () => {
     expect(pipe.transform('foo')).toEqual('foo');
     expect(pipe.transform(null)).toEqual(null);
