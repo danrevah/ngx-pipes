@@ -1,8 +1,8 @@
-import { DatePipe } from './date';
-import { FilterByPipe } from './filter-by';
+import { FilterByDatePipe } from './filter-by-date';
 
-describe('DatePipe', () => {
-    let pipe: DatePipe;
+
+describe('FilterByDate', () => {
+    let pipe: FilterByDatePipe;
 
     const dates = [
         { date: '2016-11-23' },
@@ -13,7 +13,7 @@ describe('DatePipe', () => {
     ];
 
     beforeEach(() => {
-        pipe = new DatePipe();
+        pipe = new FilterByDatePipe();
     });
 
     it('should not do anything in-case of not an array', () => {
@@ -26,26 +26,28 @@ describe('DatePipe', () => {
 
     it('should filter between dates', () => {
         const filtered = pipe.transform(dates, 'date', '2016-01-01', '2017-01-01');
-
+        
         expect(filtered.length).toEqual(2);
         expect(filtered[0]).toEqual(dates[0]);
         expect(filtered[1]).toEqual(dates[1]);
     });
     
     it('should filter by after date', () => {
-        const filtered = pipe.transform(dates, 'date', '2015-12-01', '');
-
-        expect(filtered.length).toEqual(3);
+        const filtered = pipe.transform(dates, 'date', '2016-01-01', '');
+        
+        expect(filtered.length).toEqual(2);
         expect(filtered[0]).toEqual(dates[0]);
-        expect(filtered[1]).toEqual(dates[1]);
-        expect(filtered[2]).toEqual(dates[2]);
+        expect(filtered[1]).toEqual(dates[1]);        
     });
 
+
     it('should filter by before date', () => {
-        const filtered = pipe.transform(dates, 'date', '', '2015-12-01');
-        expect(filtered.length).toEqual(2);
-        expect(filtered[0]).toEqual(dates[3]);
-        expect(filtered[1]).toEqual(dates[4]);
+        const filtered = pipe.transform(dates, 'date', '', '2016-01-01');
+        
+        expect(filtered.length).toEqual(3);
+        expect(filtered[0]).toEqual(dates[2]);
+        expect(filtered[1]).toEqual(dates[3]);
+        expect(filtered[2]).toEqual(dates[4]);
         
     });
 });

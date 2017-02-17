@@ -46,6 +46,7 @@
     - [groupBy](#groupby)
     - [filterBy](#filterby)
     - [orderBy](#orderby)
+    - [filterByDate](#filterbydate)
  - [Object](#object)
     - [keys](#keys)
     - [values](#values)
@@ -686,6 +687,38 @@ const deepObj = [
 <!-- Returns array ordered by mutliple properties -->
 <p>{{ obj | orderBy: ['amount', 'id'] }}</p>  
 <!-- Output: [{id: 1, ...}, {id: 3, ...}, {id: 2, ...}, {id: 4, ...}] -->
+```
+
+### filterByDate
+
+Returns dates filter by dates.
+
+**Usage:** `array | filterByDate: prop: [minDate | optional]: [maxDate | optional]`
+
+```typescript
+this.dates = [
+  { date: '2016-11-23' },
+  { date: '2016-10-20' },
+  { date: '2015-12-20' },
+  { date: '2015-02-15' },
+  { date: '2015-01-10' }
+];
+```
+
+```html
+<!-- Returns dates between year 2016 and 2017 -->
+<p>{{ dates | filterBy: 'date' : '2016-01-01', '2017-01-01' }}</p> 
+<!-- Output: "[{date: '2016-11-23'}, {date: '2016-10-20'}]" -->
+
+<!-- Returns dates after year 2015 -->
+<p>{{ dates | filterBy: 'date' : '2016-01-01', '' }}</p> 
+<!-- Output: "[{date: '2016-11-23'},{date: '2016-10-20'}]" -->
+
+<!-- Returns dates before year 2016 -->
+<p>{{ dates | filterBy: 'date' : '', '2016-01-01' }}</p> 
+<!-- Output: "[{date: '2015-12-20'}, {date: '2015-02-15'}, {date: '2015-01-10'}]" -->
+
+
 ```
 
 ## Object

@@ -2,8 +2,8 @@ import { PipeTransform, Pipe } from '@angular/core';
 import { extractDeepPropertyByMapKey } from '../helpers/helpers';
 import * as moment from 'moment';
 
-@Pipe({ name: 'date' })
-export class DatePipe implements PipeTransform {
+@Pipe({ name: 'filterByDate' })
+export class FilterByDatePipe implements PipeTransform {
 
     transform(input: any, prop: string, minDate?: string, maxDate?: string): any[] {
         if (!Array.isArray(input)) {
