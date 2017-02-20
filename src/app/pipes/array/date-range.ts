@@ -4,7 +4,7 @@ import { extractDeepPropertyByMapKey } from '../helpers/helpers';
 @Pipe({ name: 'dateRange' })
 export class DateRangePipe implements PipeTransform {
 
-    transform(input: any, prop: string, minDate?: string | Date, maxDate?: string | Date): any[] {
+    transform(input: any, prop: string, minDate?: string | Date, maxDate?: string | Date, strict: boolean = false): any[] {
         if (!Array.isArray(input)) {
             return input;
         }
@@ -13,15 +13,15 @@ export class DateRangePipe implements PipeTransform {
         let max = this.transformDate(maxDate);
 
         if (!!!isNaN(min) && !!!isNaN(max)) {
-            return this.between(input, prop, min, max);
+            return this.between(input, prop, min, max, strict);
         }
 
         if (!!!isNaN(min)) {
-            return this.min(input, prop, min);
+            return this.min(input, prop, min, strict);
         }
 
         if (!!!isNaN(max)) {
-            return this.max(input, prop, max);
+            return this.max(input, prop, max, strict);
         }
 
         return input;
@@ -33,7 +33,7 @@ export class DateRangePipe implements PipeTransform {
 
 
 
-    private between(input: any, prop: string, minDate: number, maxDate: number): any[] {
+    private between(input: any, prop: string, minDate: number, maxDate: number, strict: boolean): any[] {
         return input.filter((obj: any) => {
             const value: string | Date = extractDeepPropertyByMapKey(obj, prop);
             let compare = this.transformDate(value);
@@ -41,12 +41,17 @@ export class DateRangePipe implements PipeTransform {
                 return false;
             }
 
-            return compare > minDate && compare < maxDate;
+            if (strict) {
+                return compare >= minDate && compare <= maxDate;
+            } else {
+                return compare > minDate && compare < maxDate;
+            }
+
         });
 
     }
 
-    private min(input: any, prop: string, minDate: number): any[] {
+    private min(input: any, prop: string, minDate: number, strict: boolean): any[] {
         return input.filter((obj: any) => {
 
             const value: string | Date = extractDeepPropertyByMapKey(obj, prop);
@@ -55,12 +60,16 @@ export class DateRangePipe implements PipeTransform {
             if (!!isNaN(compare)) {
                 return false;
             }
+            if (strict) {
+                return compare >= minDate;
+            } else {
+                return compare > minDate;
+            }
 
-            return compare > minDate;
         });
     }
 
-    private max(input: any, prop: string, maxDate: number): any[] {
+    private max(input: any, prop: string, maxDate: number, strict: boolean): any[] {
         return input.filter((obj: any) => {
 
             const value: string | Date = extractDeepPropertyByMapKey(obj, prop);
@@ -69,7 +78,13 @@ export class DateRangePipe implements PipeTransform {
             if (!!isNaN(compare)) {
                 return false;
             }
-            return compare < maxDate;
+
+            if (strict) {
+                return compare <= maxDate;
+            } else {
+                return compare < maxDate;
+            }
+
         });
     }
 
