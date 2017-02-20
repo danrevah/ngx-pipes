@@ -46,7 +46,7 @@
     - [groupBy](#groupby)
     - [filterBy](#filterby)
     - [orderBy](#orderby)
-    - [filterByDate](#filterbydate)
+    - [dateRange](#daterange)
  - [Object](#object)
     - [keys](#keys)
     - [values](#values)
@@ -689,19 +689,19 @@ const deepObj = [
 <!-- Output: [{id: 1, ...}, {id: 3, ...}, {id: 2, ...}, {id: 4, ...}] -->
 ```
 
-### filterByDate
+### dateRange
 
-Returns dates filter by dates.
+Returns dates filter by dates
 
 **Usage:** `array | filterByDate: prop: [minDate | optional]: [maxDate | optional]`
 
 ```typescript
 this.dates = [
-  { date: '2016-11-23' },
-  { date: '2016-10-20' },
-  { date: '2015-12-20' },
-  { date: '2015-02-15' },
-  { date: '2015-01-10' }
+    { date: '2016-11-23' },
+    { date: new Date('2016-10-23') },
+    { date: new Date('2015-12-20') },
+    { date: '2015-02-15' },
+    { date: '2015-01-10' },
 ];
 ```
 
