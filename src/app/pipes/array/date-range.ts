@@ -12,15 +12,15 @@ export class DateRangePipe implements PipeTransform {
         let min = this.transformDate(minDate);
         let max = this.transformDate(maxDate);
 
-        if (isNaN(min) && isNaN(max)) {
+        if (!!!isNaN(min) && !!!isNaN(max)) {
             return this.between(input, prop, min, max);
         }
 
-        if (isNaN(min)) {
+        if (!!!isNaN(min)) {
             return this.min(input, prop, min);
         }
 
-        if (isNaN(max)) {
+        if (!!!isNaN(max)) {
             return this.max(input, prop, max);
         }
 
@@ -28,17 +28,16 @@ export class DateRangePipe implements PipeTransform {
     }
 
     private transformDate(date: string | Date): number {
-        return (date instanceof String) ? Date.parse(date) : date.valueOf();
+        return (date instanceof Date) ? date.valueOf() : Date.parse(date);
     }
 
-     
+
 
     private between(input: any, prop: string, minDate: number, maxDate: number): any[] {
         return input.filter((obj: any) => {
             const value: string | Date = extractDeepPropertyByMapKey(obj, prop);
             let compare = this.transformDate(value);
-
-            if (!!isNaN(compare)){
+            if (!!isNaN(compare)) {
                 return false;
             }
 
@@ -53,11 +52,11 @@ export class DateRangePipe implements PipeTransform {
             const value: string | Date = extractDeepPropertyByMapKey(obj, prop);
             let compare = this.transformDate(value);
 
-            if (!!isNaN(compare)){
+            if (!!isNaN(compare)) {
                 return false;
             }
 
-             return compare > minDate;
+            return compare > minDate;
         });
     }
 
@@ -67,10 +66,10 @@ export class DateRangePipe implements PipeTransform {
             const value: string | Date = extractDeepPropertyByMapKey(obj, prop);
             let compare = this.transformDate(value);
 
-            if (!!isNaN(compare)){
+            if (!!isNaN(compare)) {
                 return false;
             }
-            return compare > maxDate;
+            return compare < maxDate;
         });
     }
 

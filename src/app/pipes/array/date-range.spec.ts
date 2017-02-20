@@ -5,8 +5,8 @@ describe('dateRange', () => {
 
     const dates = [
         { date: '2016-11-23' },
-        { date: '2016-10-20' },
-        { date: '2015-12-20' },
+        { date: new Date('2016-10-23') },
+        { date: new Date('2015-12-20') },
         { date: '2015-02-15' },
         { date: '2015-01-10' },
     ];
