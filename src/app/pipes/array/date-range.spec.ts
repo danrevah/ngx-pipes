@@ -1,8 +1,7 @@
-import { FilterByDatePipe } from './filter-by-date';
+import { DateRangePipe } from './date-range';
 
-
-describe('FilterByDate', () => {
-    let pipe: FilterByDatePipe;
+describe('dateRange', () => {
+    let pipe: DateRangePipe;
 
     const dates = [
         { date: '2016-11-23' },
@@ -15,7 +14,7 @@ describe('FilterByDate', () => {
     const datesBadFormat = [{ date: '' }, { date: 'asdasdas' }]
 
     beforeEach(() => {
-        pipe = new FilterByDatePipe();
+        pipe = new DateRangePipe();
     });
 
     it('should not do anything in-case of not an array', () => {
