@@ -36,5 +36,5 @@ export function extractDeepPropertyByMapKey(obj: any, map: string): any {
     return !isUndefined(prop) && !isUndefined(prop[key])
       ? prop[key]
       : undefined;
-  }, obj[key]);
+  }, obj[key || '']);
 }
