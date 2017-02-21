@@ -80,7 +80,7 @@ describe('dateRange', () => {
     });
 
     it('should filter by before date', () => {
-        const filtered = pipe.transform(dates, 'date', '', '2016-10-23');
+        const filtered = pipe.transform(dates, 'date', '', new Date('2016-10-23'));
 
         expect(filtered.length).toEqual(3);
         expect(filtered[0]).toEqual(dates[2]);
