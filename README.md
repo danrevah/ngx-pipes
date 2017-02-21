@@ -693,7 +693,7 @@ const deepObj = [
 
 Returns dates filter by dates
 
-**Usage:** `array | filterByDate: prop: [minDate | optional]: [maxDate | optional]`
+**Usage:** `array | filterByDate: prop: [minDate | optional]: [maxDate | optional] : [strict | optional]`
 
 ```typescript
 this.dates = [
@@ -714,9 +714,9 @@ this.dates = [
 <p>{{ dates | filterBy: 'date' : '2016-01-01', '' }}</p> 
 <!-- Output: "[{date: '2016-11-23'},{date: '2016-10-20'}]" -->
 
-<!-- Returns dates before year 2016 -->
-<p>{{ dates | filterBy: 'date' : '', '2016-01-01' }}</p> 
-<!-- Output: "[{date: '2015-12-20'}, {date: '2015-02-15'}, {date: '2015-01-10'}]" -->
+<!-- Returns dates before year 2016-10-23 including it -->
+<p>{{ dates | filterBy: 'date' : '', '2016-10-23' : true}}</p> 
+<!-- Output: "[{date: '2016-10-23'}, {date: '2015-12-20'}, {date: '2015-02-15'}, {date: '2015-01-10'}]" -->
 
 
 ```
