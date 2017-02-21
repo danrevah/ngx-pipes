@@ -37,7 +37,7 @@ export class DateRangePipe implements PipeTransform {
         return input.filter((obj: any) => {
             const value: string | Date = extractDeepPropertyByMapKey(obj, prop);
             let compare = this.transformDate(value);
-            if (!!isNaN(compare)) {
+            if (isNaN(compare)) {
                 return false;
             }
 
@@ -57,7 +57,7 @@ export class DateRangePipe implements PipeTransform {
             const value: string | Date = extractDeepPropertyByMapKey(obj, prop);
             let compare = this.transformDate(value);
 
-            if (!!isNaN(compare)) {
+            if (isNaN(compare)) {
                 return false;
             }
             if (strict) {
@@ -75,7 +75,7 @@ export class DateRangePipe implements PipeTransform {
             const value: string | Date = extractDeepPropertyByMapKey(obj, prop);
             let compare = this.transformDate(value);
 
-            if (!!isNaN(compare)) {
+            if (isNaN(compare)) {
                 return false;
             }
 
