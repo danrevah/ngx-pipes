@@ -35,17 +35,33 @@ describe('dateRange', () => {
         expect(filtered.length).toEqual(0);
     });
 
-
-    it('should filter between dates', () => {
-        const filtered = pipe.transform(dates, 'date', '2016-01-01', '2017-01-01');
+    it('should filter between dates including it', () => {
+        const filtered = pipe.transform(dates, 'date', '2016-10-23', '2017-01-01', true);
 
         expect(filtered.length).toEqual(2);
         expect(filtered[0]).toEqual(dates[0]);
         expect(filtered[1]).toEqual(dates[1]);
+    });
+
+
+    it('should filter between dates', () => {
+        const filtered = pipe.transform(dates, 'date', '2016-10-23', '2017-01-01');
+
+        expect(filtered.length).toEqual(1);
+        expect(filtered[0]).toEqual(dates[0]);
+    });
+
+    it('should filter by after date including it', () => {
+        const filtered = pipe.transform(dates, 'date', '2015-12-20', '', true);
+
+        expect(filtered.length).toEqual(3);
+        expect(filtered[0]).toEqual(dates[0]);
+        expect(filtered[1]).toEqual(dates[1]);
+        expect(filtered[2]).toEqual(dates[2]);
     });
 
     it('should filter by after date', () => {
-        const filtered = pipe.transform(dates, 'date', '2016-01-01', '');
+        const filtered = pipe.transform(dates, 'date', '2015-12-20', '');
 
         expect(filtered.length).toEqual(2);
         expect(filtered[0]).toEqual(dates[0]);
@@ -53,13 +69,22 @@ describe('dateRange', () => {
     });
 
 
+    it('should filter by before date including it', () => {
+        const filtered = pipe.transform(dates, 'date', '', '2016-10-23', true);
+
+        expect(filtered.length).toEqual(4);
+        expect(filtered[0]).toEqual(dates[1]);
+        expect(filtered[1]).toEqual(dates[2]);
+        expect(filtered[2]).toEqual(dates[3]);
+        expect(filtered[3]).toEqual(dates[4]);
+    });
+
     it('should filter by before date', () => {
-        const filtered = pipe.transform(dates, 'date', '', '2016-01-01');
+        const filtered = pipe.transform(dates, 'date', '', '2016-10-23');
 
         expect(filtered.length).toEqual(3);
         expect(filtered[0]).toEqual(dates[2]);
         expect(filtered[1]).toEqual(dates[3]);
         expect(filtered[2]).toEqual(dates[4]);
-
     });
 });
