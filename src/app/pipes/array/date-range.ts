@@ -12,15 +12,15 @@ export class DateRangePipe implements PipeTransform {
         let min = this.transformDate(minDate);
         let max = this.transformDate(maxDate);
 
-        if (!!!isNaN(min) && !!!isNaN(max)) {
+        if (!isNaN(min) && !isNaN(max)) {
             return this.between(input, prop, min, max, strict);
         }
 
-        if (!!!isNaN(min)) {
+        if (!isNaN(min)) {
             return this.min(input, prop, min, strict);
         }
 
-        if (!!!isNaN(max)) {
+        if (!isNaN(max)) {
             return this.max(input, prop, max, strict);
         }
 
