@@ -1,9 +1,9 @@
 import {NgModule} from '@angular/core';
-import {NgArrayPipesModule} from './pipes/array';
-import {NgObjectPipesModule} from './pipes/object';
-import {NgStringPipesModule} from './pipes/string';
-import {NgMathPipesModule} from './pipes/math';
-import {NgBooleanPipesModule} from './pipes/boolean';
+import {NgArrayPipesModule} from './pipes/array/index';
+import {NgObjectPipesModule} from './pipes/object/index';
+import {NgStringPipesModule} from './pipes/string/index';
+import {NgMathPipesModule} from './pipes/math/index';
+import {NgBooleanPipesModule} from './pipes/boolean/index';
 
 @NgModule({
   declarations: [],
