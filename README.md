@@ -54,6 +54,7 @@
     - [omit](#omit)
     - [invert](#invert)
     - [invertBy](#invertby)
+    - [diffObj](#diffobj)
  - [Math](#math)   
     - [min](#min)
     - [max](#max)
@@ -769,6 +770,19 @@ this.cb = (value): string => {
 <p>{{ {foo: 1, bar: 2} | invertBy }}</p> <!-- Output: "{1: ['foo'], 2: ['bar']}" -->
 <p>{{ {foo: 1, bar: 2} | invertBy: cb }}</p> <!-- Output: "{name_1: ['foo'], name_2: ['bar']}" -->
 <p>{{ {a: 1, b: 2, c: 1, d: 2} | invertBy }}</p> <!-- Output: "{1: ['a', 'c'], 2: ['b', 'd']}" -->
+```
+
+### diffObj
+
+Returns a diff object of two objects
+
+**Usage:** `object | diffObj: Object`
+
+```html
+<p>{{ {a: 1} | diffObj: {a: 1} }}</p> <!-- Output: "{}" -->
+<p>{{ {a: 1} | diffObj: {a: 2} }}</p> <!-- Output: "{a: 1}" -->
+<p>{{ {a: 1, b: 2} | diffObj: {a: 1, b: 1} }}</p> <!-- Output: "{b: 2}" -->
+<p>{{ {a: 1, b: 2, c: {d: 3} } | diffObj: {a: 1, b: 1, c: {d: 1} } }}</p> <!-- Output: "{b: 2, c: {d: 3}}" -->
 ```
 
 ## Math

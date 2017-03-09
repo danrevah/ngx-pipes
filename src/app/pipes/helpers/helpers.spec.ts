@@ -1,5 +1,5 @@
 
-import {extractDeepPropertyByMapKey} from './helpers';
+import {extractDeepPropertyByMapKey, isDeepEqual} from './helpers';
 
 describe('Utils Tests', () => {
 
@@ -31,5 +31,15 @@ describe('Utils Tests', () => {
     expect(extractDeepPropertyByMapKey(obj, 'f.g')).toEqual(4);
     expect(extractDeepPropertyByMapKey(obj, 'f.i.j.k.l')).toEqual(6);
     expect(extractDeepPropertyByMapKey(obj, 'f.i.j.k.l.')).toEqual(undefined);
+  });
+
+  it('should deep equal properly', () => {
+    expect(isDeepEqual({a: 1}, {a: 1})).toBeTruthy();
+    expect(isDeepEqual({a: 1}, {b: 1})).toBeFalsy();
+    expect(isDeepEqual({a: 1}, {a: 1, b: 1})).toBeFalsy();
+    expect(isDeepEqual({a: 1, b: 2}, {a: 1, b: 2})).toBeTruthy();
+    expect(isDeepEqual({a: 1, b: 2}, {a: 1, b: 1})).toBeFalsy();
+    expect(isDeepEqual({a: 1, b: 2, c: {d: 3}}, {a: 1, b: 2, c: {d: 1}})).toBeFalsy();
+    expect(isDeepEqual({a: 1, b: 2, c: {d: 3}}, {a: 1, b: 2, c: {d: 3}})).toBeTruthy();
   });
 });

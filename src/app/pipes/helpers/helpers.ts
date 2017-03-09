@@ -38,3 +38,24 @@ export function extractDeepPropertyByMapKey(obj: any, map: string): any {
       : undefined;
   }, obj[key || '']);
 }
+
+export function getKeysTwoObjects(obj: any, other: any): any {
+  return [...Object.keys(obj), ...Object.keys(other)]
+    .filter((key, index, array) => array.indexOf(key) === index);
+}
+
+export function isDeepEqual(obj: any, other: any): any {
+  if (!isObject(obj) || !isObject(other)) {
+    return obj === other;
+  }
+
+  return getKeysTwoObjects(obj, other).every((key: any): boolean => {
+    if (!isObject(obj[key]) && !isObject(other[key])) {
+      return obj[key] === other[key];
+    }
+    if (!isObject(obj[key]) || !isObject(other[key])) {
+      return false;
+    }
+    return isDeepEqual(obj[key], other[key]);
+  });
+}
