@@ -11,6 +11,8 @@ export class OmitPipe implements PipeTransform {
 
     return Object.keys(obj)
       .filter(k => !~args.indexOf(k))
-      .reduce((o, k) => Object.assign(o, {[k]: obj[k]}), {});
+      .reduce((o, k) => {
+        return Object.assign(o, {[k]: obj[k]});
+      }, {});
   }
 }

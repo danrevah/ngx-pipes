@@ -10,6 +10,8 @@ export class InvertPipe implements PipeTransform {
     }
 
     return Object.keys(obj)
-      .reduce((o, k) => Object.assign(o, {[obj[k]]: k}), {});
+      .reduce((o, k) => {
+        return Object.assign(o, {[obj[k]]: k})
+      }, {});
   }
 }

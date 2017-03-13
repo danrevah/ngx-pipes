@@ -9,6 +9,8 @@ export class PickPipe implements PipeTransform {
       return obj;
     }
 
-    return args.reduce((o, k) => Object.assign(o, {[k]: obj[k]}), {});
+    return args.reduce((o, k) => {
+      return Object.assign(o, {[k]: obj[k]});
+    }, {});
   }
 }
