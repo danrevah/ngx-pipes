@@ -41,5 +41,6 @@ describe('Utils Tests', () => {
     expect(isDeepEqual({a: 1, b: 2}, {a: 1, b: 1})).toBeFalsy();
     expect(isDeepEqual({a: 1, b: 2, c: {d: 3}}, {a: 1, b: 2, c: {d: 1}})).toBeFalsy();
     expect(isDeepEqual({a: 1, b: 2, c: {d: 3}}, {a: 1, b: 2, c: {d: 3}})).toBeTruthy();
+    expect(isDeepEqual({a: 1, b: 2, c: {d: 3}}, {a: 1, b: 2, c: {d: {}}})).toBeFalsy();
   });
 });
