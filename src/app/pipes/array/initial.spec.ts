@@ -7,6 +7,11 @@ describe('InitialPipe', () => {
     pipe = new InitialPipe();
   });
 
+  it('should return value if not array', () => {
+    expect(pipe.transform(42)).toEqual(42);
+    expect(pipe.transform(false)).toEqual(false);
+  });
+
   it('should check that nothing happens if there are no parameters', () => {
     let arr = [1, 2, 3];
     let result = pipe.transform(arr);

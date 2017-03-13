@@ -9,6 +9,7 @@ describe('EveryPipe', () => {
   });
 
   it('should check if every elements of the array fits the predicate', () => {
+    expect(pipe.transform(42, isNumber)).toBeFalsy();
     expect(pipe.transform([1, 2, 3, 4], isNumber)).toBeTruthy();
     expect(pipe.transform([1, 2, 3, 'a'], isNumber)).toBeFalsy();
     expect(pipe.transform([1, 2, 3, 4], isUndefined)).toBeFalsy();

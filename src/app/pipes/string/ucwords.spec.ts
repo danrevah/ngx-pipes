@@ -7,6 +7,11 @@ describe('UcFirstPipe Tests', () => {
     pipe = new UcWordsPipe();
   });
 
+  it('Should return value if not a string', () => {
+    expect(pipe.transform(42)).toEqual(42);
+    expect(pipe.transform(false)).toEqual(false);
+  });
+
   it('Should capitalize all words in a string', () => {
     let result = pipe.transform('foo bar baz');
     expect(result).toEqual('Foo Bar Baz');

@@ -7,6 +7,11 @@ describe('PowerPipe', () => {
     pipe = new PowerPipe();
   });
 
+  it('should return value if not a number', () => {
+    expect(pipe.transform({a: 1})).toEqual({a: 1});
+    expect(pipe.transform(NaN)).toEqual(NaN);
+  });
+
   it('should return power of a given number', () => {
     expect(pipe.transform(3)).toEqual(9);
     expect(pipe.transform(3, 3)).toEqual(27);

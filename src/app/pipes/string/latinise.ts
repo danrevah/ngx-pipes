@@ -9,7 +9,8 @@ export class LatinisePipe implements PipeTransform {
 
   transform(text: any, chars: string = '\\s'): string {
     return isString(text)
-      ? text.replace(/[^A-Za-z0-9]/g, (key: string) => (this.latinMap[key] || key))
-      : text;
+      ? text.replace(/[^A-Za-z0-9]/g, (key: string) => {
+        return this.latinMap[key] || key;
+      }) : text;
   }
 }
