@@ -1095,7 +1095,7 @@ $ npm install -g angular-cli karma
 Clone the project, and install dependencies.
 
 ```bash
-$ git clone https://github.com/danrevah/ng2-pipes.git
+$ git clone https://github.com/danrevah/ngx-pipes.git
 $ npm install
 ```
 
