@@ -10,7 +10,7 @@ export class InsertPipe implements PipeTransform {
   transform(text: any, chars: string = '', stepSize: number = 1): any {
     function chunk(): string[] {
 
-      if (!isNumber(stepSize)) {
+      if (!isNumber(stepSize) || stepSize <= 0) {
         return text.split('');
       }
 
