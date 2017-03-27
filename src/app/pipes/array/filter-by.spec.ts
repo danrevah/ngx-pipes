@@ -4,7 +4,7 @@ describe('FilterByPipe', () => {
   let pipe: FilterByPipe;
 
   const users = [
-    {id: 1, first_name: 'John', last_name: 'Doe', work: { title: 'Software Engineer', company: 'Foo Tech', previous_company: 'Unknown' }, current_employed: true},
+    {id: 1, first_name: 'John', last_name: 'Doe', work: { title: 'Software Engineer', company: 'Foo Tech', previous_company: 'Unknown' }, current_employed: true, prop: 1},
     {id: 2, first_name: 'Jane', last_name: 'West', work: { title: 'Designer', company: 'AAA Solutions', previous_company: 'Unknown' }, current_employed: false},
     {id: 3, first_name: 'Bruce', last_name: 'John', work: { title: 'Software Engineer', company: 'Bar Tech', previous_company: 'Unknown' }, current_employed: true},
     {id: 4, first_name: 'William', last_name: 'Cent', work: { title: 'Designer', company: 'Foo Tech', previous_company: 'Bar Tech' }, current_employed: false}
@@ -20,6 +20,13 @@ describe('FilterByPipe', () => {
     expect(pipe.transform(undefined, [''], '')).toEqual(undefined);
     expect(pipe.transform(42, [''], '')).toEqual(42);
     expect(pipe.transform({foo: 1, bar: 2}, [''], '')).toEqual({foo: 1, bar: 2});
+  });
+
+  it('should filter by single field with no value to only check if property is defined', () => {
+    const filtered = pipe.transform(users, ['prop']);
+
+    expect(filtered.length).toEqual(1);
+    expect(filtered[0]).toEqual(users[0]);
   });
 
   it('should filter by single field with a single result', () => {
