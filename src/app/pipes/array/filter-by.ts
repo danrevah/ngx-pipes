@@ -1,6 +1,5 @@
 import {PipeTransform, Pipe} from '@angular/core';
-import {isString, extractDeepPropertyByMapKey, isNumberFinite, isBoolean} from '../helpers/helpers';
-import {isUndefined} from 'util';
+import {isString, extractDeepPropertyByMapKey, isNumberFinite, isBoolean, isUndefined} from '../helpers/helpers';
 
 @Pipe({name: 'filterBy'})
 export class FilterByPipe implements PipeTransform {
