@@ -1,6 +1,6 @@
 {
   "name": "ngx-pipes",
-  "version": "1.4.9",
+  "version": "1.4.10",
   "author": "Dan Revah",
   "description": "Useful angular2 pipes",
   "license": "MIT",
@@ -10,6 +10,8 @@
     "test": "ng test",
     "build:js": "ngc -p tsconfig-aot.json && ngc -p tsconfig.esm.json && rollup -c && rollup -c --environment BUNDLE_MIN"
   },
+  "types": "src/app/index.d.ts",
+  "module": "esm/index.js",
   "main": "src/app/index.js",
   "keywords": [
     "ng2",
