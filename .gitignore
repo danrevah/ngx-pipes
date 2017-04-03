@@ -3,6 +3,8 @@
 # compiled output
 /tmp
 coverage/
+bundles/
+esm/
 
 # dependencies
 /node_modules
