@@ -1,4 +1,3 @@
-
 {
   "compilerOptions": {
     "sourceMap": true,
@@ -9,10 +8,11 @@
     "noUnusedLocals": true,
     "suppressImplicitAnyIndexErrors": false,
     "declaration": true,
-    "lib": ["es6", "dom"],
-    "module": "commonjs",
-    "moduleResolution": "node",
     "target": "es5",
+    "module": "es2015",
+    "moduleResolution": "node",
+    "outDir": "esm",
+    "lib": ["es6", "dom"],
     "typeRoots": [
       "../node_modules/@types"
     ]

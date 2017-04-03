@@ -1,7 +1,7 @@
 import {PipeTransform, Pipe} from '@angular/core';
 import {isString, extractDeepPropertyByMapKey, isNumberFinite, isBoolean, isUndefined} from '../helpers/helpers';
 
-@Pipe({name: 'filterBy'})
+@Pipe({name: 'filterBy', pure: false})
 export class FilterByPipe implements PipeTransform {
 
   transform(input: any, props: Array<string>, search: any = '', strict: boolean = false): any[] {
