@@ -11,3 +11,9 @@ import {NgBooleanPipesModule} from './pipes/boolean/index';
   exports: [NgArrayPipesModule, NgStringPipesModule, NgMathPipesModule, NgBooleanPipesModule, NgObjectPipesModule]
 })
 export class NgPipesModule {}
+
+export * from './pipes/array/index';
+export * from './pipes/object/index';
+export * from './pipes/string/index';
+export * from './pipes/math/index';
+export * from './pipes/boolean/index';
