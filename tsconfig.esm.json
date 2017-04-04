@@ -18,12 +18,12 @@
     ]
   },
   "include": [
-    "src/app/pipes.module.ts",
     "src/app/index.ts",
     "index.ts"
   ],
   "exclude": [
     "node_modules",
+    "node_modules/**/*.ts",
     "**/*.spec.ts"
   ],
   "angularCompilerOptions": {
