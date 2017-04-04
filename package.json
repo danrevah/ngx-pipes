@@ -7,7 +7,7 @@
   "angular-cli": {},
   "jsnext:main": "esm/index.js",
   "module": "esm/index.js",
-  "types": "src/index.d.ts",
+  "types": "src/app/index.d.ts",
   "scripts": {
     "start": "ng serve",
     "test": "ng test",
