@@ -2,7 +2,12 @@ sudo: required
 dist: trusty
 language: node_js
 node_js:
-  - '6.9'
+  - 6
+
+cache:
+  yarn: true
+  directories:
+    - node_modules
 
 addons:
 apt:
