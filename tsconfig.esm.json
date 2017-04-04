@@ -1,5 +1,9 @@
 {
   "compilerOptions": {
+    "target": "es5",
+    "module": "es2015",
+    "moduleResolution": "node",
+    "outDir": "esm",
     "sourceMap": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
@@ -8,13 +12,9 @@
     "noUnusedLocals": true,
     "suppressImplicitAnyIndexErrors": false,
     "declaration": true,
-    "target": "es5",
-    "module": "es2015",
-    "moduleResolution": "node",
-    "outDir": "esm",
     "lib": ["es6", "dom"],
     "typeRoots": [
-      "../node_modules/@types"
+      "node_modules/@types"
     ]
   },
   "include": [
@@ -24,11 +24,9 @@
   ],
   "exclude": [
     "node_modules",
-    "node_modules/**/*.*",
     "**/*.spec.ts"
   ],
   "angularCompilerOptions": {
-    "strictMetadataEmit": true,
     "skipTemplateCodegen": true
   }
 }

@@ -6,7 +6,6 @@ const plugins = [
   nodeResolve({ jsnext: true,  module: true,  extensions: ['.js'] })
 ];
 
-
 let dest = 'bundles/bundle.umd.js';
 
 if (process.env.BUNDLE_MIN === 'true') {
