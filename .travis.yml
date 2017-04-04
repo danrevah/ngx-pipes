@@ -2,12 +2,9 @@ sudo: required
 dist: trusty
 language: node_js
 node_js:
-  - 6
-
-cache:
-  yarn: true
-  directories:
-    - node_modules
+  - '6.0'
+  - '6.9'
+  - '7.5'
 
 addons:
 apt:
@@ -23,10 +20,9 @@ before_install:
   - sh -e /etc/init.d/xvfb start
 
 before_script:
-- npm install -g @angular/cli
+- npm install -g angular-cli
 - npm install -g karma
 
 script: ng test -cc --watch=false
-
 
 after_success: cat ./coverage/coverage.lcov | ./node_modules/coveralls/bin/coveralls.js
