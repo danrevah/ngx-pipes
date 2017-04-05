@@ -32,10 +32,8 @@
     "type": "git",
     "url": "https://github.com/danrevah/ngx-pipes.git"
   },
-  "dependencies": {
-    "@angular/common": "^4.0.1"
-  },
   "devDependencies": {
+    "@angular/common": "^4.0.1",
     "@angular/compiler": "^4.0.1",
     "@angular/core": "^4.0.1",
     "@angular/forms": "^4.0.1",
