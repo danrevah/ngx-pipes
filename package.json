@@ -1,6 +1,6 @@
 {
   "name": "ngx-pipes",
-  "version": "1.5.2",
+  "version": "1.5.4",
   "author": "Dan Revah",
   "description": "Useful angular2 pipes",
   "license": "MIT",
@@ -33,7 +33,9 @@
     "url": "https://github.com/danrevah/ngx-pipes.git"
   },
   "dependencies": {
-    "@angular/common": "^4.0.1",
+    "@angular/common": "^4.0.1"
+  },
+  "devDependencies": {
     "@angular/compiler": "^4.0.1",
     "@angular/core": "^4.0.1",
     "@angular/forms": "^4.0.1",
@@ -41,26 +43,17 @@
     "@angular/platform-browser": "^4.0.1",
     "@angular/platform-browser-dynamic": "^4.0.1",
     "@angular/router": "^4.0.1",
-    "rxjs": "^5.1.0",
-    "typed.js": "^1.1.1",
     "zone.js": "^0.8.4",
-    "ts-node": "1.2.1",
-    "tslint": "3.13.0",
-    "codelyzer": "~1.0.0-beta.3",
-    "core-js": "^2.4.1",
     "coveralls": "^2.11.15",
     "gulp": "^3.9.1",
     "gulp-clean": "^0.3.2",
     "rollup": "^0.41.4",
     "rollup-plugin-node-resolve": "^2.0.0",
-    "rollup-plugin-uglify": "^1.0.1"
-  },
-  "devDependencies": {
+    "rollup-plugin-uglify": "^1.0.1",
     "@angular/cli": "1.0.0",
     "@angular/compiler-cli": "^4.0.1",
     "@types/jasmine": "2.5.38",
     "@types/node": "~6.0.60",
-    "codelyzer": "~2.0.0",
     "jasmine-core": "~2.5.2",
     "jasmine-spec-reporter": "~3.2.0",
     "karma": "~1.4.1",
@@ -69,7 +62,6 @@
     "karma-coverage-istanbul-reporter": "^0.2.0",
     "karma-jasmine": "~1.1.0",
     "karma-jasmine-html-reporter": "^0.2.2",
-    "ng2-ace-editor": "^0.1.9",
     "protractor": "~5.1.0",
     "ts-node": "~2.0.0",
     "tslint": "~4.5.0",

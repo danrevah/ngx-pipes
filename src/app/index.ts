@@ -1,19 +1,17 @@
 import {NgModule} from '@angular/core';
-import {NgArrayPipesModule} from './pipes/array';
-import {NgObjectPipesModule} from './pipes/object';
-import {NgStringPipesModule} from './pipes/string';
-import {NgMathPipesModule} from './pipes/math';
-import {NgBooleanPipesModule} from './pipes/boolean';
+import {NgArrayPipesModule} from './pipes/array/index';
+import {NgObjectPipesModule} from './pipes/object/index';
+import {NgStringPipesModule} from './pipes/string/index';
+import {NgMathPipesModule} from './pipes/math/index';
+import {NgBooleanPipesModule} from './pipes/boolean/index';
 
 @NgModule({
-  declarations: [],
-  imports: [],
   exports: [NgArrayPipesModule, NgStringPipesModule, NgMathPipesModule, NgBooleanPipesModule, NgObjectPipesModule]
 })
 export class NgPipesModule {}
 
-export * from './pipes/array';
-export * from './pipes/object';
-export * from './pipes/string';
-export * from './pipes/math';
-export * from './pipes/boolean';
+export * from './pipes/array/index';
+export * from './pipes/object/index';
+export * from './pipes/string/index';
+export * from './pipes/math/index';
+export * from './pipes/boolean/index';
