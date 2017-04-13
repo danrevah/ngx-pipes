@@ -98,7 +98,7 @@
 2. You could either add into your module `imports` the `NgPipesModule` in order to add all of the pipes, Or add a specific module such as `NgArrayPipesModule`, `NgObjectPipesModule`, `NgStringPipesModule`, `NgMathPipesModule` or `NgBooleanPipesModule`.
 
   ```typescript
-  import {NgPipesModule} from 'ngx-pipes';
+  import { NgPipesModule } from 'angular2-pipes';
   
   @NgModule({
    // ...
