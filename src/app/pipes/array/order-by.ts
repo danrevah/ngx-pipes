@@ -1,5 +1,5 @@
 import {PipeTransform, Pipe} from '@angular/core';
-import {isString, extractDeepPropertyByMapKey} from '../helpers/helpers';
+import {isString, extractDeepPropertyByMapKey, isUndefined} from '../helpers/helpers';
 
 @Pipe({name: 'orderBy', pure: false})
 export class OrderByPipe implements PipeTransform {
@@ -55,6 +55,14 @@ export class OrderByPipe implements PipeTransform {
 
     if (first === second) {
       return 0;
+    }
+
+    if (isUndefined(first)) {
+      return 1;
+    }
+
+    if (isUndefined(second)) {
+      return -1;
     }
 
     if (isString(first) && isString(second)) {

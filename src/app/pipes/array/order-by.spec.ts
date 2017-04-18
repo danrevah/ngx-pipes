@@ -200,4 +200,44 @@ describe('OrderByPipe', () => {
       {id: 3, name: 'Dan', amount: 1, deep: {prop: 1}}
     ]);
   });
+
+  it('should order by deep property even if missing', () => {
+    expect(pipe.transform([
+      {id: 1, name: 'John', amount: 1337, deep: {prop: { val: 3}}},
+      {id: 2, name: 'Michael', amount: 42, deep: {}},
+      {id: 3, name: 'Dan', amount: 1, deep: {prop: {val: 2}}},
+      {id: 4, name: 'Dave', amount: 2, deep: {}},
+      {id: 5, name: 'Other', amount: 2, deep: {prop: { val: 4 }}},
+      {id: 6, name: 'Other 2', amount: 2, deep: {}},
+      {id: 7, name: 'Other 3', amount: 2, deep: {prop: {val: 1}}},
+    ], ['deep.prop.val'])).toEqual([
+      {id: 7, name: 'Other 3', amount: 2, deep: {prop: {val: 1}}},
+      {id: 3, name: 'Dan', amount: 1, deep: {prop: {val: 2}}},
+      {id: 1, name: 'John', amount: 1337, deep: {prop: { val: 3}}},
+      {id: 5, name: 'Other', amount: 2, deep: {prop: {val: 4}}},
+      {id: 2, name: 'Michael', amount: 42, deep: {}},
+      {id: 4, name: 'Dave', amount: 2, deep: {}},
+      {id: 6, name: 'Other 2', amount: 2, deep: {}},
+    ]);
+  });
+
+  it('should order by deep property even if missing', () => {
+    expect(pipe.transform([
+      {id: 1, name: 'John', amount: 1337, deep: {prop: { val: 3}}},
+      {id: 2, name: 'Michael', amount: 42, deep: {}},
+      {id: 3, name: 'Dan', amount: 1, deep: {prop: {val: 2}}},
+      {id: 4, name: 'Dave', amount: 2, deep: {}},
+      {id: 5, name: 'Other', amount: 2, deep: {prop: { val: 4 }}},
+      {id: 6, name: 'Other 2', amount: 2, deep: {}},
+      {id: 7, name: 'Other 3', amount: 2, deep: {prop: {val: 1}}},
+    ], ['-deep.prop.val'])).toEqual([
+      {id: 5, name: 'Other', amount: 2, deep: {prop: {val: 4}}},
+      {id: 1, name: 'John', amount: 1337, deep: {prop: { val: 3}}},
+      {id: 3, name: 'Dan', amount: 1, deep: {prop: {val: 2}}},
+      {id: 7, name: 'Other 3', amount: 2, deep: {prop: {val: 1}}},
+      {id: 2, name: 'Michael', amount: 42, deep: {}},
+      {id: 4, name: 'Dave', amount: 2, deep: {}},
+      {id: 6, name: 'Other 2', amount: 2, deep: {}},
+    ]);
+  });
 });
