@@ -57,11 +57,11 @@ export class OrderByPipe implements PipeTransform {
       return 0;
     }
 
-    if (isUndefined(first)) {
+    if (isUndefined(first) || first === '') {
       return 1;
     }
 
-    if (isUndefined(second)) {
+    if (isUndefined(second) || second === '') {
       return -1;
     }
 
