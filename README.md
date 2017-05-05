@@ -85,21 +85,24 @@
     - [isNotEqualTo](#isnotequalto)
     - [isIdenticalTo](#isidenticalto)
     - [isNotIdenticalTo](#isnotidenticalto)
- 
+ - [URL](#url)   
+    - [safeUrl](#safeurl)
+		- [safeStyle](#safestyle)
+
 
 ## Installation
 
 1. Use npm to install the package
 
   ```terminal
-  $ npm install ngx-pipes --save 
+  $ npm install ngx-pipes --save
   ```
 
 2. You could either add into your module `imports` the `NgPipesModule` in order to add all of the pipes, Or add a specific module such as `NgArrayPipesModule`, `NgObjectPipesModule`, `NgStringPipesModule`, `NgMathPipesModule` or `NgBooleanPipesModule`.
 
   ```typescript
   import {NgPipesModule} from 'ngx-pipes';
-  
+
   @NgModule({
    // ...
    imports: [
@@ -338,7 +341,7 @@ Right pad a string to a given length using a given pad character  (default is a 
 
 ### diff
 
-Returns array of diff between arrays 
+Returns array of diff between arrays
 
 **Usage:** `array | diff: [ARRAY]: [ARRAY]: ... : [ARRAY]`
 
@@ -361,7 +364,7 @@ this.items = [1,2,3,[4,5,6,[7,8,9],[10,11,12,13,[14],[15],[16, [17]]]]];
 ```
 
 ```html
-<li *ngFor="let item of items | flatten"> 
+<li *ngFor="let item of items | flatten">
 <!-- Array: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17] -->
 ```
 
@@ -486,23 +489,23 @@ Returns array of properties values
 ```typescript
 this.items = [
   {
-    a: 1, 
+    a: 1,
     b: {
       c: 4
     }
-  }, 
+  },
   {
-    a: 2, 
+    a: 2,
     b: {
       c: 5
     }
-  }, 
+  },
   {
-    a: 3, 
+    a: 3,
     b: {
       c: 6
     }
-  }, 
+  },
 ];
 ```
 
@@ -586,9 +589,9 @@ Returns object of grouped by items by discriminator, and supports nested propert
 
 ```typescript
 this.arrayObject = [
-  {id: 1, elm: 'foo', value: 0}, 
-  {id: 2, elm: 'bar', value: 1}, 
-  {id: 3, elm: 'foo', value: 2}, 
+  {id: 1, elm: 'foo', value: 0},
+  {id: 2, elm: 'bar', value: 1},
+  {id: 3, elm: 'foo', value: 2},
   {id: 4, elm: 'foo', value: 2}
 ];
 
@@ -601,16 +604,16 @@ this.arrayNestedObject = [
 ```
 
 ```html
-<p>{{ arrayObject | groupBy: 'elm' }}</p> 
+<p>{{ arrayObject | groupBy: 'elm' }}</p>
 <!-- Output: "{foo: [{id: 1, elm: 'foo', value: 0}, {id: 3, elm: 'foo', value: 2}, {id: 4, elm: 'foo', value: 2}], bar: [{id: 2, elm: 'bar', value: 1}]}" -->
 
-<p>{{ arrayObject | groupBy: ['elm', 'value'] }}</p> 
+<p>{{ arrayObject | groupBy: ['elm', 'value'] }}</p>
 <!-- Output: "{'foo|0': [{elm: foo, value: 0}], 'bar|1': [{elm:bar,value: 1}], 'foo|2': [{elm:foo, value: 2}], 'bar|3': [{elm:bar, value: 3}]}" -->
 
-<p>{{ arrayObject | groupBy: ['elm', 'value']: '_' }}</p> 
+<p>{{ arrayObject | groupBy: ['elm', 'value']: '_' }}</p>
 <!-- Output: "{foo_0: [{elm: foo, value: 0}], bar_1: [{elm:bar,value: 1}], foo_2: [{elm:foo, value: 2}], bar_3: [{elm:bar, value: 3}]}" -->
 
-<p>{{ arrayNestedObject | groupBy: 'prop.deep' }}</p> 
+<p>{{ arrayNestedObject | groupBy: 'prop.deep' }}</p>
 <!-- Output:{foo: [{id: 1, prop: {deep: foo}}, {id: 3, prop: {deep: foo}}], bar: [{id: 2, prop: {deep: bar}}, {id: 4, prop: {deep: bar}}]}" -->
 ```
 
@@ -631,11 +634,11 @@ this.users = [
 
 ```html
 <!-- Returns users with `id` of 1 -->
-<p>{{ users | filterBy: ['id']: 1 }}</p> 
+<p>{{ users | filterBy: ['id']: 1 }}</p>
 <!-- Output: "[{id: 1, first_name: 'John', last_name: 'Doe', work: { company: 'Foo Tech', previous_company: '' }}]" -->
 
 <!-- filterBy also support nested properties -->
-<p>{{ users | filterBy: ['work.company']: 'Bar Tech' }}</p> 
+<p>{{ users | filterBy: ['work.company']: 'Bar Tech' }}</p>
 <!-- Output: "[{ "id": 3, "first_name": "Bruce", "last_name": "John", "work": { "company": "Bar Tech", "previous_company": "" } }]" -->
 
 <!-- Return users whose first name or last name is 'John'. -->
@@ -645,7 +648,7 @@ this.users = [
 
 ### orderBy
 
-Returns ordered array by configuration 
+Returns ordered array by configuration
 
 **Usage:** `array | orderBy: [prop, nested.prop, array of props, ...]`
 
@@ -819,7 +822,7 @@ Returns the sum of a given array
 
 ### percentage
 
-Returns percentage between numbers 
+Returns percentage between numbers
 
 **Usage:** `number | percentage: [total | default = 100]: [floor | default = false]`
 
@@ -831,7 +834,7 @@ Returns percentage between numbers
 
 ### ceil
 
-Returns ceil of a number by precision 
+Returns ceil of a number by precision
 
 **Usage:** `number | ceil: [precision | default = 0]`
 
@@ -842,7 +845,7 @@ Returns ceil of a number by precision
 
 ### floor
 
-Returns floor of a number by precision 
+Returns floor of a number by precision
 
 **Usage:** `number | floor: [precision | default = 0]`
 
@@ -853,7 +856,7 @@ Returns floor of a number by precision
 
 ### round
 
-Returns round of a number by precision 
+Returns round of a number by precision
 
 **Usage:** `number | round: [precision | default = 0]`
 
@@ -865,7 +868,7 @@ Returns round of a number by precision
 
 ### sqrt
 
-Returns the square root of a number 
+Returns the square root of a number
 
 **Usage:** `number | sqrt`
 
@@ -875,7 +878,7 @@ Returns the square root of a number
 
 ### pow
 
-Returns the power of a number 
+Returns the power of a number
 
 **Usage:** `number | pow: [power | default = 2]`
 
@@ -886,7 +889,7 @@ Returns the power of a number
 
 ### degrees
 
-Returns the degrees of a number in radians 
+Returns the degrees of a number in radians
 
 **Usage:** `number | degrees`
 
@@ -896,7 +899,7 @@ Returns the degrees of a number in radians
 
 ### radians
 
-Returns the radians of a number in degrees 
+Returns the radians of a number in degrees
 
 **Usage:** `number | radians`
 
@@ -1081,6 +1084,21 @@ this.num = 1;
 <p>{{ 1 | isNotIdenticalTo: 2 }}</p> <!-- Output: "true" -->
 <p>{{ 2 | isNotIdenticalTo: 1 }}</p> <!-- Output: "true" -->
 ```
+
+## URL
+
+### safeUrl
+
+Sanitizes an URL to a safe one to be used in attributes like `src`.
+
+**Usage:** `url | safeUrl`
+
+### safeStyle
+
+Sanitizes an URL to a safe one to be used in CSS.
+
+**Usage:** `url | safeStyle`
+
 
 ## Contributing
 
