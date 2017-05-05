@@ -98,7 +98,7 @@
   $ npm install ngx-pipes --save
   ```
 
-2. You could either add into your module `imports` the `NgPipesModule` in order to add all of the pipes, Or add a specific module such as `NgArrayPipesModule`, `NgObjectPipesModule`, `NgStringPipesModule`, `NgMathPipesModule` or `NgBooleanPipesModule`.
+2. You could either add into your module `imports` the `NgPipesModule` in order to add all of the pipes, Or add a specific module such as `NgArrayPipesModule`, `NgObjectPipesModule`, `NgStringPipesModule`, `NgMathPipesModule`, `NgBooleanPipesModule` or `NgUrlPipesModule`.
 
   ```typescript
   import {NgPipesModule} from 'ngx-pipes';
