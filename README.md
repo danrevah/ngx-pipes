@@ -437,7 +437,7 @@ this.items = [null, 1, false, undefined, 2, 0, 3, NaN, 4, ''];
 
 ### union
 
-Removes un-truthy values from array
+Combine two arrays
 
 **Usage:** `array | union: [ARRAY]`
 
