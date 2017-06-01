@@ -453,7 +453,7 @@ this.items = [1, 2, 3];
 
 Removes duplicates from array
 
-**Usage:** `array | unique`
+**Usage:** `array | unique: 'Property (Optional)'`
 
 ```typescript
 this.items = [1, 2, 3, 1, 2, 3];
