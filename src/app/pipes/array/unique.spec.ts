@@ -22,4 +22,10 @@ describe('DiffPipe', () => {
     expect(pipe.transform([1, 2, 3, 1, 2, 3])).toEqual([1, 2, 3]);
     expect(pipe.transform([1, 2, 5, 1, 3, 7, 8, 5, 10])).toEqual([1,2,5,3,7,8,10]);
   });
+
+  it('should filter the array based on object properties when a property name is supplied in arguments',()=>{
+  	expect(pipe.transform([{a:1,b:true},{a:1,b:true},{a:3,b:false}],'b')).toEqual([{a:1,b:true},{a:3,b:false}]);
+  	expect(pipe.transform([15,12,{a:1,b:true},{a:3,b:false}],'b')).toEqual([{a:1,b:true},{a:3,b:false}]);
+  	expect(pipe.transform([15,12,{a:1,b:true},{a:3,b:false}],'c')).toEqual([]);    
+  })
 });
