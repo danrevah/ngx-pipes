@@ -25,7 +25,14 @@ describe('DiffPipe', () => {
 
   it('should filter the array based on object properties when a property name is supplied in arguments',()=>{
   	expect(pipe.transform([{a:1,b:true},{a:1,b:true},{a:3,b:false}],'b')).toEqual([{a:1,b:true},{a:3,b:false}]);
-  	expect(pipe.transform([15,12,{a:1,b:true},{a:3,b:false}],'b')).toEqual([{a:1,b:true},{a:3,b:false}]);
-  	expect(pipe.transform([15,12,{a:1,b:true},{a:3,b:false}],'c')).toEqual([]);    
+  	expect(pipe.transform([1,2,{a:1,b:true},{a:3,b:false}],'b')).toEqual([{a:1,b:true},{a:3,b:false}]);
+  	expect(pipe.transform([1,2,{a:1,b:true},{a:3,b:false}],'c')).toEqual([]);    
+  })
+  
+  it('should filter the array based on object deep properties when a property name dot separated is supplied in arguments',()=>{
+  	expect(pipe.transform([{b:{c:{d:true}}},{b:{c:{d:false}}},{b:{c:{d:true}}}],'b.c.d')).toEqual([{b:{c:{d:true}}},{b:{c:{d:false}}}]);
+    expect(pipe.transform([1,2,{b:{c:{d:true}}},{b:{c:{d:false}}}],'b.c.d')).toEqual([{b:{c:{d:true}}},{b:{c:{d:false}}}]);
+  	expect(pipe.transform([{b:{c:{d:true}}},{b:{c:{d:false}}}],'b.c')).toEqual([{b:{c:{d:true}}},{b:{c:{d:false}}}]);
+  	expect(pipe.transform([{b:{c:{d:true}}},{b:{c:{d:false}}}],'b.c.e')).toEqual([]);
   })
 });

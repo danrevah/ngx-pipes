@@ -1,4 +1,5 @@
 import { PipeTransform, Pipe } from '@angular/core';
+import { isUndefined, isObject, extractDeepPropertyByMapKey } from  '../helpers/helpers';
 
 @Pipe({ name: 'unique' })
 export class UniquePipe implements PipeTransform {
@@ -6,13 +7,17 @@ export class UniquePipe implements PipeTransform {
   transform(input: any, propertyName?: string): any[] {
     const uniques: boolean[] = [];
     return Array.isArray(input) ?
-      typeof propertyName === 'undefined' ?
+      isUndefined(propertyName) ?
         input.filter((e, i) => input.indexOf(e) === i) :
         input.filter((e, i) => {
-          if (typeof e !== 'object' || !e.hasOwnProperty(propertyName) || uniques[e[propertyName]]) {
+          let value = extractDeepPropertyByMapKey(e,propertyName);
+          value = isObject(value)? JSON.stringify(value):value;
+
+          if (isUndefined(value) || uniques[value]) {
             return false;
           }
-          uniques[e[propertyName]] = true;
+
+          uniques[value] = true;
           return true;
         }) : input;
   }
