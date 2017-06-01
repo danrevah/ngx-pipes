@@ -1,5 +1,5 @@
 import {PipeTransform, Pipe} from '@angular/core';
-import {isNumberFinite} from '../helpers/helpers';
+import {isNumberFinite, isUndefined, applyPrecision} from '../helpers/helpers';
 
 @Pipe({name: 'bytes'})
 export class BytesPipe implements PipeTransform {
@@ -10,13 +10,14 @@ export class BytesPipe implements PipeTransform {
     { max: 1e12, type: 'GB' }
   ];
 
-  transform(value: number): string | number {
+  transform(value: number, precision?: number): string | number {
     if (!isNumberFinite(value)) {
       return NaN;
     }
 
     const format = this.dictionary.find(d => value < d.max) || this.dictionary[this.dictionary.length - 1];
-    const num = value / (format.max / 1e3);
+    const calc = value / (format.max / 1e3);
+    const num = isUndefined(precision) ? calc : applyPrecision(calc, precision);
     return `${num} ${format.type}`;
   }
 }

@@ -20,5 +20,8 @@ describe('BytesPipe', () => {
     expect(pipe.transform(1e9 - 1)).toEqual('999.999999 MB');
     expect(pipe.transform(1e9)).toEqual('1 GB');
     expect(pipe.transform(1e12)).toEqual('1000 GB');
+    expect(pipe.transform(12345678)).toEqual('12.345678 MB');
+    expect(pipe.transform(12345678, 1)).toEqual('12.3 MB');
+    expect(pipe.transform(12345678, 2)).toEqual('12.35 MB');
   });
 });

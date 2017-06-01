@@ -28,6 +28,15 @@ export function isNumberFinite(value: any) {
   return isNumber(value) && isFinite(value);
 }
 
+export function applyPrecision(num: number, precision: number) {
+  if (precision <= 0) {
+    return Math.round(num);
+  }
+
+  const tho = 10 ** precision;
+  return Math.round(num * tho) / tho;
+}
+
 export function extractDeepPropertyByMapKey(obj: any, map: string): any {
   const keys = map.split('.');
   const key = keys.shift();
