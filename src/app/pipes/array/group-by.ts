@@ -1,7 +1,7 @@
 import { Pipe, PipeTransform } from '@angular/core';
 import {extractDeepPropertyByMapKey, isFunction} from '../helpers/helpers';
 
-@Pipe({name: 'groupBy', pure: false})
+@Pipe({name: 'groupBy'})
 export class GroupByPipe implements PipeTransform {
 
   transform(input: any, discriminator: any = [], delimiter: string = '|'): any {
