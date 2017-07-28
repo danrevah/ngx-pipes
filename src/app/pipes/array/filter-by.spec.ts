@@ -1,6 +1,6 @@
 import {FilterByPipe} from './filter-by';
 
-describe('FilterByPipe', () => {
+describe('FilterByDatePipe', () => {
   let pipe: FilterByPipe;
 
   const users = [
