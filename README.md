@@ -44,8 +44,11 @@
     - [some](#some)
     - [sample](#sample)
     - [groupBy](#groupby)
+    - [groupByImpure](#groupbyimpure)
     - [filterBy](#filterby)
+    - [filterByImpure](#filterbyimpure)
     - [orderBy](#orderby)
+    - [orderByImpure](#orderbyimpure)
  - [Object](#object)
     - [keys](#keys)
     - [values](#values)
@@ -614,6 +617,12 @@ this.arrayNestedObject = [
 <!-- Output:{foo: [{id: 1, prop: {deep: foo}}, {id: 3, prop: {deep: foo}}], bar: [{id: 2, prop: {deep: bar}}, {id: 4, prop: {deep: bar}}]}" -->
 ```
 
+## groupByImpure
+
+Identical to groupBy pipe, the only difference is that it's an impure pipe.
+
+Pure pipes: https://angular.io/guide/pipes#pure-pipes
+
 ### filterBy
 
 Returns object array of grouped by items by discriminator
@@ -642,6 +651,12 @@ this.users = [
 <p>{{ users | filterBy: ['first_name', 'last_name']: 'John' }}</p>
 <!-- Output: "[{id: 1, first_name: 'John', last_name: 'Doe', work: { company: 'Foo Tech', previous_company: '' }}]" -->
 ```
+
+## filterByImpure
+
+Identical to filterBy pipe, the only difference is that it's an impure pipe.
+
+Pure pipes: https://angular.io/guide/pipes#pure-pipes
 
 ### orderBy
 
@@ -688,6 +703,12 @@ const deepObj = [
 <p>{{ obj | orderBy: ['amount', 'id'] }}</p>  
 <!-- Output: [{id: 1, ...}, {id: 3, ...}, {id: 2, ...}, {id: 4, ...}] -->
 ```
+
+## orderByImpure
+
+Identical to orderBy pipe, the only difference is that it's an impure pipe.
+
+Pure pipes: https://angular.io/guide/pipes#pure-pipes
 
 ## Object
 

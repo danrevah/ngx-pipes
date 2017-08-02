@@ -1,7 +1,7 @@
 import {PipeTransform, Pipe} from '@angular/core';
 import {isString, extractDeepPropertyByMapKey, isUndefined} from '../helpers/helpers';
 
-@Pipe({name: 'orderBy', pure: false})
+@Pipe({name: 'orderBy'})
 export class OrderByPipe implements PipeTransform {
 
   transform(input: any, config?: any): any[] {
