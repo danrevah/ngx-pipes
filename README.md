@@ -621,7 +621,7 @@ this.arrayNestedObject = [
 
 Identical to groupBy pipe, the only difference is that it's an impure pipe.
 
-Pure pipes: https://angular.io/guide/pipes#pure-pipes
+Impure pipes: https://angular.io/guide/pipes#impure-pipes
 
 ### filterBy
 
@@ -656,7 +656,7 @@ this.users = [
 
 Identical to filterBy pipe, the only difference is that it's an impure pipe.
 
-Pure pipes: https://angular.io/guide/pipes#pure-pipes
+Impure pipes: https://angular.io/guide/pipes#impure-pipes
 
 ### orderBy
 
@@ -708,7 +708,7 @@ const deepObj = [
 
 Identical to orderBy pipe, the only difference is that it's an impure pipe.
 
-Pure pipes: https://angular.io/guide/pipes#pure-pipes
+Impure pipes: https://angular.io/guide/pipes#impure-pipes
 
 ## Object
 
