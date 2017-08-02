@@ -7,6 +7,7 @@
 
  - [Installation](#installation)
  - [Contributing](#contributing)
+ - [ChangeLog](CHANGELOG.md)
  - [String](#string)
     - [repeat](#repeat)
     - [scan](#scan)
