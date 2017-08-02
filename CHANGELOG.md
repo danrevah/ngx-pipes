@@ -1,15 +1,15 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
-## [1.6.3] - 2017-02-12
+## [1.6.3] - 2017-08-02
 ### Added
 - Add impure versions to filterBy, groupBy and orderBy (filterByImpure, groupByImpure, orderByImpure).
 
-## [1.6.1] - 2017-02-12
+## [1.6.1] - 2017-07-13
 ### Changed
 - Revert impure pipes for groupBy
 
-## [1.4.6] - 2017-02-12
+## [1.4.6] - 2017-03-09
 ### Added
 - diffObj pipe
 
