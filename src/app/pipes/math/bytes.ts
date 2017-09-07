@@ -10,7 +10,7 @@ export class BytesPipe implements PipeTransform {
     { max: 1.0995116e12, type: 'GB' }
   ];
 
-  transform(value: number, precision?: number): string | number {
+  transform(value: number, precision?: number | undefined): string | number {
     if (!isNumberFinite(value)) {
       return NaN;
     }

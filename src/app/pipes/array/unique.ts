@@ -4,7 +4,7 @@ import { isUndefined, isObject, extractDeepPropertyByMapKey } from  '../helpers/
 @Pipe({ name: 'unique' })
 export class UniquePipe implements PipeTransform {
 
-  transform(input: any, propertyName?: string): any[] {
+  transform(input: any, propertyName?: string | undefined): any[] {
     const uniques: boolean[] = [];
     return Array.isArray(input) ?
       isUndefined(propertyName) ?
