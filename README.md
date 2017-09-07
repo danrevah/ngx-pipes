@@ -930,13 +930,13 @@ Returns the radians of a number in degrees
 
 Returns bytes with a unit symbol
 
-**Usage:** `number | bytes`
+**Usage:** `number | bytes: [precision]`
 
 ```html
 <p>{{ 10 | bytes }}</p> <!-- Output: "10 B" -->
-<p>{{ 1000 | bytes }}</p> <!-- Output: "1 KB" -->
-<p>{{ 1000000 | bytes }}</p> <!-- Output: "1 MB" -->
-<p>{{ 1000000000 | bytes }}</p> <!-- Output: "1 GB" -->
+<p>{{ 1048576 | bytes }}</p> <!-- Output: "1 KB" -->
+<p>{{ 1073741824 | bytes }}</p> <!-- Output: "1 MB" -->
+<p>{{ 1.0995116e12 | bytes }}</p> <!-- Output: "1 GB" -->
 ```
 
 ## Boolean
