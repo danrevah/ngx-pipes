@@ -11,7 +11,7 @@ export class ShufflePipe implements PipeTransform {
     }
 
     let shuffled = [...input];
-    for (let i = 0, n = input.length - 1, l = n - 1; i < l; ++i) {
+    for (let i = 0, n = input.length - 1, l = n; i < l; ++i) {
       const j = Math.floor(Math.random() * (n - i + 1)) + i;
       [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
     }
