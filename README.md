@@ -72,7 +72,7 @@
     - [degrees](#degrees)
     - [radians](#radians)
     - [bytes](#bytes)
-    - [ShortScaleNumber](#ShortScaleNumber)
+    - [shortScaleNumber](#shortscalenumber)
  - [Boolean](#boolean)
     - [isNull](#isnull)
     - [isDefined](#isdefined)
