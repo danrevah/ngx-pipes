@@ -72,7 +72,8 @@
     - [degrees](#degrees)
     - [radians](#radians)
     - [bytes](#bytes)
- - [Boolean](#boolean)   
+    - [shortScaleNumber](#ShortScaleNumber)
+ - [Boolean](#boolean)
     - [isNull](#isnull)
     - [isDefined](#isdefined)
     - [isUndefined](#isundefined)
@@ -937,6 +938,19 @@ Returns bytes with a unit symbol
 <p>{{ 1048576 | bytes }}</p> <!-- Output: "1 KB" -->
 <p>{{ 1073741824 | bytes }}</p> <!-- Output: "1 MB" -->
 <p>{{ 1.0995116e12 | bytes }}</p> <!-- Output: "1 GB" -->
+```
+
+### ShortScaleNumber
+
+Convert Number to Short Scale Number
+
+**Usage:** `number | shortScaleNumber`
+
+```html
+<p>{{ 1000 | shortScaleNumber }}</p> <!-- Output: "1.0K" -->
+<p>{{ 8600000 | shortScaleNumber }}</p> <!-- Output: "8.6M" -->
+<p>{{ 1500600000 | shortScaleNumber }}</p> <!-- Output: "1.5B" -->
+<p>{{ 1100000000000 | shortScaleNumber }}</p> <!-- Output: "1.1T" -->
 ```
 
 ## Boolean
