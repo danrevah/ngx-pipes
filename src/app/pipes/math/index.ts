@@ -35,3 +35,4 @@ export {PowerPipe} from './pow';
 export {CeilPipe} from './ceil';
 export {DegreesPipe} from './degrees';
 export {BytesPipe} from './bytes';
+export {ShortScaleNumberPipe} from './short-scale-number';
