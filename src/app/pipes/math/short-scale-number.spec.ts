@@ -7,12 +7,9 @@ describe('ShortScaleNumberPipe', () => {
     pipe = new ShortScaleNumberPipe();
   });
 
-  it('should return value if number', () => {
+  it('should return scale number from number', () => {
     expect(pipe.transform(1600)).toEqual(1.6 + 'K');
     expect(pipe.transform(999)).toEqual(999);
-  });
-
-  it('should return sum of element', () => {
     expect(pipe.transform(2100)).toEqual(2.1 + 'K');
     expect(pipe.transform(8600000)).toEqual(8.6 + 'M');
     expect(pipe.transform(1500600000)).toEqual(1.5 + 'B');

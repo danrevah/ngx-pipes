@@ -11,10 +11,11 @@ import {CeilPipe} from './ceil';
 import {DegreesPipe} from './degrees';
 import {BytesPipe} from './bytes';
 import {RadiansPipe} from './radians';
+import {ShortScaleNumberPipe} from './short-scale-number';
 
 export const MATH_PIPES = [
   MaxPipe, MinPipe, PercentagePipe, SumPipe, FloorPipe, RoundPipe, SqrtPipe, PowerPipe,
-  CeilPipe, DegreesPipe, BytesPipe, RadiansPipe
+  CeilPipe, DegreesPipe, BytesPipe, RadiansPipe, ShortScaleNumberPipe
 ];
 
 @NgModule({
