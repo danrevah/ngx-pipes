@@ -28,6 +28,7 @@
     - [match](#match)
     - [lpad](#lpad)
     - [rpad](#rpad)
+    - [shortUserProfileName](#shortuserprofilename)
  - [Array](#Array)   
     - [diff](#diff)
     - [flatten](#flatten)
@@ -331,6 +332,13 @@ Left pad a string to a given length using a given pad character (default is a sp
 ### rpad
 
 Right pad a string to a given length using a given pad character  (default is a space)
+
+### shortUserProfileName
+
+Convert User Name to Short Name
+Martin Fowler - MF
+Martin - MA
+Martin Mc Fowler - MF
 
 
 **Usage:** `string | rpad: length: [padCharacter:string|optional]`
