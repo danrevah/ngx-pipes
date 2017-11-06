@@ -314,6 +314,20 @@ Returns array of matched elements in string.
 <p>{{'FOO' | match: '^foo': 'i' }}</p> <!-- Output: 'FOO' -->
 ```
 
+### replace
+
+Returns a new string with some or all matches of a pattern replaced by a replacement
+
+**Usage:** `string | match: {RegExp}: {Replacement}: {Flags}`
+
+```html
+<p>{{'foo foo bar' | replace: 'foo': 'test': 'g' }}</p> <!-- Output: 'test test bar' -->
+<p>{{'foo foo bar' | replace: 'foo': 'test': 'i' }}</p> <!-- Output: 'test foo bar' -->
+<p>{{'she sells seashells' | match: '^\\w+': 'He': 'g' }}</p> <!-- Output: He sells seashells -->
+<p>{{'+1-(444)-555-1234' | match: '\\d': 'x': 'g' }}</p> <!-- Output: '+x-(xxx)-xxx-xxxx' -->
+<p>{{'+1-(444)-555-1234' | match: '\\d': 'x' }}</p> <!-- Output: '+x-(444)-555-1234' -->
+```
+
 ### lpad
 
 Left pad a string to a given length using a given pad character (default is a space)
