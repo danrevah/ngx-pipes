@@ -11,6 +11,7 @@
     "noUnusedLocals": true,
     "suppressImplicitAnyIndexErrors": false,
     "declaration": true,
+    "outDir": "aot",
     "lib": ["es6", "dom"],
     "typeRoots": [
       "node_modules/@types"

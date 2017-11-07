@@ -4,7 +4,8 @@
 /tmp
 coverage/
 #bundles/
-#esm/
+esm/
+aot/
 
 # dependencies
 /node_modules
