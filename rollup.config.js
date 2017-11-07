@@ -6,10 +6,10 @@ const plugins = [
   nodeResolve({ jsnext: true,  module: true,  extensions: ['.js'] })
 ];
 
-let dest = 'bundles/bundle.umd.js';
+let dest = 'esm/bundles/bundle.umd.js';
 
 if (process.env.BUNDLE_MIN === 'true') {
-  dest = 'bundles/bundle.umd.min.js';
+  dest = 'esm/bundles/bundle.umd.min.js';
   plugins.push(
     uglify()
   );
