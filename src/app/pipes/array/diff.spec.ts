@@ -1,4 +1,4 @@
-import {DiffPipe} from './diff';
+import { DiffPipe } from './diff';
 
 describe('DiffPipe', () => {
   let pipe: DiffPipe;

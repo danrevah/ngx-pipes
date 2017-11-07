@@ -1,5 +1,5 @@
-import {PipeTransform, Pipe} from '@angular/core';
-import {isObject} from '../helpers/helpers';
+import { Pipe, PipeTransform } from '@angular/core';
+import { isObject } from '../helpers/helpers';
 
 @Pipe({name: 'pairs'})
 export class PairsPipe implements PipeTransform {

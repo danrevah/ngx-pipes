@@ -1,11 +1,11 @@
-import {OrderByPipe} from './order-by';
+import { OrderByPipe } from './order-by';
 
 describe('OrderByPipe', () => {
   const testArray = [
     {id: 1, name: 'John', amount: 1337},
     {id: 2, name: 'Michael', amount: 42},
     {id: 3, name: 'Dan', amount: 1},
-    {id: 4, name: 'Dave', amount: 2}
+    {id: 4, name: 'Dave', amount: 2},
   ];
 
   let pipe: OrderByPipe;
@@ -72,14 +72,14 @@ describe('OrderByPipe', () => {
       {id: 3, name: 'Dan', amount: 1},
       {id: 4, name: 'Dave', amount: 2},
       {id: 2, name: 'Michael', amount: 42},
-      {id: 1, name: 'John', amount: 1337}
+      {id: 1, name: 'John', amount: 1337},
     ]);
 
     expect(pipe.transform(testArray, '+amount')).toEqual([
       {id: 3, name: 'Dan', amount: 1},
       {id: 4, name: 'Dave', amount: 2},
       {id: 2, name: 'Michael', amount: 42},
-      {id: 1, name: 'John', amount: 1337}
+      {id: 1, name: 'John', amount: 1337},
     ]);
   });
 
@@ -98,7 +98,7 @@ describe('OrderByPipe', () => {
   });
 
   it('should order by a property of type date', () => {
-    const curr = new Date;
+    const curr = new Date();
     expect(pipe.transform([
       {id: 1, value: new Date(curr.getTime() + 3)},
       {id: 2, value: new Date(curr.getTime() + 2)},
@@ -117,7 +117,7 @@ describe('OrderByPipe', () => {
       {id: 3, name: 'Dan', amount: 1},
       {id: 4, name: 'Dave', amount: 2},
       {id: 1, name: 'John', amount: 1337},
-      {id: 2, name: 'Michael', amount: 42}
+      {id: 2, name: 'Michael', amount: 42},
     ]);
   });
 
@@ -126,7 +126,7 @@ describe('OrderByPipe', () => {
       {id: 1, name: 'John', amount: 1337},
       {id: 2, name: 'Michael', amount: 42},
       {id: 4, name: 'Dave', amount: 2},
-      {id: 3, name: 'Dan', amount: 1}
+      {id: 3, name: 'Dan', amount: 1},
     ]);
   });
 
@@ -135,12 +135,12 @@ describe('OrderByPipe', () => {
       {id: 4, name: 'Dave', amount: 2},
       {id: 2, name: 'Michael', amount: 2},
       {id: 3, name: 'Dan', amount: 1},
-      {id: 1, name: 'John', amount: 1}
+      {id: 1, name: 'John', amount: 1},
     ], ['amount', '+id'])).toEqual([
       {id: 1, name: 'John', amount: 1},
       {id: 3, name: 'Dan', amount: 1},
       {id: 2, name: 'Michael', amount: 2},
-      {id: 4, name: 'Dave', amount: 2}
+      {id: 4, name: 'Dave', amount: 2},
     ]);
   });
 
@@ -150,12 +150,12 @@ describe('OrderByPipe', () => {
       {id: 4, name: 'Dave', amount: 2},
       {id: 2, name: 'Michael', amount: 2},
       {id: 3, name: 'Dan', amount: 1},
-      {id: 1, name: 'John', amount: 1}
+      {id: 1, name: 'John', amount: 1},
     ], ['amount'])).toEqual([
       {id: 3, name: 'Dan', amount: 1},
       {id: 1, name: 'John', amount: 1},
       {id: 4, name: 'Dave', amount: 2},
-      {id: 2, name: 'Michael', amount: 2}
+      {id: 2, name: 'Michael', amount: 2},
     ]);
   });
 
@@ -164,12 +164,12 @@ describe('OrderByPipe', () => {
       {id: 2, name: 'b', amount: 2},
       {id: 2, name: 'a', amount: 2},
       {id: 1, name: 'd', amount: 1},
-      {id: 1, name: 'c', amount: 1}
+      {id: 1, name: 'c', amount: 1},
     ], ['amount', '+id', '-name'])).toEqual([
       {id: 1, name: 'd', amount: 1},
       {id: 1, name: 'c', amount: 1},
       {id: 2, name: 'b', amount: 2},
-      {id: 2, name: 'a', amount: 2}
+      {id: 2, name: 'a', amount: 2},
     ]);
   });
 
@@ -178,12 +178,12 @@ describe('OrderByPipe', () => {
       {id: 1, name: 'John', amount: 1337, deep: {prop: 4}},
       {id: 2, name: 'Michael', amount: 42, deep: {prop: 2}},
       {id: 3, name: 'Dan', amount: 1, deep: {prop: 1}},
-      {id: 4, name: 'Dave', amount: 2, deep: {prop: 3}}
+      {id: 4, name: 'Dave', amount: 2, deep: {prop: 3}},
     ], ['deep.prop'])).toEqual([
       {id: 3, name: 'Dan', amount: 1, deep: {prop: 1}},
       {id: 2, name: 'Michael', amount: 42, deep: {prop: 2}},
       {id: 4, name: 'Dave', amount: 2, deep: {prop: 3}},
-      {id: 1, name: 'John', amount: 1337, deep: {prop: 4}}
+      {id: 1, name: 'John', amount: 1337, deep: {prop: 4}},
     ]);
   });
 
@@ -192,12 +192,12 @@ describe('OrderByPipe', () => {
       {id: 1, name: 'John', amount: 1337, deep: {prop: 4}},
       {id: 2, name: 'Michael', amount: 42, deep: {prop: 2}},
       {id: 3, name: 'Dan', amount: 1, deep: {prop: 1}},
-      {id: 4, name: 'Dave', amount: 2, deep: {prop: 3}}
+      {id: 4, name: 'Dave', amount: 2, deep: {prop: 3}},
     ], ['-deep.prop'])).toEqual([
       {id: 1, name: 'John', amount: 1337, deep: {prop: 4}},
       {id: 4, name: 'Dave', amount: 2, deep: {prop: 3}},
       {id: 2, name: 'Michael', amount: 42, deep: {prop: 2}},
-      {id: 3, name: 'Dan', amount: 1, deep: {prop: 1}}
+      {id: 3, name: 'Dan', amount: 1, deep: {prop: 1}},
     ]);
   });
 

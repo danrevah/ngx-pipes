@@ -1,4 +1,4 @@
-import {PercentagePipe} from './percentage';
+import { PercentagePipe } from './percentage';
 
 describe('PercentagePipe', () => {
   let pipe: PercentagePipe;

@@ -1,4 +1,4 @@
-import {TailPipe} from './tail';
+import { TailPipe } from './tail';
 
 describe('TailPipe', () => {
   let pipe: TailPipe;
@@ -16,8 +16,8 @@ describe('TailPipe', () => {
   });
 
   it('should check that nothing happens if there are no parameters', () => {
-    let arr = [1, 2, 3];
-    let result = pipe.transform(arr);
+    const arr = [1, 2, 3];
+    const result = pipe.transform(arr);
     expect(result).toEqual([1, 2, 3]);
   });
 
@@ -27,9 +27,9 @@ describe('TailPipe', () => {
   });
 
   it('should slice properly array of objects', () => {
-    let fooObj = {id: 1, name: 'foo'},
-        barObj = {id: 2, name: 'bar'},
-        cazObj = {id: 3, name: 'caz'};
+    const fooObj = {id: 1, name: 'foo'};
+    const barObj = {id: 2, name: 'bar'};
+    const cazObj = {id: 3, name: 'caz'};
 
     expect(pipe.transform([fooObj, barObj, cazObj], 1)).toEqual([barObj, cazObj]);
   });

@@ -1,31 +1,31 @@
-import {DiffPipe} from './diff';
-import {InitialPipe} from './initial';
-import {FlattenPipe} from './flatten';
-import {IntersectionPipe} from './intersection';
-import {ReversePipe} from './reverse';
-import {TailPipe} from './tail';
-import {TrurthifyPipe} from './truthify';
-import {UnionPipe} from './union';
-import {UniquePipe} from './unique';
-import {WithoutPipe} from './without';
-import {PluckPipe} from './pluck';
-import {ShufflePipe} from './shuffle';
-import {EveryPipe} from './every';
-import {SomePipe} from './some';
-import {SamplePipe} from './sample';
-import {GroupByPipe} from './group-by';
-import {FilterByPipe} from './filter-by';
-import {OrderByPipe} from './order-by';
-import {NgModule} from '@angular/core';
-import {GroupByImpurePipe} from './group-by-impure';
-import {FilterByImpurePipe} from './filter-by-impure';
-import {OrderByImpurePipe} from './order-by-impure';
+import { DiffPipe } from './diff';
+import { InitialPipe } from './initial';
+import { FlattenPipe } from './flatten';
+import { IntersectionPipe } from './intersection';
+import { ReversePipe } from './reverse';
+import { TailPipe } from './tail';
+import { TrurthifyPipe } from './truthify';
+import { UnionPipe } from './union';
+import { UniquePipe } from './unique';
+import { WithoutPipe } from './without';
+import { PluckPipe } from './pluck';
+import { ShufflePipe } from './shuffle';
+import { EveryPipe } from './every';
+import { SomePipe } from './some';
+import { SamplePipe } from './sample';
+import { GroupByPipe } from './group-by';
+import { FilterByPipe } from './filter-by';
+import { OrderByPipe } from './order-by';
+import { NgModule } from '@angular/core';
+import { GroupByImpurePipe } from './group-by-impure';
+import { FilterByImpurePipe } from './filter-by-impure';
+import { OrderByImpurePipe } from './order-by-impure';
 
 const ARRAY_PIPES = [
   DiffPipe, FlattenPipe, InitialPipe, IntersectionPipe, ReversePipe, TailPipe,
   TrurthifyPipe, UnionPipe, UniquePipe, WithoutPipe, PluckPipe, ShufflePipe,
   EveryPipe, SomePipe, SamplePipe, GroupByPipe, GroupByImpurePipe,
-  FilterByPipe, FilterByImpurePipe, OrderByPipe, OrderByImpurePipe
+  FilterByPipe, FilterByImpurePipe, OrderByPipe, OrderByImpurePipe,
 ];
 
 @NgModule({

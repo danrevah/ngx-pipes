@@ -1,4 +1,4 @@
-import {SqrtPipe} from "./sqrt";
+import { SqrtPipe } from './sqrt';
 
 describe('SqrtPipe', () => {
   let pipe: SqrtPipe;

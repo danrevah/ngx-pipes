@@ -1,13 +1,15 @@
-import {FilterByPipe} from './filter-by';
+import { FilterByPipe } from './filter-by';
 
 describe('FilterByPipe', () => {
   let pipe: FilterByPipe;
 
   const users = [
+    // tslint:disable:max-line-length
     {id: 1, first_name: 'John', last_name: 'Doe', work: { title: 'Software Engineer', company: 'Foo Tech', previous_company: 'Unknown' }, current_employed: true, prop: 1},
     {id: 2, first_name: 'Jane', last_name: 'West', work: { title: 'Designer', company: 'AAA Solutions', previous_company: 'Unknown' }, current_employed: false},
     {id: 3, first_name: 'Bruce', last_name: 'John', work: { title: 'Software Engineer', company: 'Bar Tech', previous_company: 'Unknown' }, current_employed: true},
-    {id: 4, first_name: 'William', last_name: 'Cent', work: { title: 'Designer', company: 'Foo Tech', previous_company: 'Bar Tech' }, current_employed: false}
+    {id: 4, first_name: 'William', last_name: 'Cent', work: { title: 'Designer', company: 'Foo Tech', previous_company: 'Bar Tech' }, current_employed: false},
+    // tslint:enable:max-line-length
   ];
 
   beforeEach(() => {

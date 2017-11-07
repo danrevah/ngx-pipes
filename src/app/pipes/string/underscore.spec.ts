@@ -1,7 +1,7 @@
-import {UnderscorePipe} from './underscore';
+import { UnderscorePipe } from './underscore';
 
 describe('UnderscorePipe Tests', () => {
-  let pipe:UnderscorePipe;
+  let pipe: UnderscorePipe;
 
   beforeEach(() => {
     pipe = new UnderscorePipe();

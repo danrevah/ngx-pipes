@@ -1,4 +1,4 @@
-import {IsFunctionPipe} from "./is-function";
+import { IsFunctionPipe } from './is-function';
 
 describe('IsFunctionPipe', () => {
   let pipe: IsFunctionPipe;

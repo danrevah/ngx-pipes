@@ -1,7 +1,7 @@
-import {CamelizePipe} from './camelize';
+import { CamelizePipe } from './camelize';
 
 describe('CamelizePipe Tests', () => {
-  let pipe:CamelizePipe;
+  let pipe: CamelizePipe;
 
   beforeEach(() => {
     pipe = new CamelizePipe();

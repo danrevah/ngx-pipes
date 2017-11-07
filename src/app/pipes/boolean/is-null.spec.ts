@@ -1,4 +1,4 @@
-import {IsNullPipe} from "./is-null";
+import { IsNullPipe } from './is-null';
 
 describe('IsNullPipe', () => {
   let pipe: IsNullPipe;

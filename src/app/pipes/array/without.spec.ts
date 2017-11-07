@@ -1,4 +1,4 @@
-import {WithoutPipe} from "./without";
+import { WithoutPipe } from './without';
 
 describe('WithoutPipe', () => {
   let pipe: WithoutPipe;

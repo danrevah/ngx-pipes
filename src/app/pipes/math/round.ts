@@ -1,5 +1,5 @@
-import {PipeTransform, Pipe} from '@angular/core';
-import {applyPrecision} from '../helpers/helpers';
+import { Pipe, PipeTransform } from '@angular/core';
+import { applyPrecision } from '../helpers/helpers';
 
 @Pipe({name: 'round'})
 export class RoundPipe implements PipeTransform {

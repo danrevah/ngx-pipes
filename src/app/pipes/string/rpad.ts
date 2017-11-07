@@ -1,5 +1,5 @@
-import { PipeTransform, Pipe } from '@angular/core';
-import {isString} from '../helpers/helpers';
+import { Pipe, PipeTransform } from '@angular/core';
+import { isString } from '../helpers/helpers';
 
 @Pipe({ name: 'rpad' })
 export class RightPadPipe implements PipeTransform {
@@ -11,6 +11,7 @@ export class RightPadPipe implements PipeTransform {
     while (str.length < length) {
       str = str + padCharacter;
     }
+
     return str;
   }
 }

@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import {extractDeepPropertyByMapKey, isFunction} from '../helpers/helpers';
+import { extractDeepPropertyByMapKey, isFunction } from '../helpers/helpers';
 
 @Pipe({name: 'groupBy'})
 export class GroupByPipe implements PipeTransform {

@@ -1,7 +1,7 @@
-import {MatchPipe} from './match';
+import { MatchPipe } from './match';
 
 describe('MatchPipe Tests', () => {
-  let pipe:MatchPipe;
+  let pipe: MatchPipe;
 
   beforeEach(() => {
     pipe = new MatchPipe();

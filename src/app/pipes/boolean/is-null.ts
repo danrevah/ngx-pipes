@@ -1,4 +1,4 @@
-import {PipeTransform, Pipe} from '@angular/core';
+import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({name: 'isNull'})
 export class IsNullPipe implements PipeTransform {

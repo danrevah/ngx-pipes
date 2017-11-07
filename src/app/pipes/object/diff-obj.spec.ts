@@ -1,4 +1,4 @@
-import {DiffObjPipe} from './diff-obj';
+import { DiffObjPipe } from './diff-obj';
 
 describe('DiffObj Pipe', () => {
   let pipe: DiffObjPipe;

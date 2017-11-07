@@ -1,7 +1,7 @@
-import {SlugifyPipe} from './slugify';
+import { SlugifyPipe } from './slugify';
 
 describe('SlugifyPipe Tests', () => {
-  let pipe:SlugifyPipe;
+  let pipe: SlugifyPipe;
 
   beforeEach(() => {
     pipe = new SlugifyPipe();

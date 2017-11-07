@@ -1,4 +1,4 @@
-import {SumPipe} from "./sum";
+import { SumPipe } from './sum';
 
 describe('SumPipe', () => {
   let pipe: SumPipe;

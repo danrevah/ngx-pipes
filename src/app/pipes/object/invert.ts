@@ -1,5 +1,5 @@
-import {PipeTransform, Pipe} from '@angular/core';
-import {isObject} from '../helpers/helpers';
+import { Pipe, PipeTransform } from '@angular/core';
+import { isObject } from '../helpers/helpers';
 
 @Pipe({name: 'invert'})
 export class InvertPipe implements PipeTransform {
@@ -11,7 +11,7 @@ export class InvertPipe implements PipeTransform {
 
     return Object.keys(obj)
       .reduce((o, k) => {
-        return Object.assign(o, {[obj[k]]: k})
+        return Object.assign(o, {[obj[k]]: k});
       }, {});
   }
 }

@@ -1,4 +1,4 @@
-import {TrurthifyPipe} from "./truthify";
+import { TrurthifyPipe } from './truthify';
 
 describe('TrurthifyPipe', () => {
   let pipe: TrurthifyPipe;
@@ -16,7 +16,7 @@ describe('TrurthifyPipe', () => {
   });
 
   it('should not change array without falsy values', () => {
-    expect(pipe.transform([1,2,3])).toEqual([1, 2, 3]);
+    expect(pipe.transform([1, 2, 3])).toEqual([1, 2, 3]);
   });
 
   it('should check if is `truthifying` array properly', () => {

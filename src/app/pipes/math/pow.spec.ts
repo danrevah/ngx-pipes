@@ -1,4 +1,4 @@
-import {PowerPipe} from "./pow";
+import { PowerPipe } from './pow';
 
 describe('PowerPipe', () => {
   let pipe: PowerPipe;

@@ -1,5 +1,5 @@
-import {PipeTransform, Pipe} from '@angular/core';
-import {isObject, getKeysTwoObjects, isDeepEqual} from '../helpers/helpers';
+import { Pipe, PipeTransform } from '@angular/core';
+import { getKeysTwoObjects, isDeepEqual, isObject } from '../helpers/helpers';
 
 @Pipe({name: 'diffObj'})
 export class DiffObjPipe implements PipeTransform {
@@ -10,7 +10,11 @@ export class DiffObjPipe implements PipeTransform {
     }
 
     return getKeysTwoObjects(obj, original).reduce((diff: any, key: any) => {
-      return (!isDeepEqual(original[key], obj[key]) ? diff[key] = obj[key] : {}), diff;
+      if (!isDeepEqual(original[key], obj[key])) {
+        diff[key] = obj[key];
+      }
+
+      return diff;
     }, {});
   }
 }

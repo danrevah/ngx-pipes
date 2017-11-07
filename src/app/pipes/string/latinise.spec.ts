@@ -1,7 +1,7 @@
-import {LatinisePipe} from './latinise';
+import { LatinisePipe } from './latinise';
 
 describe('LatinisePipe Tests', () => {
-  let pipe:LatinisePipe;
+  let pipe: LatinisePipe;
 
   beforeEach(() => {
     pipe = new LatinisePipe();

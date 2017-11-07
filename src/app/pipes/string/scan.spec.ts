@@ -1,7 +1,7 @@
-import {ScanPipe} from "./scan";
+import { ScanPipe } from './scan';
 
 describe('ScanPipe Tests', () => {
-  let pipe:ScanPipe;
+  let pipe: ScanPipe;
 
   beforeEach(() => {
     pipe = new ScanPipe();

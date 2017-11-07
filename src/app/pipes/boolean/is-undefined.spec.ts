@@ -1,4 +1,4 @@
-import {IsUndefinedPipe} from "./is-undefined";
+import { IsUndefinedPipe } from './is-undefined';
 
 describe('IsUndefinedPipe', () => {
   let pipe: IsUndefinedPipe;

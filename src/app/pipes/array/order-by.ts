@@ -1,10 +1,13 @@
-import {PipeTransform, Pipe} from '@angular/core';
-import {isString, extractDeepPropertyByMapKey, isUndefined} from '../helpers/helpers';
+import { Pipe, PipeTransform } from '@angular/core';
+import { extractDeepPropertyByMapKey, isString, isUndefined } from '../helpers/helpers';
 
 @Pipe({name: 'orderBy'})
 export class OrderByPipe implements PipeTransform {
 
-  transform(input: any, config?: any): any[] {
+  transform(input: any[], config?: any): any[];
+  transform<T>(input: T, config?: any): T;
+
+  transform(input: any, config?: any): any {
     if (!Array.isArray(input)) {
       return input;
     }
@@ -14,13 +17,15 @@ export class OrderByPipe implements PipeTransform {
     // sort by multiple properties
     if (Array.isArray(config)) {
       return out.sort((a, b) => {
-        for (let i=0, l=config.length; i<l; ++i) {
+        const l = config.length;
+        for (let i = 0; i < l; ++i) {
           const [prop, asc] = OrderByPipe.extractFromConfig(config[i]);
           const pos = OrderByPipe.orderCompare(prop, asc, a, b);
           if (pos !== 0) {
             return pos;
           }
         }
+
         return 0;
       });
     }
@@ -30,6 +35,7 @@ export class OrderByPipe implements PipeTransform {
       const [prop, asc, sign] = OrderByPipe.extractFromConfig(config);
 
       if (config.length === 1) {
+        // tslint:disable-next-line:switch-default
         switch (sign) {
           case '+': return out.sort(OrderByPipe.simpleSort.bind(this));
           case '-': return out.sort(OrderByPipe.simpleSort.bind(this)).reverse();
@@ -50,8 +56,8 @@ export class OrderByPipe implements PipeTransform {
   }
 
   private static orderCompare(prop: string, asc: boolean, a: any, b: any) {
-    const first = extractDeepPropertyByMapKey(a, prop),
-          second = extractDeepPropertyByMapKey(b, prop);
+    const first = extractDeepPropertyByMapKey(a, prop);
+    const second = extractDeepPropertyByMapKey(b, prop);
 
     if (first === second) {
       return 0;
@@ -67,6 +73,7 @@ export class OrderByPipe implements PipeTransform {
 
     if (isString(first) && isString(second)) {
       const pos = first.toLowerCase().localeCompare(second.toLowerCase());
+
       return asc ? pos : -pos;
     }
 

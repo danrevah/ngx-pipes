@@ -1,5 +1,5 @@
-import {EveryPipe} from './every';
-import {isUndefined, isNumber} from '../helpers/helpers';
+import { EveryPipe } from './every';
+import { isNumber, isUndefined } from '../helpers/helpers';
 
 describe('EveryPipe', () => {
   let pipe: EveryPipe;

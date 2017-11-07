@@ -1,4 +1,4 @@
-import {ValuesPipe} from './values';
+import { ValuesPipe } from './values';
 
 describe('Values Pipe', () => {
   let pipe: ValuesPipe;

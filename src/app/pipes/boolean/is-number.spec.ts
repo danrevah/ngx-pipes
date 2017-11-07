@@ -1,4 +1,4 @@
-import {IsNumberPipe} from "./is-number";
+import { IsNumberPipe } from './is-number';
 
 describe('IsNumberPipe', () => {
   let pipe: IsNumberPipe;
