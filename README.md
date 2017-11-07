@@ -28,6 +28,7 @@
     - [match](#match)
     - [lpad](#lpad)
     - [rpad](#rpad)
+    - [insert](#insert)
  - [Array](#Array)   
     - [diff](#diff)
     - [flatten](#flatten)
@@ -337,6 +338,21 @@ Right pad a string to a given length using a given pad character  (default is a 
 ```html
 <p>{{'Foo' | rpad: 5: '#'}}</p> <!-- Output: "Foo##" -->
 ```
+
+### insert
+
+Inserts characters into a string
+
+**Usage:** `string | insert: chars: [stepSize:number|optional]`
+
+```html
+<p>{{'foobar' | insert: '-'}}</p> <!-- Output: "f-o-o-b-a-r" -->
+```
+
+```html
+<p>{{'foobar with stepsize' | insert: '#': 3}}</p> <!-- Output: "foo#bar# wi#th #ste#psi#ze" -->
+```
+
 
 ## Array
 
