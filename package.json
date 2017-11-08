@@ -1,6 +1,6 @@
 {
   "name": "ngx-pipes",
-  "version": "1.6.6",
+  "version": "1.7.0",
   "author": "Dan Revah",
   "description": "Useful angular2 pipes",
   "license": "MIT",
@@ -53,6 +53,9 @@
     "karma": "~1.7.0",
     "karma-chrome-launcher": "^2.2.0",
     "karma-cli": "~1.0.1",
+    "rollup": "^0.41.4",
+    "rollup-plugin-node-resolve": "^2.0.0",
+    "rollup-plugin-uglify": "^1.0.1",
     "karma-coverage-istanbul-reporter": "^1.3.0",
     "karma-jasmine": "~1.1.0",
     "karma-jasmine-html-reporter": "^0.2.2",
@@ -61,5 +64,9 @@
     "tslint": "^5.5.0",
     "typescript": "~2.4.0",
     "zone.js": "^0.8.4"
+  },
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-clean": "^0.3.2"
   }
 }
