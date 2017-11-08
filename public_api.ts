@@ -1,1 +1,1 @@
-export * from "./src/pipes";
+export * from "./src/pipes/index";
