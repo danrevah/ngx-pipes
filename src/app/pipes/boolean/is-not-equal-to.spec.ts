@@ -1,4 +1,4 @@
-import {IsNotEqualToPipe} from "./is-not-equal-to";
+import { IsNotEqualToPipe } from './is-not-equal-to';
 
 describe('IsNotEqualToPipe', () => {
   let pipe: IsNotEqualToPipe;

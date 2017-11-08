@@ -1,5 +1,5 @@
-import {PipeTransform, Pipe} from '@angular/core';
-import {isObject} from '../helpers/helpers';
+import { Pipe, PipeTransform } from '@angular/core';
+import { isObject } from '../helpers/helpers';
 
 @Pipe({name: 'omit'})
 export class OmitPipe implements PipeTransform {
@@ -10,6 +10,7 @@ export class OmitPipe implements PipeTransform {
     }
 
     return Object.keys(obj)
+      // tslint:disable-next-line:no-bitwise
       .filter(k => !~args.indexOf(k))
       .reduce((o, k) => {
         return Object.assign(o, {[k]: obj[k]});

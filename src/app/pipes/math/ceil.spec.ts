@@ -1,4 +1,4 @@
-import {CeilPipe} from "./ceil";
+import { CeilPipe } from './ceil';
 
 describe('CeilPipe', () => {
   let pipe: CeilPipe;

@@ -1,16 +1,16 @@
-import {KeysPipe} from './keys';
-import {ValuesPipe} from './values';
-import {PairsPipe} from './pairs';
-import {PickPipe} from './pick';
-import {OmitPipe} from './omit';
-import {InvertPipe} from './invert';
-import {InvertByPipe} from './invert-by';
-import {DiffObjPipe} from './diff-obj';
-import {NgModule} from '@angular/core';
+import { KeysPipe } from './keys';
+import { ValuesPipe } from './values';
+import { PairsPipe } from './pairs';
+import { PickPipe } from './pick';
+import { OmitPipe } from './omit';
+import { InvertPipe } from './invert';
+import { InvertByPipe } from './invert-by';
+import { DiffObjPipe } from './diff-obj';
+import { NgModule } from '@angular/core';
 
 const OBJECT_PIPES = [
   KeysPipe, ValuesPipe, PairsPipe, PickPipe, InvertPipe, InvertByPipe,
-  OmitPipe, DiffObjPipe
+  OmitPipe, DiffObjPipe,
 ];
 
 @NgModule({

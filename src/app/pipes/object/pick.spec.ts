@@ -1,4 +1,4 @@
-import {PickPipe} from './pick';
+import { PickPipe } from './pick';
 
 describe('PickPipe', () => {
   let pipe: PickPipe;

@@ -1,28 +1,28 @@
-import {NgModule} from '@angular/core';
-import {UcWordsPipe} from './ucwords';
-import {LeftTrimPipe} from './ltrim';
-import {RepeatPipe} from './repeat';
-import {RightTrimPipe} from './rtrim';
-import {ScanPipe} from './scan';
-import {ShortenPipe} from './shorten';
-import {StripTagsPipe} from './strip-tags';
-import {TrimPipe} from './trim';
-import {UcFirstPipe} from './ucfirst';
-import {SlugifyPipe} from './slugify';
-import {CamelizePipe} from './camelize';
-import {LatinisePipe} from './latinise';
-import {LinesPipe} from './lines';
-import {UnderscorePipe} from './underscore';
-import {MatchPipe} from './match';
-import {TestPipe} from './test';
-import {LeftPadPipe} from './lpad';
-import {RightPadPipe} from './rpad';
+import { NgModule } from '@angular/core';
+import { UcWordsPipe } from './ucwords';
+import { LeftTrimPipe } from './ltrim';
+import { RepeatPipe } from './repeat';
+import { RightTrimPipe } from './rtrim';
+import { ScanPipe } from './scan';
+import { ShortenPipe } from './shorten';
+import { StripTagsPipe } from './strip-tags';
+import { TrimPipe } from './trim';
+import { UcFirstPipe } from './ucfirst';
+import { SlugifyPipe } from './slugify';
+import { CamelizePipe } from './camelize';
+import { LatinisePipe } from './latinise';
+import { LinesPipe } from './lines';
+import { UnderscorePipe } from './underscore';
+import { MatchPipe } from './match';
+import { TestPipe } from './test';
+import { LeftPadPipe } from './lpad';
+import { RightPadPipe } from './rpad';
 
 export const STRING_PIPES = [
   LeftTrimPipe, RepeatPipe, RightTrimPipe, ScanPipe, ShortenPipe,
   StripTagsPipe, TrimPipe, UcFirstPipe, UcWordsPipe, SlugifyPipe,
   CamelizePipe, LatinisePipe, LinesPipe, UnderscorePipe, MatchPipe,
-  TestPipe, LeftPadPipe, RightPadPipe
+  TestPipe, LeftPadPipe, RightPadPipe,
 ];
 
 @NgModule({

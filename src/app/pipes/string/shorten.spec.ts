@@ -1,7 +1,7 @@
-import {ShortenPipe} from './shorten';
+import { ShortenPipe } from './shorten';
 
 describe('ShortenPipe Tests', () => {
-  let pipe:ShortenPipe;
+  let pipe: ShortenPipe;
 
   beforeEach(() => {
     pipe = new ShortenPipe();

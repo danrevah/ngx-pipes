@@ -1,4 +1,4 @@
-import {GroupByPipe} from './group-by';
+import { GroupByPipe } from './group-by';
 
 describe('GroupByPipe', () => {
   let pipe: GroupByPipe;
@@ -43,7 +43,7 @@ describe('GroupByPipe', () => {
       {id: 1, key: 'foo', type: 1},
       {id: 2, key: 'foo', type: 2},
       {id: 3, key: 'foo', type: 1},
-      {id: 4, key: 'foo', type: 2}
+      {id: 4, key: 'foo', type: 2},
     ];
     const result = pipe.transform(arrayWithDiscriminator, ['key', 'type'], '_');
     expect(result).toEqual({
@@ -57,7 +57,7 @@ describe('GroupByPipe', () => {
       {id: 1, key: 'foo', type: 1},
       {id: 2, key: 'foo', type: 2},
       {id: 3, key: 'foo', type: 1},
-      {id: 4, key: 'foo', type: 2}
+      {id: 4, key: 'foo', type: 2},
     ];
     const result = pipe.transform(arrayWithDiscriminator, ['key', 'type']);
     expect(result).toEqual({
@@ -71,7 +71,7 @@ describe('GroupByPipe', () => {
       {id: 1, prop: { deep: 'foo' }},
       {id: 2, prop: { deep: 'bar' }},
       {id: 3, prop: { deep: 'foo' }},
-      {id: 4, prop: { deep: 'bar' }}
+      {id: 4, prop: { deep: 'bar' }},
     ];
     const result = pipe.transform(arrayWithDiscriminator, 'prop.deep');
     expect(result).toEqual({
@@ -85,7 +85,7 @@ describe('GroupByPipe', () => {
       {id: 1, prop: { deep: 'foo', type: 1 }},
       {id: 2, prop: { deep: 'foo', type: 2 }},
       {id: 3, prop: { deep: 'foo', type: 1 }},
-      {id: 4, prop: { deep: 'foo', type: 2 }}
+      {id: 4, prop: { deep: 'foo', type: 2 }},
     ];
     const result = pipe.transform(arrayWithDiscriminator, ['prop.deep', 'prop.type']);
     expect(result).toEqual({

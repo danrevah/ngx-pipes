@@ -1,4 +1,4 @@
-import {OmitPipe} from './omit';
+import { OmitPipe } from './omit';
 
 describe('OmitPipe', () => {
   let pipe: OmitPipe;

@@ -1,4 +1,4 @@
-import {ReversePipe} from "./reverse";
+import { ReversePipe } from './reverse';
 
 describe('ReversePipe', () => {
   let pipe: ReversePipe;
@@ -15,30 +15,30 @@ describe('ReversePipe', () => {
   });
 
   it('should reverse array', () => {
-    let array = [1,2,3,4,5];
-    let result = pipe.transform(array);
-    expect(result).toEqual([5,4,3,2,1]);
+    const array = [1, 2, 3, 4, 5];
+    const result = pipe.transform(array);
+    expect(result).toEqual([5, 4, 3, 2, 1]);
   });
 
   it('should reverse array of objects', () => {
-    let fooObj = {id: 1, name: 'foo'},
-        barObj = {id: 2, name: 'bar'},
-        cazObj = {id: 3, name: 'caz'};
+    const fooObj = {id: 1, name: 'foo'};
+    const barObj = {id: 2, name: 'bar'};
+    const cazObj = {id: 3, name: 'caz'};
 
-    let array = [
+    const array = [
       fooObj,
       barObj,
-      cazObj
+      cazObj,
     ];
-    let result = pipe.transform(array);
+    const result = pipe.transform(array);
     expect(result).toEqual([
-      cazObj, barObj, fooObj
+      cazObj, barObj, fooObj,
     ]);
   });
 
   it('should reverse string', () => {
-    let string = 'lorem ipsum';
-    let result = pipe.transform(string);
+    const target = 'lorem ipsum';
+    const result = pipe.transform(target);
     expect(result).toEqual('muspi merol');
   });
 });

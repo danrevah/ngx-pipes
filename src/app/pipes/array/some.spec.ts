@@ -1,5 +1,5 @@
-import {SomePipe} from './some';
-import {isNumber, isUndefined} from '../helpers/helpers';
+import { SomePipe } from './some';
+import { isNumber, isUndefined } from '../helpers/helpers';
 
 describe('SomePipe', () => {
   let pipe: SomePipe;

@@ -1,4 +1,4 @@
-import {IsStringPipe} from "./is-string";
+import { IsStringPipe } from './is-string';
 
 describe('IsStringPipe', () => {
   let pipe: IsStringPipe;

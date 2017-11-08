@@ -1,4 +1,4 @@
-import {FloorPipe} from "./floor";
+import { FloorPipe } from './floor';
 
 describe('FloorPipe', () => {
   let pipe: FloorPipe;

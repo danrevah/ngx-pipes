@@ -1,7 +1,7 @@
-import {LinesPipe} from './lines';
+import { LinesPipe } from './lines';
 
 describe('LinesPipe Tests', () => {
-  let pipe:LinesPipe;
+  let pipe: LinesPipe;
 
   beforeEach(() => {
     pipe = new LinesPipe();
@@ -17,7 +17,7 @@ describe('LinesPipe Tests', () => {
   it('Should extract lines properly', () => {
     expect(pipe.transform('foo\r\n')).toEqual(['foo', '']);
     expect(pipe.transform('foo\nbar')).toEqual(['foo', 'bar']);
-    expect(pipe.transform('foo\r\nbar\nbaz')).toEqual(['foo','bar','baz']);
+    expect(pipe.transform('foo\r\nbar\nbaz')).toEqual(['foo', 'bar', 'baz']);
     expect(pipe.transform('Some\nSentence\r\nwith\r\nNew line')).toEqual(['Some', 'Sentence', 'with', 'New line']);
   });
 });

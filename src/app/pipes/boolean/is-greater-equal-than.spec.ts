@@ -1,4 +1,4 @@
-import {IsGreaterEqualThanPipe} from "./is-greater-equal-than";
+import { IsGreaterEqualThanPipe } from './is-greater-equal-than';
 
 describe('IsGreaterEqualThanPipe', () => {
   let pipe: IsGreaterEqualThanPipe;

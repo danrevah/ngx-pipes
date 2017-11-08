@@ -1,7 +1,7 @@
-import {TestPipe} from './test';
+import { TestPipe } from './test';
 
 describe('TestPipe Tests', () => {
-  let pipe:TestPipe;
+  let pipe: TestPipe;
 
   beforeEach(() => {
     pipe = new TestPipe();

@@ -34,18 +34,19 @@ export function applyPrecision(num: number, precision: number) {
   }
 
   const tho = 10 ** precision;
+
   return Math.round(num * tho) / tho;
 }
 
 export function extractDeepPropertyByMapKey(obj: any, map: string): any {
   const keys = map.split('.');
-  const key = keys.shift();
+  const head = keys.shift();
 
   return keys.reduce((prop: any, key: string) => {
     return !isUndefined(prop) && !isUndefined(prop[key])
       ? prop[key]
       : undefined;
-  }, obj[key || '']);
+  }, obj[head || '']);
 }
 
 export function getKeysTwoObjects(obj: any, other: any): any {
@@ -65,6 +66,7 @@ export function isDeepEqual(obj: any, other: any): any {
     if (!isObject(obj[key]) || !isObject(other[key])) {
       return false;
     }
+
     return isDeepEqual(obj[key], other[key]);
   });
 }

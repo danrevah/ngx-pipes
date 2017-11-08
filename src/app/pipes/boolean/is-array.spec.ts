@@ -1,4 +1,4 @@
-import {IsArrayPipe} from "./is-array";
+import { IsArrayPipe } from './is-array';
 
 describe('IsArrayPipe', () => {
   let pipe: IsArrayPipe;

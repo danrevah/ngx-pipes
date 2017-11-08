@@ -1,4 +1,4 @@
-import {BytesPipe} from './bytes';
+import { BytesPipe } from './bytes';
 
 describe('BytesPipe', () => {
   let pipe: BytesPipe;
@@ -16,7 +16,7 @@ describe('BytesPipe', () => {
     expect(pipe.transform(999)).toEqual('999 B');
     expect(pipe.transform(1024)).toEqual('1 KB');
     expect(pipe.transform(10240)).toEqual('10 KB');
-	expect(pipe.transform(102400)).toEqual('100 KB');
+    expect(pipe.transform(102400)).toEqual('100 KB');
     expect(pipe.transform(1023488)).toEqual('999.5 KB');
     expect(pipe.transform(15456864)).toEqual('14.740814208984375 MB');
     expect(pipe.transform(4616548610)).toEqual('4.299496045917114 GB');

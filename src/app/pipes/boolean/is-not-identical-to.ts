@@ -1,4 +1,4 @@
-import {PipeTransform, Pipe} from '@angular/core';
+import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({name: 'isNotIdenticalTo'})
 export class IsNotIdenticalToPipe implements PipeTransform {

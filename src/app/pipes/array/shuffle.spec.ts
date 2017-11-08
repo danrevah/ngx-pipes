@@ -1,4 +1,4 @@
-import {ShufflePipe} from './shuffle';
+import { ShufflePipe } from './shuffle';
 
 describe('ShufflePipe', () => {
   let pipe: ShufflePipe;

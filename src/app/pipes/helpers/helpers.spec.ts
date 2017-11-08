@@ -1,5 +1,5 @@
 
-import {extractDeepPropertyByMapKey, isDeepEqual} from './helpers';
+import { extractDeepPropertyByMapKey, isDeepEqual } from './helpers';
 
 describe('Utils Tests', () => {
 

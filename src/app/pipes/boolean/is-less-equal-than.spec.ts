@@ -1,4 +1,4 @@
-import {IsLessEqualThanPipe} from "./is-less-equal-than";
+import { IsLessEqualThanPipe } from './is-less-equal-than';
 
 describe('IsLessEqualThanPipe', () => {
   let pipe: IsLessEqualThanPipe;

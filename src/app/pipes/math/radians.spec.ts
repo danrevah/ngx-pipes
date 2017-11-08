@@ -1,4 +1,4 @@
-import {RadiansPipe} from "./radians";
+import { RadiansPipe } from './radians';
 
 describe('RadiansPipe', () => {
   let pipe: RadiansPipe;

@@ -1,4 +1,4 @@
-import {IntersectionPipe} from './intersection';
+import { IntersectionPipe } from './intersection';
 
 describe('IntersectionPipe', () => {
   let pipe: IntersectionPipe;
@@ -25,7 +25,7 @@ describe('IntersectionPipe', () => {
   });
 
   it('should return intersection of arrays', () => {
-    expect(pipe.transform([1, 2, 3], [1, 2 ,3, 4, 5, 6])).toEqual([1,2,3]);
+    expect(pipe.transform([1, 2, 3], [1, 2 , 3, 4, 5, 6])).toEqual([1, 2, 3]);
     expect(pipe.transform([1, 2, 3], [1, 2, 4, 5, 6], [1, 2, 7, 8, 9])).toEqual([1, 2]);
   });
 });
