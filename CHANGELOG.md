@@ -1,3 +1,20 @@
+# Change Log
+
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+<a name="2.0.0"></a>
+# [2.0.0](https://github.com/danrevah/ngx-pipes/compare/v1.6.6...v2.0.0) (2017-11-08)
+
+
+* improve package bundling (#84) ([6a6f8ca](https://github.com/danrevah/ngx-pipes/commit/6a6f8ca))
+
+
+### BREAKING CHANGES
+
+* we do not publish the source file of each pipe now. As with webpack/rollup's treeshaking feature, we don't need to publish pipes separately. User who used to reference to source pipes directly should update their paths.
+
+
+
 # Changelog
 All notable changes to this project will be documented in this file.
 
@@ -87,4 +104,3 @@ All notable changes to this project will be documented in this file.
 ## 0.4.18 - 2016-12-01
 ### Added
 - Fully functional library with Angular-CLI.
-
