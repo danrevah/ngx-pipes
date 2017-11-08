@@ -116,7 +116,7 @@
 3. Pipes are also injectable and can be used in Components / Services / etc..
 
   ```typescript  
-  import {ReversePipe} from 'ngx-pipes/src/app/pipes/array/reverse';
+  import {ReversePipe} from 'ngx-pipes/src/pipes/array/reverse';
 
   @Component({
     // ..
