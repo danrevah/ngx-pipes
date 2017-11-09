@@ -33,6 +33,7 @@
     - [flatten](#flatten)
     - [initial](#initial)
     - [intersection](#intersection)
+    - [range](#range)
     - [reverse](#reverse)
     - [tail](#tail)
     - [truthify](#truthify)
@@ -409,6 +410,20 @@ this.items = [1, 2, 3, 4, 5];
 
 ```html
 <li *ngFor="let item of items | intersection: [1, 2, 3]: [3, 6]"> <!-- Array: [3] -->
+```
+
+### range
+
+Returns an array with range of numbers
+
+**Usage:** `range: [start: number, default = '1']: [count: number]: [step: number | optional, default = '1']`
+
+```typescript
+this.items = this.rangePipe.transform(1, 5); // Returns: [1, 2, 3, 4, 5]
+```
+
+```html
+<li *ngFor="let item of items"> <!-- Array: [1, 2, 3, 4, 5] -->
 ```
 
 ### reverse
