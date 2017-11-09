@@ -1,6 +1,6 @@
 import { RangePipe } from './range';
 
-fdescribe('RangePipe', () => {
+describe('RangePipe', () => {
   let pipe: RangePipe;
 
   beforeEach(() => {
