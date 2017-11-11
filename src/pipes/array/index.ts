@@ -20,12 +20,14 @@ import { NgModule } from '@angular/core';
 import { GroupByImpurePipe } from './group-by-impure';
 import { FilterByImpurePipe } from './filter-by-impure';
 import { OrderByImpurePipe } from './order-by-impure';
+import { RangePipe } from './range';
 
 const ARRAY_PIPES = [
   DiffPipe, FlattenPipe, InitialPipe, IntersectionPipe, ReversePipe, TailPipe,
   TrurthifyPipe, UnionPipe, UniquePipe, WithoutPipe, PluckPipe, ShufflePipe,
   EveryPipe, SomePipe, SamplePipe, GroupByPipe, GroupByImpurePipe,
   FilterByPipe, FilterByImpurePipe, OrderByPipe, OrderByImpurePipe,
+  RangePipe
 ];
 
 @NgModule({
@@ -57,3 +59,4 @@ export {OrderByPipe} from './order-by';
 export {GroupByImpurePipe} from './group-by-impure';
 export {FilterByImpurePipe} from './filter-by-impure';
 export {OrderByImpurePipe} from './order-by-impure';
+export {RangePipe} from './range';
