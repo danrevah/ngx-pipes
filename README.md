@@ -3,10 +3,6 @@
 
 > Useful pipes for Angular with no external dependencies
 
- <a target='_blank' rel='nofollow' href='https://app.codesponsor.io/link/8h16rfRniJJ7XsEPdTv9zXsg/danrevah/ngx-pipes'>
-  <img alt='Sponsor' width='888' height='68' src='https://app.codesponsor.io/embed/8h16rfRniJJ7XsEPdTv9zXsg/danrevah/ngx-pipes.svg' />
-</a>
-
 ## Table of contents
 
  - [Installation](#installation)
