@@ -27,7 +27,7 @@ const ARRAY_PIPES = [
   TrurthifyPipe, UnionPipe, UniquePipe, WithoutPipe, PluckPipe, ShufflePipe,
   EveryPipe, SomePipe, SamplePipe, GroupByPipe, GroupByImpurePipe,
   FilterByPipe, FilterByImpurePipe, OrderByPipe, OrderByImpurePipe,
-  RangePipe
+  RangePipe,
 ];
 
 @NgModule({
