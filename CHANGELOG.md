@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="2.1.0"></a>
+# [2.1.0](https://github.com/danrevah/ngx-pipes/compare/v1.6.6...v2.1.0) (2017-12-26)
+
+
+* improve package bundling (#84) ([6a6f8ca](https://github.com/danrevah/ngx-pipes/commit/6a6f8ca)), closes [#84](https://github.com/danrevah/ngx-pipes/issues/84)
+
+
+### BREAKING CHANGES
+
+* we do not publish the source file of each pipe now. As with webpack/rollup's treeshaking feature, we don't need to publish pipes separately. User who used to reference to source pipes directly should update their paths.
+
+
+
 <a name="2.0.3"></a>
 ## [2.0.3](https://github.com/danrevah/ngx-pipes/compare/v2.0.0...v2.0.3) (2017-11-10)
 
