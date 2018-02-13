@@ -131,7 +131,17 @@
   }
   ```
 
+4. You can also use pipes as part of your template for ex. 
 
+```html
+<p>{{ 'foo' | reverse }}</p> <!-- Output: "oof" -->
+```
+
+and it's also possible to stack multiple pipes
+
+```html
+<p>{{ ' foo' | ltrim | reverse }}</p> <!-- Output: "oof" -->
+```
 
 
 ## String
