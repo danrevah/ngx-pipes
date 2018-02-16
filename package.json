@@ -1,6 +1,6 @@
 {
   "name": "ngx-pipes",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "author": "Dan Revah",
   "description": "Useful angular2 pipes",
   "license": "MIT",
@@ -32,16 +32,16 @@
     "url": "https://github.com/danrevah/ngx-pipes.git"
   },
   "peerDependencies": {
-    "@angular/core": "^4.0.1 || ~5.0.0 || ~5.1.0"
+    "@angular/core": "^4.0.1 || ^5.0.0"
   },
   "devDependencies": {
     "@angular/cli": "^1.6.0",
-    "@angular/common": "^5.1.0",
-    "@angular/compiler": "^5.1.0",
-    "@angular/compiler-cli": "^5.1.0",
-    "@angular/core": "^5.1.0",
-    "@angular/platform-browser": "^5.1.0",
-    "@angular/platform-browser-dynamic": "^5.1.0",
+    "@angular/common": "^5.2.5",
+    "@angular/compiler": "^5.2.5",
+    "@angular/compiler-cli": "^5.2.5",
+    "@angular/core": "^5.2.5",
+    "@angular/platform-browser": "^5.2.5",
+    "@angular/platform-browser-dynamic": "^5.2.5",
     "@types/jasmine": "^2.8.2",
     "@types/jasminewd2": "~2.0.2",
     "@types/node": "^8.0.57",
