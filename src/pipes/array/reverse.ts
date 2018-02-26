@@ -10,7 +10,7 @@ export class ReversePipe implements PipeTransform {
     }
 
     return Array.isArray(input)
-      ? input.reverse()
+      ? input.slice().reverse()
       : input;
   }
 }
