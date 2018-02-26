@@ -41,4 +41,10 @@ describe('ReversePipe', () => {
     const result = pipe.transform(target);
     expect(result).toEqual('muspi merol');
   });
+
+  it('should not modify order of original array', () => {
+    const target = [1, 2, 3];
+    const result = pipe.transform(target);
+    expect(result).not.toEqual(target);
+  });
 });
