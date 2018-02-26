@@ -44,7 +44,7 @@ describe('ReversePipe', () => {
 
   it('should not modify order of original array', () => {
     const target = [1, 2, 3];
-    const result = pipe.transform(target);
-    expect(result).not.toEqual(target);
+    pipe.transform(target);
+    expect(target).toEqual([1, 2, 3]);
   });
 });
