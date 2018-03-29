@@ -28,6 +28,7 @@
     - [match](#match)
     - [lpad](#lpad)
     - [rpad](#rpad)
+    - [replace](#replace)
  - [Array](#Array)   
     - [diff](#diff)
     - [flatten](#flatten)
@@ -97,14 +98,14 @@
 1. Use npm to install the package
 
   ```terminal
-  $ npm install ngx-pipes --save 
+  $ npm install ngx-pipes --save
   ```
 
 2. You could either add into your module `imports` the `NgPipesModule` in order to add all of the pipes, Or add a specific module such as `NgArrayPipesModule`, `NgObjectPipesModule`, `NgStringPipesModule`, `NgMathPipesModule` or `NgBooleanPipesModule`.
 
   ```typescript
   import {NgPipesModule} from 'ngx-pipes';
-  
+
   @NgModule({
    // ...
    imports: [
@@ -116,7 +117,7 @@
 
 3. Pipes are also injectable and can be used in Components / Services / etc..
 
-  ```typescript  
+  ```typescript
   import {ReversePipe} from 'ngx-pipes';
 
   @Component({
@@ -347,6 +348,23 @@ Right pad a string to a given length using a given pad character  (default is a 
 
 ```html
 <p>{{'Foo' | rpad: 5: '#'}}</p> <!-- Output: "Foo##" -->
+```
+
+### replace
+
+Replace searches a string for a specified value, or a regular expression, and returns a new string where the specified values are replaced. Replace using a string or a function that takes a string and returns a string.
+
+**Usage:** `string | replace: string | RegExp : string | (string) => string`
+
+```html
+<p>{{'Partially_Shipped', '_', ' '}}</p> <!-- Output: "Partially Shipped" -->
+<p>{{'Mr Blue has blue house and blue car', RegExp variable in class (example: /blue/gi), 'red'}}</p> <!--Output: "Mr red has red house and red car" -->
+<p>{{'Mr Blue has blue house and blue car', RegExp variable in class (example: /blue|house|car/gi), function in class in class (example: test(x: string) {
+        return x.toUpperCase;
+    })}}</p> <!--Output: "Mr BLUE has a BLUE HOUSE and a BLUE CAR" -->
+
+<!--Full example using the same RegExp and function as above example-->
+<p>{{'Mr Blue has blue house and blue car', regex, test}}</p>
 ```
 
 ## Array
