@@ -5,7 +5,7 @@ import { isObject } from '../helpers/helpers';
 export class ValuesPipe implements PipeTransform {
 
   transform(obj: any): any[] {
-    if (Array.isArray(obj) || !isObject(obj)) {
+    if (Array.isArray(obj) || obj === null || !isObject(obj)) {
       return obj;
     }
 
