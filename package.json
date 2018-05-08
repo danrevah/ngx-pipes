@@ -32,16 +32,16 @@
     "url": "https://github.com/danrevah/ngx-pipes.git"
   },
   "peerDependencies": {
-    "@angular/core": "^4.0.1 || ^5.0.0"
+    "@angular/core": "^4.0.1 || ^5.0.0 || ^6.0.0"
   },
   "devDependencies": {
     "@angular/cli": "^1.6.0",
-    "@angular/common": "^5.2.5",
-    "@angular/compiler": "^5.2.5",
-    "@angular/compiler-cli": "^5.2.5",
-    "@angular/core": "^5.2.5",
-    "@angular/platform-browser": "^5.2.5",
-    "@angular/platform-browser-dynamic": "^5.2.5",
+    "@angular/common": "^6.0.0",
+    "@angular/compiler": "^6.0.0",
+    "@angular/compiler-cli": "^6.0.0",
+    "@angular/core": "^6.0.0",
+    "@angular/platform-browser": "^6.0.0",
+    "@angular/platform-browser-dynamic": "^6.0.0",
     "@types/jasmine": "^2.8.2",
     "@types/jasminewd2": "~2.0.2",
     "@types/node": "^8.0.57",
