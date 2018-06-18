@@ -6,9 +6,9 @@ describe('FilterByPipe', () => {
   const users = [
     // tslint:disable:max-line-length
     {id: 1, first_name: 'John', last_name: 'Doe', work: { title: 'Software Engineer', company: 'Foo Tech', previous_company: 'Unknown' }, current_employed: true, prop: 1},
-    {id: 2, first_name: 'Jane', last_name: 'West', work: { title: 'Designer', company: 'AAA Solutions', previous_company: 'Unknown' }, current_employed: false},
-    {id: 3, first_name: 'Bruce', last_name: 'John', work: { title: 'Software Engineer', company: 'Bar Tech', previous_company: 'Unknown' }, current_employed: true},
-    {id: 4, first_name: 'William', last_name: 'Cent', work: { title: 'Designer', company: 'Foo Tech', previous_company: 'Bar Tech' }, current_employed: false},
+    {id: 2, first_name: 'Jane', last_name: 'West', work: { title: 'Designer', company: 'AAA Solutions', previous_company: 'Unknown' }, arr: [{name: 'bar'}], current_employed: false},
+    {id: 3, first_name: 'Bruce', last_name: 'John', work: { title: 'Software Engineer', company: 'Bar Tech', previous_company: 'Unknown' }, arr: [{name: 'foo'}], current_employed: true},
+    {id: 4, first_name: 'William', last_name: 'Cent', work: { title: 'Designer', company: 'Foo Tech', previous_company: 'Bar Tech' }, arr: [{name: 'foo'}, {name: 'bar'}], current_employed: false},
     // tslint:enable:max-line-length
   ];
 
@@ -81,5 +81,11 @@ describe('FilterByPipe', () => {
     const filtered = pipe.transform(users, ['work.company'], 'Bar', true);
 
     expect(filtered.length).toEqual(0);
+  });
+
+  it('should filter child property which is an array', () => {
+    const filtered = pipe.transform(users, ['arr.name'], 'bar', true);
+
+    expect(filtered.length).toEqual(2);
   });
 });
