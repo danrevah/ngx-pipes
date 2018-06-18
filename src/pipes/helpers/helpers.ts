@@ -49,6 +49,14 @@ export function extractDeepPropertyByMapKey(obj: any, map: string): any {
   }, obj[head || '']);
 }
 
+export function extractDeepPropertyByParentMapKey(obj: any, map: string): any {
+  const keys = map.split('.');
+  const tail = keys.pop();
+  const props = extractDeepPropertyByMapKey(obj, keys.join('.'));
+
+  return { props, tail };
+}
+
 export function getKeysTwoObjects(obj: any, other: any): any {
   return [...Object.keys(obj), ...Object.keys(other)]
     .filter((key, index, array) => array.indexOf(key) === index);
