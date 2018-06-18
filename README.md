@@ -660,7 +660,7 @@ this.users = [
    {id: 1, first_name: 'John', last_name: 'Doe', work: { company: 'Foo Tech' }},
    {id: 2, first_name: 'Jane', last_name: 'West', work: { company: 'AAA Solutions' }},
    {id: 3, first_name: 'Bruce', last_name: 'John', work: { company: 'Bar Tech' }},
-   {id: 4, first_name: 'William', last_name: 'Cent', work: { company: 'Foo Tech' }}
+   {id: 4, first_name: 'William', last_name: 'Cent', work: { company: 'Foo Tech' }, arr: [{name: 'foo'}]}
 ];
 ```
 
@@ -672,6 +672,10 @@ this.users = [
 <!-- filterBy also support nested properties -->
 <p>{{ users | filterBy: ['work.company']: 'Bar Tech' }}</p> 
 <!-- Output: "[{ "id": 3, "first_name": "Bruce", "last_name": "John", "work": { "company": "Bar Tech", "previous_company": "" } }]" -->
+
+<!-- filterBy also support nested properties inside of an array -->
+<p>{{ users | filterBy: ['arr.name']: 'foo' }}</p> 
+<!-- Output: "[{id: 4, first_name: 'William', last_name: 'Cent', work: { company: 'Foo Tech' }, arr: [{name: 'foo'}]}]" -->
 
 <!-- Return users whose first name or last name is 'John'. -->
 <p>{{ users | filterBy: ['first_name', 'last_name']: 'John' }}</p>
