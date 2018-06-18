@@ -83,7 +83,7 @@ describe('FilterByPipe', () => {
     expect(filtered.length).toEqual(0);
   });
 
-  fit('should filter child property which is an array', () => {
+  it('should filter child property which is an array', () => {
     const filtered = pipe.transform(users, ['arr.name'], 'foo', true);
     const filteredBar = pipe.transform(users, ['arr.name'], 'bar', true);
     const filteredBaz = pipe.transform(users, ['arr.name'], 'baz', true);
