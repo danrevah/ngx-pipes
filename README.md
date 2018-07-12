@@ -2,7 +2,7 @@
 
 <p align="center">
 <img 
-    src="assets/ngx-logo.png" width="200" height="140" border="0" alt="NGX-PIPES">
+    src="assets/ngx-logo.png" width="50" border="0" alt="NGX-PIPES">
 <br/><br/>
 
  [![npm](https://img.shields.io/npm/v/ngx-pipes.svg?style=flat-square)](https://www.npmjs.com/package/ngx-pipes) [![Package Quality](http://npm.packagequality.com/shield/ngx-pipes.svg?style=flat-square)](http://packagequality.com/#?package=ngx-pipes) [![Travis](https://img.shields.io/travis/danrevah/ngx-pipes.svg?style=flat-square)](https://travis-ci.org/danrevah/ngx-pipes) [![Coveralls](https://img.shields.io/coveralls/danrevah/ngx-pipes.svg?style=flat-square)](https://coveralls.io/github/danrevah/ngx-pipes?branch=master) [![npm](https://img.shields.io/npm/dm/ngx-pipes.svg?style=flat-square)](https://www.npmjs.com/package/ngx-pipes) [![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://github.com/danrevah/ngx-pipes/blob/master/LICENSE.md)
