@@ -1174,3 +1174,4 @@ $ npm test
 ```
 
 Commit & push, and make a pull request!
+# ngx-pipes-contrib
