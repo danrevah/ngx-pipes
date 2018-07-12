@@ -26,5 +26,4 @@ describe('RightPadPipe Tests', () => {
     const result = pipe.transform('foofoo', 3);
     expect(result).toEqual('foofoo');
   });
-
 });

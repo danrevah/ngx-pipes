@@ -23,6 +23,8 @@ describe('RepeatPipe Tests', () => {
   });
 
   it('Should throw range exception if times count is below zero', () => {
-    expect(() => { pipe.transform('foo', -1); }).toThrow(new RangeError());
+    expect(() => {
+      pipe.transform('foo', -1);
+    }).toThrow(new RangeError());
   });
 });

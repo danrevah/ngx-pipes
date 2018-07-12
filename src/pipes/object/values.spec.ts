@@ -17,7 +17,7 @@ describe('Values Pipe', () => {
 
   it('should return array of values', () => {
     expect(pipe.transform({})).toEqual([]);
-    expect(pipe.transform({foo: 'bar'})).toEqual(['bar']);
-    expect(pipe.transform({foo: 1, bar: 42})).toEqual([1, 42]);
+    expect(pipe.transform({ foo: 'bar' })).toEqual(['bar']);
+    expect(pipe.transform({ foo: 1, bar: 42 })).toEqual([1, 42]);
   });
 });

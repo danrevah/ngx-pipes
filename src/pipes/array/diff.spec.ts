@@ -12,7 +12,7 @@ describe('DiffPipe', () => {
     expect(pipe.transform(42)).toEqual(42);
   });
 
-  it('should keep the array the same way if it doesn\'t have any without arguments', () => {
+  it("should keep the array the same way if it doesn't have any without arguments", () => {
     expect(pipe.transform([1, 2, 3])).toEqual([1, 2, 3]);
     expect(pipe.transform([])).toEqual([]);
   });

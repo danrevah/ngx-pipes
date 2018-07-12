@@ -7,7 +7,7 @@ describe('RangePipe', () => {
     pipe = new RangePipe();
   });
 
-  it('should keep the empty array way if it doesn\'t have some of the arguments', () => {
+  it("should keep the empty array way if it doesn't have some of the arguments", () => {
     expect(pipe.transform()).toEqual([]);
 
     expect(pipe.transform(0)).toEqual([]);
@@ -44,8 +44,31 @@ describe('RangePipe', () => {
   });
 
   it('should return a new array filled with range from -5 to +5', () => {
-    expect(pipe.transform(-5, 11)).toEqual([-5, -4, -3, - 2, -1, 0, 1, 2, 3, 4, 5]);
-    expect(pipe.transform(-5, 11, 1)).toEqual([-5, -4, -3, - 2, -1, 0, 1, 2, 3, 4, 5]);
+    expect(pipe.transform(-5, 11)).toEqual([
+      -5,
+      -4,
+      -3,
+      -2,
+      -1,
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+    ]);
+    expect(pipe.transform(-5, 11, 1)).toEqual([
+      -5,
+      -4,
+      -3,
+      -2,
+      -1,
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+    ]);
   });
-
 });

@@ -1,12 +1,27 @@
 import { Pipe, PipeTransform } from '@angular/core';
 import { isString } from '../helpers/helpers';
 
-@Pipe({name: 'shorten'})
+@Pipe({ name: 'shorten' })
 export class ShortenPipe implements PipeTransform {
-  transform(input: string, length?: number, suffix?: string, wordBreak?: boolean): string;
-  transform(input: any, length?: number, suffix?: string, wordBreak?: boolean): any;
+  transform(
+    input: string,
+    length?: number,
+    suffix?: string,
+    wordBreak?: boolean
+  ): string;
+  transform(
+    input: any,
+    length?: number,
+    suffix?: string,
+    wordBreak?: boolean
+  ): any;
 
-  transform(text: any, length: number = 0, suffix: string = '', wordBreak: boolean = true): string {
+  transform(
+    text: any,
+    length: number = 0,
+    suffix: string = '',
+    wordBreak: boolean = true
+  ): string {
     if (!isString(text)) {
       return text;
     }

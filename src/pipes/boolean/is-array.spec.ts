@@ -12,7 +12,7 @@ describe('IsArrayPipe', () => {
     expect(pipe.transform(1)).toBeFalsy();
     expect(pipe.transform([])).toBeTruthy();
     expect(pipe.transform([1, 2])).toBeTruthy();
-    expect(pipe.transform([{a: 1}, {a: 2}])).toBeTruthy();
+    expect(pipe.transform([{ a: 1 }, { a: 2 }])).toBeTruthy();
     expect(pipe.transform(undefined)).toBeFalsy();
     expect(pipe.transform(false)).toBeFalsy();
     expect(pipe.transform(true)).toBeFalsy();

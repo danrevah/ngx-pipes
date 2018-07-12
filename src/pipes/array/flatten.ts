@@ -1,8 +1,7 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
-@Pipe({name: 'flatten'})
+@Pipe({ name: 'flatten' })
 export class FlattenPipe implements PipeTransform {
-
   transform(input: any[], shallow?: boolean): any[];
   transform<T>(input: T, shallow?: boolean): T;
 
@@ -11,9 +10,7 @@ export class FlattenPipe implements PipeTransform {
       return input;
     }
 
-    return shallow
-      ? [].concat.apply([], input)
-      : this.flatten(input);
+    return shallow ? [].concat.apply([], input) : this.flatten(input);
   }
 
   private flatten(array: any[]): any[] {

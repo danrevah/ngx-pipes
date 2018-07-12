@@ -17,10 +17,16 @@ describe('PickPipe', () => {
 
   it('should return picked object by args', () => {
     expect(pipe.transform({})).toEqual({});
-    expect(pipe.transform({foo: 1})).toEqual({});
-    expect(pipe.transform({a: 1, b: 2, c: 3}, 'a')).toEqual({a: 1});
-    expect(pipe.transform({a: 1, b: 2, c: 3}, 'a', 'b')).toEqual({a: 1, b: 2});
-    expect(pipe.transform({a: 1, b: 2, c: 3}, 'b', 'c')).toEqual({b: 2, c: 3});
-    expect(pipe.transform({a: 1, b: 2, c: 3}, 'b')).toEqual({b: 2});
+    expect(pipe.transform({ foo: 1 })).toEqual({});
+    expect(pipe.transform({ a: 1, b: 2, c: 3 }, 'a')).toEqual({ a: 1 });
+    expect(pipe.transform({ a: 1, b: 2, c: 3 }, 'a', 'b')).toEqual({
+      a: 1,
+      b: 2,
+    });
+    expect(pipe.transform({ a: 1, b: 2, c: 3 }, 'b', 'c')).toEqual({
+      b: 2,
+      c: 3,
+    });
+    expect(pipe.transform({ a: 1, b: 2, c: 3 }, 'b')).toEqual({ b: 2 });
   });
 });

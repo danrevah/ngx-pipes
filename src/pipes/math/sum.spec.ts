@@ -8,7 +8,7 @@ describe('SumPipe', () => {
   });
 
   it('should return value if not an array', () => {
-    expect(pipe.transform({a: 1})).toEqual({a: 1});
+    expect(pipe.transform({ a: 1 })).toEqual({ a: 1 });
     expect(pipe.transform(NaN)).toEqual(NaN);
   });
 

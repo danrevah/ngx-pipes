@@ -8,7 +8,7 @@ describe('SqrtPipe', () => {
   });
 
   it('should return value if not a number', () => {
-    expect(pipe.transform({a: 1})).toEqual({a: 1});
+    expect(pipe.transform({ a: 1 })).toEqual({ a: 1 });
     expect(pipe.transform(NaN)).toEqual(NaN);
   });
 
