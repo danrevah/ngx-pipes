@@ -10,6 +10,6 @@ export class WrapPipe implements PipeTransform {
 
     return (!!prefix && isString(prefix) ? prefix: '') +
            str +
-           (!!suffix && isString(suffix)? suffix: '');
+           (!!suffix && isString(suffix) ? suffix: '');
   }
 }
