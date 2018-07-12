@@ -60,7 +60,7 @@
     "protractor": "^5.3.2",
     "standard-version": "^4.2.0",
     "tslint": "^5.5.0",
-    "typescript": "^2.8.4",
+    "typescript": "^2.7.2",
     "zone.js": "^0.8.4"
   }
 }
