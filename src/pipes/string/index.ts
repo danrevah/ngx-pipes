@@ -17,12 +17,13 @@ import { MatchPipe } from './match';
 import { TestPipe } from './test';
 import { LeftPadPipe } from './lpad';
 import { RightPadPipe } from './rpad';
+import { WrapPipe } from './wrap';
 
 export const STRING_PIPES = [
   LeftTrimPipe, RepeatPipe, RightTrimPipe, ScanPipe, ShortenPipe,
   StripTagsPipe, TrimPipe, UcFirstPipe, UcWordsPipe, SlugifyPipe,
   CamelizePipe, LatinisePipe, LinesPipe, UnderscorePipe, MatchPipe,
-  TestPipe, LeftPadPipe, RightPadPipe,
+  TestPipe, LeftPadPipe, RightPadPipe, WrapPipe
 ];
 
 @NgModule({
