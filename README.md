@@ -1,7 +1,7 @@
 
 <p align="center">
 <img 
-    src="assets/ngx-logo.png" width="50" border="0" alt="NGX-PIPES">
+    src="assets/ngx-logo.png" width="160" border="0" alt="NGX-PIPES">
 <br/><br/>
 <a href="https://www.npmjs.com/package/ngx-pipes"><img src="https://img.shields.io/npm/v/ngx-pipes.svg?style=flat-square" alt="npm"></a>
 <a href="http://packagequality.com/#?package=ngx-pipes"><img src="http://npm.packagequality.com/shield/ngx-pipes.svg?style=flat-square" alt="Package Quality"></a>
