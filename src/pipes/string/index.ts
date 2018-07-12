@@ -50,3 +50,4 @@ export {MatchPipe} from './match';
 export {TestPipe} from './test';
 export {LeftPadPipe} from './lpad';
 export {RightPadPipe} from './rpad';
+export {WrapPipe} from './wrap';

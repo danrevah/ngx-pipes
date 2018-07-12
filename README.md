@@ -40,6 +40,7 @@
     - [match](#match)
     - [lpad](#lpad)
     - [rpad](#rpad)
+    - [wrap](#wrap)
  - [Array](#Array)   
     - [diff](#diff)
     - [flatten](#flatten)
@@ -359,6 +360,17 @@ Right pad a string to a given length using a given pad character  (default is a 
 
 ```html
 <p>{{'Foo' | rpad: 5: '#'}}</p> <!-- Output: "Foo##" -->
+```
+
+### wrap
+
+Wrap a string between a prefix and a suffix
+
+
+**Usage:** `string | wrap: prefix: suffix`
+
+```html
+<p>{{'Foo' | wrap: 'nice prefix ': ' and awesome suffix!'}}</p> <!-- Output: "nice prefix Foo and awesome suffix!" -->
 ```
 
 ## Array
