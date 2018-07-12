@@ -1,4 +1,3 @@
-# ngx-pipes  
 
 <p align="center">
 <img 
