@@ -1,16 +1,14 @@
-
 import { extractDeepPropertyByMapKey, isDeepEqual } from './helpers';
 
 describe('Utils Tests', () => {
-
   it('should extract properties properly', () => {
     const obj = {
       a: 1,
       b: {
         c: 2,
         d: {
-          e: 3
-        }
+          e: 3,
+        },
       },
       f: {
         g: 4,
@@ -18,11 +16,11 @@ describe('Utils Tests', () => {
         i: {
           j: {
             k: {
-              l: 6
-            }
-          }
-        }
-      }
+              l: 6,
+            },
+          },
+        },
+      },
     };
 
     expect(extractDeepPropertyByMapKey(obj, 'a')).toEqual(1);
@@ -34,13 +32,19 @@ describe('Utils Tests', () => {
   });
 
   it('should deep equal properly', () => {
-    expect(isDeepEqual({a: 1}, {a: 1})).toBeTruthy();
-    expect(isDeepEqual({a: 1}, {b: 1})).toBeFalsy();
-    expect(isDeepEqual({a: 1}, {a: 1, b: 1})).toBeFalsy();
-    expect(isDeepEqual({a: 1, b: 2}, {a: 1, b: 2})).toBeTruthy();
-    expect(isDeepEqual({a: 1, b: 2}, {a: 1, b: 1})).toBeFalsy();
-    expect(isDeepEqual({a: 1, b: 2, c: {d: 3}}, {a: 1, b: 2, c: {d: 1}})).toBeFalsy();
-    expect(isDeepEqual({a: 1, b: 2, c: {d: 3}}, {a: 1, b: 2, c: {d: 3}})).toBeTruthy();
-    expect(isDeepEqual({a: 1, b: 2, c: {d: 3}}, {a: 1, b: 2, c: {d: {}}})).toBeFalsy();
+    expect(isDeepEqual({ a: 1 }, { a: 1 })).toBeTruthy();
+    expect(isDeepEqual({ a: 1 }, { b: 1 })).toBeFalsy();
+    expect(isDeepEqual({ a: 1 }, { a: 1, b: 1 })).toBeFalsy();
+    expect(isDeepEqual({ a: 1, b: 2 }, { a: 1, b: 2 })).toBeTruthy();
+    expect(isDeepEqual({ a: 1, b: 2 }, { a: 1, b: 1 })).toBeFalsy();
+    expect(
+      isDeepEqual({ a: 1, b: 2, c: { d: 3 } }, { a: 1, b: 2, c: { d: 1 } })
+    ).toBeFalsy();
+    expect(
+      isDeepEqual({ a: 1, b: 2, c: { d: 3 } }, { a: 1, b: 2, c: { d: 3 } })
+    ).toBeTruthy();
+    expect(
+      isDeepEqual({ a: 1, b: 2, c: { d: 3 } }, { a: 1, b: 2, c: { d: {} } })
+    ).toBeFalsy();
   });
 });

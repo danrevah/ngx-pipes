@@ -1,5 +1,3 @@
-
-
 export function isUndefined(value: any) {
   return typeof value === 'undefined';
 }
@@ -58,8 +56,9 @@ export function extractDeepPropertyByParentMapKey(obj: any, map: string): any {
 }
 
 export function getKeysTwoObjects(obj: any, other: any): any {
-  return [...Object.keys(obj), ...Object.keys(other)]
-    .filter((key, index, array) => array.indexOf(key) === index);
+  return [...Object.keys(obj), ...Object.keys(other)].filter(
+    (key, index, array) => array.indexOf(key) === index
+  );
 }
 
 export function isDeepEqual(obj: any, other: any): any {
@@ -67,14 +66,16 @@ export function isDeepEqual(obj: any, other: any): any {
     return obj === other;
   }
 
-  return getKeysTwoObjects(obj, other).every((key: any): boolean => {
-    if (!isObject(obj[key]) && !isObject(other[key])) {
-      return obj[key] === other[key];
-    }
-    if (!isObject(obj[key]) || !isObject(other[key])) {
-      return false;
-    }
+  return getKeysTwoObjects(obj, other).every(
+    (key: any): boolean => {
+      if (!isObject(obj[key]) && !isObject(other[key])) {
+        return obj[key] === other[key];
+      }
+      if (!isObject(obj[key]) || !isObject(other[key])) {
+        return false;
+      }
 
-    return isDeepEqual(obj[key], other[key]);
-  });
+      return isDeepEqual(obj[key], other[key]);
+    }
+  );
 }

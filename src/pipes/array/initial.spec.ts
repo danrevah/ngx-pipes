@@ -24,10 +24,13 @@ describe('InitialPipe', () => {
   });
 
   it('should slice properly array of objects', () => {
-    const fooObj = {id: 1, name: 'foo'};
-    const barObj = {id: 2, name: 'bar'};
-    const cazObj = {id: 3, name: 'caz'};
+    const fooObj = { id: 1, name: 'foo' };
+    const barObj = { id: 2, name: 'bar' };
+    const cazObj = { id: 3, name: 'caz' };
 
-    expect(pipe.transform([fooObj, barObj, cazObj], 1)).toEqual([fooObj, barObj]);
+    expect(pipe.transform([fooObj, barObj, cazObj], 1)).toEqual([
+      fooObj,
+      barObj,
+    ]);
   });
 });

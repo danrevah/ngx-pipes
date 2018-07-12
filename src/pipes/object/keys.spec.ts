@@ -17,7 +17,7 @@ describe('Keys Pipe', () => {
 
   it('should return array of keys', () => {
     expect(pipe.transform({})).toEqual([]);
-    expect(pipe.transform({foo: 'bar'})).toEqual(['foo']);
-    expect(pipe.transform({foo: 1, bar: 42})).toEqual(['foo', 'bar']);
+    expect(pipe.transform({ foo: 'bar' })).toEqual(['foo']);
+    expect(pipe.transform({ foo: 1, bar: 42 })).toEqual(['foo', 'bar']);
   });
 });

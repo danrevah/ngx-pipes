@@ -1,9 +1,12 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { extractDeepPropertyByMapKey, isString, isUndefined } from '../helpers/helpers';
+import {
+  extractDeepPropertyByMapKey,
+  isString,
+  isUndefined,
+} from '../helpers/helpers';
 
-@Pipe({name: 'orderBy'})
+@Pipe({ name: 'orderBy' })
 export class OrderByPipe implements PipeTransform {
-
   transform(input: any[], config?: any): any[];
   transform<T>(input: T, config?: any): T;
 
@@ -37,8 +40,10 @@ export class OrderByPipe implements PipeTransform {
       if (config.length === 1) {
         // tslint:disable-next-line:switch-default
         switch (sign) {
-          case '+': return out.sort(OrderByPipe.simpleSort.bind(this));
-          case '-': return out.sort(OrderByPipe.simpleSort.bind(this)).reverse();
+          case '+':
+            return out.sort(OrderByPipe.simpleSort.bind(this));
+          case '-':
+            return out.sort(OrderByPipe.simpleSort.bind(this)).reverse();
         }
       }
 
@@ -77,9 +82,7 @@ export class OrderByPipe implements PipeTransform {
       return asc ? pos : -pos;
     }
 
-    return asc
-      ? first - second
-      : second - first;
+    return asc ? first - second : second - first;
   }
 
   private static extractFromConfig(config: any) {

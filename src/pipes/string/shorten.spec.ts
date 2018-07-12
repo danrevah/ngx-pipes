@@ -11,7 +11,7 @@ describe('ShortenPipe Tests', () => {
     expect(pipe.transform(null)).toEqual(null);
     expect(pipe.transform(undefined)).toEqual(undefined);
     expect(pipe.transform(42)).toEqual(42);
-    expect(pipe.transform({foo: 1, bar: 2})).toEqual({foo: 1, bar: 2});
+    expect(pipe.transform({ foo: 1, bar: 2 })).toEqual({ foo: 1, bar: 2 });
   });
 
   it('should not change the string if the length is more than the string size', () => {
@@ -32,6 +32,8 @@ describe('ShortenPipe Tests', () => {
   it('should shorten the string without word breaking', () => {
     expect(pipe.transform('lorem ipsum', 4, '...', false)).toEqual('lorem...');
     expect(pipe.transform('lorem ipsum', 2, '...', false)).toEqual('lorem...');
-    expect(pipe.transform('lorem ipsum', 7, '...', false)).toEqual('lorem ipsum');
+    expect(pipe.transform('lorem ipsum', 7, '...', false)).toEqual(
+      'lorem ipsum'
+    );
   });
 });

@@ -12,7 +12,7 @@ describe('ShufflePipe', () => {
     expect(pipe.transform(null)).toEqual(null);
     expect(pipe.transform(undefined)).toEqual(undefined);
     expect(pipe.transform(42)).toEqual(42);
-    expect(pipe.transform({foo: 1, bar: 2})).toEqual({foo: 1, bar: 2});
+    expect(pipe.transform({ foo: 1, bar: 2 })).toEqual({ foo: 1, bar: 2 });
   });
 
   it('should return shuffled array', () => {

@@ -12,7 +12,7 @@ describe('TailPipe', () => {
     expect(pipe.transform(null)).toEqual(null);
     expect(pipe.transform(undefined)).toEqual(undefined);
     expect(pipe.transform(42)).toEqual(42);
-    expect(pipe.transform({foo: 1, bar: 2})).toEqual({foo: 1, bar: 2});
+    expect(pipe.transform({ foo: 1, bar: 2 })).toEqual({ foo: 1, bar: 2 });
   });
 
   it('should check that nothing happens if there are no parameters', () => {
@@ -27,10 +27,13 @@ describe('TailPipe', () => {
   });
 
   it('should slice properly array of objects', () => {
-    const fooObj = {id: 1, name: 'foo'};
-    const barObj = {id: 2, name: 'bar'};
-    const cazObj = {id: 3, name: 'caz'};
+    const fooObj = { id: 1, name: 'foo' };
+    const barObj = { id: 2, name: 'bar' };
+    const cazObj = { id: 3, name: 'caz' };
 
-    expect(pipe.transform([fooObj, barObj, cazObj], 1)).toEqual([barObj, cazObj]);
+    expect(pipe.transform([fooObj, barObj, cazObj], 1)).toEqual([
+      barObj,
+      cazObj,
+    ]);
   });
 });

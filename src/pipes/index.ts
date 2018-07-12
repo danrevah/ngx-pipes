@@ -6,7 +6,13 @@ import { NgMathPipesModule } from './math/index';
 import { NgBooleanPipesModule } from './boolean/index';
 
 @NgModule({
-  exports: [NgArrayPipesModule, NgStringPipesModule, NgMathPipesModule, NgBooleanPipesModule, NgObjectPipesModule]
+  exports: [
+    NgArrayPipesModule,
+    NgStringPipesModule,
+    NgMathPipesModule,
+    NgBooleanPipesModule,
+    NgObjectPipesModule,
+  ],
 })
 export class NgPipesModule {}
 

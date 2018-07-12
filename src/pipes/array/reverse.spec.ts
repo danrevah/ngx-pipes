@@ -11,7 +11,7 @@ describe('ReversePipe', () => {
     expect(pipe.transform(null)).toEqual(null);
     expect(pipe.transform(undefined)).toEqual(undefined);
     expect(pipe.transform(42)).toEqual(42);
-    expect(pipe.transform({foo: 1, bar: 2})).toEqual({foo: 1, bar: 2});
+    expect(pipe.transform({ foo: 1, bar: 2 })).toEqual({ foo: 1, bar: 2 });
   });
 
   it('should reverse array', () => {
@@ -21,19 +21,13 @@ describe('ReversePipe', () => {
   });
 
   it('should reverse array of objects', () => {
-    const fooObj = {id: 1, name: 'foo'};
-    const barObj = {id: 2, name: 'bar'};
-    const cazObj = {id: 3, name: 'caz'};
+    const fooObj = { id: 1, name: 'foo' };
+    const barObj = { id: 2, name: 'bar' };
+    const cazObj = { id: 3, name: 'caz' };
 
-    const array = [
-      fooObj,
-      barObj,
-      cazObj,
-    ];
+    const array = [fooObj, barObj, cazObj];
     const result = pipe.transform(array);
-    expect(result).toEqual([
-      cazObj, barObj, fooObj,
-    ]);
+    expect(result).toEqual([cazObj, barObj, fooObj]);
   });
 
   it('should reverse string', () => {

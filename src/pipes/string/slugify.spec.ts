@@ -18,7 +18,11 @@ describe('SlugifyPipe Tests', () => {
   });
 
   it('Should slugify special strings', () => {
-    expect(pipe.transform('http://example.com/foo')).toEqual('http-example-com-foo');
-    expect(pipe.transform(' http://example.com/foo ')).toEqual('http-example-com-foo');
+    expect(pipe.transform('http://example.com/foo')).toEqual(
+      'http-example-com-foo'
+    );
+    expect(pipe.transform(' http://example.com/foo ')).toEqual(
+      'http-example-com-foo'
+    );
   });
 });

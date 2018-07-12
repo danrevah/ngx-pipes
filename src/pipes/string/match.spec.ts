@@ -11,7 +11,7 @@ describe('MatchPipe Tests', () => {
     expect(pipe.transform(null, '')).toEqual(null);
     expect(pipe.transform(undefined, '')).toEqual(undefined);
     expect(pipe.transform(42, '')).toEqual(42);
-    expect(pipe.transform({name: 'foo'}, '')).toEqual({name: 'foo'});
+    expect(pipe.transform({ name: 'foo' }, '')).toEqual({ name: 'foo' });
   });
 
   it('Should camelize properly', () => {

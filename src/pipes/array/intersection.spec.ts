@@ -12,7 +12,7 @@ describe('IntersectionPipe', () => {
     expect(pipe.transform(null)).toEqual(null);
     expect(pipe.transform(undefined)).toEqual(undefined);
     expect(pipe.transform(42)).toEqual(42);
-    expect(pipe.transform({foo: 1, bar: 2})).toEqual({foo: 1, bar: 2});
+    expect(pipe.transform({ foo: 1, bar: 2 })).toEqual({ foo: 1, bar: 2 });
   });
 
   it('should not change when calling pipe without arguments', () => {
@@ -25,7 +25,9 @@ describe('IntersectionPipe', () => {
   });
 
   it('should return intersection of arrays', () => {
-    expect(pipe.transform([1, 2, 3], [1, 2 , 3, 4, 5, 6])).toEqual([1, 2, 3]);
-    expect(pipe.transform([1, 2, 3], [1, 2, 4, 5, 6], [1, 2, 7, 8, 9])).toEqual([1, 2]);
+    expect(pipe.transform([1, 2, 3], [1, 2, 3, 4, 5, 6])).toEqual([1, 2, 3]);
+    expect(pipe.transform([1, 2, 3], [1, 2, 4, 5, 6], [1, 2, 7, 8, 9])).toEqual(
+      [1, 2]
+    );
   });
 });

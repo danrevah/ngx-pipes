@@ -3,8 +3,11 @@ import { isString } from '../helpers/helpers';
 
 @Pipe({ name: 'rpad' })
 export class RightPadPipe implements PipeTransform {
-
-  transform(str: string, length: number = 1, padCharacter: string = ' '): string {
+  transform(
+    str: string,
+    length: number = 1,
+    padCharacter: string = ' '
+  ): string {
     if (!isString(str) || str.length >= length) {
       return str;
     }
