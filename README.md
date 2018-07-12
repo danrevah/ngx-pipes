@@ -9,10 +9,11 @@
 <a href="https://coveralls.io/github/danrevah/ngx-pipes?branch=master"><img src="https://img.shields.io/coveralls/danrevah/ngx-pipes.svg?style=flat-square" alt="Coveralls"></a>
 <a href="https://www.npmjs.com/package/ngx-pipes"><img src="https://img.shields.io/npm/dm/ngx-pipes.svg?style=flat-square" alt="npm"></a>
 <a href="https://github.com/danrevah/ngx-pipes/blob/master/LICENSE.md"><img src="https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square" alt="MIT licensed"></a>
+<br/><br/>
 </p>
 
 
-Useful pipes for Angular with no external dependencies
+Ngx Pipes is a collection of useful pipes to Angular with no external dependencies.
 
 ## Table of contents
 
