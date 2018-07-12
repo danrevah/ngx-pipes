@@ -15,7 +15,7 @@
 </p>
 
 
-> Useful pipes for Angular with no external dependencies
+Useful pipes for Angular with no external dependencies
 
 ## Table of contents
 
