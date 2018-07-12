@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="2.3.0"></a>
+# [2.3.0](https://github.com/danrevah/ngx-pipes/compare/v2.2.1...v2.3.0) (2018-07-12)
+
+
+### Features
+
+* add `wrap` pipe to add a prefix and a suffix to a string ([#117](https://github.com/danrevah/ngx-pipes/issues/117)) ([e2f633e](https://github.com/danrevah/ngx-pipes/commit/e2f633e)), closes [danrevah/ngx-pipes#112](https://github.com/danrevah/ngx-pipes/issues/112)
+
+
+
 <a name="2.2.1"></a>
 ## [2.2.1](https://github.com/danrevah/ngx-pipes/compare/v2.1.9...v2.2.1) (2018-06-18)
 
