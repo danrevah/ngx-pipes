@@ -12,7 +12,10 @@
     "build:lib": "ng-packagr",
     "lint": "ng lint --type-check",
     "release": "standard-version",
-    "deploy": "npm run build:lib && npm publish --access=public dist"
+    "deploy": "npm run build:lib && npm publish --access=public dist",
+    "precommit": "lint-staged",
+    "prettier:write": "prettier --write './src/**/*.ts'",
+    "prettier:check": "prettier -l './src/**/*.ts'"
   },
   "keywords": [
     "ng2",
@@ -61,6 +64,9 @@
     "standard-version": "^4.2.0",
     "tslint": "^5.5.0",
     "typescript": "^2.7.2",
-    "zone.js": "^0.8.4"
+    "zone.js": "^0.8.4",
+    "prettier": "^1.12.1",
+    "lint-staged": "^7.1.2",
+    "husky": "^0.14.3"
   }
 }

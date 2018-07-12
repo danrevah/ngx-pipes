@@ -20,6 +20,8 @@ before_install:
 before_script:
 - npm install -g karma
 
-script: npm run test-travis
+script:
+- npm run prettier:check
+- npm run test-travis
 
 after_success: cat ./coverage/coverage.lcov | ./node_modules/coveralls/bin/coveralls.js
