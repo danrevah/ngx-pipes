@@ -7,7 +7,7 @@
   "scripts": {
     "start": "ng serve",
     "test": "ng test",
-    "test-travis": "ng test -cc --watch=false",
+    "test-travis": "ng test --karma-config karma.conf.js --watch=false",
     "build": "ng build",
     "build:lib": "ng-packagr",
     "lint": "ng lint --type-check",
