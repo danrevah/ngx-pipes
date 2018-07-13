@@ -40,3 +40,4 @@ yarn-error.log
 #System Files
 .DS_Store
 Thumbs.db
+ngx-pipes.iml

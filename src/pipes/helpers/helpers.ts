@@ -1,25 +1,25 @@
 export function isUndefined(value: any) {
-  return typeof value === 'undefined';
+  return typeof value === "undefined";
 }
 
 export function isFunction(value: any) {
-  return typeof value === 'function';
+  return typeof value === "function";
 }
 
 export function isNumber(value: any) {
-  return typeof value === 'number';
+  return typeof value === "number";
 }
 
 export function isString(value: any) {
-  return typeof value === 'string';
+  return typeof value === "string";
 }
 
 export function isBoolean(value: any) {
-  return typeof value === 'boolean';
+  return typeof value === "boolean";
 }
 
 export function isObject(value: any) {
-  return value !== null && typeof value === 'object';
+  return value !== null && typeof value === "object";
 }
 
 export function isNumberFinite(value: any) {
@@ -37,28 +37,24 @@ export function applyPrecision(num: number, precision: number) {
 }
 
 export function extractDeepPropertyByMapKey(obj: any, map: string): any {
-  const keys = map.split('.');
+  const keys = map.split(".");
   const head = keys.shift();
 
   return keys.reduce((prop: any, key: string) => {
-    return !isUndefined(prop) && !isUndefined(prop[key])
-      ? prop[key]
-      : undefined;
-  }, obj[head || '']);
+    return !isUndefined(prop) && !isUndefined(prop[key]) ? prop[key] : undefined;
+  }, obj[head || ""]);
 }
 
 export function extractDeepPropertyByParentMapKey(obj: any, map: string): any {
-  const keys = map.split('.');
+  const keys = map.split(".");
   const tail = keys.pop();
-  const props = extractDeepPropertyByMapKey(obj, keys.join('.'));
+  const props = extractDeepPropertyByMapKey(obj, keys.join("."));
 
   return { props, tail };
 }
 
 export function getKeysTwoObjects(obj: any, other: any): any {
-  return [...Object.keys(obj), ...Object.keys(other)].filter(
-    (key, index, array) => array.indexOf(key) === index
-  );
+  return [...Object.keys(obj), ...Object.keys(other)].filter((key, index, array) => array.indexOf(key) === index);
 }
 
 export function isDeepEqual(obj: any, other: any): any {

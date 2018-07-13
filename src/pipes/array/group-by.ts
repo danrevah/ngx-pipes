@@ -1,9 +1,9 @@
-import { Pipe, PipeTransform } from '@angular/core';
-import { extractDeepPropertyByMapKey, isFunction } from '../helpers/helpers';
+import { Pipe, PipeTransform } from "@angular/core";
+import { extractDeepPropertyByMapKey, isFunction } from "../helpers/helpers";
 
-@Pipe({ name: 'groupBy' })
+@Pipe({ name: "groupBy" })
 export class GroupByPipe implements PipeTransform {
-  transform(input: any, discriminator: any = [], delimiter: string = '|'): any {
+  transform(input: any, discriminator: any = [], delimiter: string = "|"): any {
     if (!Array.isArray(input)) {
       return input;
     }
@@ -13,33 +13,21 @@ export class GroupByPipe implements PipeTransform {
 
   private groupBy(list: any[], discriminator: any, delimiter: string) {
     return list.reduce((acc: any, payload: string) => {
-      const key = this.extractKeyByDiscriminator(
-        discriminator,
-        payload,
-        delimiter
-      );
+      const key = this.extractKeyByDiscriminator(discriminator, payload, delimiter);
 
-      acc[key] = Array.isArray(acc[key])
-        ? acc[key].concat([payload])
-        : [payload];
+      acc[key] = Array.isArray(acc[key]) ? acc[key].concat([payload]) : [payload];
 
       return acc;
     }, {});
   }
 
-  private extractKeyByDiscriminator(
-    discriminator: any,
-    payload: string,
-    delimiter: string
-  ) {
+  private extractKeyByDiscriminator(discriminator: any, payload: string, delimiter: string) {
     if (isFunction(discriminator)) {
       return (<Function>discriminator)(payload);
     }
 
     if (Array.isArray(discriminator)) {
-      return discriminator
-        .map(k => extractDeepPropertyByMapKey(payload, k))
-        .join(delimiter);
+      return discriminator.map(k => extractDeepPropertyByMapKey(payload, k)).join(delimiter);
     }
 
     return extractDeepPropertyByMapKey(payload, <string>discriminator);

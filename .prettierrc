@@ -1,5 +1,5 @@
 {
-  "singleQuote": true,
-  "printWidth": 80,
+  "singleQuote": false,
+  "printWidth": 120,
   "trailingComma": "es5"
 }

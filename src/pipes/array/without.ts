@@ -1,6 +1,6 @@
-import { Pipe, PipeTransform } from '@angular/core';
+import { Pipe, PipeTransform } from "@angular/core";
 
-@Pipe({ name: 'without' })
+@Pipe({ name: "without" })
 export class WithoutPipe implements PipeTransform {
   transform(input: any[], args?: any[]): any[];
   transform(input: any, args?: any[]): any;

@@ -1,13 +1,13 @@
-import { RoundPipe } from './round';
+import { RoundPipe } from "./round";
 
-describe('RoundPipe', () => {
+describe("RoundPipe", () => {
   let pipe: RoundPipe;
 
   beforeEach(() => {
     pipe = new RoundPipe();
   });
 
-  it('should return rounded number of given number', () => {
+  it("should return rounded number of given number", () => {
     expect(pipe.transform(1.2)).toEqual(1);
     expect(pipe.transform(1.5)).toEqual(2);
     expect(pipe.transform(42.42)).toEqual(42);

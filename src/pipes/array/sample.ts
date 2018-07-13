@@ -1,6 +1,6 @@
-import { Pipe, PipeTransform } from '@angular/core';
+import { Pipe, PipeTransform } from "@angular/core";
 
-@Pipe({ name: 'sample' })
+@Pipe({ name: "sample" })
 export class SamplePipe implements PipeTransform {
   transform(input: any[], len?: number): any[];
   transform<T>(input: T, len?: number): T;
@@ -14,9 +14,7 @@ export class SamplePipe implements PipeTransform {
     const tmp = [...input];
     const l = len < tmp.length ? len : tmp.length;
     for (let i = 0; i < l; ++i) {
-      sample = sample.concat(
-        tmp.splice(Math.floor(Math.random() * tmp.length), 1)
-      );
+      sample = sample.concat(tmp.splice(Math.floor(Math.random() * tmp.length), 1));
     }
 
     return sample;

@@ -1,13 +1,13 @@
-import { FloorPipe } from './floor';
+import { FloorPipe } from "./floor";
 
-describe('FloorPipe', () => {
+describe("FloorPipe", () => {
   let pipe: FloorPipe;
 
   beforeEach(() => {
     pipe = new FloorPipe();
   });
 
-  it('should return floor of given number', () => {
+  it("should return floor of given number", () => {
     expect(pipe.transform(1.2345)).toEqual(1);
     expect(pipe.transform(1.2345)).toEqual(1);
     expect(pipe.transform(42.123)).toEqual(42);

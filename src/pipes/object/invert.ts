@@ -1,7 +1,7 @@
-import { Pipe, PipeTransform } from '@angular/core';
-import { isObject } from '../helpers/helpers';
+import { Pipe, PipeTransform } from "@angular/core";
+import { isObject } from "../helpers/helpers";
 
-@Pipe({ name: 'invert' })
+@Pipe({ name: "invert" })
 export class InvertPipe implements PipeTransform {
   transform(obj: any): Object {
     if (Array.isArray(obj) || !isObject(obj)) {

@@ -1,4 +1,4 @@
-import { Pipe, PipeTransform } from '@angular/core';
+import { Pipe, PipeTransform } from "@angular/core";
 import {
   extractDeepPropertyByMapKey,
   extractDeepPropertyByParentMapKey,
@@ -6,33 +6,15 @@ import {
   isNumberFinite,
   isString,
   isUndefined,
-} from '../helpers/helpers';
+} from "../helpers/helpers";
 
 // tslint:disable no-bitwise
-@Pipe({ name: 'filterBy' })
+@Pipe({ name: "filterBy" })
 export class FilterByPipe implements PipeTransform {
-  transform(
-    input: any[],
-    props: Array<string>,
-    search?: any,
-    strict?: boolean
-  ): any[];
-  transform<T>(
-    input: T,
-    props: Array<string>,
-    search?: any,
-    strict?: boolean
-  ): T;
-  transform(
-    input: any,
-    props: Array<string>,
-    search: any = '',
-    strict: boolean = false
-  ): any {
-    if (
-      !Array.isArray(input) ||
-      (!isString(search) && !isNumberFinite(search) && !isBoolean(search))
-    ) {
+  transform(input: any[], props: Array<string>, search?: any, strict?: boolean): any[];
+  transform<T>(input: T, props: Array<string>, search?: any, strict?: boolean): T;
+  transform(input: any, props: Array<string>, search: any = "", strict: boolean = false): any {
+    if (!Array.isArray(input) || (!isString(search) && !isNumberFinite(search) && !isBoolean(search))) {
       return input;
     }
 
