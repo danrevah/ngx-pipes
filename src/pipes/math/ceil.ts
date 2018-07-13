@@ -1,8 +1,7 @@
-import { Pipe, PipeTransform } from '@angular/core';
+import { Pipe, PipeTransform } from "@angular/core";
 
-@Pipe({name: 'ceil'})
+@Pipe({ name: "ceil" })
 export class CeilPipe implements PipeTransform {
-
   transform(num: number, precision: number = 0): number {
     if (precision <= 0) {
       return Math.ceil(num);

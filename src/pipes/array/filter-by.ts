@@ -1,24 +1,27 @@
-import { Pipe, PipeTransform } from '@angular/core';
+import { Pipe, PipeTransform } from "@angular/core";
 import {
-  extractDeepPropertyByMapKey, extractDeepPropertyByParentMapKey, isBoolean, isNumberFinite, isString,
-  isUndefined
-} from '../helpers/helpers';
+  extractDeepPropertyByMapKey,
+  extractDeepPropertyByParentMapKey,
+  isBoolean,
+  isNumberFinite,
+  isString,
+  isUndefined,
+} from "../helpers/helpers";
 
 // tslint:disable no-bitwise
-@Pipe({name: 'filterBy'})
+@Pipe({ name: "filterBy" })
 export class FilterByPipe implements PipeTransform {
-
   transform(input: any[], props: Array<string>, search?: any, strict?: boolean): any[];
   transform<T>(input: T, props: Array<string>, search?: any, strict?: boolean): T;
-  transform(input: any, props: Array<string>, search: any = '', strict: boolean = false): any {
+  transform(input: any, props: Array<string>, search: any = "", strict: boolean = false): any {
     if (!Array.isArray(input) || (!isString(search) && !isNumberFinite(search) && !isBoolean(search))) {
       return input;
     }
 
     const term = String(search).toLowerCase();
 
-    return input.filter((obj) => {
-      return props.some((prop) => {
+    return input.filter(obj => {
+      return props.some(prop => {
         const value = extractDeepPropertyByMapKey(obj, prop);
         const { props, tail } = extractDeepPropertyByParentMapKey(obj, prop);
 
@@ -26,9 +29,7 @@ export class FilterByPipe implements PipeTransform {
           return props.some(parent => {
             const str = String(parent[tail]).toLowerCase();
 
-            return strict
-              ? str === term
-              : !!~str.indexOf(term);
+            return strict ? str === term : !!~str.indexOf(term);
           });
         }
 
@@ -38,9 +39,7 @@ export class FilterByPipe implements PipeTransform {
 
         const strValue: string = String(value).toLowerCase();
 
-        return strict
-          ? term === strValue
-          : !!~strValue.indexOf(term);
+        return strict ? term === strValue : !!~strValue.indexOf(term);
       });
     });
   }

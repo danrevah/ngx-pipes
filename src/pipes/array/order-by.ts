@@ -1,9 +1,8 @@
-import { Pipe, PipeTransform } from '@angular/core';
-import { extractDeepPropertyByMapKey, isString, isUndefined } from '../helpers/helpers';
+import { Pipe, PipeTransform } from "@angular/core";
+import { extractDeepPropertyByMapKey, isString, isUndefined } from "../helpers/helpers";
 
-@Pipe({name: 'orderBy'})
+@Pipe({ name: "orderBy" })
 export class OrderByPipe implements PipeTransform {
-
   transform(input: any[], config?: any): any[];
   transform<T>(input: T, config?: any): T;
 
@@ -37,8 +36,10 @@ export class OrderByPipe implements PipeTransform {
       if (config.length === 1) {
         // tslint:disable-next-line:switch-default
         switch (sign) {
-          case '+': return out.sort(OrderByPipe.simpleSort.bind(this));
-          case '-': return out.sort(OrderByPipe.simpleSort.bind(this)).reverse();
+          case "+":
+            return out.sort(OrderByPipe.simpleSort.bind(this));
+          case "-":
+            return out.sort(OrderByPipe.simpleSort.bind(this)).reverse();
         }
       }
 
@@ -50,9 +51,7 @@ export class OrderByPipe implements PipeTransform {
   }
 
   private static simpleSort(a: any, b: any) {
-    return isString(a) && isString(b)
-      ? a.toLowerCase().localeCompare(b.toLowerCase())
-      : a - b;
+    return isString(a) && isString(b) ? a.toLowerCase().localeCompare(b.toLowerCase()) : a - b;
   }
 
   private static orderCompare(prop: string, asc: boolean, a: any, b: any) {
@@ -63,11 +62,11 @@ export class OrderByPipe implements PipeTransform {
       return 0;
     }
 
-    if (isUndefined(first) || first === '') {
+    if (isUndefined(first) || first === "") {
       return 1;
     }
 
-    if (isUndefined(second) || second === '') {
+    if (isUndefined(second) || second === "") {
       return -1;
     }
 
@@ -77,15 +76,13 @@ export class OrderByPipe implements PipeTransform {
       return asc ? pos : -pos;
     }
 
-    return asc
-      ? first - second
-      : second - first;
+    return asc ? first - second : second - first;
   }
 
   private static extractFromConfig(config: any) {
     const sign = config.substr(0, 1);
-    const prop = config.replace(/^[-+]/, '');
-    const asc = sign !== '-';
+    const prop = config.replace(/^[-+]/, "");
+    const asc = sign !== "-";
 
     return [prop, asc, sign];
   }
