@@ -1,3 +1,93 @@
+# Change Log
+
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+<a name="2.3.0"></a>
+# [2.3.0](https://github.com/danrevah/ngx-pipes/compare/v2.2.1...v2.3.0) (2018-07-12)
+
+
+### Features
+
+* add `wrap` pipe to add a prefix and a suffix to a string ([#117](https://github.com/danrevah/ngx-pipes/issues/117)) ([e2f633e](https://github.com/danrevah/ngx-pipes/commit/e2f633e)), closes [danrevah/ngx-pipes#112](https://github.com/danrevah/ngx-pipes/issues/112)
+
+
+
+<a name="2.2.1"></a>
+## [2.2.1](https://github.com/danrevah/ngx-pipes/compare/v2.1.9...v2.2.1) (2018-06-18)
+
+
+
+<a name="2.1.9"></a>
+## [2.1.9](https://github.com/danrevah/ngx-pipes/compare/v2.1.8...v2.1.9) (2018-06-18)
+
+
+
+<a name="2.1.8"></a>
+## [2.1.8](https://github.com/danrevah/ngx-pipes/compare/v2.1.7...v2.1.8) (2018-06-18)
+
+
+
+<a name="2.1.7"></a>
+## [2.1.7](https://github.com/danrevah/ngx-pipes/compare/v2.1.6...v2.1.7) (2018-05-08)
+
+
+
+<a name="2.1.6"></a>
+## [2.1.6](https://github.com/danrevah/ngx-pipes/compare/v2.1.5...v2.1.6) (2018-05-08)
+
+
+
+<a name="2.1.5"></a>
+## [2.1.5](https://github.com/danrevah/ngx-pipes/compare/v2.1.3...v2.1.5) (2018-05-08)
+
+
+
+<a name="2.1.3"></a>
+## [2.1.3](https://github.com/danrevah/ngx-pipes/compare/v2.1.2...v2.1.3) (2018-05-08)
+
+
+
+<a name="2.1.2"></a>
+## [2.1.2](https://github.com/danrevah/ngx-pipes/compare/v2.1.0...v2.1.2) (2018-02-26)
+
+
+
+<a name="2.1.1"></a>
+## [2.1.1](https://github.com/danrevah/ngx-pipes/compare/v2.1.0...v2.1.1) (2018-02-16)
+
+
+
+<a name="2.1.0"></a>
+# [2.1.0](https://github.com/danrevah/ngx-pipes/compare/v1.6.6...v2.1.0) (2017-12-26)
+
+
+* improve package bundling (#84) ([6a6f8ca](https://github.com/danrevah/ngx-pipes/commit/6a6f8ca)), closes [#84](https://github.com/danrevah/ngx-pipes/issues/84)
+
+
+### BREAKING CHANGES
+
+* we do not publish the source file of each pipe now. As with webpack/rollup's treeshaking feature, we don't need to publish pipes separately. User who used to reference to source pipes directly should update their paths.
+
+
+
+<a name="2.0.3"></a>
+## [2.0.3](https://github.com/danrevah/ngx-pipes/compare/v2.0.0...v2.0.3) (2017-11-10)
+
+
+
+<a name="2.0.0"></a>
+# [2.0.0](https://github.com/danrevah/ngx-pipes/compare/v1.6.6...v2.0.0) (2017-11-08)
+
+
+* improve package bundling (#84) ([6a6f8ca](https://github.com/danrevah/ngx-pipes/commit/6a6f8ca))
+
+
+### BREAKING CHANGES
+
+* we do not publish the source file of each pipe now. As with webpack/rollup's treeshaking feature, we don't need to publish pipes separately. User who used to reference to source pipes directly should update their paths.
+
+
+
 # Changelog
 All notable changes to this project will be documented in this file.
 
@@ -87,4 +177,3 @@ All notable changes to this project will be documented in this file.
 ## 0.4.18 - 2016-12-01
 ### Added
 - Fully functional library with Angular-CLI.
-

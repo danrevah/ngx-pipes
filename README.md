@@ -1,7 +1,19 @@
-# ngx-pipes  
-[![npm](https://img.shields.io/npm/v/ngx-pipes.svg?style=flat-square)](https://www.npmjs.com/package/ngx-pipes) [![Travis](https://img.shields.io/travis/danrevah/ngx-pipes.svg?style=flat-square)](https://travis-ci.org/danrevah/ngx-pipes) [![Coveralls](https://img.shields.io/coveralls/danrevah/ngx-pipes.svg?style=flat-square)](https://coveralls.io/github/danrevah/ngx-pipes?branch=master) [![npm](https://img.shields.io/npm/dm/ngx-pipes.svg?style=flat-square)](https://www.npmjs.com/package/ngx-pipes) [![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://github.com/danrevah/ngx-pipes/blob/master/LICENSE.md)
 
-> Useful pipes for Angular with no external dependencies
+<p align="center">
+<img 
+    src="assets/ngx-logo.png" width="160" border="0" alt="NGX-PIPES">
+<br/><br/>
+<a href="https://www.npmjs.com/package/ngx-pipes"><img src="https://img.shields.io/npm/v/ngx-pipes.svg?style=flat-square" alt="npm"></a>
+<a href="http://packagequality.com/#?package=ngx-pipes"><img src="http://npm.packagequality.com/shield/ngx-pipes.svg?style=flat-square" alt="Package Quality"></a>
+<a href="https://travis-ci.org/danrevah/ngx-pipes"><img src="https://img.shields.io/travis/danrevah/ngx-pipes.svg?style=flat-square" alt="Travis"></a>
+<a href="https://coveralls.io/github/danrevah/ngx-pipes?branch=master"><img src="https://img.shields.io/coveralls/danrevah/ngx-pipes.svg?style=flat-square" alt="Coveralls"></a>
+<a href="https://www.npmjs.com/package/ngx-pipes"><img src="https://img.shields.io/npm/dm/ngx-pipes.svg?style=flat-square" alt="npm"></a>
+<a href="https://github.com/danrevah/ngx-pipes/blob/master/LICENSE.md"><img src="https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square" alt="MIT licensed"></a>
+<br/><br/>
+ Useful pipes for Angular with no external dependencies
+<br/><br/>
+</p>
+
 
 ## Table of contents
 
@@ -29,11 +41,13 @@
     - [lpad](#lpad)
     - [rpad](#rpad)
     - [shortUserProfileName](#shortuserprofilename)
+    - [wrap](#wrap)
  - [Array](#Array)   
     - [diff](#diff)
     - [flatten](#flatten)
     - [initial](#initial)
     - [intersection](#intersection)
+    - [range](#range)
     - [reverse](#reverse)
     - [tail](#tail)
     - [truthify](#truthify)
@@ -118,7 +132,7 @@
 3. Pipes are also injectable and can be used in Components / Services / etc..
 
   ```typescript  
-  import {ReversePipe} from 'ngx-pipes/src/app/pipes/array/reverse';
+  import {ReversePipe} from 'ngx-pipes';
 
   @Component({
     // ..
@@ -132,7 +146,17 @@
   }
   ```
 
+4. You can also use pipes as part of your template for ex. 
 
+```html
+<p>{{ 'foo' | reverse }}</p> <!-- Output: "oof" -->
+```
+
+and it's also possible to stack multiple pipes
+
+```html
+<p>{{ ' foo' | ltrim | reverse }}</p> <!-- Output: "oof" -->
+```
 
 
 ## String
@@ -347,6 +371,17 @@ Martin Mc Fowler - MF
 <p>{{'Foo' | rpad: 5: '#'}}</p> <!-- Output: "Foo##" -->
 ```
 
+### wrap
+
+Wrap a string between a prefix and a suffix
+
+
+**Usage:** `string | wrap: prefix: suffix`
+
+```html
+<p>{{'Foo' | wrap: 'nice prefix ': ' and awesome suffix!'}}</p> <!-- Output: "nice prefix Foo and awesome suffix!" -->
+```
+
 ## Array
 
 ### diff
@@ -418,6 +453,20 @@ this.items = [1, 2, 3, 4, 5];
 
 ```html
 <li *ngFor="let item of items | intersection: [1, 2, 3]: [3, 6]"> <!-- Array: [3] -->
+```
+
+### range
+
+Returns an array with range of numbers
+
+**Usage:** `range: [start: number, default = '1']: [count: number]: [step: number | optional, default = '1']`
+
+```typescript
+this.items = this.rangePipe.transform(1, 5); // Returns: [1, 2, 3, 4, 5]
+```
+
+```html
+<li *ngFor="let item of items"> <!-- Array: [1, 2, 3, 4, 5] -->
 ```
 
 ### reverse
@@ -644,7 +693,7 @@ this.users = [
    {id: 1, first_name: 'John', last_name: 'Doe', work: { company: 'Foo Tech' }},
    {id: 2, first_name: 'Jane', last_name: 'West', work: { company: 'AAA Solutions' }},
    {id: 3, first_name: 'Bruce', last_name: 'John', work: { company: 'Bar Tech' }},
-   {id: 4, first_name: 'William', last_name: 'Cent', work: { company: 'Foo Tech' }}
+   {id: 4, first_name: 'William', last_name: 'Cent', work: { company: 'Foo Tech' }, arr: [{name: 'foo'}]}
 ];
 ```
 
@@ -656,6 +705,10 @@ this.users = [
 <!-- filterBy also support nested properties -->
 <p>{{ users | filterBy: ['work.company']: 'Bar Tech' }}</p> 
 <!-- Output: "[{ "id": 3, "first_name": "Bruce", "last_name": "John", "work": { "company": "Bar Tech", "previous_company": "" } }]" -->
+
+<!-- filterBy also support nested properties inside of an array -->
+<p>{{ users | filterBy: ['arr.name']: 'foo' }}</p> 
+<!-- Output: "[{id: 4, first_name: 'William', last_name: 'Cent', work: { company: 'Foo Tech' }, arr: [{name: 'foo'}]}]" -->
 
 <!-- Return users whose first name or last name is 'John'. -->
 <p>{{ users | filterBy: ['first_name', 'last_name']: 'John' }}</p>

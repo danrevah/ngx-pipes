@@ -2,7 +2,8 @@ sudo: required
 dist: trusty
 language: node_js
 node_js:
-  - '7.5'
+  - '10.6'
+  - '8.11'
 
 addons:
 apt:
@@ -18,9 +19,10 @@ before_install:
   - sh -e /etc/init.d/xvfb start
 
 before_script:
-- npm install -g @angular/cli
 - npm install -g karma
 
-script: ng test -cc --watch=false
+script:
+- npm run prettier:check
+- npm run test-travis
 
 after_success: cat ./coverage/coverage.lcov | ./node_modules/coveralls/bin/coveralls.js
