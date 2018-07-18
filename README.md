@@ -14,7 +14,7 @@
 <br/><br/>
 </p>
 
-<a href="https://github.com/danrevah/typeserializer" target="_blank">TypeSerializer</a> - Serializer / Deserializer, designed to make prettier code while using decorators (Can be used even both with Angular or Node.js).
+Another library you might find interesting: <a href="https://github.com/danrevah/typeserializer" target="_blank">TypeSerializer</a> - Serializer / Deserializer, designed to make prettier code while using decorators (Can be used even both with Angular or Node.js).
 
 ## Table of contents
 
