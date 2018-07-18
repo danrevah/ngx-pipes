@@ -14,13 +14,9 @@
 <br/><br/>
 </p>
 
---
 Another library you might wanna take a look at:
 
-[TypeSerializer](https://github.com/danrevah/typeserializer) - Serializer / Deserializer, designed to make prettier code while using decorators (Can be used even both with Angular or Node.js).
-
---
-
+<a href="https://github.com/danrevah/typeserializer">TypeSerializer</a> - Serializer / Deserializer, designed to make prettier code while using decorators (Can be used even both with Angular or Node.js).
 
 ## Table of contents
 
