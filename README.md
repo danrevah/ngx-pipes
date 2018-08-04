@@ -1,4 +1,3 @@
-
 <p align="center">
 <img 
     src="assets/ngx-logo.png" width="160" border="0" alt="NGX-PIPES">
