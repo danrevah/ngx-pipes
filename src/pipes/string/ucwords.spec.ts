@@ -17,6 +17,11 @@ describe("UcFirstPipe Tests", () => {
     expect(result).toEqual("Foo Bar Baz");
   });
 
+  it("Should capitalize all words joined by -", () => {
+    const result = pipe.transform("foo-bar-baz", "-");
+    expect(result).toEqual("Foo-Bar-Baz");
+  });
+
   it("Should test mixed strings capitalize behaviour", () => {
     const result = pipe.transform("foo bar baz $a $b $c some string to test");
     expect(result).toEqual("Foo Bar Baz $a $b $c Some String To Test");
