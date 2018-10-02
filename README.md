@@ -862,6 +862,16 @@ Returns a diff object of two objects
 
 ## Math
 
+### average
+
+Returns the average of a given array
+
+**Usage:** `array | average`
+
+```html
+<p>{{ [0, 10] | average }}</p> <!-- Output: "5" -->
+```
+
 ### min
 
 Returns the minimum of a given array
