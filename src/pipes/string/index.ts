@@ -1,4 +1,5 @@
 import { NgModule } from "@angular/core";
+import { AorAnPipe } from "./a-or-an";
 import { UcWordsPipe } from "./ucwords";
 import { LeftTrimPipe } from "./ltrim";
 import { RepeatPipe } from "./repeat";
@@ -20,6 +21,7 @@ import { RightPadPipe } from "./rpad";
 import { WrapPipe } from "./wrap";
 
 export const STRING_PIPES = [
+  AorAnPipe,
   LeftTrimPipe,
   RepeatPipe,
   RightTrimPipe,
@@ -48,6 +50,7 @@ export const STRING_PIPES = [
 })
 export class NgStringPipesModule {}
 
+export { AorAnPipe } from "./a-or-an";
 export { UcWordsPipe } from "./ucwords";
 export { LeftTrimPipe } from "./ltrim";
 export { RepeatPipe } from "./repeat";
