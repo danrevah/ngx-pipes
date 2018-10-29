@@ -17,6 +17,7 @@ import { MatchPipe } from "./match";
 import { TestPipe } from "./test";
 import { LeftPadPipe } from "./lpad";
 import { RightPadPipe } from "./rpad";
+import { MakePluralStringPipe } from "./pluralize";
 import { WrapPipe } from "./wrap";
 
 export const STRING_PIPES = [
@@ -38,6 +39,7 @@ export const STRING_PIPES = [
   TestPipe,
   LeftPadPipe,
   RightPadPipe,
+  MakePluralStringPipe,
   WrapPipe,
 ];
 
@@ -66,4 +68,5 @@ export { MatchPipe } from "./match";
 export { TestPipe } from "./test";
 export { LeftPadPipe } from "./lpad";
 export { RightPadPipe } from "./rpad";
+export { MakePluralStringPipe } from "./pluralize";
 export { WrapPipe } from "./wrap";
