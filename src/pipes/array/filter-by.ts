@@ -14,7 +14,7 @@ export class FilterByPipe implements PipeTransform {
   transform(input: any[], props: Array<string>, search?: any, strict?: boolean): any[];
   transform<T>(input: T, props: Array<string>, search?: any, strict?: boolean): T;
   transform(input: any, props: Array<string>, search: any = "", strict: boolean = false): any {
-    if (!Array.isArray(input) || (!isString(search) && !isNumberFinite(search) && !isBoolean(search))) {
+    if (!Array.isArray(input) || (!Array.isArray(search) && !isString(search) && !isNumberFinite(search) && !isBoolean(search))) {
       return input;
     }
 
