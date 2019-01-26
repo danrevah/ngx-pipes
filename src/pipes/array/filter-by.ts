@@ -18,28 +18,30 @@ export class FilterByPipe implements PipeTransform {
       return input;
     }
 
-    const term = String(search).toLowerCase();
+    const terms = String(search).toLowerCase().split(',');
 
     return input.filter(obj => {
       return props.some(prop => {
-        const value = extractDeepPropertyByMapKey(obj, prop);
-        const { props, tail } = extractDeepPropertyByParentMapKey(obj, prop);
+        return terms.some(term => {
+          const value = extractDeepPropertyByMapKey(obj, prop);
+          const { props, tail } = extractDeepPropertyByParentMapKey(obj, prop);
 
-        if (isUndefined(value) && !isUndefined(props) && Array.isArray(props)) {
-          return props.some(parent => {
-            const str = String(parent[tail]).toLowerCase();
+          if (isUndefined(value) && !isUndefined(props) && Array.isArray(props)) {
+            return props.some(parent => {
+              const str = String(parent[tail]).toLowerCase();
 
-            return strict ? str === term : !!~str.indexOf(term);
-          });
-        }
+              return strict ? str === term : !!~str.indexOf(term);
+            });
+          }
 
-        if (isUndefined(value)) {
-          return false;
-        }
+          if (isUndefined(value)) {
+            return false;
+          }
 
-        const strValue: string = String(value).toLowerCase();
+          const strValue: string = String(value).toLowerCase();
 
-        return strict ? term === strValue : !!~strValue.indexOf(term);
+          return strict ? term === strValue : !!~strValue.indexOf(term);
+        })
       });
     });
   }
