@@ -14,11 +14,16 @@ export class FilterByPipe implements PipeTransform {
   transform(input: any[], props: Array<string>, search?: any, strict?: boolean): any[];
   transform<T>(input: T, props: Array<string>, search?: any, strict?: boolean): T;
   transform(input: any, props: Array<string>, search: any = "", strict: boolean = false): any {
-    if (!Array.isArray(input) || (!Array.isArray(search) && !isString(search) && !isNumberFinite(search) && !isBoolean(search))) {
+    if (
+      !Array.isArray(input) ||
+      (!Array.isArray(search) && !isString(search) && !isNumberFinite(search) && !isBoolean(search))
+    ) {
       return input;
     }
 
-    const terms = String(search).toLowerCase().split(',');
+    const terms = String(search)
+      .toLowerCase()
+      .split(",");
 
     return input.filter(obj => {
       return props.some(prop => {
@@ -41,7 +46,7 @@ export class FilterByPipe implements PipeTransform {
           const strValue: string = String(value).toLowerCase();
 
           return strict ? term === strValue : !!~strValue.indexOf(term);
-        })
+        });
       });
     });
   }
