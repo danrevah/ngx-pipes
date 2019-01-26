@@ -148,4 +148,13 @@ describe("FilterByPipe", () => {
     expect(filtered[0]).toEqual(users[0]);
     expect(filtered[1]).toEqual(users[1]);
   });
+
+  it("should filter for an array of values, with an array of properties", () => {
+    const filtered = pipe.transform(users, ["first_name", "last_name"], ["John", "Cent"]);
+
+    expect(filtered.length).toEqual(3);
+    expect(filtered[0]).toEqual(users[0]);
+    expect(filtered[1]).toEqual(users[2]);
+    expect(filtered[2]).toEqual(users[3]);
+  });
 });
