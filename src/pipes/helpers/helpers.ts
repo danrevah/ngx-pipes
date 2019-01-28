@@ -26,6 +26,12 @@ export function isNumberFinite(value: any) {
   return isNumber(value) && isFinite(value);
 }
 
+export function isVowel(letter: string): boolean {
+  const vowels = ["a", "e", "i", "o", "u"];
+
+  return vowels.indexOf(letter) !== -1;
+}
+
 export function applyPrecision(num: number, precision: number) {
   if (precision <= 0) {
     return Math.round(num);
