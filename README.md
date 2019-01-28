@@ -21,6 +21,7 @@
  - [Contributing](#contributing)
  - [Changelog](CHANGELOG.md)
  - [String](#string)
+    - [a-or-an](#a-or-an)
     - [repeat](#repeat)
     - [scan](#scan)
     - [shorten](#shorten)
@@ -158,6 +159,16 @@ and it's also possible to stack multiple pipes
 
 
 ## String
+
+### a-or-an
+
+Prefixes input string with "a" or "an".
+
+**Usage:** `string | a-or-an`
+
+```html
+<span>This is a picture of {{imageDescription | a-or-an}}</span>
+```
 
 ### repeat
 
