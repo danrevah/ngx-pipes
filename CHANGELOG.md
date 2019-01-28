@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="2.3.9"></a>
+## [2.3.9](https://github.com/danrevah/ngx-pipes/compare/v2.3.8...v2.3.9) (2019-01-28)
+
+
+
 <a name="2.3.8"></a>
 ## [2.3.8](https://github.com/danrevah/ngx-pipes/compare/v2.3.7...v2.3.8) (2019-01-28)
 
