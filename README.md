@@ -41,6 +41,7 @@
     - [match](#match)
     - [lpad](#lpad)
     - [rpad](#rpad)
+    - [make-plural-string](#make-plural-string)
     - [wrap](#wrap)
  - [Array](#Array)   
     - [diff](#diff)
@@ -372,6 +373,21 @@ Right pad a string to a given length using a given pad character  (default is a 
 ```html
 <p>{{'Foo' | rpad: 5: '#'}}</p> <!-- Output: "Foo##" -->
 ```
+
+### make-plural-string
+
+Make a singular string plural. Optional `quantity` argument specifies how many of the singular string there are.
+
+**Usage:** `string | make-plural-string: [quantity:string|optional]`
+
+```html
+<span>{{'Painting' | make-plural-string}}</span> <!-- Output: "Paintings" -->
+<span>{{'Painting' | make-plural-string: 1}}</span> <!-- Output: "Painting" -->
+<span>{{'One Painting' | make-plural-string: 1}}</span> <!-- Output: "One Painting" -->
+<span>{{'Painting' | make-plural-string: 4}}</span> <!-- Output: "Paintings" -->
+<span>{{'Four Painting' | make-plural-string: 4}}</span> <!-- Output: "Four Paintings" -->
+``` 
+
 
 ### wrap
 
