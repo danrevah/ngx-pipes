@@ -18,16 +18,13 @@
     "prettier:check": "prettier -l './src/**/*.ts'"
   },
   "keywords": [
-    "ng2",
+    "ngx",
     "ng",
     "angular",
-    "angular2",
-    "angularjs",
     "pipes",
     "filters",
     "library",
-    "angular2 pipes",
-    "ng2 pipes",
+    "ngx pipes",
     "angular filters",
     "angular pipes"
   ],
