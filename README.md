@@ -88,6 +88,7 @@
     - [degrees](#degrees)
     - [radians](#radians)
     - [bytes](#bytes)
+    - [abs](#abs)
  - [Boolean](#boolean)   
     - [isNull](#isnull)
     - [isDefined](#isdefined)
@@ -1021,6 +1022,17 @@ Returns bytes with a unit symbol
 <p>{{ 1048576 | bytes }}</p> <!-- Output: "1 KB" -->
 <p>{{ 1073741824 | bytes }}</p> <!-- Output: "1 MB" -->
 <p>{{ 1.0995116e12 | bytes }}</p> <!-- Output: "1 GB" -->
+```
+
+### abs
+
+Returns the absolute value of a number (the value without regard to whether it is positive or negative)
+
+**Usage:** `number | abs`
+
+```html
+<p>{{ 5 | abs }}</p> <!-- Output: "5" -->
+<p>{{ -7 | abs }}</p> <!-- Output: "7" -->
 ```
 
 ## Boolean
