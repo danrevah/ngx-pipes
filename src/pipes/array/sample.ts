@@ -1,6 +1,6 @@
-import { Pipe, PipeTransform } from "@angular/core";
+import { Pipe, PipeTransform } from '@angular/core';
 
-@Pipe({ name: "sample" })
+@Pipe({ name: 'sample' })
 export class SamplePipe implements PipeTransform {
   transform(input: any[], len?: number): any[];
   transform<T>(input: T, len?: number): T;

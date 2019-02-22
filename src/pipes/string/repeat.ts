@@ -1,9 +1,9 @@
-import { Pipe, PipeTransform } from "@angular/core";
-import { isString } from "../helpers/helpers";
+import { Pipe, PipeTransform } from '@angular/core';
+import { isString } from '../helpers/helpers';
 
-@Pipe({ name: "repeat" })
+@Pipe({ name: 'repeat' })
 export class RepeatPipe implements PipeTransform {
-  transform(str: string, n: number = 1, separator: string = ""): string {
+  transform(str: string, n: number = 1, separator: string = ''): string {
     if (n <= 0) {
       throw new RangeError();
     }

@@ -1,9 +1,9 @@
-import { Pipe, PipeTransform } from "@angular/core";
-import { extractDeepPropertyByMapKey, isFunction } from "../helpers/helpers";
+import { Pipe, PipeTransform } from '@angular/core';
+import { extractDeepPropertyByMapKey, isFunction } from '../helpers/helpers';
 
-@Pipe({ name: "groupBy" })
+@Pipe({ name: 'groupBy' })
 export class GroupByPipe implements PipeTransform {
-  transform(input: any, discriminator: any = [], delimiter: string = "|"): any {
+  transform(input: any, discriminator: any = [], delimiter: string = '|'): any {
     if (!Array.isArray(input)) {
       return input;
     }

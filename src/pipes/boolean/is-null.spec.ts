@@ -1,13 +1,13 @@
-import { IsNullPipe } from "./is-null";
+import { IsNullPipe } from './is-null';
 
-describe("IsNullPipe", () => {
+describe('IsNullPipe', () => {
   let pipe: IsNullPipe;
 
   beforeEach(() => {
     pipe = new IsNullPipe();
   });
 
-  it("should check if of given value is null", () => {
+  it('should check if of given value is null', () => {
     expect(pipe.transform(null)).toBeTruthy();
     expect(pipe.transform(1)).toBeFalsy();
     expect(pipe.transform(undefined)).toBeFalsy();

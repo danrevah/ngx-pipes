@@ -1,7 +1,7 @@
-import { Pipe, PipeTransform } from "@angular/core";
-import { isVowel } from "../helpers/helpers";
+import { Pipe, PipeTransform } from '@angular/core';
+import { isVowel } from '../helpers/helpers';
 @Pipe({
-  name: "a-or-an",
+  name: 'a-or-an',
 })
 /**
  * Takes a string and returns the string prepended by 'a' or 'an'.
@@ -11,20 +11,20 @@ import { isVowel } from "../helpers/helpers";
  */
 export class AorAnPipe implements PipeTransform {
   private irregularMap: any = {
-    herb: "an",
-    honor: "an",
-    honorable: "an",
-    hour: "an",
-    mba: "an",
-    msc: "an",
-    "m.sc.": "an",
-    unicorn: "a",
+    herb: 'an',
+    honor: 'an',
+    honorable: 'an',
+    hour: 'an',
+    mba: 'an',
+    msc: 'an',
+    'm.sc.': 'an',
+    unicorn: 'a',
   };
   transform(stringEntity: string): string {
-    if (!stringEntity || stringEntity === "") {
-      return "";
+    if (!stringEntity || stringEntity === '') {
+      return '';
     } else {
-      const firstWord = stringEntity.trim().split(" ")[0];
+      const firstWord = stringEntity.trim().split(' ')[0];
       if (this.irregularMap[firstWord.toLocaleLowerCase()]) {
         return `${this.irregularMap[firstWord.toLocaleLowerCase()]} ${stringEntity}`;
       } else {
