@@ -1,6 +1,6 @@
-import { Pipe, PipeTransform } from "@angular/core";
+import { Pipe, PipeTransform } from '@angular/core';
 
-@Pipe({ name: "isGreaterEqualThan" })
+@Pipe({ name: 'isGreaterEqualThan' })
 export class IsGreaterEqualThanPipe implements PipeTransform {
   transform(input: number, other: number): boolean {
     return input >= other;

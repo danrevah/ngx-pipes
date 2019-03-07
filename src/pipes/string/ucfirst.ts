@@ -1,7 +1,7 @@
-import { Pipe, PipeTransform } from "@angular/core";
-import { isString } from "../helpers/helpers";
+import { Pipe, PipeTransform } from '@angular/core';
+import { isString } from '../helpers/helpers';
 
-@Pipe({ name: "ucfirst" })
+@Pipe({ name: 'ucfirst' })
 export class UcFirstPipe implements PipeTransform {
   transform(input: string): string;
   transform(input: any): any;

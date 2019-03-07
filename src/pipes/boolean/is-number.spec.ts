@@ -1,13 +1,13 @@
-import { IsNumberPipe } from "./is-number";
+import { IsNumberPipe } from './is-number';
 
-describe("IsNumberPipe", () => {
+describe('IsNumberPipe', () => {
   let pipe: IsNumberPipe;
 
   beforeEach(() => {
     pipe = new IsNumberPipe();
   });
 
-  it("should check if of given value is a number", () => {
+  it('should check if of given value is a number', () => {
     expect(pipe.transform(null)).toBeFalsy();
     expect(pipe.transform(1)).toBeTruthy();
     expect(pipe.transform(1e3)).toBeTruthy();

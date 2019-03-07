@@ -1,13 +1,13 @@
-import { IsArrayPipe } from "./is-array";
+import { IsArrayPipe } from './is-array';
 
-describe("IsArrayPipe", () => {
+describe('IsArrayPipe', () => {
   let pipe: IsArrayPipe;
 
   beforeEach(() => {
     pipe = new IsArrayPipe();
   });
 
-  it("should check if of given value is an array", () => {
+  it('should check if of given value is an array', () => {
     expect(pipe.transform(null)).toBeFalsy();
     expect(pipe.transform(1)).toBeFalsy();
     expect(pipe.transform([])).toBeTruthy();

@@ -1,13 +1,13 @@
-import { DiffPipe } from "./diff";
+import { DiffPipe } from './diff';
 
-describe("DiffPipe", () => {
+describe('DiffPipe', () => {
   let pipe: DiffPipe;
 
   beforeEach(() => {
     pipe = new DiffPipe();
   });
 
-  it("should return the input if not an array", () => {
+  it('should return the input if not an array', () => {
     expect(pipe.transform(true)).toEqual(true);
     expect(pipe.transform(42)).toEqual(42);
   });
@@ -17,7 +17,7 @@ describe("DiffPipe", () => {
     expect(pipe.transform([])).toEqual([]);
   });
 
-  it("should returns an array of diff between arrays", () => {
+  it('should returns an array of diff between arrays', () => {
     expect(pipe.transform([2, 3], [])).toEqual([2, 3]);
     expect(pipe.transform([], [2, 3])).toEqual([]);
     expect(pipe.transform([1, 2, 3], [2, 3])).toEqual([1]);

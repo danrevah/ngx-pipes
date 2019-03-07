@@ -43,9 +43,7 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "src/tsconfig.spec.json",
             "scripts": [],
-            "styles": [
-              "src/styles.css"
-            ],
+            "styles": [],
             "assets": [
               "src/assets",
               "src/favicon.ico"
