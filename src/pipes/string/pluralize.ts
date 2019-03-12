@@ -10,7 +10,7 @@ import { isVowel } from '../helpers/helpers';
  * Uses both naive and holdout-list approaches.
  * If several words appear in the string, only the last word is pluralized -- this
  * means that if "your story" was passed in, "your stories" would be passed out.
- * @constructor
+ *
  * @param {string} singularEntity - Entity to pluralize. Pass as a singular ('story' or 'house').
  *          NOTE: The last word is examined. So you can pass in e.g. 'my story'.
  * @param {number} [quantity=0] quantity - How many of the entity are there? If left blank, this will
