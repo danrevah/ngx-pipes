@@ -1,7 +1,6 @@
 import { Pipe, PipeTransform } from '@angular/core';
 import { isVowel } from '../helpers/helpers';
 
-
 @Pipe({
   name: 'aOrAn',
 })
