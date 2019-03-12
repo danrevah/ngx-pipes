@@ -1,15 +1,16 @@
 import { Pipe, PipeTransform } from '@angular/core';
 import { isVowel } from '../helpers/helpers';
 
-/**
- * Takes a string and returns the string prepended by 'a' or 'an'.
- * Uses both naive and holdout-list approaches.
- *
- * @param {string} stringEntity - Entity to prepend 'a' or 'an' to.
- */
+
 @Pipe({
   name: 'aOrAn',
 })
+/**
+ * Takes a string and returns the string prepended by 'a' or 'an'.
+ * Uses both naive and holdout-list approaches.
+ * @constructor
+ * @param {string} stringEntity - Entity to prepend 'a' or 'an' to.
+ */
 export class AorAnPipe implements PipeTransform {
   private irregularMap: any = {
     herb: 'an',
