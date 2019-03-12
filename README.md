@@ -21,7 +21,7 @@
  - [Contributing](#contributing)
  - [Changelog](CHANGELOG.md)
  - [String](#string)
-    - [a-or-an](#a-or-an)
+    - [aOrAn](#aoran)
     - [repeat](#repeat)
     - [scan](#scan)
     - [shorten](#shorten)
@@ -41,7 +41,7 @@
     - [match](#match)
     - [lpad](#lpad)
     - [rpad](#rpad)
-    - [make-plural-string](#make-plural-string)
+    - [makePluralString](#makepluralstring)
     - [wrap](#wrap)
  - [Array](#Array)   
     - [diff](#diff)
@@ -161,14 +161,14 @@ and it's also possible to stack multiple pipes
 
 ## String
 
-### a-or-an
+### aOrAn
 
 Prefixes input string with "a" or "an".
 
-**Usage:** `string | a-or-an`
+**Usage:** `string | aOrAn`
 
 ```html
-<span>This is a picture of {{imageDescription | a-or-an}}</span>
+<span>This is a picture of {{imageDescription | aOrAn}}</span>
 ```
 
 ### repeat
@@ -374,18 +374,18 @@ Right pad a string to a given length using a given pad character  (default is a 
 <p>{{'Foo' | rpad: 5: '#'}}</p> <!-- Output: "Foo##" -->
 ```
 
-### make-plural-string
+### makePluralString
 
 Make a singular string plural. Optional `quantity` argument specifies how many of the singular string there are.
 
-**Usage:** `string | make-plural-string: [quantity:string|optional]`
+**Usage:** `string | makePluralString: [quantity:string|optional]`
 
 ```html
-<span>{{'Painting' | make-plural-string}}</span> <!-- Output: "Paintings" -->
-<span>{{'Painting' | make-plural-string: 1}}</span> <!-- Output: "Painting" -->
-<span>{{'One Painting' | make-plural-string: 1}}</span> <!-- Output: "One Painting" -->
-<span>{{'Painting' | make-plural-string: 4}}</span> <!-- Output: "Paintings" -->
-<span>{{'Four Painting' | make-plural-string: 4}}</span> <!-- Output: "Four Paintings" -->
+<span>{{'Painting' | makePluralString}}</span> <!-- Output: "Paintings" -->
+<span>{{'Painting' | makePluralString: 1}}</span> <!-- Output: "Painting" -->
+<span>{{'One Painting' | makePluralString: 1}}</span> <!-- Output: "One Painting" -->
+<span>{{'Painting' | makePluralString: 4}}</span> <!-- Output: "Paintings" -->
+<span>{{'Four Painting' | makePluralString: 4}}</span> <!-- Output: "Four Paintings" -->
 ``` 
 
 
