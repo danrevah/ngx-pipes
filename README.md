@@ -166,7 +166,7 @@ and it's also possible to stack multiple pipes
 
 ### timeAgo
 
-Prefixes input string with "a" or "an".
+Time ago pipe converts date to 'just now', 'X days ago', 'last week', 'X days ago', etc..
 
 **Usage:** `string | aOrAn`
 ```typescript
