@@ -1,11 +1,14 @@
 import { TimeAgoPipe } from "./time-ago";
+import * as moment from 'moment';
 
-fdescribe("TimeAgoPipe", () => {
+describe("TimeAgoPipe", () => {
   let pipe: TimeAgoPipe;
 
   const recentlyString = "just now";
+  const futureString = "in the future";
 
   const today = new Date();
+  const future = new Date(today.getTime() + 1000 * 20);
   const fewSecondsAgoDate = new Date(today.getTime() - 5 * 1000);
   const aMinuteAgoDate = new Date(today.getTime() - 60 * 1000);
 
@@ -27,8 +30,8 @@ fdescribe("TimeAgoPipe", () => {
   const lastWeekString = "last week";
   const lastWeekDate = new Date(new Date().setDate(new Date().getDate() - 8));
 
-  const fewWeeksAgoString = 3 + " weeks ago";
-  const fewWeeksAgoDate = new Date(new Date().setDate(new Date().getDate() - 20));
+  const fewWeeksAgoString = 2 + " weeks ago";
+  const fewWeeksAgoDate = new Date(new Date().setDate(new Date().getDate() - 12));
 
   const lastMonthString = "last month";
   const lastMonthDate = new Date(new Date().setDate(new Date().getDate() - 30));
@@ -82,7 +85,7 @@ fdescribe("TimeAgoPipe", () => {
     expect(pipe.transform(lastWeekDate)).toEqual(lastWeekString);
   });
 
-  it("should return 3 weeks ago", () => {
+  it("should return 2 weeks ago", () => {
     expect(pipe.transform(fewWeeksAgoDate)).toEqual(fewWeeksAgoString);
   });
 
@@ -100,5 +103,17 @@ fdescribe("TimeAgoPipe", () => {
 
   it("should return 5 years ago", () => {
     expect(pipe.transform(fewYearsAgoDate)).toEqual(fewYearsAgoString);
+  });
+
+  it("should return in the future", () => {
+    expect(pipe.transform(future)).toEqual(futureString);
+  });
+
+  it("should support moment.js just now", () => {
+    expect(pipe.transform(moment())).toEqual("just now");
+  });
+
+  it("should support moment.js last week", () => {
+    expect(pipe.transform(moment().subtract(10, 'days'))).toEqual("last week");
   });
 });

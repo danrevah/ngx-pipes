@@ -3,36 +3,43 @@ import { Pipe, PipeTransform } from '@angular/core';
 @Pipe({ name: 'time-ago' })
 export class TimeAgoPipe implements PipeTransform {
 
+  private static YEAR_MS: number = 1000 * 60 * 60 * 24 * 7 * 4 * 12;
+  private static MAPPER: any = [
+    { single: 'last year', many: 'years', div: 1 },
+    { single: 'last month', many: 'months', div: 12 },
+    { single: 'last week', many: 'weeks', div: 4 },
+    { single: 'yesterday', many: 'days', div: 7 },
+    { single: 'an hour ago', many: 'hours', div: 24 },
+    { single: 'just now', many: 'minutes', div: 60 },
+  ];
 
-
-  public transform(inputDate: Date): string {
-
-    const pastDateValue = Math.abs(inputDate.getTime()); // make the negative returned date positive
-    const currentDateValue = new Date().getTime();
-    const dateDifferenceValue = currentDateValue - pastDateValue; // in milliseconds
-
-    const seconds = Math.round(Math.abs(dateDifferenceValue) / 1000);
-    const minutes = Math.round(Math.abs(seconds) / 60);
-    const hours = Math.round(Math.abs(minutes) / 60);
-    const days = Math.round(Math.abs(hours) / 24);
-    const weeks = Math.round(Math.abs(days) / 7);
-    const months = Math.round(Math.abs(weeks) / 4);
-    const years = Math.round(Math.abs(months) / 12);
-
-    if (years > 0 && months > 11) {
-      return years === 1 ? 'last year' : years + ' years ago';
-    } else if (months > 0 && weeks > 3) {
-      return months === 1 ? 'last month' : months + ' months ago';
-    } else if (weeks > 0 && weeks <= 3 && days > 7) {
-      return weeks === 1 ? 'last week' : weeks + ' weeks ago';
-    } else if (days > 0 && days <= 6) {
-      return days === 1 ? 'yesterday' : days + ' days ago';
-    } else if (hours > 0) {
-      return hours === 1 ? 'an hour ago' : hours + ' hours ago';
-    } else if (minutes > 0) {
-      return minutes === 1 ? 'just now' : minutes + ' minutes ago';
-    } else {
-      return 'just now';
+  /**
+   * @param inputDate: Date | Moment - not included as TypeScript interface,
+   * in order to keep `ngx-pipes` "pure" from dependencies!
+   *
+   * @returns {string}
+   */
+  public transform(inputDate: any): string {
+    if (!inputDate || (!inputDate.getTime && !inputDate.toDate)) {
+      return 'Invalid date';
     }
+
+    const past = inputDate.toDate ? inputDate.toDate() : inputDate.getTime();
+    const now = +new Date();
+
+    if (past > now) {
+      return 'in the future';
+    }
+
+    for (let i = 0, l = TimeAgoPipe.MAPPER.length, ms = now - past, div = TimeAgoPipe.YEAR_MS; i < l; ++i) {
+      const elm = TimeAgoPipe.MAPPER[i];
+      const unit = Math.round(ms / (div /= elm.div));
+
+      if (unit >= 1) {
+        return unit === 1 ? elm.single : `${unit} ${elm.many} ago`;
+      }
+    }
+
+    return 'just now';
   }
 }
