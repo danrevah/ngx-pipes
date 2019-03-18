@@ -23,7 +23,7 @@ https://plnkr.co or similar (you can use this template as a starting point: http
 **Please tell us about your environment:**
 <!-- Operating system, IDE, package manager, HTTP server, ... -->
 
-* **Angular version:** 5.0.X
+* **Angular version:** 7.X.X
 <!-- Check whether this is still an issue in the most recent Angular version -->
 
 * **Node (for AoT issues):** `node --version` =   
