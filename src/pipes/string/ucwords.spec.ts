@@ -24,6 +24,6 @@ describe('UcFirstPipe Tests', () => {
 
   it('Should test special names', () => {
     expect(pipe.transform('JEAN-LUC PICARD')).toEqual('Jean-Luc Picard');
-    expect(pipe.transform(`MILES O'BRIEN`)).toEqual(`Miles O'Brien`);
+    expect(pipe.transform(`shaquille o'neal`)).toEqual(`Shaquille O'Neal`);
   });
 });

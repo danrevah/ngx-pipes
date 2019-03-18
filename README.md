@@ -226,6 +226,7 @@ Uppercase first letter every word
 
 ```html
 <p>{{'foo bar' | ucwords }}</p> <!-- Output: "Foo Bar" -->
+<p>{{'shaquille o'neal' | ucwords }}</p> <!-- Output: "Shaquille O'Neal" -->
 ```
 
 ### trim

@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import {isString, ucFirst} from '../helpers/helpers';
+import { isString, ucFirst } from '../helpers/helpers';
 
 @Pipe({ name: 'ucfirst' })
 export class UcFirstPipe implements PipeTransform {

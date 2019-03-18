@@ -35,12 +35,16 @@ export function isVowel(letter: string): boolean {
 export function ucFirst(text: string) {
   const [part, ...split] = text.split(/\s/g);
 
-  const ucd = part.toLowerCase()
+  const ucd = part
+    .toLowerCase()
     .split(/(?=['|-])/g)
-    .map((word: any) => (word.indexOf('-') + word.indexOf('\'') > -2
-        ? word.slice(0, 2).toUpperCase() + word.slice(2)
-        : word.slice(0, 1).toUpperCase() + word.slice(1))
-    ).join('');
+    .map(
+      (word: any) =>
+        word.indexOf('-') + word.indexOf("'") > -2
+          ? word.slice(0, 2).toUpperCase() + word.slice(2)
+          : word.slice(0, 1).toUpperCase() + word.slice(1)
+    )
+    .join('');
 
   return [ucd, ...split].join(' ');
 }
