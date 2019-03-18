@@ -79,6 +79,7 @@
     - [min](#min)
     - [max](#max)
     - [sum](#sum)
+    
     - [average](#average)
     - [percentage](#percentage)
     - [ceil](#ceil)
