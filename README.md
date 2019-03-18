@@ -20,6 +20,8 @@
  - [Installation](#installation)
  - [Contributing](#contributing)
  - [Changelog](CHANGELOG.md)
+ - [Date](#boolean)   
+    - [timeAgo](#timeago)
  - [String](#string)
     - [aOrAn](#aoran)
     - [repeat](#repeat)
@@ -116,7 +118,7 @@
   $ npm install ngx-pipes --save 
   ```
 
-2. You could either add into your module `imports` the `NgPipesModule` in order to add all of the pipes, Or add a specific module such as `NgArrayPipesModule`, `NgObjectPipesModule`, `NgStringPipesModule`, `NgMathPipesModule` or `NgBooleanPipesModule`.
+2. You could either add into your module `imports` the `NgPipesModule` in order to add all of the pipes, Or add a specific module such as `NgArrayPipesModule`, `NgObjectPipesModule`, `NgStringPipesModule`, `NgMathPipesModule`, `NgDatePipesModule` or `NgBooleanPipesModule`.
 
   ```typescript
   import {NgPipesModule} from 'ngx-pipes';
@@ -159,6 +161,27 @@ and it's also possible to stack multiple pipes
 <p>{{ ' foo' | ltrim | reverse }}</p> <!-- Output: "oof" -->
 ```
 
+
+## Date
+
+### timeAgo
+
+Prefixes input string with "a" or "an".
+
+**Usage:** `string | aOrAn`
+```typescript
+import * as moment from 'moment';
+
+const now = new Date();
+
+// timeAgo also supports moment.js objects
+const lastWeek = moment().subtract(10, 'days');
+```
+
+```html
+<span>Updated: {{now | timeAgo}}</span> <!-- Output: "just now" -->
+<span>Updated: {{lastWeek | timeAgo}}</span> <!-- Output: "last week" -->
+```
 
 ## String
 

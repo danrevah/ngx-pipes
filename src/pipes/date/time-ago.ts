@@ -1,6 +1,6 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
-@Pipe({ name: 'time-ago' })
+@Pipe({ name: 'timeAgo' })
 export class TimeAgoPipe implements PipeTransform {
   private static YEAR_MS: number = 1000 * 60 * 60 * 24 * 7 * 4 * 12;
   private static MAPPER: any = [
