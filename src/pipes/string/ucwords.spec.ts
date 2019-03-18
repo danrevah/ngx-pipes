@@ -21,4 +21,9 @@ describe('UcFirstPipe Tests', () => {
     const result = pipe.transform('foo bar baz $a $b $c some string to test');
     expect(result).toEqual('Foo Bar Baz $a $b $c Some String To Test');
   });
+
+  it('Should test special names', () => {
+    expect(pipe.transform('JEAN-LUC PICARD')).toEqual('Jean-Luc Picard');
+    expect(pipe.transform(`MILES O'BRIEN`)).toEqual(`Miles O'Brien`);
+  });
 });

@@ -21,4 +21,9 @@ describe('UcFirstPipe Tests', () => {
     const result = pipe.transform('foo BAR BaZ');
     expect(result).toEqual('Foo BAR BaZ');
   });
+
+  it('Should capitalize special names properly', () => {
+    expect(pipe.transform('JEAN-LUC PICARD')).toEqual('Jean-Luc PICARD');
+    expect(pipe.transform(`MILES O'BRIEN`)).toEqual(`Miles O'BRIEN`);
+  });
 });
