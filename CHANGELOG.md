@@ -2,6 +2,46 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="2.4.4"></a>
+## [2.4.4](https://github.com/danrevah/ngx-pipes/compare/v2.4.3...v2.4.4) (2019-03-18)
+
+
+
+<a name="2.4.3"></a>
+## [2.4.3](https://github.com/danrevah/ngx-pipes/compare/v2.4.2...v2.4.3) (2019-03-18)
+
+
+
+<a name="2.4.2"></a>
+## [2.4.2](https://github.com/danrevah/ngx-pipes/compare/v2.4.1...v2.4.2) (2019-03-12)
+
+
+
+<a name="2.4.1"></a>
+## [2.4.1](https://github.com/danrevah/ngx-pipes/compare/v2.3.10...v2.4.1) (2019-03-07)
+
+
+
+<a name="2.3.10"></a>
+## [2.3.10](https://github.com/danrevah/ngx-pipes/compare/v2.3.9...v2.3.10) (2019-01-30)
+
+
+
+<a name="2.3.9"></a>
+## [2.3.9](https://github.com/danrevah/ngx-pipes/compare/v2.3.8...v2.3.9) (2019-01-28)
+
+
+
+<a name="2.3.8"></a>
+## [2.3.8](https://github.com/danrevah/ngx-pipes/compare/v2.3.7...v2.3.8) (2019-01-28)
+
+
+
+<a name="2.3.7"></a>
+## [2.3.7](https://github.com/danrevah/ngx-pipes/compare/v2.3.6...v2.3.7) (2019-01-28)
+
+
+
 <a name="2.3.6"></a>
 ## [2.3.6](https://github.com/danrevah/ngx-pipes/compare/v2.3.0...v2.3.6) (2018-10-23)
 

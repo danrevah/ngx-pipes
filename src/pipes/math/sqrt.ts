@@ -1,6 +1,6 @@
-import { Pipe, PipeTransform } from "@angular/core";
+import { Pipe, PipeTransform } from '@angular/core';
 
-@Pipe({ name: "sqrt" })
+@Pipe({ name: 'sqrt' })
 export class SqrtPipe implements PipeTransform {
   transform(num: number): number;
   transform<T>(num: T): T;

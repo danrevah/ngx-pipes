@@ -1,13 +1,13 @@
-import { IsUndefinedPipe } from "./is-undefined";
+import { IsUndefinedPipe } from './is-undefined';
 
-describe("IsUndefinedPipe", () => {
+describe('IsUndefinedPipe', () => {
   let pipe: IsUndefinedPipe;
 
   beforeEach(() => {
     pipe = new IsUndefinedPipe();
   });
 
-  it("should check if of given value is null", () => {
+  it('should check if of given value is null', () => {
     expect(pipe.transform(null)).toBeFalsy();
     expect(pipe.transform(1)).toBeFalsy();
     expect(pipe.transform(undefined)).toBeTruthy();

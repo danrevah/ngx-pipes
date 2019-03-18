@@ -21,6 +21,7 @@
  - [Contributing](#contributing)
  - [Changelog](CHANGELOG.md)
  - [String](#string)
+    - [aOrAn](#aoran)
     - [repeat](#repeat)
     - [scan](#scan)
     - [shorten](#shorten)
@@ -40,6 +41,7 @@
     - [match](#match)
     - [lpad](#lpad)
     - [rpad](#rpad)
+    - [makePluralString](#makepluralstring)
     - [wrap](#wrap)
  - [Array](#Array)   
     - [diff](#diff)
@@ -77,6 +79,7 @@
     - [min](#min)
     - [max](#max)
     - [sum](#sum)
+    - [average](#average)
     - [percentage](#percentage)
     - [ceil](#ceil)
     - [floor](#floor)
@@ -159,6 +162,16 @@ and it's also possible to stack multiple pipes
 
 ## String
 
+### aOrAn
+
+Prefixes input string with "a" or "an".
+
+**Usage:** `string | aOrAn`
+
+```html
+<span>This is a picture of {{imageDescription | aOrAn}}</span>
+```
+
 ### repeat
 
 Repeats a string n times
@@ -214,6 +227,7 @@ Uppercase first letter every word
 
 ```html
 <p>{{'foo bar' | ucwords }}</p> <!-- Output: "Foo Bar" -->
+<p>{{'shaquille o'neal' | ucwords }}</p> <!-- Output: "Shaquille O'Neal" -->
 ```
 
 ### trim
@@ -361,6 +375,21 @@ Right pad a string to a given length using a given pad character  (default is a 
 ```html
 <p>{{'Foo' | rpad: 5: '#'}}</p> <!-- Output: "Foo##" -->
 ```
+
+### makePluralString
+
+Make a singular string plural. Optional `quantity` argument specifies how many of the singular string there are.
+
+**Usage:** `string | makePluralString: [quantity:string|optional]`
+
+```html
+<span>{{'Painting' | makePluralString}}</span> <!-- Output: "Paintings" -->
+<span>{{'Painting' | makePluralString: 1}}</span> <!-- Output: "Painting" -->
+<span>{{'One Painting' | makePluralString: 1}}</span> <!-- Output: "One Painting" -->
+<span>{{'Painting' | makePluralString: 4}}</span> <!-- Output: "Paintings" -->
+<span>{{'Four Painting' | makePluralString: 4}}</span> <!-- Output: "Four Paintings" -->
+``` 
+
 
 ### wrap
 
@@ -704,6 +733,10 @@ this.users = [
 <!-- Return users whose first name or last name is 'John'. -->
 <p>{{ users | filterBy: ['first_name', 'last_name']: 'John' }}</p>
 <!-- Output: "[{id: 1, first_name: 'John', last_name: 'Doe', work: { company: 'Foo Tech', previous_company: '' }}]" -->
+
+<!-- Return users whose first name or last name is 'John' or 'Cent'. -->
+<p>{{ users | filterBy: ['first_name', 'last_name']: ['John', 'Cent'] }}</p>
+<!-- Output: "[{id: 1, first_name: 'John', last_name: 'Doe', work: { company: 'Foo Tech', previous_company: '' }}, {id: 3, first_name: 'Bruce', last_name: 'John', work: { company: 'Bar Tech' }}, {id: 4, first_name: 'William', last_name: 'Cent', work: { company: 'Foo Tech' }, arr: [{name: 'foo'}]}]" -->
 ```
 
 ## filterByImpure
@@ -890,6 +923,17 @@ Returns the sum of a given array
 
 ```html
 <p>{{ [1, 2, 3, 4] | sum }}</p> <!-- Output: "10" -->
+```
+
+### average
+
+Returns the average of a given array
+
+**Usage:** `array | average`
+
+```html
+<p>{{ [1, 2, 3] | average }}</p> <!-- Output: "2" -->
+<p>{{ [1, 2] | average }}</p> <!-- Output: "1.5" -->
 ```
 
 ### percentage

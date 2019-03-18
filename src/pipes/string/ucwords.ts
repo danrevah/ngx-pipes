@@ -1,7 +1,7 @@
-import { Pipe, PipeTransform } from "@angular/core";
-import { isString } from "../helpers/helpers";
+import { Pipe, PipeTransform } from '@angular/core';
+import { isString, ucFirst } from '../helpers/helpers';
 
-@Pipe({ name: "ucwords" })
+@Pipe({ name: 'ucwords' })
 export class UcWordsPipe implements PipeTransform {
   transform(input: string): string;
   transform(input: any): any;
@@ -9,9 +9,9 @@ export class UcWordsPipe implements PipeTransform {
   transform(text: any): string {
     if (isString(text)) {
       return text
-        .split(" ")
-        .map((sub: any) => sub.slice(0, 1).toUpperCase() + sub.slice(1))
-        .join(" ");
+        .split(' ')
+        .map((sub: any) => ucFirst(sub))
+        .join(' ');
     }
 
     return text;

@@ -10,6 +10,7 @@
       "parameters",
       "statements"
     ],
+    "no-unused-variable": {"severity": "warning"},
     "arrow-return-shorthand": true,
     "callable-types": true,
     "class-name": true,
@@ -95,7 +96,6 @@
     "no-switch-case-fall-through": true,
     "no-trailing-whitespace": [true, "ignore-jsdoc"],
     "no-unused-expression": true,
-    "no-unused-variable": true,
     "no-use-before-declare": false,
     "no-unnecessary-callback-wrapper": true,
     "no-unnecessary-initializer": true,
