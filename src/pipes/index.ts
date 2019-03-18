@@ -7,7 +7,14 @@ import { NgBooleanPipesModule } from './boolean/index';
 import { NgDatePipesModule } from './date/index';
 
 @NgModule({
-  exports: [NgArrayPipesModule, NgStringPipesModule, NgMathPipesModule, NgBooleanPipesModule, NgObjectPipesModule, NgDatePipesModule],
+  exports: [
+    NgArrayPipesModule,
+    NgStringPipesModule,
+    NgMathPipesModule,
+    NgBooleanPipesModule,
+    NgObjectPipesModule,
+    NgDatePipesModule,
+  ],
 })
 export class NgPipesModule {}
 
