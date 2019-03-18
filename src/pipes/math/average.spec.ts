@@ -1,4 +1,4 @@
-import {AveragePipe} from './average';
+import { AveragePipe } from './average';
 
 describe('AveragePipe', () => {
   let pipe: AveragePipe;

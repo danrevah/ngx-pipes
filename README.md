@@ -924,6 +924,17 @@ Returns the sum of a given array
 <p>{{ [1, 2, 3, 4] | sum }}</p> <!-- Output: "10" -->
 ```
 
+### average
+
+Returns the average of a given array
+
+**Usage:** `array | average`
+
+```html
+<p>{{ [1, 2, 3] | average }}</p> <!-- Output: "2" -->
+<p>{{ [1, 2] | average }}</p> <!-- Output: "1.5" -->
+```
+
 ### percentage
 
 Returns percentage between numbers 
