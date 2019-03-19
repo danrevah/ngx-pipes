@@ -168,7 +168,7 @@ and it's also possible to stack multiple pipes
 
 Time ago pipe converts date to 'just now', 'X days ago', 'last week', 'X days ago', etc..
 
-**Usage:** `string | aOrAn`
+**Usage:** `string | timeAgo`
 ```typescript
 import * as moment from 'moment';
 
