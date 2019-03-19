@@ -15,8 +15,6 @@ export class TimeAgoPipe implements PipeTransform {
   /**
    * @param inputDate: Date | Moment - not included as TypeScript interface,
    * in order to keep `ngx-pipes` "pure" from dependencies!
-   *
-   * @returns {string}
    */
   public transform(inputDate: any): string {
     if (!inputDate || (!inputDate.getTime && !inputDate.toDate)) {
@@ -32,7 +30,7 @@ export class TimeAgoPipe implements PipeTransform {
 
     for (let i = 0, l = TimeAgoPipe.MAPPER.length, ms = now - past, div = TimeAgoPipe.YEAR_MS; i < l; ++i) {
       const elm = TimeAgoPipe.MAPPER[i];
-      const unit = Math.round(ms / (div /= elm.div));
+      const unit = Math.floor(ms / (div /= elm.div));
 
       if (unit >= 1) {
         return unit === 1 ? elm.single : `${unit} ${elm.many} ago`;

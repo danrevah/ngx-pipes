@@ -28,10 +28,10 @@ describe('TimeAgoPipe', () => {
   const fewDaysAgoDate = new Date(new Date().setDate(new Date().getDate() - 3));
 
   const lastWeekString = 'last week';
-  const lastWeekDate = new Date(new Date().setDate(new Date().getDate() - 8));
+  const lastWeekDate = new Date(new Date().setDate(new Date().getDate() - 12));
 
   const fewWeeksAgoString = 2 + ' weeks ago';
-  const fewWeeksAgoDate = new Date(new Date().setDate(new Date().getDate() - 12));
+  const fewWeeksAgoDate = new Date(new Date().setDate(new Date().getDate() - 14));
 
   const lastMonthString = 'last month';
   const lastMonthDate = new Date(new Date().setDate(new Date().getDate() - 30));
