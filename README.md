@@ -68,6 +68,7 @@
     - [filterByImpure](#filterbyimpure)
     - [orderBy](#orderby)
     - [orderByImpure](#orderbyimpure)
+    - [chunk](#chunk)
  - [Object](#object)
     - [keys](#keys)
     - [values](#values)
@@ -719,7 +720,7 @@ this.arrayNestedObject = [
 <!-- Output:{foo: [{id: 1, prop: {deep: foo}}, {id: 3, prop: {deep: foo}}], bar: [{id: 2, prop: {deep: bar}}, {id: 4, prop: {deep: bar}}]}" -->
 ```
 
-## groupByImpure
+### groupByImpure
 
 Identical to groupBy pipe, the only difference is that it's an impure pipe.
 
@@ -762,7 +763,7 @@ this.users = [
 <!-- Output: "[{id: 1, first_name: 'John', last_name: 'Doe', work: { company: 'Foo Tech', previous_company: '' }}, {id: 3, first_name: 'Bruce', last_name: 'John', work: { company: 'Bar Tech' }}, {id: 4, first_name: 'William', last_name: 'Cent', work: { company: 'Foo Tech' }, arr: [{name: 'foo'}]}]" -->
 ```
 
-## filterByImpure
+### filterByImpure
 
 Identical to filterBy pipe, the only difference is that it's an impure pipe.
 
@@ -814,11 +815,22 @@ const deepObj = [
 <!-- Output: [{id: 1, ...}, {id: 3, ...}, {id: 2, ...}, {id: 4, ...}] -->
 ```
 
-## orderByImpure
+### orderByImpure
 
 Identical to orderBy pipe, the only difference is that it's an impure pipe.
 
 Impure pipes: https://angular.io/guide/pipes#impure-pipes
+
+### chunk
+
+Returns chunked array or string by size
+
+**Usage:** `array | size: [number | default = 1]`
+
+```html
+<p>{{ [1, 2, 3, 4, 5] | chunk: 2 }}</p>
+<!-- Output: "[[1, 2], [3, 4], [5]]" -->
+```
 
 ## Object
 
