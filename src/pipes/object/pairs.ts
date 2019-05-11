@@ -8,6 +8,6 @@ export class PairsPipe implements PipeTransform {
       return obj;
     }
 
-    return Object.keys(obj).map(k => [k, obj[k]]);
+    return Object.entries(obj);
   }
 }
