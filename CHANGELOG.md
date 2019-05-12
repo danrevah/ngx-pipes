@@ -2,7 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-## [2.4.7](https://github.com/danrevah/ngx-pipes/compare/v2.4.6...v2.4.7) (2019-05-07)
+# [2.5.0](https://github.com/danrevah/ngx-pipes/compare/v2.4.7...v2.5.0) (2019-05-12)
+
+
+### Features
+
+* from pairs pipe ([780c916](https://github.com/danrevah/ngx-pipes/commit/780c916))
+* from pairs pipe ([fc0146a](https://github.com/danrevah/ngx-pipes/commit/fc0146a))
 
 
 
