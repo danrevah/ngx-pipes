@@ -1,4 +1,4 @@
-import {FromPairsPipe} from './from-pairs';
+import { FromPairsPipe } from './from-pairs';
 
 describe('FromPairsPipe', () => {
   let pipe: FromPairsPipe;

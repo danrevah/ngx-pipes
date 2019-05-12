@@ -69,6 +69,7 @@
     - [orderBy](#orderby)
     - [orderByImpure](#orderbyimpure)
     - [chunk](#chunk)
+    - [fromPairs](#fromPairs)
  - [Object](#object)
     - [keys](#keys)
     - [values](#values)
@@ -832,6 +833,17 @@ Returns chunked array or string by size
 <!-- Output: "[[1, 2], [3, 4], [5]]" -->
 ```
 
+### fromPairs
+
+Returns object of an array of key value pairs 
+
+**Usage:** `array | fromPairs`
+
+```html
+<p>{{ [['foo', 1], ['bar', 2]] | fromPairs }}</p> <!-- Output: "{foo: 1, bar: 2}" -->
+<p>{{ [['foo', [1, 2]], ['bar', [3, 4]]] | fromPairs }}</p> <!-- Output: "{foo: [1, 2], bar: [3, 4]}" -->
+```
+
 ## Object
 
 ### keys
@@ -856,7 +868,7 @@ Returns array of object values
 
 ### pairs
 
-Returns array of an object key value pairs
+Returns array of an object key value pairs 
 
 **Usage:** `object | pairs`
 

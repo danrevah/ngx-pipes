@@ -2,7 +2,6 @@ import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({ name: 'fromPairs' })
 export class FromPairsPipe implements PipeTransform {
-
   transform(input: any): any {
     if (!Array.isArray(input)) {
       return input;
