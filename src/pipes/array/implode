@@ -1,0 +1,29 @@
+import { Pipe, PipeTransform } from '@angular/core';
+
+// does the same thing as implode in PHP
+// concat elements of array and return string
+@Pipe({
+  name: 'implode'
+})
+export class ImplodePipe implements PipeTransform {
+
+  transform(value: any[], delimiter: any, objectKey?: string): string {
+
+    if(!Array.isArray(value)){
+      let _type = typeof value;
+      throw new Error(`Implode expect an array ${_type} given!`);
+    }
+    
+    if(delimiter == undefined)
+      throw new Error('You need to specify the delimiter!');
+    
+    console.log(value);
+    // if objectKey is not specified then it's a simple array
+    if(objectKey == undefined){
+      return value.join(delimiter);
+    }else{
+      return value.map(e => e[objectKey]).join(delimiter);
+    }
+  }
+
+}
