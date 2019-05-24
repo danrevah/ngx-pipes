@@ -20,7 +20,7 @@
  - [Installation](#installation)
  - [Contributing](#contributing)
  - [Changelog](CHANGELOG.md)
- - [Date](#boolean)   
+ - [Date](#date)   
     - [timeAgo](#timeago)
  - [String](#string)
     - [aOrAn](#aoran)
