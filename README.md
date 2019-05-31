@@ -15,11 +15,11 @@
 
 #### Extra 
 
-More libraries you might find interesting.
+More libraries you might find interesting:
 
 <b><a href="https://github.com/danrevah/typeserializer" target="_blank">TypeSerializer</a> - Serializer / Deserializer, designed to make prettier code while using decorators (Can be used both with Angular or Node.js).</b>
 
-<b><a href="https://github.com/danrevah/segal-decorators" target="_blank">TypeSerializer</a> - Bunch of useful decorators</b>
+<b><a href="https://github.com/danrevah/segal-decorators" target="_blank">Segal Decorators</a> - Bunch of useful decorators</b>
 
 ## Table of contents
 
