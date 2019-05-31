@@ -15,7 +15,7 @@
 
 #### Extras
 
-<b><a href="https://github.com/danrevah/typeserializer" target="_blank">TypeSerializer</a> - Serializer / Deserializer, designed to make prettier code while using decorators (Can be used both with Angular or Node.js).</b>
+<b><a href="https://github.com/danrevah/typeserializer" target="_blank">TypeSerializer</a> - Serializer / Deserializer, designed to make prettier code while using decorators.</b>
 
 <b><a href="https://github.com/danrevah/segal-decorators" target="_blank">Segal Decorators</a> - Bunch of highly useful decorators, helps in writing a more concise code while improving readability</b>
 
