@@ -1,6 +1,6 @@
 {
   "name": "ngx-pipes",
-  "version": "2.5.5",
+  "version": "2.5.6",
   "author": "Dan Revah",
   "description": "Useful angular2 pipes",
   "license": "MIT",
@@ -36,7 +36,7 @@
     "@angular/core": "^4.0.1 || ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "~0.13.3",
+    "@angular-devkit/build-angular": "~0.801.0",
     "@angular/cli": "^8.1.0",
     "@angular/common": "^8.1.0",
     "@angular/compiler": "^8.1.0",
