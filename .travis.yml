@@ -2,8 +2,8 @@ sudo: required
 dist: trusty
 language: node_js
 node_js:
-  - '10.6'
-  - '8.11'
+  - '10.16'
+  - '12.6'
 
 addons:
 apt:
