@@ -64,6 +64,7 @@
     "ng-packagr": "^5.3.0",
     "prettier": "^1.16.4",
     "protractor": "^5.4.2",
+    "puppeteer": "^1.20.0",
     "rxjs": "6.4.0",
     "standard-version": "^5.0.0",
     "tsickle": "^0.34.3",
