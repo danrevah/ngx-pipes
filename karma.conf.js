@@ -1,6 +1,9 @@
 // Karma configuration file, see link for more information
 // https://karma-runner.github.io/1.0/config/configuration-file.html
 
+const process = require('process');
+process.env.CHROME_BIN = require('puppeteer').executablePath();
+
 module.exports = function (config) {
   config.set({
     basePath: '',
@@ -19,13 +22,18 @@ module.exports = function (config) {
       dir: require('path').join(__dirname, 'coverage'), reports: [ 'html', 'lcovonly' ],
       fixWebpackSourcePaths: true
     },
-    
+    customLaunchers: {
+      ChromeNoSandbox: {
+        base: 'Chrome',
+        flags: ['--no-sandbox']
+      }
+    },
     reporters: ['progress', 'kjhtml'],
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
-    browsers: ['Chrome'],
+    browsers: ['ChromeNoSandbox'],
     singleRun: false
   });
 };
