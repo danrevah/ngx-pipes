@@ -54,6 +54,14 @@ describe('FilterByPipe', () => {
       arr: [{ name: 'foo' }, { name: 'bar' }],
       current_employed: false,
     },
+    {
+      id: 5,
+      first_name: 'George',
+      last_name: 'Foreman',
+      work: null,
+      arr: [{ name: 'for' }],
+      current_employed: false,
+    },
     // tslint:enable:max-line-length
   ];
 

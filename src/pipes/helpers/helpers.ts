@@ -2,6 +2,10 @@ export function isUndefined(value: any) {
   return typeof value === 'undefined';
 }
 
+export function isNull(value: any) {
+  return value === null;
+}
+
 export function isFunction(value: any) {
   return typeof value === 'function';
 }
@@ -40,9 +44,9 @@ export function ucFirst(text: string) {
     .split(/(?=['|-])/g)
     .map(
       (word: any) =>
-        word.indexOf('-') + word.indexOf("'") > -2
-          ? word.slice(0, 2).toUpperCase() + word.slice(2)
-          : word.slice(0, 1).toUpperCase() + word.slice(1)
+      word.indexOf('-') + word.indexOf("'") > -2
+        ? word.slice(0, 2).toUpperCase() + word.slice(2)
+        : word.slice(0, 1).toUpperCase() + word.slice(1)
     )
     .join('');
 
@@ -64,7 +68,7 @@ export function extractDeepPropertyByMapKey(obj: any, map: string): any {
   const head = keys.shift();
 
   return keys.reduce((prop: any, key: string) => {
-    return !isUndefined(prop) && !isUndefined(prop[key]) ? prop[key] : undefined;
+    return !isUndefined(prop) && !isNull(prop) && !isUndefined(prop[key]) ? prop[key] : undefined;
   }, obj[head || '']);
 }
 
