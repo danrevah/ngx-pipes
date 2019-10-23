@@ -2,11 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-# [2.5.0](https://github.com/danrevah/ngx-pipes/compare/v2.4.7...v2.5.0) (2019-05-12)
+# [2.6.0](https://github.com/danrevah/ngx-pipes/compare/v2.3.6...v2.6.0) (2019-10-23)
+
+
+### Bug Fixes
+
+* **proj:** bump devtools verison ([237c3ed](https://github.com/danrevah/ngx-pipes/commit/237c3ed))
+* **proj:** Ivy error fix ([d4e6192](https://github.com/danrevah/ngx-pipes/commit/d4e6192))
+* **proj:** update version of nodejs in travis to support newer angular ([217f8d6](https://github.com/danrevah/ngx-pipes/commit/217f8d6))
 
 
 ### Features
 
+* from pairs pipe ([d6b71f3](https://github.com/danrevah/ngx-pipes/commit/d6b71f3))
 * from pairs pipe ([780c916](https://github.com/danrevah/ngx-pipes/commit/780c916))
 * from pairs pipe ([fc0146a](https://github.com/danrevah/ngx-pipes/commit/fc0146a))
 
