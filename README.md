@@ -26,6 +26,7 @@
  - [Changelog](CHANGELOG.md)
  - [Date](#date)   
     - [timeAgo](#timeago)
+    - [timeRemaining](#timeremaining)
  - [String](#string)
     - [aOrAn](#aoran)
     - [repeat](#repeat)
@@ -187,6 +188,18 @@ const lastWeek = moment().subtract(10, 'days');
 ```html
 <span>Updated: {{now | timeAgo}}</span> <!-- Output: "just now" -->
 <span>Updated: {{lastWeek | timeAgo}}</span> <!-- Output: "last week" -->
+```
+
+### timeRemaining
+
+Time remaining pipe converts numeric seconds between 0 and 86399 (1 second less than 1 day in seconds) to a string in format HH:mm:ss
+
+**Usage:** `number | timeRemaining`
+
+```html
+<span>Time Remaining: {{0 | timeRemaining}}</span> <!-- Output: "00:00:00" -->
+<span>Time Remaining: {{90 | timeRemaining}}</span> <!-- Output: "00:01:30" -->
+<span>Time Remaining: {{86399 | timeRemaining}}</span> <!-- Output: "23:59:59" -->
 ```
 
 ## String
