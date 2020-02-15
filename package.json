@@ -33,20 +33,20 @@
     "url": "https://github.com/danrevah/ngx-pipes.git"
   },
   "peerDependencies": {
-    "@angular/core": "^4.0.1 || ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0"
+    "@angular/core": "^4.0.1 || ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0 || ^9.0.0"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "~0.801.0",
-    "@angular/cli": "^8.1.0",
-    "@angular/common": "^8.1.0",
-    "@angular/compiler": "^8.1.0",
-    "@angular/compiler-cli": "^8.1.0",
-    "@angular/core": "^8.1.0",
-    "@angular/platform-browser": "^8.1.0",
-    "@angular/platform-browser-dynamic": "^8.1.0",
+    "@angular-devkit/build-angular": "^0.900.2",
+    "@angular/cli": "^9.0.0",
+    "@angular/common": "^9.0.0",
+    "@angular/compiler": "^9.0.0",
+    "@angular/compiler-cli": "^9.0.0",
+    "@angular/core": "^9.0.0",
+    "@angular/platform-browser": "^9.0.0",
+    "@angular/platform-browser-dynamic": "^9.0.0",
     "@types/jasmine": "^2.8.2",
     "@types/jasminewd2": "~2.0.2",
-    "@types/node": "^10.0.0",
+    "@types/node": "^12.0.0",
     "braces": "2.3.2",
     "codelyzer": "^4.5.0",
     "core-js": "^2.6.5",
@@ -69,7 +69,7 @@
     "standard-version": "^5.0.0",
     "tsickle": "^0.34.3",
     "tslint": "^5.12.1",
-    "typescript": "~3.4.0",
+    "typescript": "~3.7.5",
     "zone.js": "^0.8.29"
   }
 }
