@@ -1,6 +1,6 @@
 {
   "name": "ngx-pipes",
-  "version": "2.7.2",
+  "version": "2.7.3",
   "author": "Dan Revah",
   "description": "Useful angular2 pipes",
   "license": "MIT",
@@ -61,7 +61,7 @@
     "karma-jasmine-html-reporter": "^0.2.2",
     "lint-staged": "^7.3.0",
     "moment": "^2.24.0",
-    "ng-packagr": "^5.3.0",
+    "ng-packagr": "^9.0.0",
     "prettier": "^1.16.4",
     "protractor": "^5.4.2",
     "puppeteer": "^1.20.0",
