@@ -1,1 +1,1 @@
-export * from "./src/pipes/index";
+export * from './src/ng-pipes/ng-pipes.module';
