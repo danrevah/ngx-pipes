@@ -1,6 +1,6 @@
 {
   "name": "ngx-pipes",
-  "version": "2.7.3",
+  "version": "2.7.4",
   "author": "Dan Revah",
   "description": "Useful angular2 pipes",
   "license": "MIT",
@@ -32,18 +32,15 @@
     "type": "git",
     "url": "https://github.com/danrevah/ngx-pipes.git"
   },
-  "peerDependencies": {
-    "@angular/core": "^4.0.1 || ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0 || ^9.0.0"
-  },
   "devDependencies": {
     "@angular-devkit/build-angular": "^0.900.2",
-    "@angular/cli": "^9.0.0",
-    "@angular/common": "^9.0.0",
-    "@angular/compiler": "^9.0.0",
-    "@angular/compiler-cli": "^9.0.0",
-    "@angular/core": "^9.0.0",
-    "@angular/platform-browser": "^9.0.0",
-    "@angular/platform-browser-dynamic": "^9.0.0",
+    "@angular/cli": "^10.0.0",
+    "@angular/common": "^10.0.0",
+    "@angular/compiler": "^10.0.0",
+    "@angular/compiler-cli": "^10.0.0",
+    "@angular/core": "^10.0.0",
+    "@angular/platform-browser": "^10.0.0",
+    "@angular/platform-browser-dynamic": "^10.0.0",
     "@types/jasmine": "^2.8.2",
     "@types/jasminewd2": "~2.0.2",
     "@types/node": "^12.0.0",
@@ -61,7 +58,7 @@
     "karma-jasmine-html-reporter": "^0.2.2",
     "lint-staged": "^7.3.0",
     "moment": "^2.24.0",
-    "ng-packagr": "^9.0.0",
+    "ng-packagr": "^10.0.0",
     "prettier": "^1.16.4",
     "protractor": "^5.4.2",
     "puppeteer": "^1.20.0",
@@ -69,7 +66,7 @@
     "standard-version": "^5.0.0",
     "tsickle": "^0.34.3",
     "tslint": "^5.12.1",
-    "typescript": "~3.7.5",
+    "typescript": "^3.9.2",
     "zone.js": "^0.8.29"
   }
 }

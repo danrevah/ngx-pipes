@@ -2,21 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-# [2.7.0](https://github.com/danrevah/ngx-pipes/compare/v2.3.6...v2.7.0) (2020-02-15)
+## [2.7.4](https://github.com/danrevah/ngx-pipes/compare/v2.7.0...v2.7.4) (2020-07-11)
 
 
 ### Bug Fixes
 
-* **proj:** bump devtools verison ([237c3ed](https://github.com/danrevah/ngx-pipes/commit/237c3ed))
-* **proj:** Ivy error fix ([d4e6192](https://github.com/danrevah/ngx-pipes/commit/d4e6192))
-* **proj:** update version of nodejs in travis to support newer angular ([217f8d6](https://github.com/danrevah/ngx-pipes/commit/217f8d6))
-
-
-### Features
-
-* from pairs pipe ([d6b71f3](https://github.com/danrevah/ngx-pipes/commit/d6b71f3))
-* from pairs pipe ([780c916](https://github.com/danrevah/ngx-pipes/commit/780c916))
-* from pairs pipe ([fc0146a](https://github.com/danrevah/ngx-pipes/commit/fc0146a))
+* **cross:** export radians and frompipes ([8c48a76](https://github.com/danrevah/ngx-pipes/commit/8c48a76))
+* **module:** module issues with angular 9 ([d0240f4](https://github.com/danrevah/ngx-pipes/commit/d0240f4))
+* **proj:** fix spec ([c0a02b0](https://github.com/danrevah/ngx-pipes/commit/c0a02b0))
+* **proj:** fix spec ([3d4096a](https://github.com/danrevah/ngx-pipes/commit/3d4096a))
+* **proj:** fix spec ([772b672](https://github.com/danrevah/ngx-pipes/commit/772b672))
+* **proj:** upgrade ng-packagr to support angular 9 ([9c31798](https://github.com/danrevah/ngx-pipes/commit/9c31798))
 
 
 
