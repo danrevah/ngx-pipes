@@ -2,7 +2,7 @@
   "name": "ngx-pipes",
   "version": "2.7.5",
   "author": "Dan Revah",
-  "description": "Useful angular2 pipes",
+  "description": "Useful angular pipes",
   "license": "MIT",
   "scripts": {
     "start": "ng serve",
