@@ -12,4 +12,4 @@ export const DATE_PIPES = [TimeAgoPipe, TimeToPipe];
 export class NgDatePipesModule {}
 
 export { TimeAgoPipe } from './time-ago';
-export {TimeToPipe} from './time-to.pipe';
+export { TimeToPipe } from './time-to.pipe';

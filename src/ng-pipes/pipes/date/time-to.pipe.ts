@@ -4,7 +4,6 @@ import { Pipe, PipeTransform } from '@angular/core';
   name: 'timeTo',
 })
 export class TimeToPipe implements PipeTransform {
-
   private static YEAR_MS: number = 1000 * 60 * 60 * 24 * 7 * 4 * 12;
   private static MAPPER: any = [
     { single: 'next year', many: 'years', div: 1 },
@@ -20,8 +19,6 @@ export class TimeToPipe implements PipeTransform {
       return 'Invalid date';
     }
 
-
-
     const future = inputDate.toDate ? inputDate.toDate() : inputDate.getTime();
     const now = +new Date();
     console.log(new Date(future));
@@ -30,7 +27,6 @@ export class TimeToPipe implements PipeTransform {
     if (future < now) {
       return 'in the past';
     }
-
 
     for (let i = 0, l = TimeToPipe.MAPPER.length, ms = future - now, div = TimeToPipe.YEAR_MS; i < l; i++) {
       const elm = TimeToPipe.MAPPER[i];
@@ -43,5 +39,4 @@ export class TimeToPipe implements PipeTransform {
 
     return 'just now';
   }
-
 }

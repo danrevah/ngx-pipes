@@ -1,6 +1,5 @@
 import { TimeToPipe } from './time-to.pipe';
 
-
 describe('TimeToPipe', () => {
   let pipe: TimeToPipe;
   const today = new Date();
@@ -44,7 +43,6 @@ describe('TimeToPipe', () => {
 
   const fewYearsToString = 5 + ' years to';
   const fewYearsToDate = new Date(new Date().setDate(new Date().getDate() + 366 * 5));
-
 
   beforeAll(() => {
     pipe = new TimeToPipe();
@@ -109,8 +107,4 @@ describe('TimeToPipe', () => {
   it('should return 5 years to', () => {
     expect(pipe.transform(fewYearsToDate)).toEqual(fewYearsToString);
   });
-
-
-
 });
-
