@@ -11,37 +11,37 @@ describe('TimeToPipe', () => {
   const fewSecondsAgoDate = new Date(today.getTime() + 5 * 1000);
   const aMinuteAgoDate = new Date(today.getTime() + 60 * 1000);
 
-  const fewMinutesToString = 5 + ' minutes to';
+  const fewMinutesToString = 'in 5 minutes';
   const fewMinutesToDate = new Date(new Date().getTime() + 5 * 60 * 1000);
 
   const anHourToString = 'in an hour';
   const anHourToDate = new Date(new Date().getTime() + 60 * 60 * 1000);
 
-  const fewHoursToString = 5 + ' hours to';
+  const fewHoursToString = 'in 5 hours';
   const fewHoursToDate = new Date(new Date().getTime() + 5 * 60 * 60 * 1000);
 
   const tomorrowString = 'tomorrow';
   const tomorrowDate = new Date(new Date().setDate(new Date().getDate() + 1));
 
-  const fewDaysToString = 3 + ' days to';
+  const fewDaysToString = 'in 3 days';
   const fewDaysToDate = new Date(new Date().setDate(new Date().getDate() + 3));
 
   const nextWeekString = 'next week';
   const nextWeekDate = new Date(new Date().setDate(new Date().getDate() + 7));
 
-  const fewWeeksToString = 2 + ' weeks to';
+  const fewWeeksToString = 'in 2 weeks';
   const fewWeeksToDate = new Date(new Date().setDate(new Date().getDate() + 14));
 
   const nextMonthString = 'next month';
   const nextMonthDate = new Date(new Date().setDate(new Date().getDate() + 30));
 
-  const fewMonthsToString = 5 + ' months to';
+  const fewMonthsToString = 'in 5 months';
   const fewMonthsToDate = new Date(new Date().setDate(new Date().getDate() + 30 * 5));
 
   const nextYearString = 'next year';
   const nextYearDate = new Date(new Date().setDate(new Date().getDate() + 366));
 
-  const fewYearsToString = 5 + ' years to';
+  const fewYearsToString = 'in 5 years';
   const fewYearsToDate = new Date(new Date().setDate(new Date().getDate() + 366 * 5));
 
   beforeAll(() => {
@@ -64,15 +64,15 @@ describe('TimeToPipe', () => {
     expect(pipe.transform(past)).toEqual(pastString);
   });
 
-  it('should return 5 minutes ago', () => {
+  it('should return in 5 minutes', () => {
     expect(pipe.transform(fewMinutesToDate)).toEqual(fewMinutesToString);
   });
 
-  it('should return an hour to', () => {
+  it('should return in an hour', () => {
     expect(pipe.transform(anHourToDate)).toEqual(anHourToString);
   });
 
-  it('should return 5 hours to', () => {
+  it('should return in 5 hours', () => {
     expect(pipe.transform(fewHoursToDate)).toEqual(fewHoursToString);
   });
 
@@ -80,7 +80,7 @@ describe('TimeToPipe', () => {
     expect(pipe.transform(tomorrowDate)).toEqual(tomorrowString);
   });
 
-  it('should return 5 days to', () => {
+  it('should return in 5 days', () => {
     expect(pipe.transform(fewDaysToDate)).toEqual(fewDaysToString);
   });
 
@@ -88,7 +88,7 @@ describe('TimeToPipe', () => {
     expect(pipe.transform(nextWeekDate)).toEqual(nextWeekString);
   });
 
-  it('should return 2 weeks to', () => {
+  it('should return in 2 weeks', () => {
     expect(pipe.transform(fewWeeksToDate)).toEqual(fewWeeksToString);
   });
 
@@ -96,7 +96,7 @@ describe('TimeToPipe', () => {
     expect(pipe.transform(nextMonthDate)).toEqual(nextMonthString);
   });
 
-  it('should return 5 months to', () => {
+  it('should return in 5 months', () => {
     expect(pipe.transform(fewMonthsToDate)).toEqual(fewMonthsToString);
   });
 
@@ -104,7 +104,7 @@ describe('TimeToPipe', () => {
     expect(pipe.transform(nextYearDate)).toEqual(nextYearString);
   });
 
-  it('should return 5 years to', () => {
+  it('should return in 5 years', () => {
     expect(pipe.transform(fewYearsToDate)).toEqual(fewYearsToString);
   });
 });

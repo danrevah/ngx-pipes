@@ -33,7 +33,7 @@ export class TimeToPipe implements PipeTransform {
 
       const unit = Math.round(ms / (div /= elm.div));
       if (unit >= 1) {
-        return unit === 1 ? elm.single : `${unit} ${elm.many} to`;
+        return unit === 1 ? elm.single : `in ${unit} ${elm.many}`;
       }
     }
 

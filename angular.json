@@ -78,10 +78,8 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
-            "assets": [
-            ],
-            "styles": [
-            ],
+            "assets": [],
+            "styles": [],
             "scripts": []
           }
         },
@@ -111,6 +109,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "angular-test"
+    }
+  },
+  "defaultProject": "angular-test",
+  "cli": {
+    "analytics": "703d0878-2616-4784-9639-9ce9b07555eb"
+  }
 }
