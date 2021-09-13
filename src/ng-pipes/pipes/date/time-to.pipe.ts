@@ -21,8 +21,6 @@ export class TimeToPipe implements PipeTransform {
 
     const future = inputDate.toDate ? inputDate.toDate() : inputDate.getTime();
     const now = +new Date();
-    console.log(new Date(future));
-    console.log(new Date(now));
 
     if (future < now) {
       return 'in the past';
