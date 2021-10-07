@@ -3,8 +3,8 @@ import { extractDeepPropertyByMapKey, isString, isUndefined } from '../helpers/h
 
 @Pipe({ name: 'orderBy' })
 export class OrderByPipe implements PipeTransform {
-  transform(input: any[], config?: any): any[];
   transform<T>(input: T, config?: any): T;
+  transform(input: any[], config?: any): any[];
 
   transform(input: any, config?: any): any {
     if (!Array.isArray(input)) {
