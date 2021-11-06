@@ -1,6 +1,18 @@
-# Change Log
+# Changelog
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+### [2.7.6](https://github.com/danrevah/ngx-pipes/compare/v2.7.0...v2.7.6) (2021-11-06)
+
+
+### Bug Fixes
+
+* **cross:** export radians and frompipes ([8c48a76](https://github.com/danrevah/ngx-pipes/commit/8c48a76244e2dcf9f17feb7caae6d2e3c31e791f))
+* **module:** module issues with angular 9 ([d0240f4](https://github.com/danrevah/ngx-pipes/commit/d0240f4f9339f0ac80c3f187bc274148e863fdd0))
+* **proj:** fix spec ([c0a02b0](https://github.com/danrevah/ngx-pipes/commit/c0a02b0d10db2a7dd4acd75686eefe59771ec1a3))
+* **proj:** fix spec ([3d4096a](https://github.com/danrevah/ngx-pipes/commit/3d4096af16c46674e380564373e973b0f984821d))
+* **proj:** fix spec ([772b672](https://github.com/danrevah/ngx-pipes/commit/772b672875772cfe69b589562541862cfe30c22c))
+* **proj:** upgrade ng-packagr to support angular 9 ([9c31798](https://github.com/danrevah/ngx-pipes/commit/9c31798e27a1ef713ad6b1a9645e66d1db02758d))
 
 ## [2.7.5](https://github.com/danrevah/ngx-pipes/compare/v2.7.4...v2.7.5) (2020-07-11)
 
