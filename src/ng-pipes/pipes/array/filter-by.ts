@@ -11,8 +11,8 @@ import {
 // tslint:disable no-bitwise
 @Pipe({ name: 'filterBy' })
 export class FilterByPipe implements PipeTransform {
-  transform(input: any[], props: Array<string>, search?: any, strict?: boolean): any[];
   transform<T>(input: T, props: Array<string>, search?: any, strict?: boolean): T;
+  transform(input: any[], props: Array<string>, search?: any, strict?: boolean): any[];
   transform(input: any, props: Array<string>, search: any = '', strict: boolean = false): any {
     if (
       !Array.isArray(input) ||
