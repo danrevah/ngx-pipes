@@ -2,7 +2,6 @@ sudo: required
 dist: trusty
 language: node_js
 node_js:
-  - '10.16'
   - '12.6'
 
 addons:
@@ -19,9 +18,9 @@ before_install:
   - sh -e /etc/init.d/xvfb start
 
 before_script:
-- npm install -g karma
+  - npm install -g karma
 
 script:
-- npm run test-travis
+  - npm run test-travis
 
 after_success: cat ./coverage/coverage.lcov | ./node_modules/coveralls/bin/coveralls.js
