@@ -17,6 +17,7 @@ coverage/
 /.idea
 /.vscode
 .project
+.angular
 .classpath
 .c9/
 *.launch
