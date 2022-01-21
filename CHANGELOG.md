@@ -7,7 +7,7 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### ⚠ BREAKING CHANGES
 
-* Version 3 now adds support for Angular 13+
+* Version 3 only supports Angular 13+
 
 ### Features
 
