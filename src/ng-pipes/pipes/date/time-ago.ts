@@ -13,11 +13,11 @@ export class TimeAgoPipe implements PipeTransform {
   ];
 
   /**
-   * @param inputDate: Date | Moment - not included as TypeScript interface,
+   * @param inputDate: Date | Moment | date string - not included as TypeScript interface,
    * in order to keep `ngx-pipes` "pure" from dependencies!
    */
   public transform(inputDate: any): string {
-    if (!inputDate || (!inputDate.getTime && !inputDate.toDate)) {
+    if (!inputDate || (!inputDate.getTime && !inputDate.toDate && !Date.parse(inputDate))) {
       return 'Invalid date';
     }
 
