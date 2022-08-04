@@ -31,8 +31,8 @@ export class TimeAgoPipe implements PipeTransform {
       future: 'em breve',
       default: 'agora',
       manyPattern: 'há {unit} {many}',
-    }
-  }
+    },
+  };
   /**
    * @param inputDate: Date | Moment - not included as TypeScript interface,
    * in order to keep `ngx-pipes` "pure" from dependencies!
@@ -52,17 +52,21 @@ export class TimeAgoPipe implements PipeTransform {
       return TimeAgoPipe.MAPPER[locale].future;
     }
 
-    for (let i = 0, l = TimeAgoPipe.MAPPER[locale].dates.length, ms = now - past, div = TimeAgoPipe.YEAR_MS; i < l; ++i) {
+    for (
+      let i = 0, l = TimeAgoPipe.MAPPER[locale].dates.length, ms = now - past, div = TimeAgoPipe.YEAR_MS;
+      i < l;
+      ++i
+    ) {
       const elm = TimeAgoPipe.MAPPER[locale].dates[i];
       const unit = Math.floor(ms / (div /= elm.div));
       const pattern = TimeAgoPipe.MAPPER[locale].manyPattern;
 
       if (unit >= 1) {
-        if(unit === 1) {
+        if (unit === 1) {
           return elm.single;
-        } else{
-          const regexMany = new RegExp('{many}', 'g')
-          const regexUnit = new RegExp('{unit}', 'g')
+        } else {
+          const regexMany = new RegExp('{many}', 'g');
+          const regexUnit = new RegExp('{unit}', 'g');
 
           return pattern.replace(regexUnit, unit).replace(regexMany, elm.many);
         }

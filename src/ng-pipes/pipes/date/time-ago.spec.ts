@@ -35,7 +35,7 @@ describe('TimeAgoPipe', () => {
   const fewMonthsAgoString = 5 + ' months ago';
   const lastYearString = 'last year';
   const fewYearsAgoString = 5 + ' years ago';
-  
+
   // Strings - Brazilian Portuguese
   const recentlyStringBr = 'agora';
   const futureStringBr = 'em breve';
