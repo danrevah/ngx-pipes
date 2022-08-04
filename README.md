@@ -175,6 +175,8 @@ and it's also possible to stack multiple pipes
 
 Time ago pipe converts date to 'just now', 'X days ago', 'last week', 'X days ago', etc..
 
+Suports `'en-US', 'pt-BR'`
+
 **Usage:** `string | timeAgo`
 ```typescript
 import * as moment from 'moment';
@@ -188,6 +190,12 @@ const lastWeek = moment().subtract(10, 'days');
 ```html
 <span>Updated: {{now | timeAgo}}</span> <!-- Output: "just now" -->
 <span>Updated: {{lastWeek | timeAgo}}</span> <!-- Output: "last week" -->
+
+<span>Updated: {{now | timeAgo: 'en-US'}}</span> <!-- Output: "just now" -->
+<span>Updated: {{lastWeek | timeAgo: 'en-US'}}</span> <!-- Output: "last week" -->
+
+<span>Updated: {{now | timeAgo: 'pt-BR'}}</span> <!-- Output: "agora" -->
+<span>Updated: {{lastWeek | timeAgo: 'pt-BR'}}</span> <!-- Output: "semana passada" -->
 ```
 
 ## String
