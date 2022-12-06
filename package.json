@@ -1,6 +1,6 @@
 {
-  "name": "@vrdd/ngx-pipes",
-  "version": "3.1.1",
+  "name": "ngx-pipes",
+  "version": "3.0.0",
   "author": "Dan Revah",
   "description": "Useful angular pipes",
   "license": "MIT",
