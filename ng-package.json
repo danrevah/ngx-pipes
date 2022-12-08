@@ -3,5 +3,8 @@
   "dest": "dist",
   "lib": {
     "entryFile": "public_api.ts"
-  }
+  },
+  "allowedNonPeerDependencies": [
+    "postcss", "webpack"
+  ]
 }
