@@ -1,6 +1,6 @@
 {
   "name": "ngx-pipes",
-  "version": "3.0.0",
+  "version": "4.0.0",
   "author": "Dan Revah",
   "description": "Useful angular pipes",
   "license": "MIT",
@@ -54,6 +54,7 @@
     "@types/node": "^18.11.11",
     "@typescript-eslint/eslint-plugin": "^5.43.0",
     "@typescript-eslint/parser": "^5.43.0",
+    "ajv": "^8.11.2",
     "braces": "^3.0.2",
     "core-js": "^3.26.1",
     "eslint": "^8.28.0",
@@ -76,5 +77,9 @@
     "tsickle": "^0.46.3",
     "typescript": "^4.7.3",
     "zone.js": "^0.11.4"
+  },
+  "dependencies": {
+    "postcss": "^8.4.19",
+    "webpack": "^5.75.0"
   }
 }

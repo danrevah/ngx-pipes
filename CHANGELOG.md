@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [4.0.0](https://github.com/danrevah/ngx-pipes/compare/v2.7.6...v4.0.0) (2022-12-08)
+
+
+### ⚠ BREAKING CHANGES
+
+* Version 3 now adds support for Angular 13+
+
+### Features
+
+* **core:** adds angular 14 support ([#225](https://github.com/danrevah/ngx-pipes/issues/225)) ([c0737c3](https://github.com/danrevah/ngx-pipes/commit/c0737c3757d84002e7b80c36562258dd5fd8c5b3))
+* support for angular 13 ([abe93fe](https://github.com/danrevah/ngx-pipes/commit/abe93fef561e9b783a7f1d0e7fa538e412ad1096))
+
 ## [3.0.0](https://github.com/danrevah/ngx-pipes/compare/v2.7.8...v3.0.0) (2022-01-21)
 
 
