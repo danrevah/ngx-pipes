@@ -863,7 +863,7 @@ either from the beginning or from the end.
 ```
 
 ```typescript
-this.topTwoFrameworks = this.takePipe.transform(['React', 'Angular', 'Next', 'Vue', 'Svelte']);
+this.topTwoFrameworks = this.takePipe.transform(['React', 'Angular', 'Next', 'Vue', 'Svelte'], 'start', 2);
 console.log(this.topTwoFrameworks) // Returns: ['React', 'Angular']
 ```
 
