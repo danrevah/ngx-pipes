@@ -432,6 +432,15 @@ Wrap a string between a prefix and a suffix
 <p>{{'Foo' | wrap: 'nice prefix ': ' and awesome suffix!'}}</p> <!-- Output: "nice prefix Foo and awesome suffix!" -->
 ```
 
+### asteriks
+Mask text by asteriks(*)
+
+**Usage:** `string | asteriks: size`
+
+```
+<p>{{'69200775422' | asteriks:2}}</p> <!-- Output: "69*******22" -->
+```
+
 ## Array
 
 ### diff
