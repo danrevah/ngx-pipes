@@ -1,7 +1,10 @@
 import { Pipe, PipeTransform } from '@angular/core';
 import { isObject } from '../helpers/helpers';
 
-@Pipe({ name: 'invertBy' })
+@Pipe({
+  name: 'invertBy',
+  standalone: true,
+})
 export class InvertByPipe implements PipeTransform {
   transform(obj: any, cb?: Function): Object {
     if (Array.isArray(obj) || !isObject(obj)) {

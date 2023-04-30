@@ -42,8 +42,7 @@ export function ucFirst(text: string) {
   const ucd = part
     .toLowerCase()
     .split(/(?=['|-])/g)
-    .map(
-      (word: any) =>
+    .map((word: any) =>
       word.indexOf('-') + word.indexOf("'") > -2
         ? word.slice(0, 2).toUpperCase() + word.slice(2)
         : word.slice(0, 1).toUpperCase() + word.slice(1)
@@ -89,16 +88,14 @@ export function isDeepEqual(obj: any, other: any): any {
     return obj === other;
   }
 
-  return getKeysTwoObjects(obj, other).every(
-    (key: any): boolean => {
-      if (!isObject(obj[key]) && !isObject(other[key])) {
-        return obj[key] === other[key];
-      }
-      if (!isObject(obj[key]) || !isObject(other[key])) {
-        return false;
-      }
-
-      return isDeepEqual(obj[key], other[key]);
+  return getKeysTwoObjects(obj, other).every((key: any): boolean => {
+    if (!isObject(obj[key]) && !isObject(other[key])) {
+      return obj[key] === other[key];
     }
-  );
+    if (!isObject(obj[key]) || !isObject(other[key])) {
+      return false;
+    }
+
+    return isDeepEqual(obj[key], other[key]);
+  });
 }

@@ -48,12 +48,11 @@ const ARRAY_PIPES = [
   OrderByImpurePipe,
   RangePipe,
   ChunkPipe,
-  FromPairsPipe
+  FromPairsPipe,
 ];
 
 @NgModule({
-  declarations: ARRAY_PIPES,
-  imports: [],
+  imports: [...ARRAY_PIPES],
   exports: ARRAY_PIPES,
 })
 export class NgArrayPipesModule {}

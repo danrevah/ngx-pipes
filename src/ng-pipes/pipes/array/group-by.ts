@@ -1,7 +1,10 @@
 import { Pipe, PipeTransform } from '@angular/core';
 import { extractDeepPropertyByMapKey, isFunction } from '../helpers/helpers';
 
-@Pipe({ name: 'groupBy' })
+@Pipe({
+  name: 'groupBy',
+  standalone: true,
+})
 export class GroupByPipe implements PipeTransform {
   transform(input: any, discriminator: any = [], delimiter: string = '|'): any {
     if (!Array.isArray(input)) {
@@ -27,7 +30,7 @@ export class GroupByPipe implements PipeTransform {
     }
 
     if (Array.isArray(discriminator)) {
-      return discriminator.map(k => extractDeepPropertyByMapKey(payload, k)).join(delimiter);
+      return discriminator.map((k) => extractDeepPropertyByMapKey(payload, k)).join(delimiter);
     }
 
     return extractDeepPropertyByMapKey(payload, <string>discriminator);

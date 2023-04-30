@@ -46,8 +46,14 @@ describe('GroupByPipe', () => {
     ];
     const result = pipe.transform(arrayWithDiscriminator, ['key', 'type'], '_');
     expect(result).toEqual({
-      foo_1: [{ id: 1, key: 'foo', type: 1 }, { id: 3, key: 'foo', type: 1 }],
-      foo_2: [{ id: 2, key: 'foo', type: 2 }, { id: 4, key: 'foo', type: 2 }],
+      foo_1: [
+        { id: 1, key: 'foo', type: 1 },
+        { id: 3, key: 'foo', type: 1 },
+      ],
+      foo_2: [
+        { id: 2, key: 'foo', type: 2 },
+        { id: 4, key: 'foo', type: 2 },
+      ],
     });
   });
 
@@ -60,8 +66,14 @@ describe('GroupByPipe', () => {
     ];
     const result = pipe.transform(arrayWithDiscriminator, ['key', 'type']);
     expect(result).toEqual({
-      'foo|1': [{ id: 1, key: 'foo', type: 1 }, { id: 3, key: 'foo', type: 1 }],
-      'foo|2': [{ id: 2, key: 'foo', type: 2 }, { id: 4, key: 'foo', type: 2 }],
+      'foo|1': [
+        { id: 1, key: 'foo', type: 1 },
+        { id: 3, key: 'foo', type: 1 },
+      ],
+      'foo|2': [
+        { id: 2, key: 'foo', type: 2 },
+        { id: 4, key: 'foo', type: 2 },
+      ],
     });
   });
 
@@ -74,8 +86,14 @@ describe('GroupByPipe', () => {
     ];
     const result = pipe.transform(arrayWithDiscriminator, 'prop.deep');
     expect(result).toEqual({
-      foo: [{ id: 1, prop: { deep: 'foo' } }, { id: 3, prop: { deep: 'foo' } }],
-      bar: [{ id: 2, prop: { deep: 'bar' } }, { id: 4, prop: { deep: 'bar' } }],
+      foo: [
+        { id: 1, prop: { deep: 'foo' } },
+        { id: 3, prop: { deep: 'foo' } },
+      ],
+      bar: [
+        { id: 2, prop: { deep: 'bar' } },
+        { id: 4, prop: { deep: 'bar' } },
+      ],
     });
   });
 
@@ -88,8 +106,14 @@ describe('GroupByPipe', () => {
     ];
     const result = pipe.transform(arrayWithDiscriminator, ['prop.deep', 'prop.type']);
     expect(result).toEqual({
-      'foo|1': [{ id: 1, prop: { deep: 'foo', type: 1 } }, { id: 3, prop: { deep: 'foo', type: 1 } }],
-      'foo|2': [{ id: 2, prop: { deep: 'foo', type: 2 } }, { id: 4, prop: { deep: 'foo', type: 2 } }],
+      'foo|1': [
+        { id: 1, prop: { deep: 'foo', type: 1 } },
+        { id: 3, prop: { deep: 'foo', type: 1 } },
+      ],
+      'foo|2': [
+        { id: 2, prop: { deep: 'foo', type: 2 } },
+        { id: 4, prop: { deep: 'foo', type: 2 } },
+      ],
     });
   });
 });

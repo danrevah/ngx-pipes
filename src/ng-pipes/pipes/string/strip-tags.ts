@@ -1,6 +1,9 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
-@Pipe({ name: 'stripTags' })
+@Pipe({
+  name: 'stripTags',
+  standalone: true,
+})
 export class StripTagsPipe implements PipeTransform {
   transform(text: string, ...allowedTags: any[]): string {
     return allowedTags.length > 0

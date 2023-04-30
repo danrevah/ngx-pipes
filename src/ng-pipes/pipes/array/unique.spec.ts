@@ -24,7 +24,16 @@ describe('DiffPipe', () => {
   });
 
   it('should filter the array based on object properties when a property name is supplied in arguments', () => {
-    expect(pipe.transform([{ a: 1, b: true }, { a: 1, b: true }, { a: 3, b: false }], 'b')).toEqual([
+    expect(
+      pipe.transform(
+        [
+          { a: 1, b: true },
+          { a: 1, b: true },
+          { a: 3, b: false },
+        ],
+        'b'
+      )
+    ).toEqual([
       { a: 1, b: true },
       { a: 3, b: false },
     ]);

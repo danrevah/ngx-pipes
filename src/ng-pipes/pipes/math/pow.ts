@@ -1,6 +1,9 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
-@Pipe({ name: 'pow' })
+@Pipe({
+  name: 'pow',
+  standalone: true,
+})
 export class PowerPipe implements PipeTransform {
   transform(num: number, power?: number): number;
   transform(num: any, power?: number): any;

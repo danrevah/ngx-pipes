@@ -28,8 +28,7 @@ export const MATH_PIPES = [
 ];
 
 @NgModule({
-  declarations: MATH_PIPES,
-  imports: [],
+  imports: [...MATH_PIPES],
   exports: MATH_PIPES,
 })
 export class NgMathPipesModule {}

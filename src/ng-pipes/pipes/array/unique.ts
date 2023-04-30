@@ -1,7 +1,10 @@
 import { Pipe, PipeTransform } from '@angular/core';
 import { extractDeepPropertyByMapKey, isObject, isUndefined } from '../helpers/helpers';
 
-@Pipe({ name: 'unique' })
+@Pipe({
+  name: 'unique',
+  standalone: true,
+})
 export class UniquePipe implements PipeTransform {
   transform(input: any[], args?: string | undefined): any[];
   transform<T>(input: T, args?: string | undefined): T;

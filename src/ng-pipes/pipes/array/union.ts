@@ -1,6 +1,9 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
-@Pipe({ name: 'union' })
+@Pipe({
+  name: 'union',
+  standalone: true,
+})
 export class UnionPipe implements PipeTransform {
   transform<T>(input: T, args?: any[]): T;
   transform(input: any[], args?: any[]): any[];

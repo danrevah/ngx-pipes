@@ -1,6 +1,9 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
-@Pipe({ name: 'percentage' })
+@Pipe({
+  name: 'percentage',
+  standalone: true,
+})
 export class PercentagePipe implements PipeTransform {
   transform(num: number, total?: number, floor?: boolean): number;
   transform<T>(num: T, total?: number, floor?: boolean): T;

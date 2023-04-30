@@ -1,7 +1,10 @@
 import { Pipe, PipeTransform } from '@angular/core';
 import { isString } from '../helpers/helpers';
 
-@Pipe({ name: 'slugify' })
+@Pipe({
+  name: 'slugify',
+  standalone: true,
+})
 export class SlugifyPipe implements PipeTransform {
   transform(str: string): string {
     return isString(str)
