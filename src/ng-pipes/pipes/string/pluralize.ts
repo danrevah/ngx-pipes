@@ -3,6 +3,7 @@ import { isVowel } from '../helpers/helpers';
 
 @Pipe({
   name: 'makePluralString',
+  standalone: true,
 })
 
 /**

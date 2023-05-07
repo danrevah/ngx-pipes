@@ -1,7 +1,10 @@
 import { Pipe, PipeTransform } from '@angular/core';
 import { isString } from '../helpers/helpers';
 
-@Pipe({ name: 'shorten' })
+@Pipe({
+  name: 'shorten',
+  standalone: true,
+})
 export class ShortenPipe implements PipeTransform {
   transform(input: string, length?: number, suffix?: string, wordBreak?: boolean): string;
   transform(input: any, length?: number, suffix?: string, wordBreak?: boolean): any;

@@ -1,7 +1,10 @@
 import { Pipe, PipeTransform } from '@angular/core';
 import { isString } from '../helpers/helpers';
 
-@Pipe({ name: 'rpad' })
+@Pipe({
+  name: 'rpad',
+  standalone: true,
+})
 export class RightPadPipe implements PipeTransform {
   transform(str: string, length: number = 1, padCharacter: string = ' '): string {
     if (!isString(str) || str.length >= length) {

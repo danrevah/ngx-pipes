@@ -1,6 +1,9 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
-@Pipe({ name: 'tail' })
+@Pipe({
+  name: 'tail',
+  standalone: true,
+})
 export class TailPipe implements PipeTransform {
   transform<T>(input: T, num?: number): T;
   transform(input: any[], num?: number): any[];

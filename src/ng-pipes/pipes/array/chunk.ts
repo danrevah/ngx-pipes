@@ -1,12 +1,14 @@
 import { Pipe, PipeTransform } from '@angular/core';
 import { isString } from '../helpers/helpers';
 
-@Pipe({ name: 'chunk' })
+@Pipe({
+  name: 'chunk',
+  standalone: true,
+})
 export class ChunkPipe implements PipeTransform {
   transform(input: any, size: number = 1): any {
     if (isString(input)) {
-      return this.chunk(input
-        .split(''), size);
+      return this.chunk(input.split(''), size);
     }
 
     return Array.isArray(input) ? this.chunk(input, size) : input;
@@ -16,6 +18,6 @@ export class ChunkPipe implements PipeTransform {
     return Array(Math.ceil(input.length / size))
       .fill([])
       .map((_, index) => index * size)
-      .map(begin => input.slice(begin, begin + size));
+      .map((begin) => input.slice(begin, begin + size));
   }
 }

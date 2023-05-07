@@ -4,8 +4,7 @@ import { TimeAgoPipe } from './time-ago';
 export const DATE_PIPES = [TimeAgoPipe];
 
 @NgModule({
-  declarations: DATE_PIPES,
-  imports: [],
+  imports: [...DATE_PIPES],
   exports: DATE_PIPES,
 })
 export class NgDatePipesModule {}

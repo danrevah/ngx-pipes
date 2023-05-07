@@ -15,7 +15,12 @@ describe('FromPairsPipe', () => {
 
   it('should transform array to object', () => {
     expect(pipe.transform([['foo', 42]])).toEqual({ foo: 42 });
-    expect(pipe.transform([['foo', 42], ['bar', 'foobar']])).toEqual({ foo: 42, bar: 'foobar' });
+    expect(
+      pipe.transform([
+        ['foo', 42],
+        ['bar', 'foobar'],
+      ])
+    ).toEqual({ foo: 42, bar: 'foobar' });
   });
 
   it('should ignore non-array elements', () => {

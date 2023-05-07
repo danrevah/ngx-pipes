@@ -98,10 +98,20 @@ describe('OrderByPipe', () => {
   it('should order by a property of type boolean', () => {
     expect(
       pipe.transform(
-        [{ id: 1, value: false }, { id: 2, value: true }, { id: 3, value: false }, { id: 4, value: true }],
+        [
+          { id: 1, value: false },
+          { id: 2, value: true },
+          { id: 3, value: false },
+          { id: 4, value: true },
+        ],
         'value'
       )
-    ).toEqual([{ id: 1, value: false }, { id: 3, value: false }, { id: 2, value: true }, { id: 4, value: true }]);
+    ).toEqual([
+      { id: 1, value: false },
+      { id: 3, value: false },
+      { id: 2, value: true },
+      { id: 4, value: true },
+    ]);
   });
 
   it('should order by a property of type date', () => {

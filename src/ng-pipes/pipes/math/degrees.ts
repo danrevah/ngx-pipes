@@ -1,7 +1,10 @@
 import { Pipe, PipeTransform } from '@angular/core';
 import { isNumberFinite } from '../helpers/helpers';
 
-@Pipe({ name: 'degrees' })
+@Pipe({
+  name: 'degrees',
+  standalone: true,
+})
 export class DegreesPipe implements PipeTransform {
   transform(radians: number): number {
     if (!isNumberFinite(radians)) {
