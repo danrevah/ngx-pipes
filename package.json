@@ -1,6 +1,6 @@
 {
   "name": "ngx-pipes",
-  "version": "3.2.0",
+  "version": "3.2.1",
   "author": "Dan Revah",
   "description": "Useful angular pipes",
   "license": "MIT",
@@ -33,7 +33,7 @@
     "url": "https://github.com/danrevah/ngx-pipes.git"
   },
   "peerDependencies": {
-    "@angular/core": "14 - 15"
+    "@angular/core": ">=14"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^14.0.0",
