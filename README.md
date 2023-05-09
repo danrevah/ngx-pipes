@@ -69,6 +69,7 @@
     - [orderByImpure](#orderbyimpure)
     - [chunk](#chunk)
     - [fromPairs](#fromPairs)
+    - [take](#take)
  - [Object](#object)
     - [keys](#keys)
     - [values](#values)
@@ -841,6 +842,23 @@ Returns object of an array of key value pairs
 ```html
 <p>{{ [['foo', 1], ['bar', 2]] | fromPairs }}</p> <!-- Output: "{foo: 1, bar: 2}" -->
 <p>{{ [['foo', [1, 2]], ['bar', [3, 4]]] | fromPairs }}</p> <!-- Output: "{foo: [1, 2], bar: [3, 4]}" -->
+```
+
+### take
+Returns a slice of an array or of a string with n number of elements specified using `count`,
+either from the beginning or from the end.
+
+**Usage:** `array | take: [from:'start'|'end'|default='start']:[count:number|default = 1]`
+
+```html
+<p>{{ [1, 2, 3, 4, 5] | take }}</p> <!-- Array: [1] -->
+<p>{{ [1, 2, 3, 4, 5] | take:'end':2 }}</p> <!-- Array: [4, 5] -->
+<p>{{ "Angular is awesome" | take:'start':7 }}</p> <!-- Output: "Angular" -->
+```
+
+```typescript
+this.topTwoFrameworks = this.takePipe.transform(['React', 'Angular', 'Next', 'Vue', 'Svelte'], 'start', 2);
+console.log(this.topTwoFrameworks) // Returns: ['React', 'Angular']
 ```
 
 ## Object
