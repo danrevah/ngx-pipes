@@ -38,6 +38,7 @@
     - [latinise](#latinise)
     - [lines](#lines)
     - [underscore](#underscore)
+    - [underscoreToSpace](#underscoreToSpace)
     - [test](#test)
     - [match](#match)
     - [lpad](#lpad)
@@ -350,6 +351,17 @@ Converts camelCase string to underscore.
 ```html
 <p>{{'angularIsAwesome' | underscore }}</p> <!-- Output: "angular_is_awesome" -->
 <p>{{'FooBar' | underscore }}</p> <!-- Output: "foo_bar" -->
+```
+
+### underscore
+
+Converts underscore to space.
+
+**Usage:** `string | underscoreToSpace`
+
+```html
+<p>{{'angular_is_awesome' | underscoreToSpace }}</p> <!-- Output: "angular is awesome" -->
+<p>{{'FOO_BAR' | underscore }}</p> <!-- Output: "FOO BAR" -->
 ```
 
 ### test
