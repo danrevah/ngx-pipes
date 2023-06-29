@@ -14,6 +14,7 @@ import { CamelizePipe } from './camelize';
 import { LatinisePipe } from './latinise';
 import { LinesPipe } from './lines';
 import { UnderscorePipe } from './underscore';
+import { UnderscoreToSpacePipe } from './underscore-to-space';
 import { MatchPipe } from './match';
 import { TestPipe } from './test';
 import { LeftPadPipe } from './lpad';
@@ -37,6 +38,7 @@ export const STRING_PIPES = [
   LatinisePipe,
   LinesPipe,
   UnderscorePipe,
+  UnderscoreToSpacePipe,
   MatchPipe,
   TestPipe,
   LeftPadPipe,
@@ -67,6 +69,7 @@ export { CamelizePipe } from './camelize';
 export { LatinisePipe } from './latinise';
 export { LinesPipe } from './lines';
 export { UnderscorePipe } from './underscore';
+export { UnderscoreToSpacePipe } from './underscore-to-space';
 export { MatchPipe } from './match';
 export { TestPipe } from './test';
 export { LeftPadPipe } from './lpad';
