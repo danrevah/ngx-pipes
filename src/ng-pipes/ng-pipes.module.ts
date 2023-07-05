@@ -5,6 +5,7 @@ import { NgStringPipesModule } from './pipes/string/index';
 import { NgMathPipesModule } from './pipes/math/index';
 import { NgBooleanPipesModule } from './pipes/boolean/index';
 import { NgDatePipesModule } from './pipes/date/index';
+import { NgAJAXPipesModule } from "./pipes/other/index";
 
 @NgModule({
   exports: [
@@ -14,6 +15,7 @@ import { NgDatePipesModule } from './pipes/date/index';
     NgBooleanPipesModule,
     NgObjectPipesModule,
     NgDatePipesModule,
+    NgAJAXPipesModule
   ],
 })
 export class NgPipesModule {}
@@ -24,3 +26,4 @@ export * from './pipes/string/index';
 export * from './pipes/math/index';
 export * from './pipes/boolean/index';
 export * from './pipes/date/index';
+export * from './pipes/other/index'
