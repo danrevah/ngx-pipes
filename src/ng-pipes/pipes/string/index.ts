@@ -20,6 +20,7 @@ import { LeftPadPipe } from './lpad';
 import { RightPadPipe } from './rpad';
 import { MakePluralStringPipe } from './pluralize';
 import { WrapPipe } from './wrap';
+import { TruncPipe } from "./trunc";
 
 export const STRING_PIPES = [
   AorAnPipe,
@@ -43,6 +44,7 @@ export const STRING_PIPES = [
   RightPadPipe,
   MakePluralStringPipe,
   WrapPipe,
+  TruncPipe
 ];
 
 @NgModule({
@@ -73,3 +75,4 @@ export { LeftPadPipe } from './lpad';
 export { RightPadPipe } from './rpad';
 export { MakePluralStringPipe } from './pluralize';
 export { WrapPipe } from './wrap';
+export { TruncPipe } from './trunc';
