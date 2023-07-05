@@ -44,6 +44,7 @@
     - [rpad](#rpad)
     - [makePluralString](#makepluralstring)
     - [wrap](#wrap)
+    - [trunc](#trunc)
  - [Array](#Array)   
     - [diff](#diff)
     - [flatten](#flatten)
@@ -109,6 +110,8 @@
     - [isNotEqualTo](#isnotequalto)
     - [isIdenticalTo](#isidenticalto)
     - [isNotIdenticalTo](#isnotidenticalto)
+ - [Other](#other)
+    - [json$](#json)
  
 
 ## Installation
@@ -424,6 +427,18 @@ Wrap a string between a prefix and a suffix
 
 ```html
 <p>{{'Foo' | wrap: 'nice prefix ': ' and awesome suffix!'}}</p> <!-- Output: "nice prefix Foo and awesome suffix!" -->
+```
+
+### trunc
+
+Truncate the long text.
+
+**Usage:** `string | trunc: [length]: [replace]`
+
+```html
+<p>{{'1234567890abcdef' | trunc}} <!-- string: 1234567890abcde... --></p>
+<p>{{'abcde' | trunc:3}} <!-- string: tru... --></p>
+<p>{{'abcde' | trunc:3:*}} <!-- string: tru* --></p>
 ```
 
 ## Array
@@ -1245,6 +1260,30 @@ this.num = 1;
 <p>{{ 1 | isNotIdenticalTo: '1' }}</p> <!-- Output: "true" -->
 <p>{{ 1 | isNotIdenticalTo: 2 }}</p> <!-- Output: "true" -->
 <p>{{ 2 | isNotIdenticalTo: 1 }}</p> <!-- Output: "true" -->
+```
+
+## Other
+
+### json$
+
+**Usage:** `string | json$: [{args}]: [{headers}]`
+
+```html
+<ng-container *ngIf="'https://jsonplaceholder.typicode.com/todos' | json$ | async as result">
+  <ng-container *ngIf="result.isNotEmpty">
+    <p *ngFor="let item of result.data">
+      {{item.title}}
+    </p>
+  </ng-container>
+</ng-container>
+
+<!-- 
+<p>delectus aut autem</p>
+<p>quis ut nam facilis et officia qui</p>
+<p>fugiat veniam minus</p>
+... 
+-->
+
 ```
 
 ## Contributing
