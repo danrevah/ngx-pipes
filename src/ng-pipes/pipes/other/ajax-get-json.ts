@@ -27,7 +27,7 @@ export class Result {
 /**
  * Simple http GET request pipe for angular template, display the ajax result quickly and lightly.
  *
- * `Syntax: 'your api' | get$:{args}?:{headers}?`
+ * `Syntax: 'your api' | json$:{args}?:{headers}?`
  *
  * ### Notice:
  * The result is a wrapper(Observable<Result>) of your result from the api.
@@ -41,12 +41,12 @@ export class Result {
  * @usageNotes
  * #### With args
  * ```javascript
- * 'api' | get$:{a:1,b:2} // api?a=1&b=2
- * 'api' | get$:{a:1,b:2}:{Authorization:xxx} // api?a=1&b=2 with header {Authorization: xxx}
+ * 'api' | json$:{a:1,b:2} // actual request: api?a=1&b=2
+ * 'api' | json$:{a:1,b:2}:{Authorization:xxx} // actual request: api?a=1&b=2 with header {Authorization: xxx}
  * ```
  * #### Example
  * ```html
- * <ng-container *ngIf="'https://jsonplaceholder.typicode.com/todos' | get$ | async as result">
+ * <ng-container *ngIf="'https://jsonplaceholder.typicode.com/todos' | json$ | async as result">
  *   <ng-container *ngIf="result.isNotEmpty">
  *     <p *ngFor="let item of result.data">
  *       {{item.title}}
