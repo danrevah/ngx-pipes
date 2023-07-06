@@ -44,13 +44,13 @@ export class ResultWrapper {
  * Simple http GET request pipe for angular template, display the ajax result quickly and lightly.
  *
  * ### Notice:
- * The result is a wrapper(Observable<Result>) of your result from the api.
+ * The result is a wrapper(Observable<ResultWrapper>) of your result from the api.
  *
- * Result: `{success: boolean, data?: any | any[], message: string, valid: boolean}`
+ * ResultWrapper: `{success: boolean, data?: any | any[], message: string, valid: boolean}`
  *
- * Result#data: your actual result.
+ * ResultWrapper#data: your actual result.
  *
- * Result#valid: `result.data` is not `null`, `undefined`, `length > 0`(array) and `{field:...}`(object).
+ * ResultWrapper#valid: `result.data` is not `null`, `undefined`, `length > 0`(array) and `{field:...}`(object).
  *
  * @usageNotes
  * `string | get$:{args}?:{headers}?`
@@ -69,7 +69,7 @@ export class ResultWrapper {
  *   </ng-container>
  * </ng-container>
  * ```
- * @see Result
+ * @see ResultWrapper
  */
 @Pipe({
   name: 'get$'
