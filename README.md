@@ -111,7 +111,7 @@
     - [isIdenticalTo](#isidenticalto)
     - [isNotIdenticalTo](#isnotidenticalto)
  - [Other](#other)
-    - [json$](#json)
+    - [get$](#get)
  
 
 ## Installation
@@ -1264,13 +1264,13 @@ this.num = 1;
 
 ## Other
 
-### json$
+### get$
 
-**Usage:** `string | json$: [{args}]: [{headers}]`
+**Usage:** `string | get$:{args}?:{headers}?`
 
-```html
-<ng-container *ngIf="'https://jsonplaceholder.typicode.com/todos' | json$ | async as result">
-  <ng-container *ngIf="result.isNotEmpty">
+```angular2html
+<ng-container *ngIf="'https://jsonplaceholder.typicode.com/todos' | get$ | async as result">
+  <ng-container *ngIf="result.valid">
     <p *ngFor="let item of result.data">
       {{item.title}}
     </p>
