@@ -1,7 +1,7 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({ name: 'truthify' })
-export class TrurthifyPipe implements PipeTransform {
+export class TruthifyPipe implements PipeTransform {
   transform(input: any[]): any[];
   transform<T>(input: T): T;
 
