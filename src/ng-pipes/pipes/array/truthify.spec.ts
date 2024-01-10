@@ -1,10 +1,10 @@
-import { TrurthifyPipe } from './truthify';
+import { TruthifyPipe } from './truthify';
 
-describe('TrurthifyPipe', () => {
-  let pipe: TrurthifyPipe;
+describe('TruthifyPipe', () => {
+  let pipe: TruthifyPipe;
 
   beforeEach(() => {
-    pipe = new TrurthifyPipe();
+    pipe = new TruthifyPipe();
   });
 
   it('should not change anything if not array', () => {
